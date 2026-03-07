@@ -1,0 +1,39 @@
+
+services:
+  openclaw:
+    build: .
+    container_name: openclaw_isolated
+    volumes:
+      # Mount the project source
+      - .:/app:rw
+      # Named volume for node_modules to avoid host overwrite
+      - node_modules:/app/node_modules
+      # Mount brain components as read-only individually
+      - /Users/Mrt0309/Desktop/00_Antigravity_Brain/01_Rule:/app/brain/01_Rule:ro
+      - /Users/Mrt0309/Desktop/00_Antigravity_Brain/02_Knowledge_Base:/app/brain/02_Knowledge_Base:ro
+      - /Users/Mrt0309/Desktop/00_Antigravity_Brain/06_OpenClaw_Vault:/app/brain/06_OpenClaw_Vault:ro
+      # Grant write access only to specific output folders
+      - /Users/Mrt0309/Desktop/00_Antigravity_Brain/04_Output/Note:/app/brain/04_Output/Note:rw
+      - /Users/Mrt0309/Desktop/openclaw_seo/site_gen:/app/brain/04_Output/site_gen:rw
+      # Mount logs for monitoring
+      - ./logs:/app/logs:rw
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - NODE_ENV=development
+    networks:
+      - openclaw_net
+    # Restrict to only Gemini API if possible via host firewall or similar, 
+    # but here we set internal network and rely on monitor for external.
+    dns:
+      - 8.8.8.8
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+
+networks:
+  openclaw_net:
+    driver: bridge
+
+volumes:
+  node_modules:

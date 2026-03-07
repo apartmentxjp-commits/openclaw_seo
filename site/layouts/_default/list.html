@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="post-list">
+    {{ range .Paginator.Pages }}
+    <div class="post-item">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <div class="meta">{{ .Date.Format "2006/01/02" }}</div>
+        <p>{{ .Summary }}...</p>
+    </div>
+    {{ end }}
+</section>
+{{ end }}

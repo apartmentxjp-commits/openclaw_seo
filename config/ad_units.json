@@ -1,0 +1,31 @@
+{
+    "default_client": "ca-pub-0000000000000000",
+    "positions": {
+        "top": {
+            "general": {
+                "slot": "1111111111",
+                "format": "auto",
+                "responsive": "true"
+            }
+        },
+        "middle": {
+            "general": {
+                "slot": "2222222222",
+                "format": "rectangle",
+                "responsive": "true"
+            },
+            "investment": {
+                "slot": "3333333333",
+                "format": "auto",
+                "responsive": "true"
+            }
+        },
+        "bottom": {
+            "general": {
+                "slot": "4444444444",
+                "format": "auto",
+                "responsive": "true"
+            }
+        }
+    }
+}

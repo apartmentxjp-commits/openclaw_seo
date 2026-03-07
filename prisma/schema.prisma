@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id                String   @id @default(uuid())
+  accountName       String?
+  industry          String?
+  targetAudience    String?
+  tone              String?
+  background        String?
+  postsPerDay       Int      @default(1)
+  discordWebhookUrl String?
+  telegramBotToken  String?
+  telegramChatId    String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Post {
+  id          String    @id @default(uuid())
+  content     String
+  dayOffset   Int?      // AI生成時の相対日数
+  scheduledAt DateTime? // カレンダーで設定される実際の日時
+  timeString  String?   // "08:00" などの時間文字列（UIドラッグ＆ドロップ用）
+  autoLike    Boolean   @default(false)
+  autoRepost  Boolean   @default(false)
+  asset       String?   // 投稿内で言及された特典（プロンプト、設計図、マニュアル等）の具体的な中身
+  status      String    @default("DRAFT") // DRAFT, SCHEDULED, PUBLISHED, FAILED
+  retries     Int       @default(0)       // リトライ回数
+  lastError   String?                     // 最後のエラー内容
+  threadParts String?   // JSON array of strings for thread posts e.g. ["tweet1", "tweet2"]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model SnsAccount {
+  id           String   @id @default(uuid())
+  platform     String   // "X", "THREADS"
+  platformId   String?  // SNS側のユーザーID
+  screenName   String?  // @ユーザー名
+  accessToken  String
+  refreshToken String?
+  expiresAt    DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model PostingSchedule {
+  id        String   @id @default(uuid())
+  time      String   // "08:00" 形式の文字列
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+

@@ -1,0 +1,14 @@
+{
+  "api_calls": {
+    "total": 3,
+    "last_reset": "2026-03-01"
+  },
+  "character_counts": {
+    "total": 16573,
+    "last_reset": "2026-03-01"
+  },
+  "limits": {
+    "max_monthly_calls": 1500,
+    "max_monthly_characters": 1000000
+  }
+}

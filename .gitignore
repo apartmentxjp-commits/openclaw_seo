@@ -1,0 +1,32 @@
+# Security: Ignore environment variables and API keys
+.env
+.env.*
+!.env.example
+
+# Databases
+*.db
+*.sqlite
+
+# Logs
+logs/
+*.log
+
+# Docker
+.docker_id
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+site/public/
+site/resources/_gen/
+bin/
+obj/
+
+# Temporary files
+tmp/
+.gemini/
+.claude/
+! .claude/commands/
+node_modules

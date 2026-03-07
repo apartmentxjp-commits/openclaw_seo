@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+    {{ with .Site.Params.adsense_client }}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}" crossorigin="anonymous"></script>
+    {{ end }}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+        </div>
+    </header>
+
+    <main class="container">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
+        </div>
+    </footer>
+</body>
+</html>
