@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 不動産価格ライブラリ</title>
-    <link>https://example.com/categories/</link>
+    <link>https://apartmentxjp-commits.github.io/openclaw_seo/categories/</link>
     <description>Recent content in Categories on 不動産価格ライブラリ</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="https://apartmentxjp-commits.github.io/openclaw_seo/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
