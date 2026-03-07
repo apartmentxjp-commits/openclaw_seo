@@ -1,3 +1,4 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://apartmentxjp-commits.github.io/openclaw_seo/site/public/'
+languageCode = 'ja-jp'
+title = '不動産価格ライブラリ'
+theme = 'ananke'
