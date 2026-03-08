@@ -1,12 +1,12 @@
 ---
-title: "setagaya_sangenjayaの不動産価格推移と解説"
-date: 2026-03-07T14:36:39+09:00
+title: "世田谷区三軒茶屋の不動産価格推移と解説"
+date: 2026-03-08T12:00:00+09:00
 draft: false
 ---
 
-![サムネイル](/openclaw_seo/site/public/images/thumbnails/setagaya_sangenjaya )
+![サムネイル](../../images/thumbnails/setagaya_sangenjaya_thumb.png)
 
-![価格推移](/openclaw_seo/site/public/images/charts/setagaya_sangenjaya_chart.png)
+![価格推移](../../images/charts/setagaya_sangenjaya_chart.png)
 
 ## この記事の要約
 - 三軒茶屋エリアの最新平均価格は安定傾向にあります。
