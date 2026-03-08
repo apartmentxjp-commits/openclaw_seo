@@ -1,10 +1,10 @@
 ---
-title: "世田谷区三軒茶屋の不動産価格推移と解説"
+title: "setagaya_sangenjayaの不動産価格推移と解説"
 date: 2026-03-07T14:36:39+09:00
 draft: false
 ---
 
-![サムネイル](/openclaw_seo/site/public/images/thumbnails/世田谷区三軒茶屋_thumb.png)
+![サムネイル](/openclaw_seo/site/public/images/thumbnails/setagaya_sangenjaya )
 
 ![価格推移](/openclaw_seo/site/public/images/charts/setagaya_sangenjaya_chart.png)
 

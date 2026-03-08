@@ -45,13 +45,17 @@ def generate_chart(municipality, district=None):
 
     # Simplify labels for clarity (e.g. 2023 7-9月 instead of 2023年第3四半期)
     def format_period(p):
+        # Normalize full-width numbers to half-width
+        p = p.translate(str.maketrans('１２３４', '1234'))
         year = p[:4]
         try:
-            q = p[p.find('第')+1]
-            if q == '1': return f"{year} 1-3月"
-            if q == '2': return f"{year} 4-6月"
-            if q == '3': return f"{year} 7-9月"
-            if q == '4': return f"{year} 10-12月"
+            idx = p.find('第')
+            if idx != -1:
+                q = p[idx+1]
+                if q == '1': return f"{year} 1-3月"
+                if q == '2': return f"{year} 4-6月"
+                if q == '3': return f"{year} 7-9月"
+                if q == '4': return f"{year} 10-12月"
         except:
             pass
         return p

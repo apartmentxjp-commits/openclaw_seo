@@ -7,6 +7,7 @@ layout: "tool"
 script: "js/loan-calculator.js"
 ---
 
+{{< rawhtml >}}
 <div class="calc-container">
     <div class="form-group">
         <label for="loan-amount">借入金額 (円)</label>
@@ -29,6 +30,7 @@ script: "js/loan-calculator.js"
         <span id="total-interest" style="font-size: 0.9rem; color: #94a3b8;">内利子: --- 円</span>
     </div>
 </div>
+{{< /rawhtml >}}
 
 ## シミュレーションの解説
 このシミュレーターは「元利均等返済方式」を採用しています。

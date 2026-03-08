@@ -25,28 +25,30 @@
     </header>
 
     <div class="tool-container">
-        <div class="calc-container">
+        
+<div class="calc-container">
     <div class="form-group">
         <label for="loan-amount">借入金額 (円)</label>
         <input type="number" id="loan-amount" value="35000000" step="1000000" oninput="calculateLoan()">
     </div>
-<pre><code>&lt;div class=&quot;form-group&quot;&gt;
-    &lt;label for=&quot;loan-rate&quot;&gt;年利 (%)&lt;/label&gt;
-    &lt;input type=&quot;number&quot; id=&quot;loan-rate&quot; value=&quot;0.5&quot; step=&quot;0.1&quot; oninput=&quot;calculateLoan()&quot;&gt;
-&lt;/div&gt;
+    
+    <div class="form-group">
+        <label for="loan-rate">年利 (%)</label>
+        <input type="number" id="loan-rate" value="0.5" step="0.1" oninput="calculateLoan()">
+    </div>
+    
+    <div class="form-group">
+        <label for="loan-years">返済期間 (年)</label>
+        <input type="number" id="loan-years" value="35" step="1" oninput="calculateLoan()">
+    </div>
 
-&lt;div class=&quot;form-group&quot;&gt;
-    &lt;label for=&quot;loan-years&quot;&gt;返済期間 (年)&lt;/label&gt;
-    &lt;input type=&quot;number&quot; id=&quot;loan-years&quot; value=&quot;35&quot; step=&quot;1&quot; oninput=&quot;calculateLoan()&quot;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;calc-result&quot;&gt;
-    &lt;span class=&quot;result-label&quot;&gt;月々の推定返済額&lt;/span&gt;
-    &lt;span class=&quot;result-value&quot; id=&quot;monthly-payment&quot;&gt;--- 円&lt;/span&gt;
-    &lt;span id=&quot;total-interest&quot; style=&quot;font-size: 0.9rem; color: #94a3b8;&quot;&gt;内利子: --- 円&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
+    <div class="calc-result">
+        <span class="result-label">月々の推定返済額</span>
+        <span class="result-value" id="monthly-payment">--- 円</span>
+        <span id="total-interest" style="font-size: 0.9rem; color: #94a3b8;">内利子: --- 円</span>
+    </div>
 </div>
+
 <h2 id="シミュレーションの解説">シミュレーションの解説</h2>
 <p>このシミュレーターは「元利均等返済方式」を採用しています。
 現在の超低金利環境（変動金利 0.3%〜0.7%程度）を想定して初期値を設定していますが、将来的な金利上昇リスクも考慮し、1.0%〜2.0%でのシミュレーションも行うことをおすすめします。</p>
@@ -77,11 +79,11 @@
                 <ul class="widget-list">
                     
                     
-                    <li><a href="/openclaw_seo/site/public/post/setagaya_sangenjaya/">世田谷区三軒茶屋の不動産価格推移と解説</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/setagaya_sangenjaya/">setagaya_sangenjayaの不動産価格推移と解説</a></li>
                     
                     
                     
-                    <li><a href="/openclaw_seo/site/public/post/setagaya_daizawa/">世田谷区代沢の不動産価格推移と解説</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/setagaya_daizawa/">setagaya_daizawaの不動産価格推移と解説</a></li>
                     
                     
                     
