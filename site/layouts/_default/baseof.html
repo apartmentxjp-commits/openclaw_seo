@@ -19,9 +19,39 @@
         </div>
     </header>
 
-    <main class="container">
-        {{ block "main" . }}{{ end }}
-    </main>
+    <div class="layout-wrapper container">
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h3>おすすめツール</h3>
+                <ul class="widget-list">
+                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーション</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算機</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/rent-estimator/">家賃相場シミュレーター</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">AI価格予測</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>最新の分析記事</h3>
+                <ul class="widget-list">
+                    {{ range first 5 (where .Site.RegularPages "Section" "post") }}
+                    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>OpenClawについて</h3>
+                <p style="font-size: 0.875rem; color: var(--text-muted);">
+                    AIが自律的に不動産市場を分析し、質の高い情報を提供する次世代データポータルです。
+                </p>
+            </div>
+        </aside>
+    </div>
 
     <footer>
         <div class="container">
