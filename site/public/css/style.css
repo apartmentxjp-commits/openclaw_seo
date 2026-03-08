@@ -27,7 +27,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
 header {
     background: #0f172a;
     color: white;
@@ -46,7 +45,7 @@ header a {
     text-decoration: none;
 }
 
-/* Hide Dates and Meta - User Request */
+/* Hide Dates - Global */
 .meta,
 .date,
 time,
@@ -54,7 +53,6 @@ time,
     display: none !important;
 }
 
-/* Layout */
 .layout-wrapper {
     display: grid;
     grid-template-columns: 1fr 300px;
@@ -68,103 +66,19 @@ time,
     }
 }
 
-/* Article Styling */
 article {
     background: var(--card-bg);
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 article h1 {
     font-size: 2rem;
     color: var(--primary);
     margin-bottom: 30px;
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 15px;
 }
 
-.content h2 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    border-left: 5px solid var(--accent);
-    padding-left: 15px;
-    margin: 40px 0 20px;
-}
-
-.content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin: 20px 0;
-    border: 1px solid var(--border);
-}
-
-/* Sidebar Widgets */
-aside {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.sidebar-widget {
-    background: var(--card-bg);
-    padding: 24px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-
-.sidebar-widget h3 {
-    font-size: 1.1rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: var(--primary);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
-}
-
-.widget-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.widget-list li {
-    margin-bottom: 10px;
-    border-bottom: 1px dashed var(--border);
-    padding-bottom: 8px;
-}
-
-.widget-list li:last-child {
-    border-bottom: none;
-}
-
-.widget-list a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.widget-list a:hover {
-    color: var(--accent);
-}
-
-/* Search UI Refinement */
-.search-section {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    border: 1px solid var(--border);
-}
-
-.region-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-}
-
-/* Calculator Styles */
+/* Calculator Formatting FIX */
 .calc-container {
     max-width: 500px;
     margin: 30px auto;
@@ -174,13 +88,30 @@ aside {
     border: 1px solid var(--border);
 }
 
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
 .calc-result {
     background: #0f172a;
     color: white;
     padding: 25px;
-    border-radius: 8px;
-    margin-top: 25px;
     text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
 .result-value {
@@ -189,12 +120,10 @@ aside {
     font-weight: 700;
 }
 
-/* Footer */
 footer {
     background: #0f172a;
     color: #94a3b8;
     padding: 40px 0;
     text-align: center;
     margin-top: 80px;
-    font-size: 0.9rem;
 }

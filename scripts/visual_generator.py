@@ -64,13 +64,18 @@ def generate_chart(municipality, district=None):
     
     title = f"{municipality}{district or ''} 不動産価格推移"
     plt.title(title, fontproperties=jp_font, fontsize=16, pad=20)
-    plt.xlabel("調査時期 (年/期)", fontproperties=jp_font)
+    plt.xlabel("時期", fontproperties=jp_font)
     plt.ylabel("平均取引価格（円）", fontproperties=jp_font)
     plt.grid(True, linestyle='--', alpha=0.7)
-    plt.xticks(rotation=0) # No rotation for cleaner look if labels are short
+    plt.xticks(rotation=0)
     plt.tight_layout()
 
-    filename = f"{municipality}_{district or 'all'}_chart.png"
+    # Use English filename to prevent encoding issues
+    base_name = "setagaya_all"
+    if district == "三軒茶屋": base_name = "setagaya_sangenjaya"
+    elif district == "代沢": base_name = "setagaya_daizawa"
+    
+    filename = f"{base_name}_chart.png"
     save_path = os.path.join(CHART_DIR, filename)
     plt.savefig(save_path)
     plt.close()
@@ -96,7 +101,11 @@ def generate_thumbnail(title, location):
     d.rectangle([0, 530, 1200, 630], fill=(30, 41, 59))
     d.text((100, 550), "日本不動産価格調査センター", font=fnt_small, fill=(255, 255, 255))
 
-    filename = f"{location}_thumb.png".replace("/", "_")
+    base_name = "setagaya_all"
+    if "三軒茶屋" in location: base_name = "setagaya_sangenjaya"
+    elif "代沢" in location: base_name = "setagaya_daizawa"
+
+    filename = f"{base_name}_thumb.png"
     save_path = os.path.join(THUMBNAIL_DIR, filename)
     img.save(save_path)
     return f"images/thumbnails/{filename}"
