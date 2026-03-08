@@ -50,12 +50,13 @@ Q3: 賃貸と購入、どちらがお得ですか？ A: 資産形成の観点か
     </item>
     
     <item>
-      <title>住宅ローン計算ツール</title>
+      <title>住宅ローン計算シミュレーター</title>
       <link>/openclaw_seo/site/public/post/loan-calculator/</link>
       <pubDate>Sat, 07 Mar 2026 00:00:00 +0900</pubDate>
       
       <guid>/openclaw_seo/site/public/post/loan-calculator/</guid>
-      <description>住宅ローン 支払シミュレーション 借入金額、金利、返済期間から月々の返済額を算出します。</description>
+      <description>&amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;loan-rate&amp;quot;&amp;gt;年利 (%)&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;number&amp;quot; id=&amp;quot;loan-rate&amp;quot; value=&amp;quot;0.5&amp;quot; step=&amp;quot;0.1&amp;quot; oninput=&amp;quot;calculateLoan()&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;loan-years&amp;quot;&amp;gt;返済期間 (年)&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;number&amp;quot; id=&amp;quot;loan-years&amp;quot; value=&amp;quot;35&amp;quot; step=&amp;quot;1&amp;quot; oninput=&amp;quot;calculateLoan()&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;calc-result&amp;quot;&amp;gt; &amp;lt;span class=&amp;quot;result-label&amp;quot;&amp;gt;月々の推定返済額&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;result-value&amp;quot; id=&amp;quot;monthly-payment&amp;quot;&amp;gt;--- 円&amp;lt;/span&amp;gt; &amp;lt;span id=&amp;quot;total-interest&amp;quot; style=&amp;quot;font-size: 0.9rem; color: #94a3b8;&amp;quot;&amp;gt;内利子: --- 円&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; シミュレーションの解説 このシミュレーターは「元利均等返済方式」を採用しています。 現在の超低金利環境（変動金利 0.3%〜0.7%程度）を想定して初期値を設定していますが、将来的な金利上昇リスクも考慮し、1.0%〜2.0%でのシミュレーションも行うことをおすすめします。
+OpenClaw AIのアドバイス 三軒茶屋や代沢のような資産価値の下がりにくいエリアでは、ローン完済時の売却価格が残債を上回る「リセールバリュー」が高い物件が多く存在します。月々の返済額だけでなく、将来の資産性（出口戦略）も含めた検討が重要です。</description>
     </item>
     
     <item>
