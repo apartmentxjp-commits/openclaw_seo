@@ -3,7 +3,7 @@ languageCode = "ja"
 title = "日本不動産価格調査センター"
 
 [params]
-  description = "全国の取引実例データに基づく不動産価格の調査・分析レポート"
+  description = "全国の取引データに基づく、公平で客観的な不動産価格調査レポート"
 
 [markup]
   [markup.goldmark]

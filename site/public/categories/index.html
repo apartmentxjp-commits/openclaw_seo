@@ -20,22 +20,19 @@
             
 <section class="search-section">
     <div class="search-box">
-        <h1 style="font-size: 1.75rem; color: var(--primary); margin-bottom: 10px;">エリア・住所から相場を調べる</h1>
-        <p style="color: var(--text-muted); margin-bottom: 24px;">最新の不動産取引価格データを基にした公式な相場情報を提供します。</p>
-        <div class="search-input-group" style="display: flex; gap: 10px;">
-            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）"
-                style="flex: 1; padding: 12px; border: 1px solid var(--border); border-radius: 4px;">
-            <button onclick="searchAddress()"
-                style="padding: 12px 24px; background: var(--accent); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">検索</button>
+        <h1 style="font-size: 1.8rem; color: #0f172a; margin-bottom: 24px;">エリア・住所から相場を調べる</h1>
+        <div class="search-input-group">
+            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
+            <button onclick="searchAddress()">検索</button>
         </div>
     </div>
 
-    <div class="region-selector" style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px;">
-        <h3 style="margin-bottom: 20px;">都道府県から探す</h3>
+    <div class="region-selector">
+        <h3>都道府県から探す</h3>
         <div class="region-grid">
             <div class="region-block">
-                <h4 style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">関東</h4>
-                <ul class="widget-list">
+                <h4>関東</h4>
+                <ul>
                     <li><a href="/openclaw_seo/site/public/post/">東京都</a></li>
                     <li><a href="#">神奈川県</a></li>
                     <li><a href="#">千葉県</a></li>
@@ -43,18 +40,19 @@
                 </ul>
             </div>
             <div class="region-block">
-                <h4 style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">関西</h4>
-                <ul class="widget-list">
+                <h4>関西</h4>
+                <ul>
                     <li><a href="#">大阪府</a></li>
                     <li><a href="#">京都府</a></li>
                     <li><a href="#">兵庫県</a></li>
                 </ul>
             </div>
             <div class="region-block">
-                <h4 style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">九州</h4>
-                <ul class="widget-list">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="#">北海道</a></li>
+                    <li><a href="#">愛知県</a></li>
                     <li><a href="#">福岡県</a></li>
-                    <li><a href="#">熊本県</a></li>
                 </ul>
             </div>
         </div>
@@ -62,7 +60,7 @@
 </section>
 
 <section class="post-list">
-    <h1 style="font-size: 1.5rem; margin-bottom: 20px;">最新の調査レポート</h1>
+    <h3>最新の調査レポート</h3>
     
 </section>
 
@@ -75,6 +73,46 @@
     }
 </script>
 
+<style>
+    .search-section {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        margin-bottom: 40px;
+    }
+
+    .search-input-group {
+        display: flex;
+        gap: 12px;
+    }
+
+    .search-input-group input {
+        flex: 1;
+        padding: 14px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+    }
+
+    .search-input-group button {
+        padding: 0 32px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .region-selector {
+        margin-top: 40px;
+    }
+
+    .region-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 24px;
+    }
+</style>
+
         </main>
 
         <aside>
@@ -82,34 +120,37 @@
                 <h3>シミュレーター</h3>
                 <ul class="widget-list">
                     <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算機</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算器</a></li>
                     <li><a href="/openclaw_seo/site/public/post/rent-estimator/">家賃相場シミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産相場予測</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">価格調査（相場予測）</a></li>
                 </ul>
             </div>
 
             <div class="sidebar-widget">
-                <h3>最新の分析記事</h3>
+                <h3>最新の調査レポート</h3>
                 <ul class="widget-list">
                     
-                    <li><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%B8%89%E8%BB%92%E8%8C%B6%E5%B1%8B_20260307/">世田谷区三軒茶屋の不動産価格推移と解説</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%BB%A3%E6%B2%A2_20260307/">世田谷区代沢の不動産価格推移と解説</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/setagaya_sangenjaya/">世田谷区三軒茶屋の不動産価格推移と解説</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産分析価格予測ツール</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローン計算シミュレーター</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算ツール</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/setagaya_daizawa/">世田谷区代沢の不動産価格推移と解説</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                 </ul>
             </div>
 
             <div class="sidebar-widget">
-                <h3>地域別リンク</h3>
+                <h3>地域別分析</h3>
                 <ul class="widget-list">
-                    <li><a href="/openclaw_seo/site/public/post/">東京都の分析</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">計算ツール一覧</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/">東京都</a></li>
                 </ul>
             </div>
         </aside>
@@ -117,7 +158,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 日本不動産価格調査センター - 不動産取引価格の調査機関</p>
+            <p>&copy; 2026 日本不動産価格調査センター</p>
         </div>
     </footer>
 </body>

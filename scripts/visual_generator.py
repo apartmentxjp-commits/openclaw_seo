@@ -43,8 +43,19 @@ def generate_chart(municipality, district=None):
     df_avg['trade_period'] = df_avg['trade_period'].astype(str)
     df_avg = df_avg.sort_values('trade_period')
 
-    # Simplify labels for clarity (e.g. 2023/3 instead of 2023年第3四半期)
-    clean_labels = [p.replace('年第', '/').replace('四半期', '') for p in df_avg['trade_period']]
+    # Simplify labels for clarity (e.g. 2023 7-9月 instead of 2023年第3四半期)
+    def format_period(p):
+        year = p[:4]
+        try:
+            q = p[p.find('第')+1]
+            if q == '1': return f"{year} 1-3月"
+            if q == '2': return f"{year} 4-6月"
+            if q == '3': return f"{year} 7-9月"
+            if q == '4': return f"{year} 10-12月"
+        except:
+            pass
+        return p
+    clean_labels = [format_period(p) for p in df_avg['trade_period']]
 
     # Plot
     jp_font = fm.FontProperties(fname=FONT_PATH)

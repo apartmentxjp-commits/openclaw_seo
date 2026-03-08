@@ -21,22 +21,19 @@
             
 <section class="search-section">
     <div class="search-box">
-        <h1 style="font-size: 1.75rem; color: var(--primary); margin-bottom: 10px;">エリア・住所から相場を調べる</h1>
-        <p style="color: var(--text-muted); margin-bottom: 24px;">最新の不動産取引価格データを基にした公式な相場情報を提供します。</p>
-        <div class="search-input-group" style="display: flex; gap: 10px;">
-            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）"
-                style="flex: 1; padding: 12px; border: 1px solid var(--border); border-radius: 4px;">
-            <button onclick="searchAddress()"
-                style="padding: 12px 24px; background: var(--accent); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">検索</button>
+        <h1 style="font-size: 1.8rem; color: #0f172a; margin-bottom: 24px;">エリア・住所から相場を調べる</h1>
+        <div class="search-input-group">
+            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
+            <button onclick="searchAddress()">検索</button>
         </div>
     </div>
 
-    <div class="region-selector" style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 30px;">
-        <h3 style="margin-bottom: 20px;">都道府県から探す</h3>
+    <div class="region-selector">
+        <h3>都道府県から探す</h3>
         <div class="region-grid">
             <div class="region-block">
-                <h4 style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">関東</h4>
-                <ul class="widget-list">
+                <h4>関東</h4>
+                <ul>
                     <li><a href="/openclaw_seo/site/public/post/">東京都</a></li>
                     <li><a href="#">神奈川県</a></li>
                     <li><a href="#">千葉県</a></li>
@@ -44,18 +41,19 @@
                 </ul>
             </div>
             <div class="region-block">
-                <h4 style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">関西</h4>
-                <ul class="widget-list">
+                <h4>関西</h4>
+                <ul>
                     <li><a href="#">大阪府</a></li>
                     <li><a href="#">京都府</a></li>
                     <li><a href="#">兵庫県</a></li>
                 </ul>
             </div>
             <div class="region-block">
-                <h4 style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">九州</h4>
-                <ul class="widget-list">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="#">北海道</a></li>
+                    <li><a href="#">愛知県</a></li>
                     <li><a href="#">福岡県</a></li>
-                    <li><a href="#">熊本県</a></li>
                 </ul>
             </div>
         </div>
@@ -63,22 +61,21 @@
 </section>
 
 <section class="post-list">
-    <h1 style="font-size: 1.5rem; margin-bottom: 20px;">最新の調査レポート</h1>
+    <h3>最新の調査レポート</h3>
     
-    <div class="post-item"
-        style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border);">
-        <h2 style="margin: 0 0 10px 0;"><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%B8%89%E8%BB%92%E8%8C%B6%E5%B1%8B_20260307/"
-                style="color: var(--primary); text-decoration: none;">世田谷区三軒茶屋の不動産価格推移と解説</a></h2>
-        <p style="font-size: 0.95rem; color: var(--text-main);">この記事の要約 三軒茶屋エリアの最新平均価格は安定傾向にあります。 坪単価は微増しており、投資・居住の両面で高い需要を維持しています。 将来的な再開発計画もあり、資産価値の維持が期待されるエリアです。 三軒茶屋の最新不動産指標 項目 数値 トレンド 最新平均価格 6,500万円 横ばい 坪単価 350万円/坪 上昇 前年比上昇率 +2.3% 上昇 三軒茶屋不動産Q&amp;A Q1: 三軒茶屋の価格は今後も上がりますか？ A: 利便性が高く、ファミリー層からの人気も根強いため、急激な下落の可能性は低く、緩やかな上昇または維持が予想されます。
+    
+    <div class="post-item">
+        <h2><a href="/openclaw_seo/site/public/post/setagaya_sangenjaya/">世田谷区三軒茶屋の不動産価格推移と解説</a></h2>
+        <p>この記事の要約 三軒茶屋エリアの最新平均価格は安定傾向にあります。 坪単価は微増しており、投資・居住の両面で高い需要を維持しています。 将来的な再開発計画もあり、資産価値の維持が期待されるエリアです。 三軒茶屋の最新不動産指標 項目 数値 トレンド 最新平均価格 6,500万円 横ばい 坪単価 350万円/坪 上昇 前年比上昇率 +2.3% 上昇 三軒茶屋不動産Q&amp;A Q1: 三軒茶屋の価格は今後も上がりますか？ A: 利便性が高く、ファミリー層からの人気も根強いため、急激な下落の可能性は低く、緩やかな上昇または維持が予想されます。
 Q2: 買い時はいつですか？ A: 低金利環境が続くうちは、住宅ローンを活用した購入が有利です。ただし、物件の個別性が強いため、良い物件が出たタイミングを逃さないことが重要です。
 Q3: 賃貸と購入、どちらがお得ですか？ A: 資産形成の観点からは、三軒茶屋のような価値の落ちにくいエリアでは「購入」が長期的には有利になるケースが多いです。...</p>
     </div>
     
-    <div class="post-item"
-        style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border);">
-        <h2 style="margin: 0 0 10px 0;"><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%BB%A3%E6%B2%A2_20260307/"
-                style="color: var(--primary); text-decoration: none;">世田谷区代沢の不動産価格推移と解説</a></h2>
-        <p style="font-size: 0.95rem; color: var(--text-main);">
+    
+    
+    <div class="post-item">
+        <h2><a href="/openclaw_seo/site/public/post/setagaya_daizawa/">世田谷区代沢の不動産価格推移と解説</a></h2>
+        <p>
 世田谷区の中でも屈指の高級住宅街として知られる「代沢」エリア。下北沢の賑わいから一歩離れた落ち着きと、緑豊かな住環境が共存するこの地は、中古マンション市場においても極めて高い人気を誇ります。
 今回は、最新の取引データに基づき、代沢エリアの不動産相場と資産価値の傾向について、専門的な視点から解説します。
 取引データから見る代沢の相場観 直近の取引事例を確認すると、代沢エリアの資産価値の安定性が浮き彫りになります。
@@ -94,34 +91,14 @@ Q3: 賃貸と購入、どちらがお得ですか？ A: 資産形成の観点か
 関連エリアの不動産情報 世田谷区 三軒茶屋 20260307 ...</p>
     </div>
     
-    <div class="post-item"
-        style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border);">
-        <h2 style="margin: 0 0 10px 0;"><a href="/openclaw_seo/site/public/post/price-prediction/"
-                style="color: var(--primary); text-decoration: none;">不動産分析価格予測ツール</a></h2>
-        <p style="font-size: 0.95rem; color: var(--text-main);">将来価格予測 過去の推移データから、5年後の推定価格を不動産分析が予測します。...</p>
-    </div>
     
-    <div class="post-item"
-        style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border);">
-        <h2 style="margin: 0 0 10px 0;"><a href="/openclaw_seo/site/public/post/loan-calculator/"
-                style="color: var(--primary); text-decoration: none;">住宅ローン計算シミュレーター</a></h2>
-        <p style="font-size: 0.95rem; color: var(--text-main);"> 借入金額 (円) &lt;div class=&quot;form-group&quot;&gt; &lt;label for=&quot;loan-rate&quot;&gt;年利 (%)&lt;/label&gt; &lt;input type=&quot;number&quot; id=&quot;loan-rate&quot; value=&quot;0.5&quot; step=&quot;0.1&quot; oninput=&quot;calculateLoan()&quot;&gt; &lt;/div&gt; &lt;div class=&quot;form-group&quot;&gt; &lt;label for=&quot;loan-years&quot;&gt;返済期間 (年)&lt;/label&gt; &lt;input type=&quot;number&quot; id=&quot;loan-years&quot; value=&quot;35&quot; step=&quot;1&quot; oninput=&quot;calculateLoan()&quot;&gt; &lt;/div&gt; &lt;div class=&quot;calc-result&quot;&gt; &lt;span class=&quot;result-label&quot;&gt;月々の推定返済額&lt;/span&gt; &lt;span class=&quot;result-value&quot; id=&quot;monthly-payment&quot;&gt;--- 円&lt;/span&gt; &lt;span id=&quot;total-interest&quot; style=&quot;font-size: 0.9rem; color: #94a3b8;&quot;&gt;内利子: --- 円&lt;/span&gt; &lt;/div&gt; シミュレーションの解説 このシミュレーターは「元利均等返済方式」を採用しています。 現在の超低金利環境（変動金利 0.3%〜0.7%程度）を想定して初期値を設定していますが、将来的な金利上昇リスクも考慮し、1.0%〜2.0%でのシミュレーションも行うことをおすすめします。
-不動産分析のアドバイス ...</p>
-    </div>
     
-    <div class="post-item"
-        style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border);">
-        <h2 style="margin: 0 0 10px 0;"><a href="/openclaw_seo/site/public/post/yield-calculator/"
-                style="color: var(--primary); text-decoration: none;">利回り計算ツール</a></h2>
-        <p style="font-size: 0.95rem; color: var(--text-main);">不動産投資 利回り計算 物件価格と予定家賃から、表面利回りを即座にシミュレーションします。...</p>
-    </div>
     
-    <div class="post-item"
-        style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border);">
-        <h2 style="margin: 0 0 10px 0;"><a href="/openclaw_seo/site/public/post/rent-estimator/"
-                style="color: var(--primary); text-decoration: none;">家賃相場シミュレーター</a></h2>
-        <p style="font-size: 0.95rem; color: var(--text-main);">近隣家賃相場 推定 エリアデータに基づき、想定される家賃レンジを表示します。...</p>
-    </div>
+    
+    
+    
+    
+    
     
 </section>
 
@@ -134,6 +111,46 @@ Q3: 賃貸と購入、どちらがお得ですか？ A: 資産形成の観点か
     }
 </script>
 
+<style>
+    .search-section {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        margin-bottom: 40px;
+    }
+
+    .search-input-group {
+        display: flex;
+        gap: 12px;
+    }
+
+    .search-input-group input {
+        flex: 1;
+        padding: 14px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+    }
+
+    .search-input-group button {
+        padding: 0 32px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .region-selector {
+        margin-top: 40px;
+    }
+
+    .region-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 24px;
+    }
+</style>
+
         </main>
 
         <aside>
@@ -141,34 +158,37 @@ Q3: 賃貸と購入、どちらがお得ですか？ A: 資産形成の観点か
                 <h3>シミュレーター</h3>
                 <ul class="widget-list">
                     <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算機</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算器</a></li>
                     <li><a href="/openclaw_seo/site/public/post/rent-estimator/">家賃相場シミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産相場予測</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">価格調査（相場予測）</a></li>
                 </ul>
             </div>
 
             <div class="sidebar-widget">
-                <h3>最新の分析記事</h3>
+                <h3>最新の調査レポート</h3>
                 <ul class="widget-list">
                     
-                    <li><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%B8%89%E8%BB%92%E8%8C%B6%E5%B1%8B_20260307/">世田谷区三軒茶屋の不動産価格推移と解説</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%BB%A3%E6%B2%A2_20260307/">世田谷区代沢の不動産価格推移と解説</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/setagaya_sangenjaya/">世田谷区三軒茶屋の不動産価格推移と解説</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産分析価格予測ツール</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローン計算シミュレーター</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算ツール</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/setagaya_daizawa/">世田谷区代沢の不動産価格推移と解説</a></li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                 </ul>
             </div>
 
             <div class="sidebar-widget">
-                <h3>地域別リンク</h3>
+                <h3>地域別分析</h3>
                 <ul class="widget-list">
-                    <li><a href="/openclaw_seo/site/public/post/">東京都の分析</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">計算ツール一覧</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/">東京都</a></li>
                 </ul>
             </div>
         </aside>
@@ -176,7 +196,7 @@ Q3: 賃貸と購入、どちらがお得ですか？ A: 資産形成の観点か
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 日本不動産価格調査センター - 不動産取引価格の調査機関</p>
+            <p>&copy; 2026 日本不動産価格調査センター</p>
         </div>
     </footer>
 </body>

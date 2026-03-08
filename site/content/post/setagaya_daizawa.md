@@ -4,7 +4,7 @@ date: 2026-03-07T14:36:00+09:00
 draft: false
 ---
 
-![価格推移](/openclaw_seo/site/public/images/charts/世田谷区_代沢_chart.png)
+![価格推移](/openclaw_seo/site/public/images/charts/setagaya_daizawa_chart.png)
 
 ![サムネイル](/openclaw_seo/site/public/images/thumbnails/世田谷区代沢_thumb.png)
 
@@ -68,4 +68,4 @@ draft: false
 今後も、住環境の良さと利便性を兼ね備えた代沢の価値は、大きく揺らぐことはないと考えられます。物件の個別要因（所在階、眺望、管理体制）を精査することで、賢い不動産投資・住宅購入が実現できるエリアです。
 
 ## 関連エリアの不動産情報
-- [世田谷区 三軒茶屋 20260307](/post/世田谷区_三軒茶屋_20260307/)
+- [世田谷区 三軒茶屋 20260307](/post/setagaya_sangenjaya/)

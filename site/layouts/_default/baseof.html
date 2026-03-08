@@ -25,26 +25,27 @@
                 <h3>シミュレーター</h3>
                 <ul class="widget-list">
                     <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算機</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算器</a></li>
                     <li><a href="/openclaw_seo/site/public/post/rent-estimator/">家賃相場シミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産相場予測</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">価格調査（相場予測）</a></li>
                 </ul>
             </div>
 
             <div class="sidebar-widget">
-                <h3>最新の分析記事</h3>
+                <h3>最新の調査レポート</h3>
                 <ul class="widget-list">
                     {{ range first 5 (where .Site.RegularPages "Section" "post") }}
+                    {{ if ne .Layout "tool" }}
                     <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    {{ end }}
                     {{ end }}
                 </ul>
             </div>
 
             <div class="sidebar-widget">
-                <h3>地域別リンク</h3>
+                <h3>地域別分析</h3>
                 <ul class="widget-list">
-                    <li><a href="/openclaw_seo/site/public/post/">東京都の分析</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">計算ツール一覧</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/">東京都</a></li>
                 </ul>
             </div>
         </aside>
@@ -52,7 +53,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; {{ now.Format "2006" }} 日本不動産価格調査センター - 不動産取引価格の調査機関</p>
+            <p>&copy; {{ now.Format "2006" }} 日本不動産価格調査センター</p>
         </div>
     </footer>
 </body>

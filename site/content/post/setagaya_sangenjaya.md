@@ -6,7 +6,7 @@ draft: false
 
 ![サムネイル](/openclaw_seo/site/public/images/thumbnails/世田谷区三軒茶屋_thumb.png)
 
-![価格推移](/openclaw_seo/site/public/images/charts/世田谷区_三軒茶屋_chart.png)
+![価格推移](/openclaw_seo/site/public/images/charts/setagaya_sangenjaya_chart.png)
 
 ## この記事の要約
 - 三軒茶屋エリアの最新平均価格は安定傾向にあります。
