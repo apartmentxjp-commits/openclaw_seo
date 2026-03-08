@@ -6,7 +6,7 @@ draft: false
 
 ![サムネイル](../../images/thumbnails/setagaya_sangenjaya_thumb.png)
 
-![価格推移](../../../../images/charts/setagaya_sangenjaya_chart.png)
+![価格推移](../../images/charts/setagaya_sangenjaya_chart.png)
 
 ## この記事の要約
 - 三軒茶屋エリアの最新平均価格は安定傾向にあります。
