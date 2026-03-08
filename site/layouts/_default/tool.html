@@ -6,7 +6,7 @@
     </header>
 
     <div class="tool-container">
-        {{ .Content }}
+        {{ .Content | safeHTML }}
     </div>
 
     <!-- Tool Specific Scripts -->
