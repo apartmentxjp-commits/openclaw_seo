@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ .Site.LanguageCode }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ " /css/style.css" | relURL }}">
-    {{ with .Site.Params.adsense_client }}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
-        crossorigin="anonymous"></script>
-    {{ end }}
+    <link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <h1><a href="/openclaw_seo/site/public/">{{ .Site.Title }}</a></h1>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <h1><a href="/openclaw_seo/site/public/">不動産価格ライブラリ</a></h1>
         </div>
     </header>
 
@@ -26,12 +22,12 @@
 
         <aside>
             <div class="sidebar-widget">
-                <h3>おすすめツール</h3>
+                <h3>シミュレーター</h3>
                 <ul class="widget-list">
-                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーション</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーター</a></li>
                     <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算機</a></li>
                     <li><a href="/openclaw_seo/site/public/post/rent-estimator/">家賃相場シミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">相場予測</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産相場予測</a></li>
                 </ul>
             </div>
 
@@ -56,7 +52,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
+            <p>&copy; {{ now.Format "2006" }} 不動産価格ライブラリ - 最新の取引データに基づく相場情報</p>
         </div>
     </footer>
 </body>

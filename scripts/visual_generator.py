@@ -47,12 +47,16 @@ def generate_chart(municipality, district=None):
     # Plot
     jp_font = fm.FontProperties(fname=FONT_PATH)
     plt.figure(figsize=(10, 6))
-    plt.plot(df_avg['trade_period'], df_avg['price'], marker='o', linestyle='-', color='#1e88e5')
+    
+    # Simplify labels (remove "第X四半期" if user dislikes it, or just make it cleaner)
+    clean_labels = [p.replace('年第', '/').replace('四半期', '') for p in df_avg['trade_period']]
+    
+    plt.plot(clean_labels, df_avg['price'], marker='o', linestyle='-', color='#1e88e5')
     
     title = f"{municipality}{district or ''} 不動産価格推移"
     plt.title(title, fontproperties=jp_font, fontsize=16)
-    plt.xlabel("取引時期", fontproperties=jp_font)
-    plt.ylabel("取引価格（円）", fontproperties=jp_font)
+    plt.xlabel("時期 (年/期)", fontproperties=jp_font)
+    plt.ylabel("平均価格（円）", fontproperties=jp_font)
     plt.xticks(rotation=45)
     plt.tight_layout()
 
