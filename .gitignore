@@ -19,7 +19,7 @@ logs/
 Thumbs.db
 
 # Build outputs
-site/public/
+# site/public/ (Removed to allow deployment to GitHub Pages)
 site/resources/_gen/
 bin/
 obj/
