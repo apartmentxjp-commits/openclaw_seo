@@ -7,9 +7,6 @@
     <title>住宅ローン計算シミュレーター | 不動産価格ライブラリ</title>
     <link rel="stylesheet" href="/openclaw_seo/site/public/%20/css/style.css">
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
-        crossorigin="anonymous"></script>
-    
 </head>
 
 <body>
@@ -25,11 +22,15 @@
 <div class="tool-page">
     <header class="tool-header">
         <h1>住宅ローン計算シミュレーター</h1>
-        <p class="tool-description">借入金額、金利、返済期間から月々の返済額と将来の支払総額をAIがシミュレーションします。</p>
+        <p class="tool-description">借入金額、金利、返済期間から月々の返済額と将来の支払総額を不動産分析がシミュレーションします。</p>
     </header>
 
     <div class="tool-container">
-        <!-- raw HTML omitted -->
+        <div class="calc-container">
+    <div class="form-group">
+        <label for="loan-amount">借入金額 (円)</label>
+        <input type="number" id="loan-amount" value="35000000" step="1000000" oninput="calculateLoan()">
+    </div>
 <pre><code>&lt;div class=&quot;form-group&quot;&gt;
     &lt;label for=&quot;loan-rate&quot;&gt;年利 (%)&lt;/label&gt;
     &lt;input type=&quot;number&quot; id=&quot;loan-rate&quot; value=&quot;0.5&quot; step=&quot;0.1&quot; oninput=&quot;calculateLoan()&quot;&gt;
@@ -46,12 +47,11 @@
     &lt;span id=&quot;total-interest&quot; style=&quot;font-size: 0.9rem; color: #94a3b8;&quot;&gt;内利子: --- 円&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
-<!-- raw HTML omitted -->
+</div>
 <h2 id="シミュレーションの解説">シミュレーションの解説</h2>
 <p>このシミュレーターは「元利均等返済方式」を採用しています。
 現在の超低金利環境（変動金利 0.3%〜0.7%程度）を想定して初期値を設定していますが、将来的な金利上昇リスクも考慮し、1.0%〜2.0%でのシミュレーションも行うことをおすすめします。</p>
-<h3 id="openclaw-aiのアドバイス">OpenClaw AIのアドバイス</h3>
-<p>三軒茶屋や代沢のような資産価値の下がりにくいエリアでは、ローン完済時の売却価格が残債を上回る「リセールバリュー」が高い物件が多く存在します。月々の返済額だけでなく、将来の資産性（出口戦略）も含めた検討が重要です。</p>
+<h3 id="不動産分析のアドバイス">不動産分析のアドバイス</h3>
 
     </div>
 
@@ -82,7 +82,7 @@
                     
                     <li><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%BB%A3%E6%B2%A2_20260307/">世田谷区代沢の不動産価格推移と解説</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">AI価格予測ツール</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産分析価格予測ツール</a></li>
                     
                     <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローン計算シミュレーター</a></li>
                     
@@ -92,10 +92,11 @@
             </div>
 
             <div class="sidebar-widget">
-                <h3>OpenClawについて</h3>
-                <p style="font-size: 0.875rem; color: var(--text-muted);">
-                    AIが自律的に不動産市場を分析し、質の高い情報を提供する次世代データポータルです。
-                </p>
+                <h3>カテゴリー</h3>
+                <ul class="widget-list">
+                    <li><a href="/openclaw_seo/site/public/post/">地域別分析</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">ツール</a></li>
+                </ul>
             </div>
         </aside>
     </div>

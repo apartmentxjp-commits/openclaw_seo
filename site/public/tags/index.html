@@ -7,9 +7,6 @@
     <title>Tags | 不動産価格ライブラリ</title>
     <link rel="stylesheet" href="/openclaw_seo/site/public/%20/css/style.css">
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
-        crossorigin="anonymous"></script>
-    
 </head>
 
 <body>
@@ -22,9 +19,145 @@
     <div class="layout-wrapper container">
         <main>
             
+<section class="search-section">
+    <div class="search-box">
+        <h2>エリア・住所から相場を調べる</h2>
+        <div class="search-input-group">
+            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
+            <button onclick="searchAddress()">検索</button>
+        </div>
+    </div>
+
+    <div class="region-selector">
+        <h3>都道府県から探す</h3>
+        <div class="region-grid">
+            <div class="region-block">
+                <h4>関東</h4>
+                <ul>
+                    <li><a href="/openclaw_seo/site/public/post/">東京都</a></li>
+                    <li><a href="#">神奈川県</a></li>
+                    <li><a href="#">千葉県</a></li>
+                    <li><a href="#">埼玉県</a></li>
+                </ul>
+            </div>
+            <div class="region-block">
+                <h4>関西</h4>
+                <ul>
+                    <li><a href="#">大阪府</a></li>
+                    <li><a href="#">京都府</a></li>
+                    <li><a href="#">兵庫県</a></li>
+                </ul>
+            </div>
+            <div class="region-block">
+                <h4>中部・東海</h4>
+                <ul>
+                    <li><a href="#">愛知県</a></li>
+                    <li><a href="#">静岡県</a></li>
+                </ul>
+            </div>
+            <div class="region-block">
+                <h4>その他</h4>
+                <ul>
+                    <li><a href="#">北海道</a></li>
+                    <li><a href="#">福岡県</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="post-list">
+    <h3>最新の分析レポート</h3>
     
 </section>
+
+<script>
+    function searchAddress() {
+        const query = document.getElementById('address-search').value;
+        if (query) {
+            
+            window.location.href = "/openclaw_seo/site/public/post/";
+        }
+    }
+</script>
+
+<style>
+    .search-section {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-box h2 {
+        margin-top: 0;
+        margin-bottom: 24px;
+        font-size: 1.5rem;
+    }
+
+    .search-input-group {
+        display: flex;
+        gap: 12px;
+    }
+
+    .search-input-group input {
+        flex: 1;
+        padding: 14px;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    .search-input-group button {
+        padding: 0 32px;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .region-selector {
+        margin-top: 40px;
+        border-top: 1px solid #f1f5f9;
+        padding-top: 30px;
+    }
+
+    .region-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 24px;
+    }
+
+    .region-block h4 {
+        color: #64748b;
+        font-size: 0.875rem;
+        margin-bottom: 12px;
+    }
+
+    .region-block ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .region-block li {
+        margin-bottom: 8px;
+    }
+
+    .region-block a {
+        color: #1e293b;
+        text-decoration: none;
+        font-size: 0.95rem;
+    }
+
+    .region-block a:hover {
+        color: #3b82f6;
+        text-decoration: underline;
+    }
+</style>
 
         </main>
 
@@ -47,7 +180,7 @@
                     
                     <li><a href="/openclaw_seo/site/public/post/%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA_%E4%BB%A3%E6%B2%A2_20260307/">世田谷区代沢の不動産価格推移と解説</a></li>
                     
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">AI価格予測ツール</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産分析価格予測ツール</a></li>
                     
                     <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローン計算シミュレーター</a></li>
                     
@@ -57,10 +190,11 @@
             </div>
 
             <div class="sidebar-widget">
-                <h3>OpenClawについて</h3>
-                <p style="font-size: 0.875rem; color: var(--text-muted);">
-                    AIが自律的に不動産市場を分析し、質の高い情報を提供する次世代データポータルです。
-                </p>
+                <h3>カテゴリー</h3>
+                <ul class="widget-list">
+                    <li><a href="/openclaw_seo/site/public/post/">地域別分析</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">ツール</a></li>
+                </ul>
             </div>
         </aside>
     </div>

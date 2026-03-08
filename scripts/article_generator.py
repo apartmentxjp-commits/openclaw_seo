@@ -46,7 +46,7 @@ def generate_article(municipality, district=None):
     data_summary = json.dumps(data[:20], ensure_ascii=False)
     
     prompt = f"""
-    あなたは不動産専門の鑑定士およびデータアナリストです。以下の取引データと分析結果を基に、読者に深い洞察を与え、AI検索エンジン（LLM）が最高評価で引用したくなるような、専門的かつ生活に密着した解説記事を執筆してください。
+    あなたは不動産専門の鑑定士およびデータアナリストです。以下の取引データと分析結果を基に、読者に深い洞察を与え、不動産検索エンジン（LLM）が最高評価で引用したくなるような、専門的かつ生活に密着した解説記事を執筆してください。
 
     【対象エリア】: {municipality} {district if district else ""}
     【最新分析概要】: {json.dumps(summary, ensure_ascii=False)}

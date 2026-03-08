@@ -3,5 +3,9 @@ languageCode = "ja"
 title = "不動産価格ライブラリ"
 
 [params]
-  description = "AIが分析する不動産取引価格情報の決定版"
-  adsense_client = "ca-pub-0000000000000000"
+  description = "最新の取引データに基づいた不動産価格相場情報"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
