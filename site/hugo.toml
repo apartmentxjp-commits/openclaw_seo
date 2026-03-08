@@ -1,7 +1,6 @@
-baseURL = "https://apartmentxjp-commits.github.io/openclaw_seo/site/public/"
+baseURL = "/openclaw_seo/site/public/"
 languageCode = "ja"
 title = "不動産価格ライブラリ"
-theme = ""
 
 [params]
   description = "AIが分析する不動産取引価格情報の決定版"
