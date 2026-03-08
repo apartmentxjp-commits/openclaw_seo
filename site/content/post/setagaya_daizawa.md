@@ -4,7 +4,7 @@ date: 2026-03-08T12:00:00+09:00
 draft: false
 ---
 
-![価格推移](../../images/charts/setagaya_daizawa_chart.png)
+![価格推移](../../../../images/charts/setagaya_daizawa_chart.png)
 
 ![サムネイル](../../images/thumbnails/setagaya_daizawa_thumb.png)
 

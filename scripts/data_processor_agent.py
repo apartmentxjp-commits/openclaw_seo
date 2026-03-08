@@ -7,8 +7,8 @@ import pandas as pd
 
 # Paths
 DB_PATH = "/app/brain/04_Output/real_estate.db"
-CHART_DIR = "/app/brain/04_Output/images/charts"
-THUMBNAIL_DIR = "/app/brain/04_Output/images/thumbnails"
+CHART_DIR = "/app/site/static/images/charts"
+THUMBNAIL_DIR = "/app/site/static/images/thumbnails"
 FONT_PATH = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
 
 # Set global font for matplotlib
