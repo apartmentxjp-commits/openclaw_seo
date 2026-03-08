@@ -15,7 +15,6 @@ FONT_PATH = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
 if os.path.exists(FONT_PATH):
     prop = fm.FontProperties(fname=FONT_PATH)
     plt.rcParams['font.family'] = prop.get_name()
-    # Add to font manager to avoid finding issues
     fm.fontManager.addfont(FONT_PATH)
 
 # Ensure directories exist
@@ -42,22 +41,22 @@ def generate_chart(municipality, district=None):
     # Group and calculate average
     df_avg = df.groupby('trade_period')['price'].mean().reset_index()
     df_avg['trade_period'] = df_avg['trade_period'].astype(str)
-    df_avg = df_avg.sort_values('trade_period') # Very basic sort
+    df_avg = df_avg.sort_values('trade_period')
+
+    # Simplify labels for clarity (e.g. 2023/3 instead of 2023年第3四半期)
+    clean_labels = [p.replace('年第', '/').replace('四半期', '') for p in df_avg['trade_period']]
 
     # Plot
     jp_font = fm.FontProperties(fname=FONT_PATH)
     plt.figure(figsize=(10, 6))
-    
-    # Simplify labels (remove "第X四半期" if user dislikes it, or just make it cleaner)
-    clean_labels = [p.replace('年第', '/').replace('四半期', '') for p in df_avg['trade_period']]
-    
-    plt.plot(clean_labels, df_avg['price'], marker='o', linestyle='-', color='#1e88e5')
+    plt.plot(clean_labels, df_avg['price'], marker='o', linestyle='-', color='#2563eb', linewidth=2)
     
     title = f"{municipality}{district or ''} 不動産価格推移"
-    plt.title(title, fontproperties=jp_font, fontsize=16)
-    plt.xlabel("時期 (年/期)", fontproperties=jp_font)
-    plt.ylabel("平均価格（円）", fontproperties=jp_font)
-    plt.xticks(rotation=45)
+    plt.title(title, fontproperties=jp_font, fontsize=16, pad=20)
+    plt.xlabel("調査時期 (年/期)", fontproperties=jp_font)
+    plt.ylabel("平均取引価格（円）", fontproperties=jp_font)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.xticks(rotation=0) # No rotation for cleaner look if labels are short
     plt.tight_layout()
 
     filename = f"{municipality}_{district or 'all'}_chart.png"
@@ -67,21 +66,24 @@ def generate_chart(municipality, district=None):
     return f"images/charts/{filename}"
 
 def generate_thumbnail(title, location):
-    # For now, create a nice colored placeholder with text
-    img = Image.new('RGB', (1200, 630), color = (30, 136, 229))
+    # Professional Blue Template
+    img = Image.new('RGB', (1200, 630), color = (15, 23, 42))
     d = ImageDraw.Draw(img)
     
     try:
-        # Use the same Noto font
         fnt = ImageFont.truetype(FONT_PATH, 60)
         fnt_small = ImageFont.truetype(FONT_PATH, 40)
     except:
         fnt = ImageFont.load_default()
         fnt_small = ImageFont.load_default()
 
-    d.text((100,200), f"【{location}】", font=fnt_small, fill=(255,255,255))
-    d.text((100,300), title[:25] + ("..." if len(title)>25 else ""), font=fnt, fill=(255,255,255))
-    d.text((100,500), "日本不動産価格調査センター", font=fnt_small, fill=(255,255,255))
+    d.text((100,150), f"不動産価格調査レポート", font=fnt_small, fill=(148, 163, 184))
+    d.text((100,220), f"【{location}】", font=fnt, fill=(255,255,255))
+    d.text((100,320), title[:25] + ("..." if len(title)>25 else ""), font=fnt, fill=(255,255,255))
+    
+    # Official Footer Label
+    d.rectangle([0, 530, 1200, 630], fill=(30, 41, 59))
+    d.text((100, 550), "日本不動産価格調査センター", font=fnt_small, fill=(255, 255, 255))
 
     filename = f"{location}_thumb.png".replace("/", "_")
     save_path = os.path.join(THUMBNAIL_DIR, filename)
@@ -93,6 +95,6 @@ if __name__ == "__main__":
     mun = sys.argv[1] if len(sys.argv) > 1 else "世田谷区"
     dist = sys.argv[2] if len(sys.argv) > 2 else None
     chart_path = generate_chart(mun, dist)
-    thumb_path = generate_thumbnail(f"{mun}{dist or ''} 不動産価格レポート", f"{mun}{dist or ''}")
+    thumb_path = generate_thumbnail(f"{mun}{dist or ''} 不動産価格分析結果", f"{mun}{dist or ''}")
     print(f"Chart: {chart_path}")
     print(f"Thumbnail: {thumb_path}")

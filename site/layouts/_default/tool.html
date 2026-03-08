@@ -1,15 +1,14 @@
 {{ define "main" }}
 <div class="tool-page">
-    <header class="tool-header">
+    <header class="tool-header" style="text-align: center; margin-bottom: 40px;">
         <h1>{{ .Title }}</h1>
-        <p class="tool-description">{{ .Description }}</p>
+        <p style="color: var(--text-muted);">{{ .Description }}</p>
     </header>
 
     <div class="tool-container">
         {{ .Content | safeHTML }}
     </div>
 
-    <!-- Tool Specific Scripts -->
     {{ if .Params.script }}
     <script src="{{ .Params.script | relURL }}"></script>
     {{ end }}
