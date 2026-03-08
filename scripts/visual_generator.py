@@ -81,7 +81,7 @@ def generate_thumbnail(title, location):
 
     d.text((100,200), f"【{location}】", font=fnt_small, fill=(255,255,255))
     d.text((100,300), title[:25] + ("..." if len(title)>25 else ""), font=fnt, fill=(255,255,255))
-    # Removed OpenClaw labels per user instructions
+    d.text((100,500), "日本不動産価格調査センター", font=fnt_small, fill=(255,255,255))
 
     filename = f"{location}_thumb.png".replace("/", "_")
     save_path = os.path.join(THUMBNAIL_DIR, filename)

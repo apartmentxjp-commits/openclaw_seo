@@ -1,7 +1,8 @@
 {{ define "main" }}
 <section class="search-section">
     <div class="search-box">
-        <h2>エリア・住所から相場を調べる</h2>
+        <h1>エリア・住所から相場を調べる</h1>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">全国の不動産取引価格データを基にした客観的な相場情報を提供します。</p>
         <div class="search-input-group">
             <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
             <button onclick="searchAddress()">検索</button>
@@ -47,7 +48,7 @@
 </section>
 
 <section class="post-list">
-    <h3>最新の分析レポート</h3>
+    <h3>最新の調査レポート</h3>
     {{ range .Paginator.Pages }}
     <div class="post-item">
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
@@ -74,10 +75,11 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
 
-    .search-box h2 {
+    .search-box h1 {
         margin-top: 0;
-        margin-bottom: 24px;
-        font-size: 1.5rem;
+        margin-bottom: 8px;
+        font-size: 1.75rem;
+        color: var(--primary);
     }
 
     .search-input-group {

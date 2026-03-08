@@ -1,9 +1,9 @@
 baseURL = "/openclaw_seo/site/public/"
 languageCode = "ja"
-title = "不動産価格ライブラリ"
+title = "日本不動産価格調査センター"
 
 [params]
-  description = "最新の取引データに基づいた不動産価格相場情報"
+  description = "全国の取引実例データに基づく不動産価格の調査・分析レポート"
 
 [markup]
   [markup.goldmark]

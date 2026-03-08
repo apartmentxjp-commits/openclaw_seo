@@ -2,16 +2,15 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Categories | 不動産価格ライブラリ</title>
-    <link rel="stylesheet" href="/openclaw_seo/site/public/%20/css/style.css">
-    
+    <link rel="stylesheet" href="/openclaw_seo/site/public/%20css/style.css">
 </head>
 
 <body>
     <header>
-        <div class="container">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <h1><a href="/openclaw_seo/site/public/">不動産価格ライブラリ</a></h1>
         </div>
     </header>
@@ -75,7 +74,6 @@
     function searchAddress() {
         const query = document.getElementById('address-search').value;
         if (query) {
-            
             window.location.href = "/openclaw_seo/site/public/post/";
         }
     }
@@ -163,12 +161,12 @@
 
         <aside>
             <div class="sidebar-widget">
-                <h3>おすすめツール</h3>
+                <h3>シミュレーター</h3>
                 <ul class="widget-list">
-                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーション</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/loan-calculator/">住宅ローンシミュレーター</a></li>
                     <li><a href="/openclaw_seo/site/public/post/yield-calculator/">利回り計算機</a></li>
                     <li><a href="/openclaw_seo/site/public/post/rent-estimator/">家賃相場シミュレーター</a></li>
-                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">相場予測</a></li>
+                    <li><a href="/openclaw_seo/site/public/post/price-prediction/">不動産相場予測</a></li>
                 </ul>
             </div>
 
@@ -201,7 +199,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 不動産価格ライブラリ</p>
+            <p>&copy; 2026 不動産価格ライブラリ - 最新の取引データに基づく相場情報</p>
         </div>
     </footer>
 </body>
