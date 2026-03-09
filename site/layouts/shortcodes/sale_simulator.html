@@ -1,0 +1,192 @@
+<!-- Tailwind CSS CDN for standalone compatibility -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div id="sale-app-root" class="not-prose my-10 antialiased text-slate-800 font-sans">
+    <div class="max-w-5xl mx-auto bg-slate-50 border border-slate-200 shadow-2xl rounded-[2rem] overflow-hidden">
+        <div class="bg-slate-900 px-8 py-6 text-white flex justify-between items-center">
+            <div>
+                <h3 class="text-xl font-bold tracking-tight">不動産売却価格シミュレーター</h3>
+                <p class="text-slate-400 text-xs mt-1">AIデータに基づく推定成約価格の算出</p>
+            </div>
+            <div class="hidden md:block">
+                <span
+                    class="bg-slate-800 text-slate-300 text-[10px] px-3 py-1 rounded-full border border-slate-700 uppercase tracking-widest">Market
+                    Analysis v3.0</span>
+            </div>
+        </div>
+        <div class="p-6 md:p-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase mb-2">物件種別</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button id="btn_condo" onclick="setType('condo')"
+                                        class="py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all">マンション</button>
+                                    <button id="btn_house" onclick="setType('house')"
+                                        class="py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all">一戸建て</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase mb-2">エリア選択</label>
+                                <select id="s_area"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-slate-900 outline-none">
+                                    <option value="1.5">東京都 心 5区</option>
+                                    <option value="1.2" selected>東京都 23区内</option>
+                                    <option value="1.0">首都圏 主要都市</option>
+                                    <option value="0.8">地方都市</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-black text-slate-400 uppercase mb-2">面積 (㎡)</label>
+                                    <input type="number" id="s_size" value="70"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-black text-slate-400 uppercase mb-2">築年数
+                                        (年)</label>
+                                    <input type="number" id="s_age" value="10"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-800 rounded-3xl text-white">
+                        <h4 class="text-xs font-bold text-slate-400 mb-4 flex items-center">
+                            <span class="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span> 近隣の類似成約事例
+                        </h4>
+                        <ul class="text-[11px] space-y-3 opacity-90">
+                            <li class="flex justify-between border-b border-slate-700 pb-2"><span>徒歩5分 / 築12年 /
+                                    75㎡</span><span class="font-bold">¥6,480万</span></li>
+                            <li class="flex justify-between border-b border-slate-700 pb-2"><span>徒歩8分 / 築8年 /
+                                    68㎡</span><span class="font-bold">¥6,100万</span></li>
+                            <li class="flex justify-between"><span>徒歩3分 / 築20年 / 80㎡</span><span
+                                    class="font-bold">¥5,200万</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:col-span-8 space-y-6">
+                    <div
+                        class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-6 opacity-5">
+                            <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="text-center relative z-10">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">推定売却相場</p>
+                            <div class="flex items-end justify-center gap-1 mb-4">
+                                <span class="text-2xl font-bold text-slate-900 mb-2">¥</span>
+                                <span id="res_price"
+                                    class="text-6xl md:text-7xl font-black text-slate-900 tracking-tighter">0</span>
+                                <span class="text-2xl font-bold text-slate-900 mb-2">万</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center px-4 py-1.5 bg-slate-100 rounded-full text-slate-600 text-xs font-bold">
+                                坪単価: ¥<span id="res_tsubo" class="mx-1">0</span>万
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-8 border-t border-slate-100 pt-8">
+                            <div class="text-center">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">最低予想</p>
+                                <p class="text-lg font-bold text-slate-500">¥<span id="res_low">0</span>万</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">最高予想</p>
+                                <p class="text-lg font-bold text-slate-500">¥<span id="res_high">0</span>万</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                        <h4 class="text-xs font-bold text-slate-400 mb-6 flex items-center justify-between">
+                            <span><span class="w-2 h-2 bg-slate-900 rounded-full inline-block mr-2"></span>
+                                今後の価格予測（5年）</span>
+                            <span class="text-[10px] bg-red-50 text-red-500 px-2 py-0.5 rounded">予測モデル: 下落傾向</span>
+                        </h4>
+                        <div class="h-56">
+                            <canvas id="sale_trend_chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script>
+    (function () {
+        let currentType = 'condo';
+        let saleChart = null;
+        window.setType = function (type) {
+            currentType = type;
+            const cBtn = document.getElementById('btn_condo');
+            const hBtn = document.getElementById('btn_house');
+            if (type === 'condo') {
+                cBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all";
+                hBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all";
+            } else {
+                hBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all";
+                cBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all";
+            }
+            calculateSale();
+        };
+        function calculateSale() {
+            const sAreaEl = document.getElementById('s_area');
+            const sSizeEl = document.getElementById('s_size');
+            const sAgeEl = document.getElementById('s_age');
+            if (!sAreaEl || !sSizeEl || !sAgeEl) return;
+            const areaFactor = parseFloat(sAreaEl.value);
+            const size = parseFloat(sSizeEl.value || 0);
+            const age = parseFloat(sAgeEl.value || 0);
+            let baseSqmPrice = currentType === 'condo' ? 600000 : 400000;
+            let ageFactor = Math.max(0.2, 1 - (age * 0.025));
+            const centerPrice = baseSqmPrice * areaFactor * ageFactor * size;
+            const finalPrice = Math.round(centerPrice / 10000);
+            document.getElementById('res_price').innerText = finalPrice.toLocaleString();
+            document.getElementById('res_low').innerText = Math.round(finalPrice * 0.9).toLocaleString();
+            document.getElementById('res_high').innerText = Math.round(finalPrice * 1.1).toLocaleString();
+            document.getElementById('res_tsubo').innerText = Math.round((centerPrice / size * 3.305) / 10000).toLocaleString();
+            updateTrendChart(finalPrice);
+        }
+        function updateTrendChart(base) {
+            const canvas = document.getElementById('sale_trend_chart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const labels = ["現在", "1年後", "2年後", "3年後", "4年後", "5年後"];
+            const data = [base, base * 0.98, base * 0.96, base * 0.93, base * 0.91, base * 0.89];
+            if (saleChart) saleChart.destroy();
+            saleChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        borderColor: '#0f172a',
+                        backgroundColor: 'rgba(15, 23, 42, 0.05)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false } },
+                        y: { display: false }
+                    }
+                }
+            });
+        }
+        ['s_area', 's_size', 's_age'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', calculateSale);
+        });
+        calculateSale();
+    })();
+</script>
