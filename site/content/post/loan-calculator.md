@@ -6,6 +6,7 @@ draft: false
 layout: "tool"
 ---
 
+{{< rawhtml >}}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="premium-card">
@@ -112,7 +113,6 @@ layout: "tool"
         const price = parseInt(priceInput.value);
         const downpayment = parseInt(downpaymentInput.value);
         
-        // Ensure downpayment doesn't exceed price
         if (downpayment > price) {
             downpaymentInput.value = price;
         }
@@ -157,3 +157,5 @@ layout: "tool"
     [priceInput, downpaymentInput, yearsInput, rateInput].forEach(el => el.addEventListener('input', updateLoan));
     updateLoan();
 </script>
+{{< /rawhtml >}}
+
