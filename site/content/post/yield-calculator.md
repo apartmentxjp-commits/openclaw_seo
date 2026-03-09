@@ -1,68 +1,18 @@
 ---
-title: "不動産利回り計算機"
+title: "不動産利回り計算シミュレーター | 実質利回りを簡単計算"
 date: 2026-03-09T00:00:00+09:00
+description: "表面利回りだけでなく、管理費や固定資産税を考慮した実質利回りを瞬時に計算。投資判断を視覚的にサポートします。"
 draft: false
 layout: "tool"
 ---
 
-{{< rawhtml >}}
-<div class="premium-card">
-<div class="input-wrapper">
-    <span class="premium-label">物件価格</span>
-    <input type="number" id="yield-price" value="5000" placeholder="5000">
-    <span class="unit-tag">万円</span>
-</div>
+表面利回りだけで物件を選んでいませんか？投資判断には実質利回りの把握が不可欠です。
 
-<div class="input-wrapper">
-    <span class="premium-label">月額家賃収入</span>
-    <input type="number" id="yield-rent" value="20" placeholder="20">
-    <span class="unit-tag">万円</span>
-</div>
+{{< yield_calculator >}}
 
-<div class="input-wrapper">
-    <span class="premium-label">年間諸経費（管理費・固定資産税等）</span>
-    <input type="number" id="yield-exp" value="60" placeholder="60">
-    <span class="unit-tag">万円</span>
-</div>
-</div>
+### 表面利回りと実質利回りの違い
+- **表面利回り**: (年間家賃収入 ÷ 物件価格) × 100
+- **実質利回り**: (年間家賃収入 - 年間経費) ÷ 物件価格 × 100
 
-<div class="result-dashboard">
-<div class="result-main">
-    <div class="result-label">実質利回り (Net Yield)</div>
-    <div class="result-big-value" id="res-net-yield">0.00%</div>
-    <div class="result-grid">
-        <div>
-            <div class="result-sub-label">表面利回り</div>
-            <div class="result-sub-value" id="res-gross-yield">0.00%</div>
-        </div>
-        <div>
-            <div class="result-sub-label">年間純収益</div>
-            <div class="result-sub-value" id="res-net-income">¥0</div>
-        </div>
-    </div>
-</div>
-</div>
-
-<script>
-const priceIn = document.getElementById('yield-price');
-const rentIn = document.getElementById('yield-rent');
-const expIn = document.getElementById('yield-exp');
-
-function updateYield() {
-    const price = priceIn.value * 10000;
-    const annualRent = rentIn.value * 12 * 10000;
-    const annualExp = expIn.value * 10000;
-
-    const gross = (annualRent / price) * 100;
-    const net = ((annualRent - annualExp) / price) * 100;
-
-    document.getElementById('res-gross-yield').innerText = gross.toFixed(2) + "%";
-    document.getElementById('res-net-yield').innerText = net.toFixed(2) + "%";
-    document.getElementById('res-net-income').innerText = "¥" + Math.round(annualRent - annualExp).toLocaleString();
-}
-
-[priceIn, rentIn, expIn].forEach(el => el.addEventListener('input', updateYield));
-updateYield();
-</script>
-{{< /rawhtml >}}
-
+### なぜ実質利回りが重要なのか
+不動産経営には、固定資産税や管理費、修繕積立金などのランニングコストがかかります。これらの費用を差し引いた「手残り（NOI）」をベースに計算することで、より正確な収益性を把握できます。
