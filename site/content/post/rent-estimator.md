@@ -5,6 +5,7 @@ draft: false
 layout: "tool"
 ---
 
+{{< rawhtml >}}
 <div class="premium-card">
     <div class="input-wrapper">
         <span class="premium-label">エリアを選択</span>
@@ -65,3 +66,5 @@ layout: "tool"
     [areaSel, sqmIn, ageIn].forEach(el => el.addEventListener('input', updateRent));
     updateRent();
 </script>
+{{< /rawhtml >}}
+

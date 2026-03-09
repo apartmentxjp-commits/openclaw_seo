@@ -5,6 +5,7 @@ draft: false
 layout: "tool"
 ---
 
+{{< rawhtml >}}
 <div class="premium-card">
     <div class="input-wrapper">
         <span class="premium-label">物件価格</span>
@@ -63,3 +64,5 @@ layout: "tool"
     [priceIn, rentIn, expIn].forEach(el => el.addEventListener('input', updateYield));
     updateYield();
 </script>
+{{< /rawhtml >}}
+

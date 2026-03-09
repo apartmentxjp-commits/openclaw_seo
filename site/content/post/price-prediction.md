@@ -5,6 +5,7 @@ draft: false
 layout: "tool"
 ---
 
+{{< rawhtml >}}
 <div class="premium-card">
     <h3 style="margin-top:0; color:var(--primary);">世田谷区エリア 地価予測エンジン</h3>
     <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:24px;">独自アルゴリズムと取引事例に基づき、今後の市場トレンドを分析します。</p>
@@ -58,3 +59,5 @@ layout: "tool"
     areaSel.addEventListener('change', updateTrend);
     updateTrend();
 </script>
+{{< /rawhtml >}}
+
