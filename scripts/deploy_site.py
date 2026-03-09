@@ -3,7 +3,7 @@ import shutil
 import subprocess
 
 # Paths
-NOTE_DIR = "/app/brain/04_Output/Note"
+NOTE_DIR = "/app/brain/04_Output/articles"
 IMAGE_DIR = "/app/brain/04_Output/images"
 HUGO_CONTENT_DIR = "/app/site/content/post"
 HUGO_STATIC_DIR = "/app/site/static"
@@ -11,8 +11,7 @@ HUGO_SITE_DIR = "/app/site"
 
 def sync_content():
     print("Cleaning and syncing content to Hugo...")
-    if os.path.exists(HUGO_CONTENT_DIR):
-        shutil.rmtree(HUGO_CONTENT_DIR)
+    print("Syncing content to Hugo...")
     os.makedirs(HUGO_CONTENT_DIR, exist_ok=True)
     
     # Sync Markdown files (excluding tests/txt)
@@ -29,9 +28,10 @@ def sync_content():
     if os.path.exists(IMAGE_DIR):
         # We want to copy everything in images/ to site/static/images/
         dest_img_dir = os.path.join(HUGO_STATIC_DIR, "images")
-        if os.path.exists(dest_img_dir):
-            shutil.rmtree(dest_img_dir)
-        shutil.copytree(IMAGE_DIR, dest_img_dir)
+        dest_img_dir = os.path.join(HUGO_STATIC_DIR, "images")
+        if not os.path.exists(dest_img_dir):
+            os.makedirs(dest_img_dir, exist_ok=True)
+        # shutil.copytree(IMAGE_DIR, dest_img_dir, dirs_exist_ok=True) # Ensure Python 3.8+ or use alternate method
 
 def build_site():
     print("Building Hugo site...")

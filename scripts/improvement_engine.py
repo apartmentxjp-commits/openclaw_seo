@@ -1,14 +1,17 @@
 import os
 import sqlite3
 import json
-import google.generativeai as genai
+from openai import OpenAI
 from datetime import datetime
 
 # Configuration
-API_KEY = os.getenv("GEMINI_API_KEY")
 LOG_DB = "/app/brain/04_Output/improvement_log.db"
-genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-flash-latest')
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.environ.get("OPENROUTER_API_KEY"),
+)
+PRIMARY_MODEL = os.environ.get("OPENROUTER_MODEL", "qwen/qwen-2.5-coder-32b-instruct:free")
+FALLBACK_MODEL = os.environ.get("OPENROUTER_FALLBACK_MODEL", "google/gemini-2.0-flash-lite-preview-02-05:free")
 
 def init_log_db():
     conn = sqlite3.connect(LOG_DB)
@@ -46,10 +49,26 @@ def propose_improvement(page_content, metrics):
   "new_content": "更新後のテキスト"
 }}
 """
-    response = model.generate_content(prompt)
+    try:
+        response = client.chat.completions.create(
+            model=PRIMARY_MODEL,
+            response_format={"type": "json_object"},
+            messages=[{"role": "user", "content": prompt}]
+        )
+        text = response.choices[0].message.content
+    except Exception as e:
+        print(f"Primary model failed ({e}), trying fallback...")
+        try:
+            response = client.chat.completions.create(
+                model=FALLBACK_MODEL,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            text = response.choices[0].message.content
+        except Exception:
+            text = ""
+
     try:
         # Simple extraction for JSON
-        text = response.text
         start = text.find("{")
         end = text.rfind("}") + 1
         return json.loads(text[start:end])

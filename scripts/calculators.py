@@ -1,7 +1,7 @@
 import os
 import json
 
-CONTENT_DIR = "/app/brain/04_Output/Note"
+CONTENT_DIR = "/app/brain/04_Output/articles"
 
 def create_tool_pages():
     os.makedirs(CONTENT_DIR, exist_ok=True)

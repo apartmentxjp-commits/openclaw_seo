@@ -1,10 +1,14 @@
 import json
 import os
-import google.generativeai as genai
+from openai import OpenAI
 
 # Configuration
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-flash-latest')
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.environ.get("OPENROUTER_API_KEY"),
+)
+PRIMARY_MODEL = os.environ.get("OPENROUTER_MODEL", "qwen/qwen-2.5-coder-32b-instruct:free")
+FALLBACK_MODEL = os.environ.get("OPENROUTER_FALLBACK_MODEL", "google/gemini-2.0-flash-lite-preview-02-05:free")
 
 def discover_topics(traffic_data_path):
     if not os.path.exists(traffic_data_path):
@@ -28,17 +32,33 @@ def discover_topics(traffic_data_path):
 }}
 """
 
-    response = model.generate_content(prompt)
+    try:
+        response = client.chat.completions.create(
+            model=PRIMARY_MODEL,
+            response_format={"type": "json_object"},
+            messages=[{"role": "user", "content": prompt}]
+        )
+        text = response.choices[0].message.content
+    except Exception as e:
+        print(f"Primary model failed ({e}), trying fallback...")
+        try:
+            response = client.chat.completions.create(
+                model=FALLBACK_MODEL,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            text = response.choices[0].message.content
+        except Exception:
+            text = ""
+
     try:
         # Simple extraction of JSON from response
-        text = response.text
         start = text.find('{')
         end = text.rfind('}') + 1
         result = json.loads(text[start:end])
         print(json.dumps(result, indent=2, ensure_ascii=False))
     except Exception as e:
         print(f"Error parsing AI response: {e}")
-        print(response.text)
+        print(text)
 
 if __name__ == "__main__":
     import sys

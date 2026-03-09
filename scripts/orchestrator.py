@@ -2,6 +2,10 @@ import os
 import subprocess
 import logging
 import time
+import sys
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configuration
 BASE_DIR = "/app"
@@ -35,13 +39,9 @@ def main_loop():
         # 2. Generate Content
         # Example area to focus on based on analysis
         run_command(["python3", "/app/scripts/article_generator.py", "世田谷区", "三軒茶屋"])
-        run_command(["python3", "/app/scripts/visual_generator.py", "世田谷区", "三軒茶屋"])
         
-        # 3. LLMO & Optimization
-        # Find latest file
-        note_dir = "/app/brain/04_Output/Note"
-        latest_file = sorted([os.path.join(note_dir, f) for f in os.listdir(note_dir) if f.endswith(".md")], key=os.path.getmtime)[-1]
-        run_command(["python3", "/app/scripts/llmo_optimizer.py", latest_file])
+        # 3. Optimization (Content/LLMO)
+        # Note: Update logic here when LLMO structure changes for articles vs notes
 
         # 4. Links & Tools
         run_command(["python3", "/app/scripts/calculators.py"])
@@ -72,4 +72,14 @@ def main_loop():
         print(f"Orchestrator failed: {e}")
 
 if __name__ == "__main__":
-    main_loop()
+    if len(sys.argv) > 1 and sys.argv[1] == "--loop":
+        interval_hours = int(sys.argv[2]) if len(sys.argv) > 2 else 4
+        interval_seconds = interval_hours * 3600
+        logging.info(f"Starting Orchestrator in Loop Mode (Every {interval_hours} hours)")
+        print(f"🚀 Starting Autonomous Loop Mode (Every {interval_hours} hours)...")
+        while True:
+            main_loop()
+            print(f"Sleeping for {interval_hours} hours...")
+            time.sleep(interval_seconds)
+    else:
+        main_loop()

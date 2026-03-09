@@ -1,12 +1,17 @@
 import os
 import json
-import google.generativeai as genai
+from openai import OpenAI
 from datetime import datetime
 
 # Configuration
 CONFIG_PATH = "/app/config/usage_stats.json"
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-flash-latest')
+
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.environ.get("OPENROUTER_API_KEY"),
+)
+PRIMARY_MODEL = os.environ.get("OPENROUTER_MODEL", "qwen/qwen-2.5-coder-32b-instruct:free")
+FALLBACK_MODEL = os.environ.get("OPENROUTER_FALLBACK_MODEL", "google/gemini-2.0-flash-lite-preview-02-05:free")
 
 def update_usage(chars):
     os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)
@@ -44,8 +49,19 @@ def optimize_article(file_path):
 出力はMarkdown形式の「記事全体」を返してください。フロントマターは維持してください。
 """
 
-    response = model.generate_content(prompt)
-    optimized_content = response.text
+    try:
+        response = client.chat.completions.create(
+            model=PRIMARY_MODEL,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        optimized_content = response.choices[0].message.content
+    except Exception as e:
+        print(f"Primary model failed ({e}), trying fallback...")
+        response = client.chat.completions.create(
+            model=FALLBACK_MODEL,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        optimized_content = response.choices[0].message.content
     
     update_usage(len(original_content) + len(optimized_content))
 

@@ -44,10 +44,10 @@ def publish():
         run_command(["git", "commit", "-m", commit_msg])
         
         print("Pushing to GitHub...")
-        # run_command(["git", "push", "origin", "main"]) # Comented out as it requires auth/remote
+        run_command(["git", "push", "origin", "main"])
         
-        print("✅ Site changes committed. (Push skipped in demo to avoid auth issues)")
-        logging.info("Auto-publish successful (commit only).")
+        print("✅ Site changes committed and pushed autonomously.")
+        logging.info("Auto-publish successful.")
 
     except Exception as e:
         print(f"❌ Publish failed: {e}")

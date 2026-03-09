@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-RUN pip3 install --no-cache-dir --break-system-packages google-generativeai requests matplotlib pillow pandas
+RUN pip3 install --no-cache-dir --break-system-packages google-generativeai requests matplotlib pillow pandas openai python-dotenv
 
 # Set working directory
 WORKDIR /app

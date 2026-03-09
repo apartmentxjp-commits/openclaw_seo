@@ -1,7 +1,7 @@
 import os
 import re
 
-CONTENT_DIR = "/app/brain/04_Output/Note"
+CONTENT_DIR = "/app/brain/04_Output/articles"
 
 def build_links():
     files = [f for f in os.listdir(CONTENT_DIR) if f.endswith(".md")]

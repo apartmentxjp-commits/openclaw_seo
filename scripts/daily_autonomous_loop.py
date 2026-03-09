@@ -70,9 +70,10 @@ def autonomous_step():
     asyncio.run(send_update_report(report_msg))
 
 if __name__ == "__main__":
-    # 24時間に1回実行する無限ループ
-    print("🚀 自律運用システムを起動しました（24時間に1回実行）")
+    # 最大効率モード（10分に1回実行）
+    # Gemini API 無料枠の制限（RPM）を考慮しつつ、1日あたりの出力を最大化します
+    print("🚀 自律運用システムを起動しました（最大効率モード: 10分に1回）")
     while True:
         autonomous_step()
-        print(f"[{datetime.now()}] 次の更新まで24時間待機します...")
-        time.sleep(24 * 60 * 60) # 24時間待機
+        print(f"[{datetime.now()}] 次の更新まで10分待機します...")
+        time.sleep(10 * 60) # 10分待機

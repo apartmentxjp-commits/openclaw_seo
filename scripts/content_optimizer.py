@@ -1,10 +1,14 @@
 import os
 import json
-import google.generativeai as genai
+from openai import OpenAI
 
 # Configuration
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-flash-latest')
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.environ.get("OPENROUTER_API_KEY"),
+)
+PRIMARY_MODEL = os.environ.get("OPENROUTER_MODEL", "qwen/qwen-2.5-coder-32b-instruct:free")
+FALLBACK_MODEL = os.environ.get("OPENROUTER_FALLBACK_MODEL", "google/gemini-2.0-flash-lite-preview-02-05:free")
 
 def optimize_content(article_path, performance_data_path):
     if not os.path.exists(article_path):
@@ -38,8 +42,19 @@ def optimize_content(article_path, performance_data_path):
 出力はMarkdown形式の「記事全体」を返してください。フロントマターは維持してください。
 """
 
-    response = model.generate_content(prompt)
-    optimized_content = response.text
+    try:
+        response = client.chat.completions.create(
+            model=PRIMARY_MODEL,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        optimized_content = response.choices[0].message.content
+    except Exception as e:
+        print(f"Primary model failed ({e}), trying fallback...")
+        response = client.chat.completions.create(
+            model=FALLBACK_MODEL,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        optimized_content = response.choices[0].message.content
 
     # Overwrite the article with the optimized version
     with open(article_path, "w", encoding="utf-8") as f:

@@ -30,3 +30,4 @@ tmp/
 .claude/
 ! .claude/commands/
 node_modules
+.next

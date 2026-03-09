@@ -1,20 +1,24 @@
 import os
 import sqlite3
-import google.generativeai as genai
+from openai import OpenAI
 import sys
+import pandas as pd
+from dotenv import load_dotenv
 
-# Agent Role: Content Worker (Gemini)
+load_dotenv()
+
+# Agent Role: Content Worker
 # Goal: Generate professional real estate reports based on transaction data.
 
 def generate_article(municipality, district=None):
     # Setup
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        print("API Key missing.")
-        return
-
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-pro')
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=api_key,
+    )
+    PRIMARY_MODEL = os.environ.get("OPENROUTER_MODEL", "qwen/qwen-2.5-coder-32b-instruct:free")
+    FALLBACK_MODEL = os.environ.get("OPENROUTER_FALLBACK_MODEL", "google/gemini-2.0-flash-lite-preview-02-05:free")
 
     # Data Retrieval (Proxy for Data Worker)
     db_path = "/app/brain/04_Output/real_estate.db"
@@ -27,6 +31,11 @@ def generate_article(municipality, district=None):
     
     df_data = pd.read_sql_query(query, conn, params=params)
     conn.close()
+
+    # Mapping to English Slug for consistency
+    district_en = "all"
+    if district == "三軒茶屋": district_en = "sangenjaya"
+    elif district == "代沢": district_en = "daizawa"
 
     # Context Construction
     stats = df_data.describe().to_string()
@@ -53,14 +62,37 @@ def generate_article(municipality, district=None):
 - 今後の展望
 """
 
-    response = model.generate_content(prompt)
+    # Robust Free Tier Generation Loop
+    models_to_try = [
+        os.environ.get("OPENROUTER_MODEL", "qwen/qwen3-next-80b-a3b-instruct:free"),
+        os.environ.get("OPENROUTER_FALLBACK_MODEL", "meta-llama/llama-3.3-70b-instruct:free"),
+        "stepfun/step-3.5-flash:free",
+        "liquid/lfm-2.5-1.2b-instruct:free",
+    ]
+
+    import time
+    ai_text = ""
+    for model_id in models_to_try:
+        try:
+            print(f"Trying model: {model_id}...")
+            response = client.chat.completions.create(
+                model=model_id,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            ai_text = response.choices[0].message.content
+            print(f"Success with {model_id}!")
+            break
+        except Exception as e:
+            print(f"Failed with {model_id} ({e}).")
+            time.sleep(2)
+            
+    if not ai_text:
+        print("All models failed. Generating placeholder text.")
+        ai_text = "APIの一時的なエラーにより記事が生成できませんでした。時間をおいて再実行してください。"
     
     # Save as Markdown
     safe_name = f"{municipality}_{district or 'all'}".replace("/", "_")
-    # Mapping to English Slug for consistency
-    slug = "setagaya_all"
-    if district == "三軒茶屋": slug = "setagaya_sangenjaya"
-    elif district == "代沢": slug = "setagaya_daizawa"
+    slug = f"setagaya_{district_en}"
 
     file_path = f"/app/site/content/post/{slug}.md"
     
@@ -70,14 +102,13 @@ date: 2026-03-08T12:00:00+09:00
 draft: false
 ---
 
-{response.text}
+{ai_text}
 """
     with open(file_path, "w") as f:
         f.write(content)
     print(f"Report generated: {file_path}")
 
 if __name__ == "__main__":
-    import pandas as pd
     mun = sys.argv[1] if len(sys.argv) > 1 else "世田谷区"
     dist = sys.argv[2] if len(sys.argv) > 2 else None
     generate_article(mun, dist)

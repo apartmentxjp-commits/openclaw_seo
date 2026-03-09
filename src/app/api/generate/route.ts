@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { SNS_STRATEGIES } from '@/lib/prompt-logic';
 import prisma from '@/lib/prisma';
+import OpenAI from 'openai';
 
-const apiKey = process.env.GEMINI_API_KEY || '';
-const genAI = new GoogleGenerativeAI(apiKey);
+const openai = new OpenAI({
+  baseURL: "https://openrouter.ai/api/v1",
+  apiKey: process.env.OPENROUTER_API_KEY,
+});
+
+const PRIMARY_MODEL = process.env.OPENROUTER_MODEL || "qwen/qwen3-coder-480b-a35b:free";
+const FALLBACK_MODEL = process.env.OPENROUTER_FALLBACK_MODEL || "meta-llama/llama-3.3-70b-instruct:free";
 
 // 🔒 レート制限: IP別・1分間に最大3リクエスト
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -79,10 +84,6 @@ export async function POST(req: Request) {
       return `【第${postIndex + 1}案 / 戦略: ${config.name}】\n${config.directives.map((d: string) => `- ${d}`).join('\n')}\n- ${isThread ? '★スレッド形式（threadPartsに3〜5ツイート）で出力' : '★単発tweet（threadPartsはnull）'}`;
     };
 
-    if (!apiKey) return NextResponse.json({ success: false, error: "Gemini API key is not set" }, { status: 500 });
-
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
-
     // お手本投稿の分析セクション
     const referenceSection = referencePost ? `
 【お手本投稿（スタイル移植）】
@@ -108,9 +109,6 @@ ${phaseDirective}
 ━━━━━━━━━━━━━━━━━━━━━
 【絶対禁止事項】
 ━━━━━━━━━━━━━━━━━━━━━
-    - 「ミッドナイトテープ」「Midnight Tape」等の固有プロジェクト名の使用
-    - ハッシュタグ（#）の使用。一切不要です。
-    - noteや外部サービスへの誘導リンク・「続きはnoteで」の文言
     - 具体性のない抽象的な発言
 
 ━━━━━━━━━━━━━━━━━━━━━
@@ -219,13 +217,31 @@ ${Array.from({ length: totalPosts }).map((_, i) => getStrategyDirective(i)).join
       ]
     } `;
 
-    const result = await model.generateContent([
-      systemPrompt,
-      `「${topic}」について計${totalPosts}件を${accountName} の語り口で生成。スレッドは各140〜270文字、血の通った泥臭い文章で。`
-    ]);
+    const userPrompt = `「${topic}」について計${totalPosts}件を${accountName} の語り口で生成。スレッドは各140〜270文字、血の通った泥臭い文章で。`;
 
-    const aiResponse = result.response.text();
-    if (!aiResponse) throw new Error("No response from Gemini API");
+    let aiResponse = "";
+    try {
+      const completion = await openai.chat.completions.create({
+        model: PRIMARY_MODEL,
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
+        ],
+      });
+      aiResponse = completion.choices[0]?.message?.content || "";
+    } catch (error: any) {
+      console.warn("Primary model failed, trying fallback...", error.message);
+      const completionFallback = await openai.chat.completions.create({
+        model: FALLBACK_MODEL,
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
+        ],
+      });
+      aiResponse = completionFallback.choices[0]?.message?.content || "";
+    }
+
+    if (!aiResponse) throw new Error("No response from OpenRouter API");
 
     const jsonMatch = aiResponse.match(/\{[\s\S]*\}/);
     const cleanJson = jsonMatch ? jsonMatch[0] : aiResponse;
@@ -233,7 +249,7 @@ ${Array.from({ length: totalPosts }).map((_, i) => getStrategyDirective(i)).join
     return NextResponse.json({ success: true, posts: parsed.posts });
 
   } catch (error: any) {
-    console.error("Gemini API Generation Error:", error);
+    console.error("OpenRouter API Generation Error:", error);
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }

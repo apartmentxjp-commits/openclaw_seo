@@ -1,0 +1,11 @@
+{
+  "region": "東京都",
+  "municipality": "世田谷区",
+  "statistics": {
+    "average_price": 85750000,
+    "tsubo_price": 0,
+    "transaction_count": 4,
+    "last_updated": "\"Mon Mar  9 14:17:42 UTC 2026\""
+  },
+  "market_trend": "Stable"
+}
