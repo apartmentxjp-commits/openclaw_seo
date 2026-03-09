@@ -1,0 +1,184 @@
+<!-- Tailwind CSS CDN for standalone compatibility -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div id="rent-app-root" class="not-prose my-10 antialiased text-slate-800">
+    <div class="max-w-5xl mx-auto bg-white border border-slate-200 shadow-2xl rounded-3xl overflow-hidden">
+
+        <div class="bg-blue-600 px-6 py-5 text-white">
+            <h3 class="text-xl font-bold flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                家賃相場シミュレーター
+            </h3>
+        </div>
+
+        <div class="p-6 md:p-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-600 mb-2">地域エリア</label>
+                            <select id="r_area"
+                                class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="1.2">東京都 港区</option>
+                                <option value="1.0" selected>東京都 中野区</option>
+                                <option value="0.9">東京都 練馬区</option>
+                                <option value="1.1">大阪市 北区</option>
+                                <option value="0.8">福岡市 中央区</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-600 mb-2">間取り</label>
+                                <select id="r_type"
+                                    class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                                    <option value="1.0">1R/1K</option>
+                                    <option value="1.1">1LDK</option>
+                                    <option value="1.3">2LDK</option>
+                                    <option value="1.5">3LDK+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-600 mb-2">面積 (㎡)</label>
+                                <input type="number" id="r_size" value="25"
+                                    class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-600 mb-2">築年数</label>
+                            <select id="r_age"
+                                class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="1.1">新築〜3年</option>
+                                <option value="1.0" selected>5〜10年</option>
+                                <option value="0.9">15〜20年</option>
+                                <option value="0.7">30年以上</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-blue-50 rounded-2xl">
+                        <h4 class="text-xs font-black text-blue-500 uppercase tracking-widest mb-3">人気エリアランキング</h4>
+                        <ol class="text-sm space-y-2">
+                            <li class="flex justify-between border-b border-blue-100 pb-1"><span>1. 港区エリア</span><span
+                                    class="font-bold">¥14.2万</span></li>
+                            <li class="flex justify-between border-b border-blue-100 pb-1"><span>2. 渋谷区エリア</span><span
+                                    class="font-bold">¥13.5万</span></li>
+                            <li class="flex justify-between pb-1"><span>3. 中野区エリア</span><span
+                                    class="font-bold">¥9.8万</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 text-center">
+                            <p class="text-xs font-bold text-slate-400 mb-1">最低相場</p>
+                            <p class="text-xl font-bold">¥<span id="res_min">0</span></p>
+                        </div>
+                        <div class="p-6 bg-blue-600 rounded-3xl text-center text-white shadow-xl shadow-blue-200">
+                            <p class="text-xs font-bold text-blue-200 mb-1 text-center uppercase tracking-widest">予想平均相場
+                            </p>
+                            <p class="text-4xl font-black italic">¥<span id="res_avg">0</span></p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100 text-center">
+                            <p class="text-xs font-bold text-slate-400 mb-1">最高相場</p>
+                            <p class="text-xl font-bold">¥<span id="res_max">0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-inner">
+                        <h4 class="text-sm font-bold text-slate-500 mb-6 flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> 家賃トレンド（過去6ヶ月推移）
+                        </h4>
+                        <div class="h-64">
+                            <canvas id="rent_chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script>
+    (function () {
+        let chart = null;
+
+        const calculate = () => {
+            const rAreaEl = document.getElementById('r_area');
+            const rTypeEl = document.getElementById('r_type');
+            const rSizeEl = document.getElementById('r_size');
+            const rAgeEl = document.getElementById('r_age');
+
+            if (!rAreaEl || !rTypeEl || !rSizeEl || !rAgeEl) return;
+
+            const areaVal = parseFloat(rAreaEl.value);
+            const typeVal = parseFloat(rTypeEl.value);
+            const size = parseFloat(rSizeEl.value || 0);
+            const ageVal = parseFloat(rAgeEl.value);
+
+            // 基本単価: 1平米あたり 3500円（基準）
+            const basePrice = 3500;
+            const average = basePrice * areaVal * typeVal * ageVal * size;
+
+            const avgVal = Math.round(average);
+            const minVal = Math.round(average * 0.85);
+            const maxVal = Math.round(average * 1.2);
+
+            document.getElementById('res_avg').innerText = (avgVal / 10000).toFixed(1) + "万";
+            document.getElementById('res_min').innerText = (minVal / 10000).toFixed(1) + "万";
+            document.getElementById('res_max').innerText = (maxVal / 10000).toFixed(1) + "万";
+
+            updateChart(avgVal);
+        };
+
+        const updateChart = (avg) => {
+            const canvas = document.getElementById('rent_chart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const months = ["10月", "11月", "12月", "1月", "2月", "3月"];
+            // ゆるやかな上昇トレンドをシミュレート
+            const data = [avg * 0.96, avg * 0.97, avg * 0.98, avg * 0.99, avg * 1.0, avg];
+
+            if (chart) chart.destroy();
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: months,
+                    datasets: [{
+                        label: '相場推移',
+                        data: data,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { display: true, ticks: { display: false }, grid: { display: false } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        };
+
+        ['r_area', 'r_type', 'r_size', 'r_age'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', calculate);
+        });
+        calculate();
+    })();
+</script>
