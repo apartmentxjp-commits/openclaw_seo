@@ -72,11 +72,21 @@ article {
     border-radius: 8px;
 }
 
-article h1 {
-    font-size: 2rem;
+article header {
+    background: var(--card-bg);
     color: var(--primary);
-    margin-bottom: 30px;
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 28px;
 }
+
+article h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin: 0;
+    line-height: 1.5;
+}
+
 
 /* Calculator Formatting FIX */
 .calc-container {
@@ -151,7 +161,7 @@ article h1 {
     margin-bottom: 24px;
 }
 
-.input-wrapper input[type="number"], 
+.input-wrapper input[type="number"],
 .input-wrapper input[type="text"] {
     width: 100%;
     padding: 18px 20px;
@@ -215,7 +225,7 @@ input[type="range"]::-webkit-slider-thumb {
     background: var(--accent);
     cursor: pointer;
     border: 4px solid white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
@@ -261,7 +271,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     color: #60a5fa;
     line-height: 1;
     margin-bottom: 8px;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .result-grid {
@@ -269,7 +279,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 32px;
 }
 
