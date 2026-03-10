@@ -2,32 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/openclaw_seo/site/public/post/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/</loc>
+    <lastmod>2026-03-09T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/sale-simulator/</loc>
+    <lastmod>2026-03-09T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/</loc>
+    <lastmod>2026-03-09T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/setagaya_sangenjaya/</loc>
     <lastmod>2026-03-08T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>/openclaw_seo/site/public/post/setagaya_sangenjaya/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/setagaya_daizawa/</loc>
     <lastmod>2026-03-08T12:00:00+09:00</lastmod>
   </url><url>
-    <loc>/openclaw_seo/site/public/post/setagaya_daizawa/</loc>
-    <lastmod>2026-03-08T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>/openclaw_seo/site/public/</loc>
-    <lastmod>2026-03-08T12:00:00+09:00</lastmod>
-  </url><url>
-    <loc>/openclaw_seo/site/public/post/price-prediction/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/price-prediction/</loc>
     <lastmod>2026-03-07T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/openclaw_seo/site/public/post/loan-calculator/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/loan-calculator/</loc>
     <lastmod>2026-03-07T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/openclaw_seo/site/public/post/yield-calculator/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/yield-calculator/</loc>
     <lastmod>2026-03-07T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/openclaw_seo/site/public/post/rent-estimator/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/post/rent-estimator/</loc>
     <lastmod>2026-03-07T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/openclaw_seo/site/public/categories/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/categories/</loc>
   </url><url>
-    <loc>/openclaw_seo/site/public/tags/</loc>
+    <loc>https://apartmentxjp-commits.github.io/openclaw_seo/tags/</loc>
   </url>
 </urlset>

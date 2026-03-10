@@ -1,13 +1,35 @@
-<!-- Tailwind CSS CDN for standalone compatibility -->
 <script src="https://cdn.tailwindcss.com"></script>
+<style>
+    /* Premium UI Enhancement */
+    #loan-app-root input:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
+    }
+
+    .value-update-flash {
+        animation: flash 0.5s ease-out;
+    }
+
+    @keyframes flash {
+        0% {
+            background-color: rgba(59, 130, 246, 0.4);
+        }
+
+        100% {
+            background-color: transparent;
+        }
+    }
+</style>
 
 <div id="loan-app-root" class="not-prose my-10 antialiased text-slate-800">
     <div class="max-w-4xl mx-auto bg-white border border-slate-200 shadow-xl rounded-3xl overflow-hidden">
-        
+
         <div class="bg-slate-900 px-6 py-4">
             <h3 class="text-white text-lg font-bold flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
                 住宅ローン返済シミュレーター
             </h3>
@@ -15,42 +37,50 @@
 
         <div class="p-6 md:p-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
+
                 <div class="space-y-6">
                     <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                         <h4 class="text-sm font-bold text-slate-500 mb-4 uppercase tracking-wider">基本条件</h4>
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-xs font-bold mb-1">物件価格 (万円)</label>
-                                <input type="number" id="s_price" value="4500" class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                                <input type="number" id="s_price" value="4500"
+                                    class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold mb-1">頭金 (万円)</label>
-                                <input type="number" id="s_down" value="500" class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                                <input type="number" id="s_down" value="500"
+                                    class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                             </div>
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
                                     <label class="block text-xs font-bold mb-1">金利 (%)</label>
-                                    <input type="number" id="s_rate" value="0.5" step="0.01" class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                                    <input type="number" id="s_rate" value="0.5" step="0.01"
+                                        class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold mb-1">期間 (年)</label>
-                                    <input type="number" id="s_years" value="35" class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                                    <input type="number" id="s_years" value="35"
+                                        class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="p-4 bg-orange-50 rounded-2xl border border-orange-100">
-                        <h4 class="text-sm font-bold text-orange-600 mb-4 uppercase tracking-wider italic">金利上昇リスク設定</h4>
+                        <h4 class="text-sm font-bold text-orange-600 mb-4 uppercase tracking-wider italic">金利上昇リスク設定
+                        </h4>
                         <div class="space-y-4">
                             <div>
-                                <label class="block text-xs font-bold text-orange-700 mb-1"><span id="s_hikeYear_label">10</span>年後に金利が上がる</label>
-                                <input type="range" id="s_hikeYear" min="1" max="30" value="10" class="w-full h-2 bg-orange-200 rounded-lg appearance-none cursor-pointer accent-orange-500">
+                                <label class="block text-xs font-bold text-orange-700 mb-1"><span
+                                        id="s_hikeYear_label">10</span>年後に金利が上がる</label>
+                                <input type="range" id="s_hikeYear" min="1" max="30" value="10"
+                                    class="w-full h-2 bg-orange-200 rounded-lg appearance-none cursor-pointer accent-orange-500">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-orange-700 mb-1">上昇幅 (+ %)</label>
-                                <input type="number" id="s_hikeAmount" value="0.5" step="0.1" class="w-full bg-white border border-orange-200 rounded-lg p-2.5 focus:ring-2 focus:ring-orange-500 outline-none">
+                                <input type="number" id="s_hikeAmount" value="0.5" step="0.1"
+                                    class="w-full bg-white border border-orange-200 rounded-lg p-2.5 focus:ring-2 focus:ring-orange-500 outline-none">
                             </div>
                         </div>
                     </div>
@@ -65,14 +95,15 @@
                         <div class="text-center p-4 bg-orange-600 rounded-2xl shadow-lg shadow-orange-200">
                             <p class="text-[10px] font-bold text-orange-100 uppercase">金利上昇後の月々返済額</p>
                             <p class="text-3xl font-black text-white">¥<span id="s_res_monthly2">0</span></p>
-                            <p class="text-xs font-bold text-orange-200 mt-1">負担増: +¥<span id="s_res_diff">0</span> /月</p>
+                            <p class="text-xs font-bold text-orange-200 mt-1">負担増: +¥<span id="s_res_diff">0</span> /月
+                            </p>
                         </div>
                         <div class="text-center p-3">
                             <p class="text-[10px] font-bold text-slate-400 uppercase">総返済額（利息含む）</p>
                             <p class="text-xl font-bold text-slate-800">¥<span id="s_res_total">0</span></p>
                         </div>
                     </div>
-                    
+
                     <div class="relative h-48 w-full">
                         <canvas id="s_chart"></canvas>
                     </div>
@@ -85,83 +116,107 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 <script>
-(function() {
-    let chart = null;
+    (function () {
+        let chart = null;
 
-    const calcM = (p, r_annual, months) => {
-        if (r_annual <= 0) return p / months;
-        const r = r_annual / 12 / 100;
-        return p * (r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
-    };
+        const calcM = (p, r_annual, months) => {
+            if (r_annual <= 0) return p / months;
+            const r = r_annual / 12 / 100;
+            return p * (r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
+        };
 
-    const update = () => {
-        const sPriceEl = document.getElementById('s_price');
-        const sDownEl = document.getElementById('s_down');
-        const sRateEl = document.getElementById('s_rate');
-        const sYearsEl = document.getElementById('s_years');
-        const sHikeYearEl = document.getElementById('s_hikeYear');
-        const sHikeAmountEl = document.getElementById('s_hikeAmount');
+        const update = () => {
+            const sPriceEl = document.getElementById('s_price');
+            const sDownEl = document.getElementById('s_down');
+            const sRateEl = document.getElementById('s_rate');
+            const sYearsEl = document.getElementById('s_years');
+            const sHikeYearEl = document.getElementById('s_hikeYear');
+            const sHikeAmountEl = document.getElementById('s_hikeAmount');
 
-        if (!sPriceEl || !sDownEl || !sRateEl || !sYearsEl || !sHikeYearEl || !sHikeAmountEl) return;
+            if (!sPriceEl || !sDownEl || !sRateEl || !sYearsEl || !sHikeYearEl || !sHikeAmountEl) return;
 
-        const price = (sPriceEl.value || 0) * 10000;
-        const down = (sDownEl.value || 0) * 10000;
-        const r1 = parseFloat(sRateEl.value || 0);
-        const y = parseInt(sYearsEl.value || 0);
-        const hy = parseInt(sHikeYearEl.value);
-        const ha = parseFloat(sHikeAmountEl.value || 0);
+            const price = (sPriceEl.value || 0) * 10000;
+            const down = (sDownEl.value || 0) * 10000;
+            const r1 = parseFloat(sRateEl.value || 0);
+            const y = parseInt(sYearsEl.value || 0);
+            const hy = parseInt(sHikeYearEl.value);
+            const ha = parseFloat(sHikeAmountEl.value || 0);
 
-        const principal = price - down;
-        const m_total = y * 12;
-        const m_hike = hy * 12;
+            const principal = price - down;
+            const m_total = y * 12;
+            const m_hike = hy * 12;
 
-        const monthly1 = calcM(principal, r1, m_total);
+            const monthly1 = calcM(principal, r1, m_total);
 
-        // Calculate balance at hike point
-        let balance = principal;
-        const r1_m = r1 / 12 / 100;
-        for(let i=0; i<m_hike; i++) {
-            balance -= (monthly1 - (balance * r1_m));
-        }
-
-        const r2 = r1 + ha;
-        const monthly2 = calcM(balance, r2, m_total - m_hike);
-        const total = (monthly1 * m_hike) + (monthly2 * (m_total - m_hike));
-
-        document.getElementById('s_hikeYear_label').innerText = hy;
-        document.getElementById('s_res_monthly1').innerText = Math.round(monthly1).toLocaleString();
-        document.getElementById('s_res_monthly2').innerText = Math.round(monthly2).toLocaleString();
-        document.getElementById('s_res_diff').innerText = Math.round(monthly2 - monthly1).toLocaleString();
-        document.getElementById('s_res_total').innerText = Math.round(total).toLocaleString();
-
-        const ctx = document.getElementById('s_chart').getContext('2d');
-        if(chart) chart.destroy();
-        chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: Array.from({length: y}, (_, i) => i + 1),
-                datasets: [{
-                    label: '返済額',
-                    data: Array.from({length: y}, (_, i) => i < hy ? monthly1 : monthly2),
-                    borderColor: '#3b82f6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    fill: true,
-                    stepped: true
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: { y: { display: false } }
+            // Calculate balance at hike point
+            let balance = principal;
+            const r1_m = r1 / 12 / 100;
+            for (let i = 0; i < m_hike; i++) {
+                balance -= (monthly1 - (balance * r1_m));
             }
-        });
-    };
 
-    ['s_price', 's_down', 's_rate', 's_years', 's_hikeYear', 's_hikeAmount'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('input', update);
-    });
-    update();
-})();
+            const r2 = r1 + ha;
+            const monthly2 = calcM(balance, r2, m_total - m_hike);
+            const total = (monthly1 * m_hike) + (monthly2 * (m_total - m_hike));
+
+            document.getElementById('s_hikeYear_label').innerText = hy;
+            document.getElementById('s_res_monthly1').innerText = Math.round(monthly1).toLocaleString();
+            document.getElementById('s_res_monthly2').innerText = Math.round(monthly2).toLocaleString();
+            document.getElementById('s_res_diff').innerText = Math.round(monthly2 - monthly1).toLocaleString();
+            document.getElementById('s_res_total').innerText = Math.round(total).toLocaleString();
+
+            // Flash effect for value updates
+            ['s_res_monthly1', 's_res_monthly2', 's_res_total'].forEach(id => {
+                const el = document.getElementById(id).parentElement;
+                el.classList.remove('value-update-flash');
+                void el.offsetWidth; // trigger reflow
+                el.classList.add('value-update-flash');
+            });
+
+            const ctx = document.getElementById('s_chart').getContext('2d');
+            if (chart) chart.destroy();
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({ length: y }, (_, i) => i + 1),
+                    datasets: [{
+                        label: '返済額',
+                        data: Array.from({ length: y }, (_, i) => i < hy ? monthly1 : monthly2),
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        fill: true,
+                        stepped: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { display: false } }
+                }
+            });
+        };
+
+        ['s_price', 's_down', 's_rate', 's_years', 's_hikeYear', 's_hikeAmount'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', update);
+        });
+        update();
+    })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ .Page.Title }}",
+  "operatingSystem": "All",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "description": "{{ .Page.Description }}"
+}
 </script>

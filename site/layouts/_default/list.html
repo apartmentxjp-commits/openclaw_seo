@@ -14,7 +14,7 @@
             <div class="region-block">
                 <h4>関東</h4>
                 <ul>
-                    <li><a href="/openclaw_seo/site/public/post/">東京都</a></li>
+                    <li><a href="{{ " post/" | relURL }}">東京都</a></li>
                     <li><a href="#">神奈川県</a></li>
                     <li><a href="#">千葉県</a></li>
                     <li><a href="#">埼玉県</a></li>
@@ -56,7 +56,7 @@
     function searchAddress() {
         const query = document.getElementById('address-search').value;
         if (query) {
-            window.location.href = "/openclaw_seo/site/public/post/";
+            window.location.href = '{{ "post/" | relURL }}';
         }
     }
 </script>

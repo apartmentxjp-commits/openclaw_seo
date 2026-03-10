@@ -1,6 +1,27 @@
 <!-- Tailwind CSS CDN for standalone compatibility -->
 <script src="https://cdn.tailwindcss.com"></script>
 
+<style>
+    #rent-app-root input:focus,
+    #rent-app-root select:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+    }
+
+    .value-update-flash {
+        animation: flash 0.5s ease-out;
+    }
+
+    @keyframes flash {
+        0% {
+            background-color: rgba(37, 99, 235, 0.4);
+        }
+
+        100% {
+            background-color: transparent;
+        }
+    }
+</style>
 <div id="rent-app-root" class="not-prose my-10 antialiased text-slate-800">
     <div class="max-w-5xl mx-auto bg-white border border-slate-200 shadow-2xl rounded-3xl overflow-hidden">
 
@@ -135,6 +156,14 @@
             document.getElementById('res_min').innerText = (minVal / 10000).toFixed(1) + "万";
             document.getElementById('res_max').innerText = (maxVal / 10000).toFixed(1) + "万";
 
+            // Flash effect for value updates
+            ['res_avg', 'res_min', 'res_max'].forEach(id => {
+                const el = document.getElementById(id).parentElement;
+                el.classList.remove('value-update-flash');
+                void el.offsetWidth; // trigger reflow
+                el.classList.add('value-update-flash');
+            });
+
             updateChart(avgVal);
         };
 
@@ -181,4 +210,20 @@
         });
         calculate();
     })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ .Page.Title }}",
+  "operatingSystem": "All",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "description": "{{ .Page.Description }}"
+}
 </script>

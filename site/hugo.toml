@@ -1,6 +1,7 @@
 baseURL = "https://apartmentxjp-commits.github.io/openclaw_seo/"
 languageCode = "ja"
 title = "日本不動産価格調査センター"
+canonifyURLs = true
 
 [params]
   description = "全国の取引データに基づく、公平で客観的な不動産価格調査レポート"
