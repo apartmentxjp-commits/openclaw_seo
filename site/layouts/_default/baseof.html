@@ -4,11 +4,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
 
-    {{ if .Site.Params.googleAnalytics }}
+    <!-- OGP Tags -->
+    <meta property="og:title"
+        content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+    <meta property="og:description"
+        content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ with .Params.image }}
+    <meta property="og:image" content="{{ . | absURL }}">{{ end }}
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Google tag (gtag.js) -->
+    {{ if .Site.Params.googleAnalytics }}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];

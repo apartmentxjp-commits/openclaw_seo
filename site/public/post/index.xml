@@ -30,32 +30,32 @@
       <description>&lt;h1 id=&#34;世田谷区代沢の不動産価格推移と解説&#34;&gt;世田谷区代沢の不動産価格推移と解説&lt;/h1&gt;&#xA;&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;本稿では、世田谷区代沢における取引事例を基に、直近の不動産価格動向について分析する。本次の調査対象データは、同一ロット（&lt;code&gt;import_batch_id=1&lt;/code&gt;）に属する取引2件であり、中古マンションもしくは小規模な戸建て住宅が想定される。取引価格の平均は&lt;strong&gt;8,150万円&lt;/strong&gt;、取引面積の平均は&lt;strong&gt;約67.5平方メートル&lt;/strong&gt;であった。価格帯は&lt;strong&gt;7,800万円から8,500万円&lt;/strong&gt;のレンジで推移しており、標準偏差が約495万円と比較的狭いことから、特定の価格帯で取引が集中する傾向が見られる。&lt;/p&gt;&#xA;&lt;h2 id=&#34;取引データから見る相場観&#34;&gt;取引データから見る相場観&lt;/h2&gt;&#xA;&lt;p&gt;件数は限定的ではあるが、分析対象となった2物件は面積65～70平方メートルと、ファミリー層にも適した広さを有している。価格と面積には正の相関が見られ（面積が大きいほど高額）、1平方メートル当たりの単価はおおむね&lt;strong&gt;約120万円〜125万円&lt;/strong&gt;の範囲と推察される。この単価水準は、世田谷区の中でも特に人気の高いエリア（例：三軒茶屋、下北沢へのアクセス良好な地域）の典型的な取引単価と整合する。&lt;/p&gt;&#xA;&lt;p&gt;四分位系（第一四分位～第三四分位）を見ると、取引価格の多くが&lt;strong&gt;7,975万円から8,325万円&lt;/strong&gt;の間に集中しており、価格均同志向が高い。これは、代沢エリアが一定の需要基盤を有し、売り手・買い手双方が類似した価格観念を共有している可能性を示唆する。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://apartmentxjp-commits.github.io/openclaw_seo/site/public/images/thumbnails/setagaya_daizawa_thumb.png&#34; alt=&#34;サムネイル&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;今後の展望&#34;&gt;今後の展望&lt;/h2&gt;&#xA;&lt;p&gt;世田谷区代沢は、閑静な住宅街でありながら、商業施設や交通網（東急田園都市線・世田谷線など）へのアクセスにも優れることから、継続的な需要が見込まれる。ただし、本次の分析は2件という极小標本に基づくため、あくまで直近の「目安」として捉える必要がある。&lt;/p&gt;&#xA;&lt;p&gt;中長期的には、東京23区全体での地価動向、金利環境、新築供給の状況などを注視する必要がある。代沢エリアは供給が限定的であるため、需給バランスが価格を下支えする要因となり得るが、経済環境の急変等による影響は避けられない。今後の動向を把握するためには、継続的な取引データの蓄積と、周辺エリア（三軒茶屋、松原など）との比較分析が不可欠である。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://apartmentxjp-commits.github.io/openclaw_seo/site/public/images/charts/setagaya_daizawa_chart.png&#34; alt=&#34;価格推移&#34;&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;本レポートは、提供された取引データ（2件）に基づく分析であり、区域全体を代表する統計値ではない。詳細については、より大規模なサンプルによる継続的な調査を要する。&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>AI価格予測ツール</title>
-      <link>https://apartmentxjp-commits.github.io/openclaw_seo/post/price-prediction/</link>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0900</pubDate>
-      <guid>https://apartmentxjp-commits.github.io/openclaw_seo/post/price-prediction/</guid>
-      <description>&lt;h2 id=&#34;将来価格予測&#34;&gt;将来価格予測&lt;/h2&gt;&#xA;&lt;p&gt;過去の推移データから、5年後の推定価格をAIが予測します。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>住宅ローン計算ツール</title>
+      <title></title>
       <link>https://apartmentxjp-commits.github.io/openclaw_seo/post/loan-calculator/</link>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://apartmentxjp-commits.github.io/openclaw_seo/post/loan-calculator/</guid>
-      <description>&lt;h2 id=&#34;住宅ローン-支払シミュレーション&#34;&gt;住宅ローン 支払シミュレーション&lt;/h2&gt;&#xA;&lt;p&gt;借入金額、金利、返済期間から月々の返済額を算出します。&lt;/p&gt;</description>
+      <description>&lt;p&gt;title: &amp;ldquo;住宅ローン返済シミュレーション | 借り入れ計算ツール&amp;rdquo;&#xA;date: 2026-03-07T00:00:00+09:00&#xA;description: &amp;ldquo;毎月の返済額や総返済額をシミュレーション。不動産購入時の資金計画に役立つ住宅ローン計算ツールです。&amp;rdquo;&#xA;draft: false&#xA;layout: &amp;ldquo;tool&amp;rdquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;住宅ローン-支払シミュレーション&#34;&gt;住宅ローン 支払シミュレーション&lt;/h2&gt;&#xA;&lt;p&gt;借入金額、金利、返済期間から月々の返済額を算出します。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>利回り計算ツール</title>
-      <link>https://apartmentxjp-commits.github.io/openclaw_seo/post/yield-calculator/</link>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0900</pubDate>
-      <guid>https://apartmentxjp-commits.github.io/openclaw_seo/post/yield-calculator/</guid>
-      <description>&lt;h2 id=&#34;不動産投資-利回り計算&#34;&gt;不動産投資 利回り計算&lt;/h2&gt;&#xA;&lt;p&gt;物件価格と予定家賃から、表面利回りを即座にシミュレーションします。&lt;/p&gt;</description>
+      <title></title>
+      <link>https://apartmentxjp-commits.github.io/openclaw_seo/post/price-prediction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://apartmentxjp-commits.github.io/openclaw_seo/post/price-prediction/</guid>
+      <description>&lt;p&gt;title: &amp;ldquo;AI不動産価格予測・相場調査レポート&amp;rdquo;&#xA;date: 2026-03-07T00:00:00+09:00&#xA;description: &amp;ldquo;最新の取引データとAI分析に基づき、不動産価格の相場と将来の予測を公開。公平で客観的な視点から市場動向を紐解きます。&amp;rdquo;&#xA;draft: false&#xA;layout: &amp;ldquo;tool&amp;rdquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;将来価格予測&#34;&gt;将来価格予測&lt;/h2&gt;&#xA;&lt;p&gt;過去の推移データから、5年後の推定価格をAIが予測します。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>家賃相場シミュレーター</title>
+      <title></title>
       <link>https://apartmentxjp-commits.github.io/openclaw_seo/post/rent-estimator/</link>
-      <pubDate>Sat, 07 Mar 2026 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://apartmentxjp-commits.github.io/openclaw_seo/post/rent-estimator/</guid>
-      <description>&lt;h2 id=&#34;近隣家賃相場-推定&#34;&gt;近隣家賃相場 推定&lt;/h2&gt;&#xA;&lt;p&gt;エリアデータに基づき、想定される家賃レンジを表示します。&lt;/p&gt;</description>
+      <description>&lt;p&gt;title: &amp;ldquo;家賃相場シミュレーター | 不動産投資の家賃予測&amp;rdquo;&#xA;date: 2026-03-07T00:00:00+09:00&#xA;description: &amp;ldquo;エリアや条件から適切な家賃相場を推定。不動産投資の収益性判断に欠かせない、客観的なデータに基づく家賃シミュレーターです。&amp;rdquo;&#xA;draft: false&#xA;layout: &amp;ldquo;tool&amp;rdquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;近隣家賃相場-推定&#34;&gt;近隣家賃相場 推定&lt;/h2&gt;&#xA;&lt;p&gt;エリアデータに基づき、想定される家賃レンジを表示します。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://apartmentxjp-commits.github.io/openclaw_seo/post/yield-calculator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://apartmentxjp-commits.github.io/openclaw_seo/post/yield-calculator/</guid>
+      <description>&lt;p&gt;title: &amp;ldquo;不動産投資 利回り計算シミュレーター | 収益計算ツール&amp;rdquo;&#xA;date: 2026-03-07T00:00:00+09:00&#xA;description: &amp;ldquo;物件価格や家賃から表面利回りを即座に算出する、不動産投資家のための収益計算ツールです。&amp;rdquo;&#xA;draft: false&#xA;layout: &amp;ldquo;tool&amp;rdquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;不動産投資-利回り計算&#34;&gt;不動産投資 利回り計算&lt;/h2&gt;&#xA;&lt;p&gt;物件価格と予定家賃から、表面利回りを即座にシミュレーションします。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
