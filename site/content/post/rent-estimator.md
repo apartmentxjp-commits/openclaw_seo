@@ -8,3 +8,5 @@ layout: "tool"
 
 
 エリアデータに基づき、想定される家賃レンジを表示します。
+
+{{< rent_simulator >}}

@@ -8,3 +8,5 @@ layout: "tool"
 
 
 借入金額、金利、返済期間から月々の返済額を算出します。
+
+{{< loan_simulator >}}

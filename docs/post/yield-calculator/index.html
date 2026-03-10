@@ -50,6 +50,203 @@
 
     <div class="tool-container">
         <p>物件価格と予定家賃から、表面利回りを即座にシミュレーションします。</p>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    #yield-app-root input:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
+    }
+
+    .value-update-flash {
+        animation: flash 0.5s ease-out;
+    }
+
+    @keyframes flash {
+        0% {
+            background-color: rgba(16, 185, 129, 0.4);
+        }
+
+        100% {
+            background-color: transparent;
+        }
+    }
+</style>
+
+<div id="yield-app-root" class="not-prose my-10 antialiased text-slate-800">
+    <div class="max-w-4xl mx-auto bg-white border border-slate-200 shadow-xl rounded-3xl overflow-hidden">
+        <div class="bg-emerald-600 px-6 py-4">
+            <h3 class="text-white text-lg font-bold flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+                不動産利回り計算シミュレーター
+            </h3>
+        </div>
+        <div class="p-6 md:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-5">
+                    <section class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                        <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">投資基本情報</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold mb-1">物件価格 (万円)</label>
+                                <input type="number" id="y_price" value="3000"
+                                    class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold mb-1">想定月額家賃 (円)</label>
+                                <input type="number" id="y_rent" value="150000"
+                                    class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="p-4 bg-red-50 rounded-2xl border border-red-100">
+                        <h4 class="text-xs font-bold text-red-400 mb-4 uppercase tracking-widest italic">ランニングコスト（年間費用）
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-[10px] font-bold mb-1">管理費 (月額/円)</label>
+                                    <input type="number" id="y_maint" value="10000"
+                                        class="w-full bg-white border border-red-200 rounded-lg p-2 focus:ring-2 focus:ring-red-500 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold mb-1">修繕積立 (月額/円)</label>
+                                    <input type="number" id="y_repair" value="5000"
+                                        class="w-full bg-white border border-red-200 rounded-lg p-2 focus:ring-2 focus:ring-red-500 outline-none transition-all">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold mb-1">固定資産税・都市計画税 (年額/円)</label>
+                                <input type="number" id="y_tax" value="120000"
+                                    class="w-full bg-white border border-red-200 rounded-lg p-2 focus:ring-2 focus:ring-red-500 outline-none transition-all">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="flex flex-col">
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center p-4 bg-emerald-50 rounded-2xl border border-emerald-100">
+                            <p class="text-[10px] font-bold text-emerald-600 uppercase">表面利回り</p>
+                            <p class="text-2xl font-black text-emerald-700"><span id="res_gross_yield">0</span>%</p>
+                        </div>
+                        <div class="text-center p-4 bg-emerald-600 rounded-2xl shadow-lg shadow-emerald-200">
+                            <p class="text-[10px] font-bold text-emerald-100 uppercase">実質利回り</p>
+                            <p class="text-2xl font-black text-white"><span id="res_net_yield">0</span>%</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-6 px-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">年間家賃収入</span>
+                            <span class="font-bold">¥<span id="res_annual_income">0</span></span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">年間諸経費</span>
+                            <span class="font-bold text-red-500">¥<span id="res_annual_exp">0</span></span>
+                        </div>
+                        <div class="border-t border-slate-100 pt-2 flex justify-between text-base font-bold">
+                            <span>手残り（NOI）</span>
+                            <span class="text-emerald-600">¥<span id="res_noi">0</span></span>
+                        </div>
+                    </div>
+                    <div class="relative h-44 w-full">
+                        <canvas id="yield_chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script>
+    (function () {
+        let yieldChart = null;
+        const updateYield = () => {
+            const yPriceEl = document.getElementById('y_price');
+            const yRentEl = document.getElementById('y_rent');
+            const yMaintEl = document.getElementById('y_maint');
+            const yRepairEl = document.getElementById('y_repair');
+            const yTaxEl = document.getElementById('y_tax');
+
+            if (!yPriceEl || !yRentEl || !yMaintEl || !yRepairEl || !yTaxEl) return;
+
+            const price = (yPriceEl.value || 0) * 10000;
+            const rent = parseFloat(yRentEl.value || 0);
+            const maint = parseFloat(yMaintEl.value || 0);
+            const repair = parseFloat(yRepairEl.value || 0);
+            const tax = parseFloat(yTaxEl.value || 0);
+
+            const annualIncome = rent * 12;
+            const annualExp = (maint * 12) + (repair * 12) + tax;
+            const noi = annualIncome - annualExp;
+
+            const grossYield = price > 0 ? (annualIncome / price) * 100 : 0;
+            const netYield = price > 0 ? (noi / price) * 100 : 0;
+
+            document.getElementById('res_gross_yield').innerText = grossYield.toFixed(2);
+            document.getElementById('res_net_yield').innerText = netYield.toFixed(2);
+            document.getElementById('res_annual_income').innerText = annualIncome.toLocaleString();
+            document.getElementById('res_annual_exp').innerText = annualExp.toLocaleString();
+            document.getElementById('res_noi').innerText = noi.toLocaleString();
+
+            
+            ['res_gross_yield', 'res_net_yield', 'res_noi'].forEach(id => {
+                const el = document.getElementById(id).parentElement;
+                el.classList.remove('value-update-flash');
+                void el.offsetWidth; 
+                el.classList.add('value-update-flash');
+            });
+
+            const ctx = document.getElementById('yield_chart').getContext('2d');
+            if (yieldChart) yieldChart.destroy();
+            yieldChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['手残り', '諸経費'],
+                    datasets: [{
+                        data: [noi > 0 ? noi : 0, annualExp],
+                        backgroundColor: ['#10b981', '#f87171'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } }
+                    },
+                    cutout: '70%'
+                }
+            });
+        };
+
+        ['y_price', 'y_rent', 'y_maint', 'y_repair', 'y_tax'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', updateYield);
+        });
+        updateYield();
+    })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "不動産投資 利回り計算シミュレーター | 収益計算ツール",
+  "operatingSystem": "All",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "description": "物件価格や家賃から表面利回りを即座に算出する、不動産投資家のための収益計算ツールです。"
+}
+</script>
 
     </div>
 

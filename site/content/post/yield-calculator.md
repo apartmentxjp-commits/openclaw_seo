@@ -8,3 +8,5 @@ layout: "tool"
 
 
 物件価格と予定家賃から、表面利回りを即座にシミュレーションします。
+
+{{< yield_calculator >}}

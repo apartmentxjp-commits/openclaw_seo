@@ -8,3 +8,5 @@ layout: "tool"
 
 
 過去の推移データから、5年後の推定価格をAIが予測します。
+
+{{< yield_calculator >}}
