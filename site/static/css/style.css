@@ -573,3 +573,108 @@ footer {
     text-align: center;
     margin-top: 80px;
 }
+/* Price Map Section */
+.price-map-section {
+    padding: 80px 0;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.japan-map-container {
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.map-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "hokkaido . . ."
+        "tohoku . . ."
+        "kanto chubu kansai chugoku-shikoku"
+        "kyushu . . .";
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .map-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.map-region {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.map-region:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+.region-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.pref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 8px;
+}
+
+.pref-grid a {
+    display: block;
+    padding: 6px;
+    background: #f1f5f9;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.pref-grid a:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.pref-grid a.highlight {
+    background: #e0f2fe;
+    color: var(--accent);
+    font-weight: 700;
+    border: 1px solid var(--accent);
+}
+
+.map-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hokkaido { grid-area: hokkaido; }
+.tohoku { grid-area: tohoku; }
+.kanto { grid-area: kanto; }
+.chubu { grid-area: chubu; }
+.kansai { grid-area: kansai; }
+.chugoku-shikoku { grid-area: chugoku-shikoku; }
+.kyushu { grid-area: kyushu; }

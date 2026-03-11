@@ -18,7 +18,7 @@
         <p>物件購入前から売却戦略まで、プロ基準の試算をWeb上で再現</p>
     </div>
     <div class="simulator-grid">
-        <a href="{{ "post/loan-calculator/" | relURL }}" class="simulator-card">
+        <a href="{{ " post/loan-calculator/" | relURL }}" class="simulator-card">
             <div class="sim-icon">🏠</div>
             <div class="sim-content">
                 <h3>住宅ローン</h3>
@@ -26,7 +26,7 @@
             </div>
             <div class="sim-action">試算スタート</div>
         </a>
-        <a href="{{ "post/yield-calculator/" | relURL }}" class="simulator-card">
+        <a href="{{ " post/yield-calculator/" | relURL }}" class="simulator-card">
             <div class="sim-icon">📈</div>
             <div class="sim-content">
                 <h3>利回り計算</h3>
@@ -34,7 +34,7 @@
             </div>
             <div class="sim-action">収益を計算</div>
         </a>
-        <a href="{{ "post/rent-estimator/" | relURL }}" class="simulator-card">
+        <a href="{{ " post/rent-estimator/" | relURL }}" class="simulator-card">
             <div class="sim-icon">📊</div>
             <div class="sim-content">
                 <h3>家賃相場</h3>
@@ -42,7 +42,7 @@
             </div>
             <div class="sim-action">相場を調査</div>
         </a>
-        <a href="{{ "post/price-prediction/" | relURL }}" class="simulator-card">
+        <a href="{{ " post/price-prediction/" | relURL }}" class="simulator-card">
             <div class="sim-icon">🤖</div>
             <div class="sim-content">
                 <h3>価格予測</h3>
@@ -53,38 +53,121 @@
     </div>
 </section>
 
+<section class="price-map-section container">
+    <div class="section-header">
+        <h2>地域別、不動産価格を調べる</h2>
+        <p>調査したいエリアを選択して、最新の相場レポートを確認</p>
+    </div>
+    <div class="japan-map-container">
+        <!-- SVG or Premium Grid Layout for Map -->
+        <div class="map-wrapper">
+            <div class="map-region hokkaido">
+                <a href="{{ " post/" | relURL }}" class="map-btn">北海道</a>
+            </div>
+            <div class="map-region tohoku">
+                <span class="region-label">東北</span>
+                <div class="pref-grid">
+                    <a href="{{ " post/" | relURL }}">青森</a>
+                    <a href="{{ " post/" | relURL }}">岩手</a>
+                    <a href="{{ " post/" | relURL }}">宮城</a>
+                    <a href="{{ " post/" | relURL }}">秋田</a>
+                    <a href="{{ " post/" | relURL }}">山形</a>
+                    <a href="{{ " post/" | relURL }}">福島</a>
+                </div>
+            </div>
+            <div class="map-region kanto">
+                <span class="region-label">関東</span>
+                <div class="pref-grid">
+                    <a href="{{ " post/" | relURL }}" class="highlight">東京</a>
+                    <a href="{{ " post/" | relURL }}">神奈川</a>
+                    <a href="{{ " post/" | relURL }}">埼玉</a>
+                    <a href="{{ " post/" | relURL }}">千葉</a>
+                    <a href="{{ " post/" | relURL }}">茨城</a>
+                    <a href="{{ " post/" | relURL }}">栃木</a>
+                    <a href="{{ " post/" | relURL }}">群馬</a>
+                </div>
+            </div>
+            <div class="map-region chubu">
+                <span class="region-label">中部</span>
+                <div class="pref-grid">
+                    <a href="{{ " post/" | relURL }}">愛知</a>
+                    <a href="{{ " post/" | relURL }}">静岡</a>
+                    <a href="{{ " post/" | relURL }}">岐阜</a>
+                    <a href="{{ " post/" | relURL }}">三重</a>
+                    <a href="{{ " post/" | relURL }}">新潟</a>
+                    <a href="{{ " post/" | relURL }}">富山</a>
+                    <a href="{{ " post/" | relURL }}">石川</a>
+                    <a href="{{ " post/" | relURL }}">福井</a>
+                    <a href="{{ " post/" | relURL }}">山梨</a>
+                    <a href="{{ " post/" | relURL }}">長野</a>
+                </div>
+            </div>
+            <div class="map-region kansai">
+                <span class="region-label">関西</span>
+                <div class="pref-grid">
+                    <a href="{{ " post/" | relURL }}">大阪</a>
+                    <a href="{{ " post/" | relURL }}">兵庫</a>
+                    <a href="{{ " post/" | relURL }}">京都</a>
+                    <a href="{{ " post/" | relURL }}">滋賀</a>
+                    <a href="{{ " post/" | relURL }}">奈良</a>
+                    <a href="{{ " post/" | relURL }}">和歌山</a>
+                </div>
+            </div>
+            <div class="map-region chugoku-shikoku">
+                <span class="region-label">中国・四国</span>
+                <div class="pref-grid">
+                    <a href="{{ " post/" | relURL }}">広島</a>
+                    <a href="{{ " post/" | relURL }}">岡山</a>
+                    <a href="{{ " post/" | relURL }}">鳥取</a>
+                    <a href="{{ " post/" | relURL }}">島根</a>
+                    <a href="{{ " post/" | relURL }}">山口</a>
+                    <a href="{{ " post/" | relURL }}">徳島</a>
+                    <a href="{{ " post/" | relURL }}">香川</a>
+                    <a href="{{ " post/" | relURL }}">愛媛</a>
+                    <a href="{{ " post/" | relURL }}">高知</a>
+                </div>
+            </div>
+            <div class="map-region kyushu">
+                <span class="region-label">九州・沖縄</span>
+                <div class="pref-grid">
+                    <a href="{{ " post/" | relURL }}">福岡</a>
+                    <a href="{{ " post/" | relURL }}">佐賀</a>
+                    <a href="{{ " post/" | relURL }}">長崎</a>
+                    <a href="{{ " post/" | relURL }}">熊本</a>
+                    <a href="{{ " post/" | relURL }}">大分</a>
+                    <a href="{{ " post/" | relURL }}">宮崎</a>
+                    <a href="{{ " post/" | relURL }}">鹿児島</a>
+                    <a href="{{ " post/" | relURL }}">沖縄</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="home-bottom-content container">
-    <div class="layout-wrapper" style="display: grid; grid-template-columns: 1fr 300px; gap: 32px; margin-top: 40px;">
+    <div class="layout-wrapper" style="display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 40px;">
         <section class="post-list">
             <div class="section-header" style="text-align: left; margin-bottom: 24px;">
                 <h2 style="font-size: 1.5rem;">最新の調査レポート</h2>
             </div>
-            {{ range first 5 (where .Site.RegularPages "Section" "post") }}
-            {{ if ne .Layout "tool" }}
-            <a href="{{ .Permalink }}" class="post-card">
-                <div class="post-info">
-                    <h3>{{ .Title }}</h3>
-                    <p>{{ .Summary | truncate 100 }}</p>
-                </div>
-            </a>
-            {{ end }}
-            {{ end }}
-            <div style="margin-top: 20px; text-align: center;">
-                <a href="{{ "post/" | relURL }}" class="nav-link"
-                    style="color: var(--accent); font-weight: 700;">すべてのレポートを見る →</a>
+            <div class="post-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
+                {{ range first 6 (where .Site.RegularPages "Section" "post") }}
+                {{ if ne .Layout "tool" }}
+                <a href="{{ .Permalink }}" class="post-card">
+                    <div class="post-info">
+                        <h3>{{ .Title }}</h3>
+                        <p>{{ .Summary | truncate 100 }}</p>
+                    </div>
+                </a>
+                {{ end }}
+                {{ end }}
+            </div>
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="{{ " post/" | relURL }}" class="nav-link"
+                    style="color: var(--accent); font-weight: 700; font-size: 1.1rem;">すべてのレポートを見る →</a>
             </div>
         </section>
-
-        <aside class="home-sidebar">
-            <div class="sidebar-widget">
-                <h3>エリア別調査</h3>
-                <ul class="widget-list">
-                    <li><a href="{{ "post/" | relURL }}">東京都 世田谷区</a></li>
-                    <li><a href="#">港区（準備中）</a></li>
-                    <li><a href="#">渋谷区（準備中）</a></li>
-                </ul>
-            </div>
-        </aside>
     </div>
 </div>
 
