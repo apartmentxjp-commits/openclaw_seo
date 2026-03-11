@@ -1,44 +1,48 @@
 {{ define "main" }}
-<section class="search-section">
-    <div class="search-box">
-        <h1 style="font-size: 1.8rem; color: #0f172a; margin-bottom: 24px;">エリア・住所から相場を調べる</h1>
-        <div class="search-input-group">
-            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
-            <button onclick="searchAddress()">検索</button>
-        </div>
-    </div>
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h2>AIデータで、<br>不動産投資に「確信」を。</h2>
+        <p>最新の成約事例とAI予測モデルに基づき、適正な収益性と将来価格を算出します。</p>
 
-    <div class="region-selector">
-        <h3>都道府県から探す</h3>
-        <div class="region-grid">
-            <div class="region-block">
-                <h4>関東</h4>
-                <ul>
-                    <li><a href="{{ "post/" | relURL }}">東京都</a></li>
-                    <li><a href="#">神奈川県</a></li>
-                    <li><a href="#">千葉県</a></li>
-                    <li><a href="#">埼玉県</a></li>
-                </ul>
-            </div>
-            <div class="region-block">
-                <h4>関西</h4>
-                <ul>
-                    <li><a href="#">大阪府</a></li>
-                    <li><a href="#">京都府</a></li>
-                    <li><a href="#">兵庫県</a></li>
-                </ul>
-            </div>
-            <div class="region-block">
-                <h4>その他</h4>
-                <ul>
-                    <li><a href="#">北海道</a></li>
-                    <li><a href="#">愛知県</a></li>
-                    <li><a href="#">福岡県</a></li>
-                </ul>
-            </div>
+        <div class="hero-search-box">
+            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
+            <button onclick="searchAddress()">相場を調査する</button>
         </div>
     </div>
 </section>
+
+<div class="region-selector">
+    <h3>都道府県から探す</h3>
+    <div class="region-grid">
+        <div class="region-block">
+            <h4>関東</h4>
+            <ul>
+                <li><a href="{{ " post/" | relURL }}">東京都</a></li>
+                <li><a href="#">神奈川県</a></li>
+                <li><a href="#">千葉県</a></li>
+                <li><a href="#">埼玉県</a></li>
+            </ul>
+        </div>
+        <div class="region-block">
+            <h4>関西</h4>
+            <ul>
+                <li><a href="#">大阪府</a></li>
+                <li><a href="#">京都府</a></li>
+                <li><a href="#">兵庫県</a></li>
+            </ul>
+        </div>
+        <div class="region-block">
+            <h4>その他</h4>
+            <ul>
+                <li><a href="#">北海道</a></li>
+                <li><a href="#">愛知県</a></li>
+                <li><a href="#">福岡県</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 <section class="post-list">
     <h3>最新の調査レポート</h3>
