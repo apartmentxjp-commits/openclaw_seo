@@ -1,136 +1,28 @@
 {{ define "main" }}
-<section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h2>AIデータで、<br>不動産投資に「確信」を。</h2>
-        <p>最新の成約事例とAI予測モデルに基づき、適正な収益性と将来価格を算出します。</p>
-
-        <div class="hero-search-box">
-            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
-            <button onclick="searchAddress()">相場を調査する</button>
-        </div>
-    </div>
-</section>
-
-<section class="simulator-hub container">
-    <div class="simulator-grid">
-        <a href="{{ " post/loan-calculator/" | relURL }}" class="simulator-card">
-            <div class="sim-icon">🏠</div>
-            <h3>住宅ローン</h3>
-            <p>借入額や金利から、月々の返済額と総返済額を瞬時に計算します。</p>
-            <div class="sim-action">シミュレーターへ</div>
-        </a>
-        <a href="{{ " post/yield-calculator/" | relURL }}" class="simulator-card">
-            <div class="sim-icon">📈</div>
-            <h3>利回り計算</h3>
-            <p>物件価格と家賃から、表面・実質利回りとCFを算出。収益を可視化します。</p>
-            <div class="sim-action">計算ツールへ</div>
-        </a>
-        <a href="{{ " post/rent-estimator/" | relURL }}" class="simulator-card">
-            <div class="sim-icon">📊</div>
-            <h3>家賃相場</h3>
-            <p>周辺エリアの最新成約データを基に、適切な家賃設定を提案します。</p>
-            <div class="sim-action">相場を調べる</div>
-        </a>
-        <a href="{{ " post/price-prediction/" | relURL }}" class="simulator-card">
-            <div class="sim-icon">🤖</div>
-            <h3>価格予測</h3>
-            <p>AIが過去の推移と市場トレンドを分析し、将来の物件価値を予測します。</p>
-            <div class="sim-action">レポートを見る</div>
-        </a>
-    </div>
-</section>
-
-<div class="region-selector">
-    <h3>都道府県から探す</h3>
-    <div class="region-grid">
-        <div class="region-block">
-            <h4>関東</h4>
-            <ul>
-                <li><a href="{{ " post/" | relURL }}">東京都</a></li>
-                <li><a href="#">神奈川県</a></li>
-                <li><a href="#">千葉県</a></li>
-                <li><a href="#">埼玉県</a></li>
-            </ul>
-        </div>
-        <div class="region-block">
-            <h4>関西</h4>
-            <ul>
-                <li><a href="#">大阪府</a></li>
-                <li><a href="#">京都府</a></li>
-                <li><a href="#">兵庫県</a></li>
-            </ul>
-        </div>
-        <div class="region-block">
-            <h4>その他</h4>
-            <ul>
-                <li><a href="#">北海道</a></li>
-                <li><a href="#">愛知県</a></li>
-                <li><a href="#">福岡県</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
 <section class="post-list">
-    <h3>最新の調査レポート</h3>
+    <div class="section-header">
+        <h1>調査レポート一覧</h1>
+        <p>日本全国の不動産取引データに基づく最新分析レポート</p>
+    </div>
+
     {{ range .Paginator.Pages }}
     {{ if ne .Layout "tool" }}
-    <div class="post-item">
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <p>{{ .Summary }}...</p>
+    <a href="{{ .Permalink }}" class="post-card">
+        <div class="post-info">
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Summary | truncate 150 }}</p>
+        </div>
+    </a>
+    {{ end }}
+    {{ end }}
+
+    <div class="pagination">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="nav-link">&laquo; 前へ</a>
+        {{ end }}
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="nav-link">次へ &raquo;</a>
+        {{ end }}
     </div>
-    {{ end }}
-    {{ end }}
 </section>
-
-<script>
-    function searchAddress() {
-        const query = document.getElementById('address-search').value;
-        if (query) {
-            window.location.href = '{{ "post/" | relURL }}';
-        }
-    }
-</script>
-
-<style>
-    .search-section {
-        background: white;
-        padding: 40px;
-        border-radius: 16px;
-        margin-bottom: 40px;
-    }
-
-    .search-input-group {
-        display: flex;
-        gap: 12px;
-    }
-
-    .search-input-group input {
-        flex: 1;
-        padding: 14px;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-    }
-
-    .search-input-group button {
-        padding: 0 32px;
-        background: #2563eb;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-    }
-
-    .region-selector {
-        margin-top: 40px;
-    }
-
-    .region-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 24px;
-    }
-</style>
 {{ end }}

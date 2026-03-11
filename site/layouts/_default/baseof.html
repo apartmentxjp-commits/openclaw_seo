@@ -10,6 +10,7 @@
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 
+
     <!-- OGP Tags -->
     <meta property="og:title"
         content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
@@ -40,6 +41,9 @@
         </div>
     </header>
 
+    {{ if .IsHome }}
+    {{ block "main" . }}{{ end }}
+    {{ else }}
     <div class="layout-wrapper container">
         <main>
             {{ block "main" . }}{{ end }}
@@ -75,6 +79,7 @@
             </div>
         </aside>
     </div>
+    {{ end }}
 
     <footer>
         <div class="container">

@@ -1,0 +1,99 @@
+{{ define "main" }}
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h2>AIデータで、<br>不動産投資に「確信」を。</h2>
+        <p>最新の成約事例とAI予測モデルに基づき、適正な収益性と将来価格を算出します。</p>
+
+        <div class="hero-search-box">
+            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
+            <button onclick="searchAddress()">相場を調査する</button>
+        </div>
+    </div>
+</section>
+
+<section class="simulator-hub container">
+    <div class="section-header">
+        <h2>収益シミュレーション・ツール</h2>
+        <p>物件購入前から売却戦略まで、プロ基準の試算をWeb上で再現</p>
+    </div>
+    <div class="simulator-grid">
+        <a href="{{ "post/loan-calculator/" | relURL }}" class="simulator-card">
+            <div class="sim-icon">🏠</div>
+            <div class="sim-content">
+                <h3>住宅ローン</h3>
+                <p>借入額や金利から、月々の返済額と総返済額を算出。</p>
+            </div>
+            <div class="sim-action">試算スタート</div>
+        </a>
+        <a href="{{ "post/yield-calculator/" | relURL }}" class="simulator-card">
+            <div class="sim-icon">📈</div>
+            <div class="sim-content">
+                <h3>利回り計算</h3>
+                <p>表面・実質利回りとCFを算出。収益を可視化します。</p>
+            </div>
+            <div class="sim-action">収益を計算</div>
+        </a>
+        <a href="{{ "post/rent-estimator/" | relURL }}" class="simulator-card">
+            <div class="sim-icon">📊</div>
+            <div class="sim-content">
+                <h3>家賃相場</h3>
+                <p>周辺の成約データを基に、適正な家賃設定を提案。</p>
+            </div>
+            <div class="sim-action">相場を調査</div>
+        </a>
+        <a href="{{ "post/price-prediction/" | relURL }}" class="simulator-card">
+            <div class="sim-icon">🤖</div>
+            <div class="sim-content">
+                <h3>価格予測</h3>
+                <p>AIが市場トレンドを分析し、将来の価値を予測。</p>
+            </div>
+            <div class="sim-action">レポート表示</div>
+        </a>
+    </div>
+</section>
+
+<div class="home-bottom-content container">
+    <div class="layout-wrapper" style="display: grid; grid-template-columns: 1fr 300px; gap: 32px; margin-top: 40px;">
+        <section class="post-list">
+            <div class="section-header" style="text-align: left; margin-bottom: 24px;">
+                <h2 style="font-size: 1.5rem;">最新の調査レポート</h2>
+            </div>
+            {{ range first 5 (where .Site.RegularPages "Section" "post") }}
+            {{ if ne .Layout "tool" }}
+            <a href="{{ .Permalink }}" class="post-card">
+                <div class="post-info">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Summary | truncate 100 }}</p>
+                </div>
+            </a>
+            {{ end }}
+            {{ end }}
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="{{ "post/" | relURL }}" class="nav-link"
+                    style="color: var(--accent); font-weight: 700;">すべてのレポートを見る →</a>
+            </div>
+        </section>
+
+        <aside class="home-sidebar">
+            <div class="sidebar-widget">
+                <h3>エリア別調査</h3>
+                <ul class="widget-list">
+                    <li><a href="{{ "post/" | relURL }}">東京都 世田谷区</a></li>
+                    <li><a href="#">港区（準備中）</a></li>
+                    <li><a href="#">渋谷区（準備中）</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script>
+    function searchAddress() {
+        const query = document.getElementById('address-search').value;
+        if (query) {
+            window.location.href = '{{ "post/" | relURL }}';
+        }
+    }
+</script>
+{{ end }}
