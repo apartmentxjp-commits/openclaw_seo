@@ -279,67 +279,28 @@ article h1 {
 
 .simulator-card {
     background: white;
-    padding: 32px;
-    border-radius: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 10px 15px rgba(0, 0, 0, 0.03);
-    border: 1px solid var(--border);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 20px;
+    overflow: hidden;
     text-decoration: none;
-    color: inherit;
+    color: var(--secondary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    /* Left align for readability */
-    text-align: left;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .simulator-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-    border-color: var(--accent);
+    box-shadow: 0 40px 60px -15px rgba(0, 52, 101, 0.15);
+    border-color: var(--accent-light);
 }
 
-.simulator-card::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.sim-preview {
     width: 100%;
-    height: 4px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: left;
-}
-
-.simulator-card:hover::before {
-    transform: scaleX(1);
-}
-
-.sim-icon {
-    width: 56px;
-    height: 56px;
+    aspect-ratio: 3/2;
+    overflow: hidden;
     background: #f1f5f9;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    font-size: 24px;
-    color: var(--accent);
-    transition: all 0.3s ease;
-}
-
-.simulator-card:hover .sim-icon {
-    background: var(--primary);
-    transform: rotate(-5deg);
-}
-
-.simulator-card h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
     margin-bottom: 12px;
     color: var(--primary);
     line-height: 1.4;
@@ -573,6 +534,7 @@ footer {
     text-align: center;
     margin-top: 80px;
 }
+
 /* Price Map Section */
 .price-map-section {
     padding: 80px 0;
@@ -588,7 +550,7 @@ footer {
 .map-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
+    grid-template-areas:
         "hokkaido . . ."
         "tohoku . . ."
         "kanto chubu kansai chugoku-shikoku"
@@ -671,10 +633,30 @@ footer {
     text-decoration: none;
 }
 
-.hokkaido { grid-area: hokkaido; }
-.tohoku { grid-area: tohoku; }
-.kanto { grid-area: kanto; }
-.chubu { grid-area: chubu; }
-.kansai { grid-area: kansai; }
-.chugoku-shikoku { grid-area: chugoku-shikoku; }
-.kyushu { grid-area: kyushu; }
+.hokkaido {
+    grid-area: hokkaido;
+}
+
+.tohoku {
+    grid-area: tohoku;
+}
+
+.kanto {
+    grid-area: kanto;
+}
+
+.chubu {
+    grid-area: chubu;
+}
+
+.kansai {
+    grid-area: kansai;
+}
+
+.chugoku-shikoku {
+    grid-area: chugoku-shikoku;
+}
+
+.kyushu {
+    grid-area: kyushu;
+}
