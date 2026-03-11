@@ -1,9 +1,12 @@
 {{ define "main" }}
 <div class="tool-page">
     <header class="tool-header">
-        <h1>{{ .Title }}</h1>
-        <p class="tool-description">{{ .Description }}</p>
+        <div class="container">
+            <h1>{{ .Title }}</h1>
+            <p class="tool-description">{{ .Description }}</p>
+        </div>
     </header>
+
 
     <div class="tool-container">
         {{ .Content | safeHTML }}
