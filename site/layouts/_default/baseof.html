@@ -8,7 +8,7 @@
     <meta name="description"
         content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
 
 
     <!-- OGP Tags -->
@@ -53,10 +53,10 @@
             <div class="sidebar-widget">
                 <h3>シミュレーター</h3>
                 <ul class="widget-list">
-                    <li><a href="{{ "post/loan-calculator/" | relURL }}">住宅ローンシミュレーター</a></li>
-                    <li><a href="{{ "post/yield-calculator/" | relURL }}">利回り計算器</a></li>
-                    <li><a href="{{ "post/rent-estimator/" | relURL }}">家賃相場シミュレーター</a></li>
-                    <li><a href="{{ "post/price-prediction/" | relURL }}">価格調査（相場予測）</a></li>
+                    <li><a href="{{" post/loan-calculator/"|relURL}}">住宅ローンシミュレーター</a></li>
+                    <li><a href="{{" post/yield-calculator/"|relURL}}">不動産利回りシミュレーター</a></li>
+                    <li><a href="{{" post/rent-estimator/"|relURL}}">家賃相場シミュレーター</a></li>
+                    <li><a href="{{ " post/price-prediction/" | relURL }}">価格調査（相場予測）</a></li>
                 </ul>
             </div>
 
@@ -74,7 +74,7 @@
             <div class="sidebar-widget">
                 <h3>地域別分析</h3>
                 <ul class="widget-list">
-                    <li><a href="{{ "post/" | relURL }}">東京都</a></li>
+                    <li><a href="{{ " post/" | relURL }}">東京都</a></li>
                 </ul>
             </div>
         </aside>
