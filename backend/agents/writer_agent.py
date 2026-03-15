@@ -11,6 +11,7 @@ from datetime import datetime
 from typing import Optional
 from groq import Groq
 from slugify import slugify
+from agents.thoughts import emit_thought
 
 MODEL = "llama-3.3-70b-versatile"
 
@@ -90,8 +91,15 @@ class WriterAgent:
 記事タイトルも含めて、Markdown形式で出力してください。
 """
 
+        await emit_thought("writer", f"タスク受信: {prefecture} {area} の{property_type}記事", "thinking",
+                           detail=f"モデル: {MODEL}")
+        await asyncio.sleep(0.3)
+
         start = time.time()
         try:
+            await emit_thought("writer", f"Groq に接続中... 執筆開始", "working",
+                               detail=f"{area} {property_type}の価格相場記事を生成")
+
             response = await asyncio.to_thread(
                 self.client.chat.completions.create,
                 model=MODEL,
@@ -111,12 +119,18 @@ class WriterAgent:
                     title = line.replace("# ", "").strip()
                     break
 
+            await emit_thought("writer", f"記事完成 ({len(content)}文字)。SEOメタデータ生成中...", "working",
+                               detail=f"タイトル候補: {title[:40]}")
+
             # スラッグ生成
             slug = slugify(f"{prefecture}-{area}-{property_type}-{datetime.now().strftime('%Y%m%d%H%M')}", allow_unicode=False)
             slug = slug.replace("--", "-")
 
             # SEOメタデータ生成
             seo_data = await self._generate_seo(title, content, area, property_type)
+
+            await emit_thought("writer", f"✅ 「{title[:28]}...」完成・保存完了", "success",
+                               detail=f"{duration_ms}ms で生成 / {len(content)}文字")
 
             return {
                 "slug": slug,
@@ -134,6 +148,8 @@ class WriterAgent:
             }
 
         except Exception as e:
+            await emit_thought("writer", f"❌ エラー: {str(e)[:60]}", "error",
+                               detail=f"{area} {property_type} の記事生成に失敗")
             raise RuntimeError(f"記事生成エラー: {e}")
 
     async def _generate_seo(self, title: str, content: str, area: str, property_type: str) -> dict:

@@ -142,6 +142,12 @@ export default function AdminPage() {
               <span className="w-1 h-1 rounded-full bg-[var(--green)] animate-pulse" />
               稼働中
             </div>
+            <a
+              href="/admin/office"
+              className="text-xs text-[#8b5cf6] hover:text-[#a78bfa] border border-[#8b5cf6]/30 hover:border-[#8b5cf6]/60 px-3 py-1.5 rounded-md transition-colors flex items-center gap-1.5"
+            >
+              <span>🏢</span> オフィスビュー
+            </a>
             <button
               onClick={fetchStatus}
               className="text-xs text-[var(--muted)] hover:text-[var(--text)] border border-[var(--border)] hover:border-[var(--border2)] px-3 py-1.5 rounded-md transition-colors"

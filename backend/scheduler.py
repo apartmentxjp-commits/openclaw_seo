@@ -15,6 +15,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 from database import init_db, AsyncSessionLocal
 from models import Article, AgentLog
 from agents.writer_agent import WriterAgent, ARTICLE_TOPICS
+from agents.thoughts import emit_thought
 from publisher import publish_pending_articles
 
 _topic_index = 0
@@ -34,6 +35,10 @@ def _next_topic() -> dict:
 async def run_article_generation():
     topic = _next_topic()
     print(f"[Writer] {datetime.utcnow().isoformat()} — 記事生成: {topic['prefecture']} {topic['area']}")
+
+    await emit_thought("scheduler",
+                       f"WriterAgent に指示: {topic['prefecture']} {topic['area']} {topic['property_type']}",
+                       "working", detail=f"トピック #{_topic_index}/{len(ARTICLE_TOPICS)}")
 
     async with AsyncSessionLocal() as db:
         log = AgentLog(
@@ -74,11 +79,14 @@ async def run_article_generation():
             log.output_summary = f"Article ID {article.id}: {article.title}"
             log.duration_ms = result.get("duration_ms")
             print(f"[Writer] 完了: {article.title}")
+            await emit_thought("scheduler", f"✅ 記事生成完了。次は GitHub Pages に公開", "success",
+                               detail=f"「{result['title'][:30]}...」")
 
         except Exception as e:
             log.status = "error"
             log.error_message = str(e)
             print(f"[Writer] エラー: {e}")
+            await emit_thought("scheduler", f"❌ 記事生成でエラー発生", "error", detail=str(e)[:80])
 
         await db.commit()
 
@@ -86,8 +94,10 @@ async def run_article_generation():
         published = await publish_pending_articles()
         if published:
             print(f"[Writer] {published}件を GitHub Pages に公開しました")
+            await emit_thought("scheduler", f"📤 {published}件を GitHub Pages に公開完了", "success")
     except Exception as e:
         print(f"[Writer] 公開エラー: {e}")
+        await emit_thought("scheduler", f"⚠️ GitHub Pages 公開でエラー", "error", detail=str(e)[:80])
 
 
 # ------------------------------------------------------------------ #
@@ -96,6 +106,7 @@ async def run_article_generation():
 
 async def run_optimization_cycle():
     print(f"[Optimizer] {datetime.utcnow().isoformat()} — 最適化サイクル開始")
+    await emit_thought("scheduler", "最適化サイクル開始。AnalyticsAgent に分析依頼", "working")
 
     async with AsyncSessionLocal() as db:
         log = AgentLog(
@@ -162,6 +173,10 @@ async def main():
     print(f"[Scheduler] 起動完了")
     print(f"  - 記事生成: {generation_minutes}分ごと")
     print(f"  - 最適化: {optimization_hours}時間ごと（週1回）")
+
+    await emit_thought("scheduler",
+                       f"起動完了。記事生成: {generation_minutes}分ごと / 最適化: {optimization_hours}h ごと",
+                       "idle", detail="次の実行を待機中...")
 
     # 起動時に記事生成を即実行
     asyncio.create_task(run_article_generation())
