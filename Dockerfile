@@ -25,5 +25,9 @@ RUN npm install
 # Copy the rest of the source (for local dev, we will mount it, but we need node_modules)
 COPY . .
 
+# Expose ports for Hugo (1313) and Next.js (3000)
+EXPOSE 1313 3000
+
 # Default command
-CMD ["npm", "run", "dev"]
+RUN chmod +x scripts/start.sh
+CMD ["./scripts/start.sh"]

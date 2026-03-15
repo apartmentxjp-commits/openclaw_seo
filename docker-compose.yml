@@ -1,13 +1,11 @@
-
 services:
   openclaw:
     build: .
     container_name: openclaw_isolated
     volumes:
       # Mount the project source
-      - .:/app:rw
-      # Named volume for node_modules to avoid host overwrite
-      - node_modules:/app/node_modules
+      # - .:/app:rw
+      # - node_modules:/app/node_modules
       # Mount brain components as read-only individually
       - /Users/Mrt0309/Desktop/00_Antigravity_Brain/01_Rule:/app/brain/01_Rule:ro
       - /Users/Mrt0309/Desktop/00_Antigravity_Brain/02_Knowledge_Base:/app/brain/02_Knowledge_Base:ro
@@ -16,12 +14,13 @@ services:
       - /Users/Mrt0309/Desktop/00_Antigravity_Brain/04_Output/Note:/app/brain/04_Output/Note:rw
       - /Users/Mrt0309/Desktop/openclaw_seo/site_gen:/app/brain/04_Output/site_gen:rw
       # Mount logs for monitoring
-      - ./logs:/app/logs:rw
+      # - ./logs:/app/logs:rw
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - NODE_ENV=development
     ports:
-      - "3000:3000"
+      - "80:3000"
+      - "1313:1313"
     networks:
       - openclaw_net
     # Restrict to only Gemini API if possible via host firewall or similar, 
@@ -38,16 +37,16 @@ services:
     container_name: openclaw_autonomous_agent
     volumes:
       - .:/app:rw
-      - node_modules:/app/node_modules
+      # - node_modules:/app/node_modules
       - /Users/Mrt0309/Desktop/00_Antigravity_Brain/01_Rule:/app/brain/01_Rule:ro
       - /Users/Mrt0309/Desktop/00_Antigravity_Brain/02_Knowledge_Base:/app/brain/02_Knowledge_Base:ro
       - /Users/Mrt0309/Desktop/00_Antigravity_Brain/06_OpenClaw_Vault:/app/brain/06_OpenClaw_Vault:ro
       - /Users/Mrt0309/Desktop/00_Antigravity_Brain/04_Output/Note:/app/brain/04_Output/Note:rw
       - /Users/Mrt0309/Desktop/openclaw_seo/site_gen:/app/brain/04_Output/site_gen:rw
-      - ./logs:/app/logs:rw
+      # - ./logs:/app/logs:rw
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
-    command: ["python3", "scripts/orchestrator.py", "--loop", "4"]
+    command: [ "python3", "scripts/orchestrator.py", "--loop", "4" ]
     networks:
       - openclaw_net
     dns:
