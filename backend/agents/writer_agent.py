@@ -1,5 +1,5 @@
 """
-Writer Agent - Gemini による不動産記事自動執筆エージェント
+Writer Agent - Groq (Llama 3.3 70b) による不動産記事自動執筆エージェント
 役割: SEO最適化された不動産価格情報記事を自動生成
 """
 
@@ -9,13 +9,10 @@ import time
 import asyncio
 from datetime import datetime
 from typing import Optional
-import google.generativeai as genai
+from groq import Groq
 from slugify import slugify
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY", ""))
-
-# 無料枠最適 - gemini-1.5-flash (高速・低コスト)
-MODEL = "gemini-1.5-flash"
+MODEL = "llama-3.3-70b-versatile"
 
 ARTICLE_SYSTEM_PROMPT = """
 あなたは不動産業界の専門ライターです。
@@ -60,17 +57,10 @@ SEO_SYSTEM_PROMPT = """
 
 
 class WriterAgent:
-    """Gemini記事執筆エージェント"""
+    """Groq (Llama 3.3 70b) 記事執筆エージェント"""
 
     def __init__(self):
-        self.model = genai.GenerativeModel(
-            model_name=MODEL,
-            system_instruction=ARTICLE_SYSTEM_PROMPT,
-        )
-        self.seo_model = genai.GenerativeModel(
-            model_name=MODEL,
-            system_instruction=SEO_SYSTEM_PROMPT,
-        )
+        self.client = Groq(api_key=os.getenv("GROQ_API_KEY", ""))
 
     async def generate_article(
         self,
@@ -103,9 +93,15 @@ class WriterAgent:
         start = time.time()
         try:
             response = await asyncio.to_thread(
-                self.model.generate_content, prompt
+                self.client.chat.completions.create,
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": ARTICLE_SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+                max_tokens=4096,
             )
-            content = response.text
+            content = response.choices[0].message.content
             duration_ms = int((time.time() - start) * 1000)
 
             # タイトル抽出 (最初の # 行)
@@ -116,7 +112,7 @@ class WriterAgent:
                     break
 
             # スラッグ生成
-            slug = slugify(f"{prefecture}-{area}-{property_type}-{datetime.now().strftime('%Y%m')}", allow_unicode=False)
+            slug = slugify(f"{prefecture}-{area}-{property_type}-{datetime.now().strftime('%Y%m%d%H%M')}", allow_unicode=False)
             slug = slug.replace("--", "-")
 
             # SEOメタデータ生成
@@ -131,7 +127,7 @@ class WriterAgent:
                 "prefecture": prefecture,
                 "property_type": property_type,
                 "status": "published",
-                "generated_by": "gemini",
+                "generated_by": "groq",
                 "generation_prompt": prompt,
                 "duration_ms": duration_ms,
                 **seo_data,
@@ -141,7 +137,7 @@ class WriterAgent:
             raise RuntimeError(f"記事生成エラー: {e}")
 
     async def _generate_seo(self, title: str, content: str, area: str, property_type: str) -> dict:
-        """SEOメタデータをGeminiで生成"""
+        """SEOメタデータをGroqで生成"""
         prompt = f"""
 記事タイトル: {title}
 対象: {area}の{property_type}価格情報
@@ -153,15 +149,21 @@ class WriterAgent:
 """
         try:
             response = await asyncio.to_thread(
-                self.seo_model.generate_content, prompt
+                self.client.chat.completions.create,
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": SEO_SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+                max_tokens=1024,
             )
-            text = response.text.strip()
+            text = response.choices[0].message.content.strip()
             # JSONブロックを抽出
             if "```json" in text:
                 text = text.split("```json")[1].split("```")[0]
             elif "```" in text:
                 text = text.split("```")[1].split("```")[0]
-            
+
             seo = json.loads(text.strip())
             return {
                 "meta_title": seo.get("meta_title", title[:60]),
@@ -185,15 +187,65 @@ class WriterAgent:
 
 
 # ── バッチ記事生成 ────────────────────────────────────
+# 50トピック × 30分間隔 = 25時間で一巡（1日48記事、Groq無料枠の0.7%）
 ARTICLE_TOPICS = [
+    # 東京都
     {"area": "港区", "prefecture": "東京都", "property_type": "マンション"},
     {"area": "渋谷区", "prefecture": "東京都", "property_type": "マンション"},
     {"area": "新宿区", "prefecture": "東京都", "property_type": "マンション"},
     {"area": "世田谷区", "prefecture": "東京都", "property_type": "一戸建て"},
-    {"area": "横浜市", "prefecture": "神奈川県", "property_type": "マンション"},
-    {"area": "さいたま市", "prefecture": "埼玉県", "property_type": "マンション"},
-    {"area": "千葉市", "prefecture": "千葉県", "property_type": "一戸建て"},
+    {"area": "目黒区", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "品川区", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "中野区", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "豊島区", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "文京区", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "江東区", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "杉並区", "prefecture": "東京都", "property_type": "一戸建て"},
+    {"area": "練馬区", "prefecture": "東京都", "property_type": "一戸建て"},
+    {"area": "板橋区", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "立川市", "prefecture": "東京都", "property_type": "マンション"},
+    {"area": "八王子市", "prefecture": "東京都", "property_type": "一戸建て"},
+    # 神奈川県
+    {"area": "横浜市西区", "prefecture": "神奈川県", "property_type": "マンション"},
+    {"area": "横浜市港北区", "prefecture": "神奈川県", "property_type": "マンション"},
+    {"area": "川崎市中原区", "prefecture": "神奈川県", "property_type": "マンション"},
+    {"area": "藤沢市", "prefecture": "神奈川県", "property_type": "一戸建て"},
+    {"area": "相模原市", "prefecture": "神奈川県", "property_type": "一戸建て"},
+    # 大阪府・近畿
     {"area": "大阪市北区", "prefecture": "大阪府", "property_type": "マンション"},
+    {"area": "大阪市中央区", "prefecture": "大阪府", "property_type": "マンション"},
+    {"area": "大阪市西区", "prefecture": "大阪府", "property_type": "マンション"},
+    {"area": "豊中市", "prefecture": "大阪府", "property_type": "一戸建て"},
+    {"area": "吹田市", "prefecture": "大阪府", "property_type": "マンション"},
+    {"area": "神戸市中央区", "prefecture": "兵庫県", "property_type": "マンション"},
+    {"area": "西宮市", "prefecture": "兵庫県", "property_type": "一戸建て"},
+    {"area": "京都市左京区", "prefecture": "京都府", "property_type": "マンション"},
+    {"area": "京都市中京区", "prefecture": "京都府", "property_type": "マンション"},
+    # 愛知・東海
     {"area": "名古屋市中区", "prefecture": "愛知県", "property_type": "マンション"},
+    {"area": "名古屋市千種区", "prefecture": "愛知県", "property_type": "マンション"},
+    {"area": "名古屋市天白区", "prefecture": "愛知県", "property_type": "一戸建て"},
+    {"area": "豊田市", "prefecture": "愛知県", "property_type": "一戸建て"},
+    # 福岡・九州
     {"area": "福岡市中央区", "prefecture": "福岡県", "property_type": "マンション"},
+    {"area": "福岡市博多区", "prefecture": "福岡県", "property_type": "マンション"},
+    {"area": "福岡市東区", "prefecture": "福岡県", "property_type": "一戸建て"},
+    {"area": "北九州市小倉北区", "prefecture": "福岡県", "property_type": "マンション"},
+    # 埼玉・千葉・茨城
+    {"area": "さいたま市浦和区", "prefecture": "埼玉県", "property_type": "マンション"},
+    {"area": "川口市", "prefecture": "埼玉県", "property_type": "マンション"},
+    {"area": "千葉市中央区", "prefecture": "千葉県", "property_type": "マンション"},
+    {"area": "船橋市", "prefecture": "千葉県", "property_type": "一戸建て"},
+    {"area": "柏市", "prefecture": "千葉県", "property_type": "一戸建て"},
+    {"area": "つくば市", "prefecture": "茨城県", "property_type": "一戸建て"},
+    # 札幌・仙台
+    {"area": "札幌市中央区", "prefecture": "北海道", "property_type": "マンション"},
+    {"area": "札幌市豊平区", "prefecture": "北海道", "property_type": "マンション"},
+    {"area": "仙台市青葉区", "prefecture": "宮城県", "property_type": "マンション"},
+    # 広島・岡山
+    {"area": "広島市中区", "prefecture": "広島県", "property_type": "マンション"},
+    {"area": "岡山市北区", "prefecture": "岡山県", "property_type": "マンション"},
+    # 沖縄
+    {"area": "那覇市", "prefecture": "沖縄県", "property_type": "マンション"},
+    {"area": "浦添市", "prefecture": "沖縄県", "property_type": "一戸建て"},
 ]

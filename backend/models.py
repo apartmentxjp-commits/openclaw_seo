@@ -22,6 +22,7 @@ class Article(Base):
     generated_by = Column(String, default="gemini")
     duration_ms = Column(Integer, nullable=True)
     published_at = Column(DateTime, nullable=True)  # Hugo/GitHub Pages 公開日時
+    last_optimized_at = Column(DateTime, nullable=True)  # 最後に最適化された日時
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

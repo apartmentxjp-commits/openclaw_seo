@@ -1,36 +1,35 @@
 """
-Publisher: DB記事 → Hugo Markdown → git push → GitHub Pages
+Publisher: DB記事 → GitHub REST API → GitHub Pages
 
 フロー:
   1. articles テーブルから status='published', published_at IS NULL の記事を取得
-  2. Hugo形式の .md ファイルを site/content/post/ に書き出す
-  3. git add / commit / push → GitHub Actions が Hugo ビルドして GitHub Pages に公開
+  2. GitHub Contents API で site/content/post/{slug}.md を直接作成/更新
+  3. GitHub Actions が Hugo ビルドして GitHub Pages に公開
+  ※ git バイナリ不使用（macOS Docker bind mount デッドロック回避）
 """
 
 import os
-import subprocess
+import base64
 import asyncio
+import urllib.request
+import urllib.error
+import json
 from datetime import datetime
-from sqlalchemy import select, update
-from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
 
 from database import AsyncSessionLocal
 from models import Article
 
 # ─── 設定 ────────────────────────────────────────────────
-SITE_DIR = os.getenv("SITE_DIR", "/mainproject/site")
-HUGO_CONTENT_DIR = os.path.join(SITE_DIR, "content", "post")
-PROJECT_DIR = os.getenv("PROJECT_DIR", "/mainproject")
 GH_TOKEN = os.getenv("GH_TOKEN", "")
 GITHUB_REPO = "apartmentxjp-commits/openclaw_seo"
+HUGO_POST_PATH = "site/content/post"
 GIT_USER_NAME = os.getenv("GIT_USER_NAME", "OpenClaw Bot")
 GIT_USER_EMAIL = os.getenv("GIT_USER_EMAIL", "bot@openclaw.local")
 
 
-def _write_hugo_markdown(article: Article) -> str:
-    """記事オブジェクトをHugoのMarkdownファイルとして書き出す"""
-    os.makedirs(HUGO_CONTENT_DIR, exist_ok=True)
-
+def _write_hugo_markdown(article: Article) -> tuple[str, str]:
+    """記事オブジェクトをHugoのMarkdown文字列に変換し、(filename, content)を返す"""
     keywords = article.keywords or []
     kw_str = ", ".join(f'"{k}"' for k in keywords[:8]) if keywords else ""
 
@@ -38,7 +37,6 @@ def _write_hugo_markdown(article: Article) -> str:
     description = (article.meta_description or "").replace('"', "'")
     title_safe = article.title.replace('"', "'")
 
-    # f-string を使わず文字列結合（Python 3.11 f-string内バックスラッシュ制限を回避）
     lines = [
         "---",
         'title: "' + title_safe + '"',
@@ -54,73 +52,76 @@ def _write_hugo_markdown(article: Article) -> str:
         "",
     ]
     front_matter = "\n".join(lines) + "\n"
-    filepath = os.path.join(HUGO_CONTENT_DIR, f"{article.slug}.md")
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(front_matter + (article.content or ""))
-
-    return filepath
+    content = front_matter + (article.content or "")
+    filename = f"{article.slug}.md"
+    return filename, content
 
 
-def _git_push(files: list[str], commit_msg: str) -> bool:
-    """指定ファイルをgit add/commit/pushする"""
+def _github_api_push_file(filename: str, content: str, commit_msg: str) -> bool:
+    """GitHub Contents API でファイルを作成/更新する（git バイナリ不使用）"""
     if not GH_TOKEN:
-        print("[Publisher] GH_TOKEN が未設定のため git push をスキップします")
+        print("[Publisher] GH_TOKEN が未設定のため GitHub push をスキップします")
         return False
+
+    api_path = f"{HUGO_POST_PATH}/{filename}"
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{api_path}"
+    encoded = base64.b64encode(content.encode("utf-8")).decode("ascii")
+
+    headers = {
+        "Authorization": f"token {GH_TOKEN}",
+        "Accept": "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+        "User-Agent": "OpenClaw-Publisher/1.0",
+    }
+
+    # 既存ファイルの SHA を取得（更新の場合に必要）
+    sha = None
+    try:
+        req = urllib.request.Request(url, headers=headers, method="GET")
+        with urllib.request.urlopen(req) as resp:
+            data = json.loads(resp.read())
+            sha = data.get("sha")
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            print(f"[Publisher] SHA取得エラー: {e}")
+            return False
+
+    # PUT でファイル作成または更新
+    payload = {
+        "message": commit_msg,
+        "content": encoded,
+        "branch": "main",
+        "committer": {
+            "name": GIT_USER_NAME,
+            "email": GIT_USER_EMAIL,
+        },
+    }
+    if sha:
+        payload["sha"] = sha
 
     try:
-        remote_url = f"https://{GH_TOKEN}@github.com/{GITHUB_REPO}.git"
-
-        env = {**os.environ, "GIT_AUTHOR_NAME": GIT_USER_NAME, "GIT_AUTHOR_EMAIL": GIT_USER_EMAIL,
-               "GIT_COMMITTER_NAME": GIT_USER_NAME, "GIT_COMMITTER_EMAIL": GIT_USER_EMAIL}
-
-        def run(cmd, **kwargs):
-            result = subprocess.run(
-                cmd, cwd=PROJECT_DIR, capture_output=True, text=True, env=env, **kwargs
-            )
-            if result.returncode != 0:
-                raise RuntimeError(f"{' '.join(cmd)}: {result.stderr.strip()}")
-            return result.stdout.strip()
-
-        # 認証付きリモートを一時設定
-        run(["git", "remote", "set-url", "origin", remote_url])
-
-        # ファイルをステージ
-        for f in files:
-            run(["git", "add", f])
-
-        # コミット（差分がなければスキップ）
-        status = run(["git", "status", "--porcelain"])
-        if not status:
-            print("[Publisher] 差分なし、push をスキップ")
+        body = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(url, data=body, headers=headers, method="PUT")
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read())
+            action = "更新" if sha else "作成"
+            print(f"[Publisher] GitHub API {action}成功: {api_path} (commit: {result['commit']['sha'][:7]})")
             return True
-
-        run(["git", "commit", "-m", commit_msg])
-        run(["git", "push", "origin", "main"])
-        print(f"[Publisher] git push 完了: {commit_msg}")
-        return True
-
-    except Exception as e:
-        print(f"[Publisher] git push 失敗: {e}")
+    except urllib.error.HTTPError as e:
+        err_body = e.read().decode("utf-8", errors="replace")
+        print(f"[Publisher] GitHub API push失敗 ({e.code}): {err_body[:300]}")
         return False
-    finally:
-        # リモートURLを元に戻す（トークンを残さない）
-        try:
-            subprocess.run(
-                ["git", "remote", "set-url", "origin",
-                 f"https://github.com/{GITHUB_REPO}.git"],
-                cwd=PROJECT_DIR, capture_output=True
-            )
-        except Exception:
-            pass
+    except Exception as e:
+        print(f"[Publisher] GitHub API push エラー: {e}")
+        return False
 
 
 async def publish_pending_articles() -> int:
     """
-    DBの未公開記事をHugoに書き出してgit pushする。
+    DBの未公開記事をGitHub APIで直接pushする。
     公開済みにした記事数を返す。
     """
     async with AsyncSessionLocal() as db:
-        # published_at IS NULL の記事を取得（新規生成分）
         q = await db.execute(
             select(Article)
             .where(Article.status == "published")
@@ -133,32 +134,27 @@ async def publish_pending_articles() -> int:
             print("[Publisher] 未公開記事なし")
             return 0
 
-        written_files = []
-        titles = []
-
+        published_count = 0
         for article in articles:
             try:
-                filepath = _write_hugo_markdown(article)
-                written_files.append(filepath)
-                titles.append(article.title)
-                print(f"[Publisher] Markdown書き出し: {filepath}")
+                filename, content = _write_hugo_markdown(article)
+                now = datetime.utcnow().strftime("%Y-%m-%d %H:%M")
+                commit_msg = f"feat: add article [{now}] {article.title}"
+
+                success = await asyncio.to_thread(
+                    _github_api_push_file, filename, content, commit_msg
+                )
+                if success:
+                    article.published_at = datetime.utcnow()
+                    published_count += 1
+                    print(f"[Publisher] 公開完了: {article.title}")
+                else:
+                    print(f"[Publisher] push失敗: {article.title}")
             except Exception as e:
-                print(f"[Publisher] 書き出し失敗 (ID={article.id}): {e}")
+                print(f"[Publisher] エラー (ID={article.id}): {e}")
 
-        if not written_files:
-            return 0
-
-        # git push
-        now = datetime.utcnow().strftime("%Y-%m-%d %H:%M")
-        count = len(written_files)
-        msg = f"feat: add {count} article(s) [{now}]\n\n" + "\n".join(f"- {t}" for t in titles)
-        pushed = _git_push(written_files, msg)
-
-        if pushed:
-            # published_at を更新
-            for article in articles:
-                article.published_at = datetime.utcnow()
+        if published_count > 0:
             await db.commit()
-            print(f"[Publisher] {count}件を公開済みにしました")
+            print(f"[Publisher] {published_count}件を公開済みにしました")
 
-        return count if pushed else 0
+        return published_count

@@ -1,10 +1,11 @@
 """
-Agent Scheduler — 4時間ごとに記事を自動生成し、GitHub Pagesに公開する常駐プロセス
+Agent Scheduler — 記事生成・最適化を自律的に実行する常駐プロセス
 
-フロー:
-  1. Gemini で記事生成 → PostgreSQL 保存
-  2. publisher.py が Hugo markdown を書き出し git push
-  3. GitHub Actions が Hugo ビルド → GitHub Pages 公開
+ジョブ:
+  1. 記事生成 (ARTICLE_GENERATION_INTERVAL_HOURS ごと、デフォルト0.5h)
+     WriterAgent → PostgreSQL → GitHub Pages
+  2. 最適化サイクル (OPTIMIZATION_INTERVAL_HOURS ごと、デフォルト168h=週1回)
+     AnalyticsAgent で低パフォーマンス記事を特定 → OptimizerAgent でリライト → 再公開
 """
 import asyncio
 import os
@@ -26,13 +27,17 @@ def _next_topic() -> dict:
     return topic
 
 
+# ------------------------------------------------------------------ #
+#  ジョブ1: 記事生成                                                   #
+# ------------------------------------------------------------------ #
+
 async def run_article_generation():
     topic = _next_topic()
-    print(f"[Scheduler] {datetime.utcnow().isoformat()} — 記事生成開始: {topic['prefecture']} {topic['area']}")
+    print(f"[Writer] {datetime.utcnow().isoformat()} — 記事生成: {topic['prefecture']} {topic['area']}")
 
     async with AsyncSessionLocal() as db:
         log = AgentLog(
-            agent_name="scheduler",
+            agent_name="writer_agent",
             task_type="generate_article",
             status="running",
             input_summary=f"{topic['prefecture']} {topic['area']} {topic['property_type']}",
@@ -58,7 +63,7 @@ async def run_article_generation():
                 keywords=result.get("keywords"),
                 structured_data=result.get("structured_data"),
                 status="published",
-                generated_by="gemini",
+                generated_by="groq",
                 duration_ms=result.get("duration_ms"),
             )
             db.add(article)
@@ -68,38 +73,98 @@ async def run_article_generation():
             log.status = "success"
             log.output_summary = f"Article ID {article.id}: {article.title}"
             log.duration_ms = result.get("duration_ms")
-            print(f"[Scheduler] 完了: {article.title}")
+            print(f"[Writer] 完了: {article.title}")
 
         except Exception as e:
             log.status = "error"
             log.error_message = str(e)
-            print(f"[Scheduler] エラー: {e}")
+            print(f"[Writer] エラー: {e}")
 
         await db.commit()
 
-    # 記事生成後に公開パイプラインを実行
     try:
         published = await publish_pending_articles()
         if published:
-            print(f"[Scheduler] {published}件を GitHub Pages に公開しました")
+            print(f"[Writer] {published}件を GitHub Pages に公開しました")
     except Exception as e:
-        print(f"[Scheduler] 公開パイプライン エラー: {e}")
+        print(f"[Writer] 公開エラー: {e}")
 
+
+# ------------------------------------------------------------------ #
+#  ジョブ2: 最適化サイクル                                              #
+# ------------------------------------------------------------------ #
+
+async def run_optimization_cycle():
+    print(f"[Optimizer] {datetime.utcnow().isoformat()} — 最適化サイクル開始")
+
+    async with AsyncSessionLocal() as db:
+        log = AgentLog(
+            agent_name="optimizer_agent",
+            task_type="optimization_cycle",
+            status="running",
+            input_summary="scheduled weekly optimization",
+        )
+        db.add(log)
+        await db.commit()
+
+        try:
+            from agents.optimizer_agent import OptimizerAgent
+            optimizer = OptimizerAgent()
+            results = await optimizer.run_optimization_cycle(db, limit=3)
+
+            success = [r for r in results if r.get("success")]
+            log.status = "success"
+            log.output_summary = (
+                f"{len(success)}/{len(results)} articles optimized: "
+                + ", ".join(r["slug"] for r in success)
+            )
+            print(f"[Optimizer] 完了: {len(success)}件最適化")
+
+        except Exception as e:
+            log.status = "error"
+            log.error_message = str(e)
+            print(f"[Optimizer] エラー: {e}")
+
+        await db.commit()
+
+
+# ------------------------------------------------------------------ #
+#  メイン                                                              #
+# ------------------------------------------------------------------ #
 
 async def main():
     print("[Scheduler] 起動中...")
     await init_db()
 
-    interval_hours = int(os.getenv("ARTICLE_GENERATION_INTERVAL_HOURS", "4"))
+    generation_minutes = int(float(os.getenv("ARTICLE_GENERATION_INTERVAL_HOURS", "4")) * 60)
+    optimization_hours = int(float(os.getenv("OPTIMIZATION_INTERVAL_HOURS", "168")))  # 週1
+
     scheduler = AsyncIOScheduler()
+
+    # ジョブ1: 記事生成
     scheduler.add_job(
         run_article_generation,
-        IntervalTrigger(hours=interval_hours),
+        IntervalTrigger(minutes=generation_minutes),
         id="article_generation",
         replace_existing=True,
     )
+
+    # ジョブ2: 最適化（起動から1時間後に初回実行）
+    scheduler.add_job(
+        run_optimization_cycle,
+        IntervalTrigger(hours=optimization_hours),
+        id="optimization_cycle",
+        replace_existing=True,
+        next_run_time=None,  # 手動または初回起動1h後
+    )
+
     scheduler.start()
-    print(f"[Scheduler] 起動完了 — {interval_hours}時間ごとに記事生成")
+    print(f"[Scheduler] 起動完了")
+    print(f"  - 記事生成: {generation_minutes}分ごと")
+    print(f"  - 最適化: {optimization_hours}時間ごと（週1回）")
+
+    # 起動時に記事生成を即実行
+    asyncio.create_task(run_article_generation())
 
     try:
         while True:

@@ -159,3 +159,40 @@ async def write_batch(
         background_tasks.add_task(_generate_and_save, topic, db)
 
     return {"message": f"{count}件の記事生成をキューに追加しました"}
+
+
+async def _run_optimization(db: AsyncSession):
+    """Background task: run full optimization cycle."""
+    from agents.optimizer_agent import OptimizerAgent
+    optimizer = OptimizerAgent()
+    await optimizer.run_optimization_cycle(db, limit=3)
+
+
+@router.post("/optimize")
+async def trigger_optimization(
+    background_tasks: BackgroundTasks = None,
+    db: AsyncSession = Depends(get_db),
+):
+    """低パフォーマンス記事の最適化サイクルを手動トリガー"""
+    log = AgentLog(
+        agent_name="optimizer_agent",
+        task_type="optimization_cycle",
+        status="running",
+        input_summary="manual trigger",
+    )
+    db.add(log)
+    await db.commit()
+    await db.refresh(log)
+
+    background_tasks.add_task(_run_optimization, db)
+
+    return {"message": "最適化サイクルを開始しました（バックグラウンド実行）", "log_id": str(log.id)}
+
+
+@router.get("/optimize/targets")
+async def get_optimization_targets(db: AsyncSession = Depends(get_db)):
+    """最適化候補記事を確認する（実行なし）"""
+    from agents.analytics_agent import AnalyticsAgent
+    analytics = AnalyticsAgent()
+    targets = await analytics.get_optimization_targets(db, limit=5)
+    return {"targets": targets, "gsc_enabled": analytics.gsc_available}

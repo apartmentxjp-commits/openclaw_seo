@@ -34,7 +34,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     environment:
-      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
       - DATABASE_URL=${DATABASE_URL}
       - REDIS_URL=${REDIS_URL}
       - SITE_URL=${SITE_URL:-http://localhost}
@@ -56,7 +56,7 @@ services:
       dockerfile: Dockerfile
     command: ["python", "scheduler.py"]
     environment:
-      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
       - DATABASE_URL=${DATABASE_URL}
       - REDIS_URL=${REDIS_URL}
       - ARTICLE_GENERATION_INTERVAL_HOURS=${ARTICLE_GENERATION_INTERVAL_HOURS:-4}
