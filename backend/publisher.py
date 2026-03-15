@@ -35,20 +35,25 @@ def _write_hugo_markdown(article: Article) -> str:
     kw_str = ", ".join(f'"{k}"' for k in keywords[:8]) if keywords else ""
 
     date_str = article.created_at.strftime("%Y-%m-%dT%H:%M:%S+09:00")
+    description = (article.meta_description or "").replace('"', "'")
+    title_safe = article.title.replace('"', "'")
 
-    front_matter = f"""---
-title: "{article.title}"
-date: {date_str}
-slug: "{article.slug}"
-area: "{article.area}"
-prefecture: "{article.prefecture}"
-property_type: "{article.property_type}"
-description: "{(article.meta_description or '').replace('"', '\\"')}"
-keywords: [{kw_str}]
-draft: false
----
-
-"""
+    # f-string を使わず文字列結合（Python 3.11 f-string内バックスラッシュ制限を回避）
+    lines = [
+        "---",
+        'title: "' + title_safe + '"',
+        "date: " + date_str,
+        'slug: "' + article.slug + '"',
+        'area: "' + article.area + '"',
+        'prefecture: "' + article.prefecture + '"',
+        'property_type: "' + article.property_type + '"',
+        'description: "' + description + '"',
+        "keywords: [" + kw_str + "]",
+        "draft: false",
+        "---",
+        "",
+    ]
+    front_matter = "\n".join(lines) + "\n"
     filepath = os.path.join(HUGO_CONTENT_DIR, f"{article.slug}.md")
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(front_matter + (article.content or ""))
