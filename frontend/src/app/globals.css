@@ -3,15 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --paper: #fafaf8;
-  --ink: #1a1a1a;
-  --muted: #6b7280;
-  --accent: #2563eb;
-  --font-display: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Surface scale */
+  --bg:       #09090b;
+  --surface:  #111113;
+  --surface2: #18181b;
+  --border:   #27272a;
+  --border2:  #3f3f46;
+
+  /* Text */
+  --text:     #f4f4f5;
+  --muted:    #71717a;
+  --subtle:   #a1a1aa;
+
+  /* Accent — purple for AI/tech */
+  --accent:   #8b5cf6;
+  --accent-h: #7c3aed;
+
+  /* Status */
+  --green:    #22c55e;
+  --red:      #ef4444;
+  --yellow:   #eab308;
 }
 
 body {
-  background-color: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-inter);
+  background: var(--bg);
+  color: var(--text);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

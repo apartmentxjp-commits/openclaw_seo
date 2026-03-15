@@ -22,6 +22,31 @@ type AgentStatus = {
   total_articles: number
 }
 
+function StatusDot({ status }: { status: string }) {
+  const colors: Record<string, string> = {
+    success: 'bg-[var(--green)]',
+    error: 'bg-[var(--red)]',
+    running: 'bg-[var(--yellow)]',
+  }
+  return (
+    <span className={`inline-block w-1.5 h-1.5 rounded-full ${colors[status] ?? 'bg-[var(--muted)]'} mr-1.5`} />
+  )
+}
+
+function Badge({ status }: { status: string }) {
+  const cfg: Record<string, string> = {
+    success: 'text-[var(--green)] bg-[var(--green)]/10 border-[var(--green)]/20',
+    error:   'text-[var(--red)] bg-[var(--red)]/10 border-[var(--red)]/20',
+    running: 'text-[var(--yellow)] bg-[var(--yellow)]/10 border-[var(--yellow)]/20',
+  }
+  return (
+    <span className={`inline-flex items-center text-[10px] font-medium px-2 py-0.5 rounded border ${cfg[status] ?? 'text-muted bg-surface2 border-border'}`}>
+      <StatusDot status={status} />
+      {status}
+    </span>
+  )
+}
+
 export default function AdminPage() {
   const [status, setStatus] = useState<AgentStatus | null>(null)
   const [logs, setLogs] = useState<Log[]>([])
@@ -60,10 +85,10 @@ export default function AdminPage() {
         body: JSON.stringify(form),
       })
       const data = await res.json()
-      setMessage(`✅ ${data.message} (Log ID: ${data.log_id?.slice(0, 8)}...)`)
+      setMessage(`${data.message}`)
       setTimeout(fetchStatus, 3000)
-    } catch (e) {
-      setMessage('❌ エラーが発生しました')
+    } catch {
+      setMessage('エラーが発生しました')
     } finally {
       setGenerating(false)
     }
@@ -79,179 +104,216 @@ export default function AdminPage() {
         body: JSON.stringify({ count }),
       })
       const data = await res.json()
-      setMessage(`✅ ${data.message}`)
+      setMessage(data.message)
       setTimeout(fetchStatus, 5000)
     } catch {
-      setMessage('❌ エラーが発生しました')
+      setMessage('エラーが発生しました')
     } finally {
       setGenerating(false)
     }
   }
 
-  const statusColor = (s: string) => {
-    if (s === 'success') return 'text-green-600 bg-green-50'
-    if (s === 'error') return 'text-red-600 bg-red-50'
-    return 'text-yellow-600 bg-yellow-50'
-  }
+  const stats = [
+    { label: '公開記事数', value: status?.total_articles ?? '—', sub: 'total articles' },
+    { label: '24h 成功', value: status?.last_24h?.success_count ?? '—', sub: 'successful runs' },
+    { label: '24h エラー', value: status?.last_24h?.error_count ?? '—', sub: 'failed runs' },
+    { label: '実行中', value: status?.last_24h?.running_count ?? '—', sub: 'in progress' },
+  ]
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="font-display text-2xl font-bold">AIエージェント 管理ダッシュボード</h1>
-          <p className="text-muted text-sm mt-1">Gemini AI エージェントの制御・監視</p>
+    <div className="min-h-screen bg-[var(--bg)]">
+      {/* Top bar */}
+      <header className="border-b border-[var(--border)] bg-[var(--surface)] sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            {/* Logo mark */}
+            <div className="w-7 h-7 rounded-md bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7L7 2L12 7L7 12L2 7Z" stroke="var(--accent)" strokeWidth="1.5" strokeLinejoin="round"/>
+                <circle cx="7" cy="7" r="1.5" fill="var(--accent)"/>
+              </svg>
+            </div>
+            <span className="font-semibold text-sm tracking-tight">OpenClaw</span>
+            <span className="text-[var(--border2)] text-sm">/</span>
+            <span className="text-[var(--subtle)] text-sm">Agent Dashboard</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 text-[10px] text-[var(--green)] bg-[var(--green)]/10 border border-[var(--green)]/20 px-2.5 py-1 rounded-full">
+              <span className="w-1 h-1 rounded-full bg-[var(--green)] animate-pulse" />
+              稼働中
+            </div>
+            <button
+              onClick={fetchStatus}
+              className="text-xs text-[var(--muted)] hover:text-[var(--text)] border border-[var(--border)] hover:border-[var(--border2)] px-3 py-1.5 rounded-md transition-colors"
+            >
+              更新
+            </button>
+          </div>
         </div>
-        <button
-          onClick={fetchStatus}
-          className="text-xs border border-ink/20 px-3 py-1.5 rounded hover:bg-ink/5 transition-colors"
-        >
-          🔄 更新
-        </button>
-      </div>
+      </header>
 
-      {/* Stats Cards */}
-      {status && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {[
-            { label: '公開記事数', value: status.total_articles, icon: '📄' },
-            { label: '24h成功', value: status.last_24h?.success_count || 0, icon: '✅' },
-            { label: '24h エラー', value: status.last_24h?.error_count || 0, icon: '❌' },
-            { label: '実行中', value: status.last_24h?.running_count || 0, icon: '⏳' },
-          ].map((s) => (
-            <div key={s.label} className="border border-ink/10 rounded-lg p-4 bg-paper">
-              <div className="text-2xl mb-1">{s.icon}</div>
-              <div className="font-display text-2xl font-bold">{s.value}</div>
-              <div className="text-xs text-muted">{s.label}</div>
+      <main className="max-w-7xl mx-auto px-5 py-8">
+
+        {/* Stats row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 hover:border-[var(--border2)] transition-colors">
+              <p className="text-[var(--muted)] text-xs mb-2">{s.label}</p>
+              <p className="text-3xl font-bold tabular-nums tracking-tight">{s.value}</p>
+              <p className="text-[var(--muted)] text-[10px] mt-1">{s.sub}</p>
             </div>
           ))}
         </div>
-      )}
 
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
-        {/* エージェント一覧 */}
-        <div className="border border-ink/10 rounded-lg p-5 bg-paper">
-          <h2 className="font-medium mb-4">🤖 常駐エージェント</h2>
-          {status ? (
-            <div className="space-y-3">
-              {Object.entries(status.agents).map(([key, agent]) => (
-                <div key={key} className="flex items-center justify-between text-sm p-3 bg-ink/[0.03] rounded">
-                  <div>
-                    <span className="font-medium capitalize">{key}</span>
-                    <span className="text-muted text-xs ml-2">{agent.role}</span>
+        <div className="grid md:grid-cols-2 gap-5 mb-8">
+
+          {/* Active agents */}
+          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl overflow-hidden">
+            <div className="px-5 py-4 border-b border-[var(--border)] flex items-center justify-between">
+              <h2 className="text-sm font-medium">常駐エージェント</h2>
+              <span className="text-[10px] text-[var(--muted)] font-mono">{Object.keys(status?.agents ?? {}).length} agents</span>
+            </div>
+            <div className="p-3 space-y-2">
+              {!status ? (
+                <div className="px-2 py-6 text-center text-[var(--muted)] text-sm">接続中...</div>
+              ) : (
+                Object.entries(status.agents).map(([key, agent]) => (
+                  <div key={key} className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[var(--surface2)] hover:bg-[var(--border)]/30 transition-colors">
+                    <div>
+                      <p className="text-sm font-medium capitalize">{key}</p>
+                      <p className="text-[var(--muted)] text-xs">{agent.role}</p>
+                    </div>
+                    <div className="text-right">
+                      <div className="flex items-center gap-1 justify-end mb-0.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--green)]" />
+                        <span className="text-[10px] text-[var(--green)]">active</span>
+                      </div>
+                      <span className="text-[var(--muted)] text-[10px] font-mono">{agent.model}</span>
+                    </div>
                   </div>
-                  <span className="text-xs text-green-600 bg-green-50 px-2 py-0.5 rounded">
-                    稼働中 · {agent.model}
-                  </span>
+                ))
+              )}
+            </div>
+          </div>
+
+          {/* Article generator */}
+          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl overflow-hidden">
+            <div className="px-5 py-4 border-b border-[var(--border)]">
+              <h2 className="text-sm font-medium">記事を今すぐ生成</h2>
+              <p className="text-[var(--muted)] text-xs mt-0.5">AIエージェントに記事生成を指示</p>
+            </div>
+            <div className="p-5 space-y-3">
+              {[
+                { label: '都道府県', key: 'prefecture' as const },
+                { label: 'エリア', key: 'area' as const },
+              ].map(({ label, key }) => (
+                <div key={key}>
+                  <label className="block text-[var(--muted)] text-xs mb-1.5">{label}</label>
+                  <input
+                    value={form[key]}
+                    onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+                    className="w-full bg-[var(--surface2)] border border-[var(--border)] hover:border-[var(--border2)] focus:border-[var(--accent)]/50 rounded-lg px-3 py-2 text-sm outline-none transition-colors"
+                  />
                 </div>
               ))}
-            </div>
-          ) : (
-            <p className="text-muted text-sm">接続中...</p>
-          )}
-        </div>
+              <div>
+                <label className="block text-[var(--muted)] text-xs mb-1.5">物件種別</label>
+                <select
+                  value={form.property_type}
+                  onChange={(e) => setForm({ ...form, property_type: e.target.value })}
+                  className="w-full bg-[var(--surface2)] border border-[var(--border)] hover:border-[var(--border2)] rounded-lg px-3 py-2 text-sm outline-none transition-colors"
+                >
+                  {['マンション', '一戸建て', '土地'].map((t) => (
+                    <option key={t}>{t}</option>
+                  ))}
+                </select>
+              </div>
 
-        {/* 記事生成フォーム */}
-        <div className="border border-ink/10 rounded-lg p-5 bg-paper">
-          <h2 className="font-medium mb-4">✍️ 記事を今すぐ生成</h2>
-          <div className="space-y-3 mb-4">
-            <div>
-              <label className="text-xs text-muted mb-1 block">都道府県</label>
-              <input
-                value={form.prefecture}
-                onChange={(e) => setForm({ ...form, prefecture: e.target.value })}
-                className="w-full border border-ink/20 rounded px-3 py-2 text-sm focus:outline-none focus:border-ink/40"
-              />
-            </div>
-            <div>
-              <label className="text-xs text-muted mb-1 block">エリア</label>
-              <input
-                value={form.area}
-                onChange={(e) => setForm({ ...form, area: e.target.value })}
-                className="w-full border border-ink/20 rounded px-3 py-2 text-sm focus:outline-none focus:border-ink/40"
-              />
-            </div>
-            <div>
-              <label className="text-xs text-muted mb-1 block">物件種別</label>
-              <select
-                value={form.property_type}
-                onChange={(e) => setForm({ ...form, property_type: e.target.value })}
-                className="w-full border border-ink/20 rounded px-3 py-2 text-sm focus:outline-none focus:border-ink/40"
-              >
-                {['マンション', '一戸建て', '土地'].map((t) => (
-                  <option key={t}>{t}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={generateArticle}
-              disabled={generating}
-              className="flex-1 bg-accent hover:bg-accent/90 disabled:opacity-50 text-white py-2 rounded text-sm font-medium transition-colors"
-            >
-              {generating ? '生成中...' : '1記事生成'}
-            </button>
-            <button
-              onClick={() => batchGenerate(3)}
-              disabled={generating}
-              className="flex-1 bg-ink hover:bg-ink/80 disabled:opacity-50 text-white py-2 rounded text-sm font-medium transition-colors"
-            >
-              3記事まとめて
-            </button>
-          </div>
-          {message && (
-            <p className="mt-3 text-sm p-3 bg-ink/5 rounded">{message}</p>
-          )}
-        </div>
-      </div>
-
-      {/* Agent Logs */}
-      <div className="border border-ink/10 rounded-lg bg-paper">
-        <div className="px-5 py-4 border-b border-ink/10">
-          <h2 className="font-medium">📋 実行ログ (最新20件)</h2>
-        </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-ink/10 text-xs text-muted">
-                <th className="px-4 py-2 text-left">エージェント</th>
-                <th className="px-4 py-2 text-left">タスク</th>
-                <th className="px-4 py-2 text-left">ステータス</th>
-                <th className="px-4 py-2 text-left hidden md:table-cell">入力</th>
-                <th className="px-4 py-2 text-right hidden md:table-cell">時間</th>
-                <th className="px-4 py-2 text-right">日時</th>
-              </tr>
-            </thead>
-            <tbody>
-              {logs.length === 0 && (
-                <tr>
-                  <td colSpan={6} className="px-4 py-8 text-center text-muted">ログがありません</td>
-                </tr>
-              )}
-              {logs.map((l) => (
-                <tr key={l.id} className="border-t border-ink/5 hover:bg-ink/[0.02]">
-                  <td className="px-4 py-2 font-medium">{l.agent_name}</td>
-                  <td className="px-4 py-2 text-muted text-xs">{l.task_type}</td>
-                  <td className="px-4 py-2">
-                    <span className={`text-xs px-2 py-0.5 rounded ${statusColor(l.status)}`}>
-                      {l.status}
+              <div className="flex gap-2 pt-1">
+                <button
+                  onClick={generateArticle}
+                  disabled={generating}
+                  className="flex-1 bg-[var(--accent)] hover:bg-[var(--accent-h)] disabled:opacity-40 text-white py-2.5 rounded-lg text-sm font-medium transition-colors"
+                >
+                  {generating ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                      </svg>
+                      生成中...
                     </span>
-                  </td>
-                  <td className="px-4 py-2 text-xs text-muted hidden md:table-cell max-w-xs truncate">
-                    {l.input_summary || l.output_summary || l.error_message || '-'}
-                  </td>
-                  <td className="px-4 py-2 text-right text-xs text-muted hidden md:table-cell">
-                    {l.duration_ms ? `${l.duration_ms}ms` : '-'}
-                  </td>
-                  <td className="px-4 py-2 text-right text-xs text-muted">
-                    {new Date(l.created_at).toLocaleString('ja-JP', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  ) : '1記事生成'}
+                </button>
+                <button
+                  onClick={() => batchGenerate(3)}
+                  disabled={generating}
+                  className="flex-1 bg-[var(--surface2)] hover:bg-[var(--border)] border border-[var(--border)] disabled:opacity-40 text-[var(--text)] py-2.5 rounded-lg text-sm font-medium transition-colors"
+                >
+                  3記事まとめて
+                </button>
+              </div>
+
+              {message && (
+                <div className="text-xs p-3 bg-[var(--surface2)] border border-[var(--border)] rounded-lg text-[var(--subtle)] leading-relaxed">
+                  {message}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+
+        {/* Logs table */}
+        <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl overflow-hidden">
+          <div className="px-5 py-4 border-b border-[var(--border)] flex items-center justify-between">
+            <h2 className="text-sm font-medium">実行ログ</h2>
+            <span className="text-[10px] text-[var(--muted)] font-mono">最新 20件</span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-[var(--border)]">
+                  {['エージェント', 'タスク', 'ステータス', '概要', '時間', '日時'].map((h) => (
+                    <th key={h} className="px-4 py-2.5 text-left text-[10px] font-medium text-[var(--muted)] uppercase tracking-wider first:pl-5 last:pr-5 last:text-right">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[var(--border)]/50">
+                {logs.length === 0 && (
+                  <tr>
+                    <td colSpan={6} className="px-5 py-12 text-center text-[var(--muted)] text-sm">
+                      ログがありません
+                    </td>
+                  </tr>
+                )}
+                {logs.map((l) => (
+                  <tr key={l.id} className="hover:bg-[var(--surface2)] transition-colors">
+                    <td className="px-4 py-3 pl-5 font-medium text-sm whitespace-nowrap">{l.agent_name}</td>
+                    <td className="px-4 py-3 text-[var(--muted)] text-xs font-mono whitespace-nowrap">{l.task_type}</td>
+                    <td className="px-4 py-3 whitespace-nowrap">
+                      <Badge status={l.status} />
+                    </td>
+                    <td className="px-4 py-3 text-xs text-[var(--muted)] max-w-xs truncate">
+                      {l.output_summary || l.input_summary || l.error_message || '—'}
+                    </td>
+                    <td className="px-4 py-3 text-xs text-[var(--muted)] font-mono whitespace-nowrap">
+                      {l.duration_ms ? `${(l.duration_ms / 1000).toFixed(1)}s` : '—'}
+                    </td>
+                    <td className="px-4 py-3 pr-5 text-right text-xs text-[var(--muted)] whitespace-nowrap">
+                      {new Date(l.created_at).toLocaleString('ja-JP', {
+                        month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit',
+                      })}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
     </div>
   )
 }

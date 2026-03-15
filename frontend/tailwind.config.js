@@ -8,13 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        paper: 'var(--paper)',
-        ink: 'var(--ink)',
-        muted: 'var(--muted)',
-        accent: 'var(--accent)',
+        bg:       'var(--bg)',
+        surface:  'var(--surface)',
+        surface2: 'var(--surface2)',
+        border:   'var(--border)',
+        border2:  'var(--border2)',
+        text:     'var(--text)',
+        muted:    'var(--muted)',
+        subtle:   'var(--subtle)',
+        accent:   'var(--accent)',
       },
       fontFamily: {
-        display: ['var(--font-display)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
+      borderColor: {
+        DEFAULT: 'var(--border)',
+      },
+      ringColor: {
+        DEFAULT: 'var(--accent)',
       },
     },
   },
