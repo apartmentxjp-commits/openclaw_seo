@@ -21,6 +21,7 @@ class Article(Base):
     status = Column(String, default="published")
     generated_by = Column(String, default="gemini")
     duration_ms = Column(Integer, nullable=True)
+    published_at = Column(DateTime, nullable=True)  # Hugo/GitHub Pages 公開日時
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

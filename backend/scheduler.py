@@ -1,5 +1,10 @@
 """
-Agent Scheduler — 4時間ごとに記事を自動生成する常駐プロセス
+Agent Scheduler — 4時間ごとに記事を自動生成し、GitHub Pagesに公開する常駐プロセス
+
+フロー:
+  1. Gemini で記事生成 → PostgreSQL 保存
+  2. publisher.py が Hugo markdown を書き出し git push
+  3. GitHub Actions が Hugo ビルド → GitHub Pages 公開
 """
 import asyncio
 import os
@@ -9,6 +14,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 from database import init_db, AsyncSessionLocal
 from models import Article, AgentLog
 from agents.writer_agent import WriterAgent, ARTICLE_TOPICS
+from publisher import publish_pending_articles
 
 _topic_index = 0
 
@@ -70,6 +76,14 @@ async def run_article_generation():
             print(f"[Scheduler] エラー: {e}")
 
         await db.commit()
+
+    # 記事生成後に公開パイプラインを実行
+    try:
+        published = await publish_pending_articles()
+        if published:
+            print(f"[Scheduler] {published}件を GitHub Pages に公開しました")
+    except Exception as e:
+        print(f"[Scheduler] 公開パイプライン エラー: {e}")
 
 
 async def main():
