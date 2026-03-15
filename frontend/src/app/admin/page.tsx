@@ -47,6 +47,112 @@ function Badge({ status }: { status: string }) {
   )
 }
 
+// ── Webhook Remote Control Panel ─────────────────────────────────────────────
+function WebhookPanel() {
+  const [token, setToken] = useState('')
+  const [result, setResult] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [copied, setCopied] = useState<string | null>(null)
+
+  const call = async (body: object) => {
+    if (!token) { setResult('トークンを入力してください'); return }
+    setLoading(true); setResult(null)
+    try {
+      const res = await fetch('/api/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify(body),
+      })
+      const data = await res.json()
+      setResult(res.ok ? `✅ ${data.message ?? JSON.stringify(data)}` : `❌ ${data.detail ?? JSON.stringify(data)}`)
+    } catch { setResult('❌ 接続エラー') }
+    setLoading(false)
+  }
+
+  const copy = (key: string, text: string) => {
+    navigator.clipboard.writeText(text)
+    setCopied(key); setTimeout(() => setCopied(null), 1500)
+  }
+
+  const host = typeof window !== 'undefined' ? window.location.origin : 'https://your-domain'
+  const curlBase = `curl -X POST ${host}/api/webhook \\\n  -H "Authorization: Bearer <WEBHOOK_SECRET>" \\\n  -H "Content-Type: application/json"`
+  const examples = [
+    { key: 'gen', label: '記事生成', curl: `${curlBase} \\\n  -d '{"action":"generate_article"}'` },
+    { key: 'batch', label: 'バッチ生成', curl: `${curlBase} \\\n  -d '{"action":"generate_batch","count":3}'` },
+    { key: 'opt', label: '最適化', curl: `${curlBase} \\\n  -d '{"action":"optimize"}'` },
+  ]
+
+  return (
+    <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl overflow-hidden mb-5">
+      <div className="px-5 py-4 border-b border-[var(--border)] flex items-center justify-between">
+        <div>
+          <h2 className="text-sm font-medium">外部連携 / Webhook</h2>
+          <p className="text-[var(--muted)] text-xs mt-0.5">外部サービスやcurlからエージェントへ指示を送る</p>
+        </div>
+        <span className="text-[10px] font-mono text-[var(--muted)] bg-[var(--surface2)] border border-[var(--border)] px-2 py-1 rounded">
+          POST /api/webhook
+        </span>
+      </div>
+      <div className="p-5">
+        <div className="grid md:grid-cols-2 gap-5">
+          {/* Left: token input + action buttons */}
+          <div className="space-y-3">
+            <div>
+              <label className="block text-[var(--muted)] text-xs mb-1.5">WEBHOOK_SECRET トークン</label>
+              <input
+                type="password"
+                value={token}
+                onChange={(e) => setToken(e.target.value)}
+                placeholder=".env の WEBHOOK_SECRET を貼り付け"
+                className="w-full bg-[var(--surface2)] border border-[var(--border)] hover:border-[var(--border2)] focus:border-[var(--accent)]/50 rounded-lg px-3 py-2 text-sm font-mono outline-none transition-colors"
+              />
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              {[
+                { label: '記事生成', body: { action: 'generate_article' } },
+                { label: 'バッチ×3', body: { action: 'generate_batch', count: 3 } },
+                { label: '最適化', body: { action: 'optimize' } },
+              ].map(({ label, body }) => (
+                <button
+                  key={label}
+                  onClick={() => call(body)}
+                  disabled={loading}
+                  className="bg-[var(--accent)]/10 hover:bg-[var(--accent)]/20 border border-[var(--accent)]/30 hover:border-[var(--accent)]/50 text-[var(--accent)] disabled:opacity-40 py-2 rounded-lg text-xs font-medium transition-colors"
+                >
+                  {loading ? '送信中...' : label}
+                </button>
+              ))}
+            </div>
+            {result && (
+              <div className="text-xs p-3 bg-[var(--surface2)] border border-[var(--border)] rounded-lg font-mono leading-relaxed">
+                {result}
+              </div>
+            )}
+          </div>
+          {/* Right: curl examples */}
+          <div className="space-y-2">
+            <p className="text-[var(--muted)] text-xs mb-2">curl コマンド例</p>
+            {examples.map(({ key, label, curl }) => (
+              <div key={key} className="relative group">
+                <div className="bg-[var(--surface2)] border border-[var(--border)] rounded-lg px-3 py-2 pr-16">
+                  <p className="text-[10px] text-[var(--accent)] mb-1 font-medium">{label}</p>
+                  <pre className="text-[10px] text-[var(--muted)] font-mono whitespace-pre-wrap break-all leading-relaxed">{curl}</pre>
+                </div>
+                <button
+                  onClick={() => copy(key, curl)}
+                  className="absolute right-2 top-2 text-[10px] text-[var(--muted)] hover:text-[var(--text)] bg-[var(--border)] hover:bg-[var(--border2)] px-2 py-1 rounded transition-colors"
+                >
+                  {copied === key ? '✓' : 'copy'}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function AdminPage() {
   const [status, setStatus] = useState<AgentStatus | null>(null)
   const [logs, setLogs] = useState<Log[]>([])
@@ -268,6 +374,9 @@ export default function AdminPage() {
             </div>
           </div>
         </div>
+
+        {/* Webhook Remote Control */}
+        <WebhookPanel />
 
         {/* Logs table */}
         <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl overflow-hidden">
