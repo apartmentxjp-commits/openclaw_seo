@@ -32,3 +32,4 @@ tmp/
 node_modules
 .next
 __pycache__/
+claude-remote/.env
