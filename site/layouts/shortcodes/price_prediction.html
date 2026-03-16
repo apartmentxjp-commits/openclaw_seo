@@ -1,0 +1,274 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+<style>
+  #price-app-root input:focus,
+  #price-app-root select:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px -4px rgba(12,110,63,0.2);
+  }
+  @keyframes pulse-green {
+    0%   { background-color: rgba(12,110,63,0.15); }
+    100% { background-color: transparent; }
+  }
+  .flash-green { animation: pulse-green 0.6s ease-out; }
+</style>
+
+<div id="price-app-root" class="not-prose my-10 antialiased text-slate-800">
+  <div class="max-w-4xl mx-auto bg-white border border-slate-200 shadow-xl rounded-3xl overflow-hidden">
+
+    <!-- ヘッダー -->
+    <div class="bg-gradient-to-r from-emerald-800 to-emerald-600 px-6 py-5 text-white">
+      <h3 class="text-xl font-bold flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
+        </svg>
+        AI価格予測シミュレーター
+      </h3>
+      <p class="text-emerald-100 text-sm mt-1">エリア別トレンドデータに基づく将来価格の統計的推計</p>
+    </div>
+
+    <div class="p-6 md:p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- 左：入力 -->
+        <div class="space-y-4">
+          <section class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+            <h4 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">物件情報</h4>
+            <div class="space-y-3">
+              <div>
+                <label class="block text-xs font-bold mb-1">現在の物件価格 (万円)</label>
+                <input type="number" id="pp_price" value="5000" min="100" max="100000"
+                  class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
+              </div>
+              <div>
+                <label class="block text-xs font-bold mb-1">物件種別</label>
+                <select id="pp_type"
+                  class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
+                  <option value="1.0">マンション（区分）</option>
+                  <option value="0.85">戸建て（木造）</option>
+                  <option value="1.05">マンション（一棟）</option>
+                  <option value="0.9">戸建て（RC造）</option>
+                  <option value="0.7">土地のみ</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold mb-1">築年数</label>
+                <select id="pp_age"
+                  class="w-full bg-white border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
+                  <option value="0">新築・築5年以内</option>
+                  <option value="5" selected>築6〜10年</option>
+                  <option value="10">築11〜20年</option>
+                  <option value="20">築21〜30年</option>
+                  <option value="30">築31年以上</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="p-4 bg-emerald-50 rounded-2xl border border-emerald-100">
+            <h4 class="text-xs font-bold text-emerald-600 mb-4 uppercase tracking-widest">エリア</h4>
+            <div>
+              <select id="pp_area"
+                class="w-full bg-white border border-emerald-200 rounded-lg p-2.5 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
+                <optgroup label="東京都">
+                  <option value="3.2">港区・千代田区・中央区</option>
+                  <option value="2.8" selected>渋谷区・新宿区・文京区</option>
+                  <option value="2.4">目黒区・世田谷区・品川区</option>
+                  <option value="1.8">杉並区・中野区・豊島区</option>
+                  <option value="1.3">練馬区・板橋区・足立区・葛飾区</option>
+                  <option value="0.9">多摩・八王子・町田</option>
+                </optgroup>
+                <optgroup label="神奈川県">
+                  <option value="2.2">横浜市（中区・西区・都筑区）</option>
+                  <option value="1.6">横浜市（その他）・川崎市</option>
+                  <option value="0.8">横浜・川崎以外</option>
+                </optgroup>
+                <optgroup label="大阪府">
+                  <option value="2.5">大阪市（北区・中央区・西区）</option>
+                  <option value="1.7">大阪市（その他）</option>
+                  <option value="1.0">大阪市以外</option>
+                </optgroup>
+                <optgroup label="愛知県">
+                  <option value="1.8">名古屋市（中心部）</option>
+                  <option value="1.0">名古屋市（周辺）・その他</option>
+                </optgroup>
+                <optgroup label="その他">
+                  <option value="1.2">福岡市・札幌市・京都市・仙台市</option>
+                  <option value="0.7">政令指定都市（上記以外）</option>
+                  <option value="0.3">地方都市・郡部</option>
+                </optgroup>
+              </select>
+            </div>
+            <p class="text-[10px] text-emerald-600 mt-2">※ エリア需要スコアに基づく年率変動モデルを適用</p>
+          </section>
+        </div>
+
+        <!-- 右：結果 -->
+        <div class="flex flex-col gap-4">
+          <!-- 予測値カード3枚 -->
+          <div class="grid grid-cols-3 gap-2 text-center">
+            <div class="bg-slate-50 rounded-2xl p-3 border border-slate-100">
+              <p class="text-[10px] font-bold text-slate-400 uppercase">1年後</p>
+              <p class="text-lg font-black text-slate-700"><span id="pp_y1">—</span></p>
+              <p class="text-[10px] text-slate-400" id="pp_r1">万円</p>
+            </div>
+            <div class="bg-emerald-600 rounded-2xl p-3 shadow-lg shadow-emerald-200">
+              <p class="text-[10px] font-bold text-emerald-100 uppercase">3年後</p>
+              <p class="text-lg font-black text-white"><span id="pp_y3">—</span></p>
+              <p class="text-[10px] text-emerald-200" id="pp_r3">万円</p>
+            </div>
+            <div class="bg-slate-800 rounded-2xl p-3">
+              <p class="text-[10px] font-bold text-slate-400 uppercase">5年後</p>
+              <p class="text-lg font-black text-emerald-400"><span id="pp_y5">—</span></p>
+              <p class="text-[10px] text-slate-400" id="pp_r5">万円</p>
+            </div>
+          </div>
+
+          <!-- 差益 -->
+          <div class="px-1 space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-slate-500">現在価格</span>
+              <span class="font-bold">¥ <span id="pp_now_label">5,000</span> 万</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">5年後（中央推計）</span>
+              <span id="pp_gain_row" class="font-bold text-emerald-600">¥ <span id="pp_gain_val">—</span> 万</span>
+            </div>
+            <div class="flex justify-between border-t border-slate-100 pt-2 font-black">
+              <span>予測差益</span>
+              <span id="pp_diff_row" class="text-emerald-600">+ <span id="pp_diff_val">—</span> 万</span>
+            </div>
+          </div>
+
+          <!-- チャート -->
+          <div class="relative h-44 w-full mt-1">
+            <canvas id="pp_chart"></canvas>
+          </div>
+
+          <p class="text-[10px] text-slate-400 leading-relaxed">
+            ※本推計はエリア別需要スコアと物件種別係数に基づく統計モデルによるものです。実際の価格は市況・個別物件条件により大きく異なります。投資判断の参考値としてお使いください。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // エリアスコア → 年率（%）変換テーブル
+  const scoreToRate = (score) => {
+    if (score >= 3.0) return 2.8;
+    if (score >= 2.5) return 2.2;
+    if (score >= 2.0) return 1.6;
+    if (score >= 1.5) return 1.1;
+    if (score >= 1.0) return 0.6;
+    if (score >= 0.7) return 0.1;
+    return -0.5;
+  };
+
+  // 築年数減価係数（年率%）
+  const ageDepreciation = (age) => {
+    if (age == 0)  return -0.8;
+    if (age == 5)  return -0.5;
+    if (age == 10) return -0.3;
+    if (age == 20) return  0.0;
+    return 0.2; // 旧耐震・リノベ需要でやや上昇も
+  };
+
+  let ppChart = null;
+
+  const predict = () => {
+    const price  = parseFloat(document.getElementById('pp_price')?.value) || 5000;
+    const typeM  = parseFloat(document.getElementById('pp_type')?.value)  || 1.0;
+    const age    = parseInt(document.getElementById('pp_age')?.value)      || 5;
+    const areaS  = parseFloat(document.getElementById('pp_area')?.value)  || 2.8;
+
+    const baseRate  = scoreToRate(areaS);          // 年率 %
+    const ageAdj    = ageDepreciation(age);         // 築年数補正 %
+    const finalRate = (baseRate + ageAdj) * typeM / 100; // 小数
+
+    const y1 = Math.round(price * Math.pow(1 + finalRate, 1));
+    const y3 = Math.round(price * Math.pow(1 + finalRate, 3));
+    const y5 = Math.round(price * Math.pow(1 + finalRate, 5));
+
+    const fmt = (n) => n.toLocaleString();
+    const pct = (n) => {
+      const r = ((n - price) / price * 100).toFixed(1);
+      return (r > 0 ? '+' : '') + r + '%';
+    };
+
+    document.getElementById('pp_y1').innerText = fmt(y1);
+    document.getElementById('pp_y3').innerText = fmt(y3);
+    document.getElementById('pp_y5').innerText = fmt(y5);
+    document.getElementById('pp_r1').innerText = pct(y1);
+    document.getElementById('pp_r3').innerText = pct(y3);
+    document.getElementById('pp_r5').innerText = pct(y5);
+    document.getElementById('pp_now_label').innerText = fmt(price);
+    document.getElementById('pp_gain_val').innerText  = fmt(y5);
+
+    const diff = y5 - price;
+    const diffEl = document.getElementById('pp_diff_row');
+    document.getElementById('pp_diff_val').innerText = fmt(Math.abs(diff));
+    diffEl.className = diff >= 0 ? 'text-emerald-600 font-black' : 'text-red-500 font-black';
+    diffEl.innerHTML = (diff >= 0 ? '+ ' : '－ ') +
+      '<span id="pp_diff_val">' + fmt(Math.abs(diff)) + '</span> 万';
+
+    // Chart
+    const ctx = document.getElementById('pp_chart').getContext('2d');
+    if (ppChart) ppChart.destroy();
+    const labels = ['現在', '1年後', '2年後', '3年後', '4年後', '5年後'];
+    const dataPoints = [0,1,2,3,4,5].map(yr =>
+      Math.round(price * Math.pow(1 + finalRate, yr))
+    );
+    ppChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: '予測価格（万円）',
+          data: dataPoints,
+          borderColor: '#0c6e3f',
+          backgroundColor: 'rgba(12,110,63,0.08)',
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: '#0c6e3f',
+          pointRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: {
+            ticks: { callback: (v) => v.toLocaleString() + '万', font: { size: 10 } },
+            grid: { color: '#f1f5f9' }
+          },
+          x: { ticks: { font: { size: 10 } }, grid: { display: false } }
+        }
+      }
+    });
+  };
+
+  ['pp_price','pp_type','pp_age','pp_area'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', predict);
+  });
+  predict();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI不動産価格予測シミュレーター",
+  "operatingSystem": "All",
+  "applicationCategory": "FinanceApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "description": "エリア別需要スコアと物件種別係数に基づく将来価格の統計的推計ツール"
+}
+</script>
