@@ -74,6 +74,10 @@ async def instruct(body: dict, authorization: str = Header(None)):
     ]
 
     try:
+        # CLAUDECODE env var を除外（ネストセッションエラー回避）
+        clean_env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
+        clean_env["HOME"] = str(Path.home())
+
         result = await asyncio.get_event_loop().run_in_executor(
             None,
             lambda: subprocess.run(
@@ -82,7 +86,7 @@ async def instruct(body: dict, authorization: str = Header(None)):
                 capture_output=True,
                 text=True,
                 timeout=300,
-                env={**os.environ, "HOME": str(Path.home())},
+                env=clean_env,
             ),
         )
         return {
@@ -125,6 +129,9 @@ async def instruct_stream(body: dict, authorization: str = Header(None)):
         "--allowedTools", ",".join(tools),
     ]
 
+    clean_env2 = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
+    clean_env2["HOME"] = str(Path.home())
+
     async def generate():
         yield f"data: {json.dumps({'type':'start','instruction':instruction,'dir':work_dir}, ensure_ascii=False)}\n\n"
         proc = await asyncio.create_subprocess_exec(
@@ -132,7 +139,7 @@ async def instruct_stream(body: dict, authorization: str = Header(None)):
             cwd=work_dir,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
-            env={**os.environ, "HOME": str(Path.home())},
+            env=clean_env2,
         )
         async for line in proc.stdout:
             text = line.decode("utf-8", errors="replace")
