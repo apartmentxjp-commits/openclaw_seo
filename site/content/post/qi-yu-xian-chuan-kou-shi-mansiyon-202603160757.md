@@ -7,6 +7,9 @@ prefecture: "埼玉県"
 property_type: "マンション"
 description: " 埼玉県川口市のマンション価格情報。最新相場と地域の特徴を紹介。1LDK、2LDK、3LDKの価格や、中古マンション、新築マンションの価格推移などを掲載。"
 keywords: ["川口市", "マンション価格", "不動産", "埼玉県", "最新相場"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["saitama"]
 draft: false
 ---
 

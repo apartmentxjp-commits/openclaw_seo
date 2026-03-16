@@ -1,6 +1,8 @@
 ---
 title: "世田谷区代沢の不動産価格推移と解説"
 date: 2026-03-08T12:00:00+09:00
+article_type: "area"
+categories: ["area-info"]
 draft: false
 ---
 

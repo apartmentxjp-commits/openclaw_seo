@@ -7,6 +7,9 @@ prefecture: "愛知県"
 property_type: "マンション"
 description: "名古屋市千種区のマンション価格情報をご紹介します。最新相場や魅力的な地域の特性などをチェックしてください。"
 keywords: ["名古屋市千種区", "マンション価格", "最新相場", "名古屋市", "千種区"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["aichi"]
 draft: false
 ---
 

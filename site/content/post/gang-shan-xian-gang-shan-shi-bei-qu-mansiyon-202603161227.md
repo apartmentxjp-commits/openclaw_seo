@@ -7,6 +7,9 @@ prefecture: "岡山県"
 property_type: "マンション"
 description: "岡山県岡山市北区のマンション価格情報を掲載。2024年現在の平均価格や地域ごとの価格情報、価格を決定する要因などを紹介します。"
 keywords: ["岡山県", "岡山市北区", "マンション価格", "平均価格", "地域別価格"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["okayama"]
 draft: false
 ---
 

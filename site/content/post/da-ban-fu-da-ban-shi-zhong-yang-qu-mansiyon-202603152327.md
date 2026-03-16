@@ -7,6 +7,9 @@ prefecture: "大阪府"
 property_type: "マンション"
 description: "大阪市中央区のマンション価格は約450万円〜1億5000万円で、平均価格は約8000万円です。大阪市中央区のマンション価格情報をご紹介します。"
 keywords: ["大阪市中央区", "マンション価格", "不動産", "物件情報"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["osaka"]
 draft: false
 ---
 

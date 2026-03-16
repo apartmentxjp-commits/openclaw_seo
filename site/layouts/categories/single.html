@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="container">
+  <div class="category-hero">
+    {{ if eq .Title "market-data" }}
+    <h1>📊 市場データ・ランキング</h1>
+    <p>国土交通省地価公示データに基づくエリア別ランキングと市場分析</p>
+    {{ else if eq .Title "real-estate-guide" }}
+    <h1>📖 不動産ガイド</h1>
+    <p>マンション・一戸建ての購入から投資まで、わかりやすく解説</p>
+    {{ else if eq .Title "qa" }}
+    <h1>❓ よくある質問（Q&A）</h1>
+    <p>不動産購入・ローン・税金に関する疑問に専門家が回答</p>
+    {{ else }}
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Site.Params.description }}</p>
+    {{ end }}
+  </div>
+
+  <div class="article-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    {{ if ne .Layout "tool" }}
+    <div class="article-card">
+      <span class="card-type">
+        {{ with .Params.article_type }}
+          {{ if eq . "ranking" }}📊 ランキング
+          {{ else if eq . "guide"   }}📖 ガイド
+          {{ else if eq . "qa"      }}❓ Q&A
+          {{ else }}🏘️ エリア情報
+          {{ end }}
+        {{ else }}🏘️ エリア情報
+        {{ end }}
+      </span>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="card-meta">{{ .Date.Format "2006年01月02日" }}
+        {{ with .Params.prefecture }} | {{ . }}{{ end }}
+      </p>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+
+  {{ if eq (len .Pages) 0 }}
+  <div style="text-align:center; padding: 3rem; color: #888;">
+    <p>このカテゴリーの記事は準備中です。しばらくお待ちください。</p>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

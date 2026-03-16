@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都豊島区のマンション価格情報を紹介します。最新相場と魅力的な生活環境をご覧いただけます。池袋駅周辺の繁華街や交通機関の便が良く、都心での生活に適したエリアです。"
 keywords: ["豊島区", "マンション価格", "東京都", "池袋駅", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

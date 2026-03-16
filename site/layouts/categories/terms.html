@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="container">
+  <div class="category-hero">
+    <h1>📂 記事カテゴリー</h1>
+    <p>ガイド・Q&A・市場データ・エリア情報からお探しください</p>
+  </div>
+
+  <div class="article-grid">
+    {{ range .Data.Terms.ByCount }}
+    <div class="article-card">
+      <span class="card-type">{{ .Name }}</span>
+      <h3><a href="{{ .Page.Permalink }}">{{ .Name }}の記事 ({{ .Count }}件)</a></h3>
+      <p class="card-meta">{{ .Count }}記事</p>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

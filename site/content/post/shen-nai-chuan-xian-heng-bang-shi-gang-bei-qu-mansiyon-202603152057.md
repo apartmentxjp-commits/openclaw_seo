@@ -7,6 +7,9 @@ prefecture: "神奈川県"
 property_type: "マンション"
 description: "横浜市港北区のマンション価格は約450〜700万円から。最新相場と生活環境について詳細を記載します。交通利便性や人気エリア情報も含む総合情報です。"
 keywords: ["横浜市港北区", "マンション価格", "最新相場", "生活環境", "交通利便性"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["kanagawa"]
 draft: false
 ---
 

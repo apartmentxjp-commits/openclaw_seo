@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "一戸建て"
 description: "東京都練馬区の一戸建て不動産価格情報を最新相場でご紹介。平均価格や特徴、詳細情報などを参考にしてください。"
 keywords: ["東京都練馬区", "一戸建て", "不動産価格", "相場"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

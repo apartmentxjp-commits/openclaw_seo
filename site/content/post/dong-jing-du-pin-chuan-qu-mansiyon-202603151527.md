@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都品川区の最新マンション価格情報を紹介します。2024年3月現在、品川区のマンション価格は平均で約943万円/坪と推定されます。交通、ショッピング、自然など魅力的なポイントを探ります。"
 keywords: ["東京都", "品川区", "マンション価格", "不動産", "東京"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

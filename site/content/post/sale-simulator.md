@@ -2,6 +2,8 @@
 title: "不動産売却価格シミュレーター | AIデータによる推定成約価格算出"
 date: 2026-03-09T00:00:00+09:00
 description: "エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。"
+article_type: "area"
+categories: ["area-info"]
 draft: false
 layout: "tool"
 ---

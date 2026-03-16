@@ -7,6 +7,9 @@ prefecture: "兵庫県"
 property_type: "一戸建て"
 description: "兵庫県西宮市の一戸建て不動産価格情報。最新の価格は約3500〜5000万円程度。地域ごとの価格分布や生活環境についても紹介しています。"
 keywords: ["西宮市", "一戸建て", "不動産価格", "兵庫県"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hyogo"]
 draft: false
 ---
 

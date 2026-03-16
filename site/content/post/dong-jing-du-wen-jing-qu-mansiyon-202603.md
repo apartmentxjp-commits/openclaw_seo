@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都文京区のマンション価格情報を最新相場と魅力的な住環境で紹介。東京大学や上野公園に近いエリアの価格情報やエリア別比較もご覧いただけます。"
 keywords: ["東京都文京区", "マンション価格情報", "最新相場", "魅力的な住環境", "東京大学", "上野公園"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

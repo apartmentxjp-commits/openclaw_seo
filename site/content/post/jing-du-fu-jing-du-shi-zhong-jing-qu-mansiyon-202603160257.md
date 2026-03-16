@@ -7,6 +7,9 @@ prefecture: "京都府"
 property_type: "マンション"
 description: "京都府京都市中京区のマンション価格情報。最新相場や生活環境の紹介。1LDK、2LDK、3LDKなどの平均価格や、人気のあるマンションの特徴を知ることができます。"
 keywords: ["京都市中京区", "マンション価格", "最新相場", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["kyoto"]
 draft: false
 ---
 

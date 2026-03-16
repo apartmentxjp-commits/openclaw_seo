@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "江東区のマンション価格情報を提供します。最新の相場や生活環境について解説します。マンション価格は平均で約850万円から約2億円です。"
 keywords: ["江東区", "マンション価格", "生活環境", "東京湾", "東西線", "大江戸線", "京葉線"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

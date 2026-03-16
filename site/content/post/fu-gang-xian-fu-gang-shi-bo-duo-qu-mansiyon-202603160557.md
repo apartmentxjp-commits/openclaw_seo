@@ -7,6 +7,9 @@ prefecture: "福岡県"
 property_type: "マンション"
 description: "福岡市博多区のマンション価格情報を紹介。最新相場と生活環境についてご紹介。1LDK、2LDK、3LDKの価格情報や、生活に必要な施設についてまとめました。"
 keywords: ["福岡市博多区", "マンション価格", "生活環境", "不動産情報"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["fukuoka"]
 draft: false
 ---
 

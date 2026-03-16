@@ -7,6 +7,9 @@ prefecture: "沖縄県"
 property_type: "マンション"
 description: "沖縄県那覇市のマンション価格情報をご紹介します。最新相場と地域の特徴、人気エリアなどを掲載しています。那覇市のマンションを探す際に参照してください。"
 keywords: ["那覇市", "マンション価格", "沖縄県", "最新相場", "地域情報"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["okinawa"]
 draft: false
 ---
 

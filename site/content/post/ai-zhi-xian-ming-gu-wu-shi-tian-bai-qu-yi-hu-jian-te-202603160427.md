@@ -7,6 +7,9 @@ prefecture: "愛知県"
 property_type: "一戸建て"
 description: "名古屋市天白区の一戸建て不動産価格は、最新相場で約2300〜3500万円です。地域の特徴や生活環境についても紹介します。"
 keywords: ["名古屋市天白区", "一戸建て不動産", "価格情報", "最新相場", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["aichi"]
 draft: false
 ---
 

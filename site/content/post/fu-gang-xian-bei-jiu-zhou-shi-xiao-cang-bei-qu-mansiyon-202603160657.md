@@ -7,6 +7,9 @@ prefecture: "福岡県"
 property_type: "マンション"
 description: "福岡県北九州市小倉北区のマンション価格情報。最新相場は約250〜450万円/坪と報道されています。小倉駅へのアクセスが良好なエリアのマンション価格が高騰しています。"
 keywords: ["北九州市小倉北区", "マンション価格", "福岡県", "小倉駅", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["fukuoka"]
 draft: false
 ---
 

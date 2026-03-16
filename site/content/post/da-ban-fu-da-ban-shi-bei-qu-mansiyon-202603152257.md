@@ -7,6 +7,9 @@ prefecture: "大阪府"
 property_type: "マンション"
 description: "大阪市北区のマンション価格は、最新相場で約450万円から約1億2000万円です。地域の特性やマンション価格情報をまとめました。"
 keywords: ["大阪市北区", "マンション価格", "マンション情報", "大阪府"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["osaka"]
 draft: false
 ---
 

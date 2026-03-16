@@ -7,6 +7,9 @@ prefecture: "宮城県"
 property_type: "マンション"
 description: "仙台市青葉区のマンション価格は平均で約350〜450万円/平方メートルです。新築マンション、中古マンション、リノベーションマンションの価格情報をご紹介します。"
 keywords: ["仙台市青葉区", "マンション価格", "宮城県", "東北地方"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["miyagi"]
 draft: false
 ---
 

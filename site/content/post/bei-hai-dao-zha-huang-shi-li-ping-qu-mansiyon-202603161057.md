@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "マンション"
 description: "札幌市豊平区のマンション価格情報を掲載しています。平均価格や特徴、最新相場などの情報をご案内します。"
 keywords: ["札幌市豊平区", "マンション価格", "北海道"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

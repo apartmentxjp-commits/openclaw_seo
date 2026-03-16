@@ -7,6 +7,9 @@ prefecture: "大阪府"
 property_type: "マンション"
 description: "大阪市西区のマンション価格は平均で約450万円/㎡。最新相場の新築、中古、分譲マンション価格の情報をチェック!"
 keywords: ["大阪市西区", "マンション価格", "新築マンション", "中古マンション", "分譲マンション"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["osaka"]
 draft: false
 ---
 

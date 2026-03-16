@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都豊島区の最新マンション価格相場と魅力的な地域を紹介します。池袋駅周辺の価格から要町駅周辺まで、各地域の価格情報を掲載しています。"
 keywords: ["東京都豊島区", "マンション価格情報", "池袋駅", "西池袋駅", "要町駅"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都渋谷区の最新のマンション価格情報を紹介します。平均価格は約920万円から1億2000万円です。魅力的な地域の特性や生活環境もご紹介します。"
 keywords: ["渋谷区", "マンション価格", "不動産情報", "東京都"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

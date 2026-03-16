@@ -7,6 +7,9 @@ prefecture: "千葉県"
 property_type: "一戸建て"
 description: "千葉県柏市の一戸建て不動産価格情報をご紹介。最新相場と地域の魅力、購入ポイントなどの情報を掲載しています。柏市で一戸建てを購入する際の参考にお役立てください。"
 keywords: ["千葉県柏市", "一戸建て不動産", "価格情報", "最新相場", "地域の魅力"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["chiba"]
 draft: false
 ---
 

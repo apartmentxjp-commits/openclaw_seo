@@ -7,6 +7,9 @@ prefecture: "神奈川県"
 property_type: "一戸建て"
 description: "神奈川県相模原市の一戸建て不動産価格は約2500〜4000万円。相模原駅、町田駅、藤野駅周辺の価格差や特徴を紹介します。交通の便や学校の状況、周辺環境にも注意が必要です。"
 keywords: ["相模原市", "一戸建て", "不動産価格", "東京通勤", "自然豊かな環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["kanagawa"]
 draft: false
 ---
 

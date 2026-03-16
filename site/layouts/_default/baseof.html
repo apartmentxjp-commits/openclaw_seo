@@ -43,10 +43,19 @@
       </div>
     </a>
     <nav class="header-nav">
-      <a href="{{ "post/" | relURL }}">調査レポート</a>
-      <a href="{{ "post/loan-calculator/" | relURL }}">ローン計算</a>
-      <a href="{{ "post/yield-calculator/" | relURL }}">利回り計算</a>
-      <a href="{{ "post/rent-estimator/" | relURL }}">家賃相場</a>
+      <a href="{{ "categories/market-data/" | relURL }}">市場データ</a>
+      <a href="{{ "categories/real-estate-guide/" | relURL }}">ガイド</a>
+      <a href="{{ "categories/qa/" | relURL }}">Q&amp;A</a>
+      <a href="{{ "post/" | relURL }}">エリア情報</a>
+      <div class="nav-tools-wrap">
+        <span class="nav-tools-label">ツール ▾</span>
+        <div class="nav-tools-dropdown">
+          <a href="{{ "post/loan-calculator/" | relURL }}">ローン計算</a>
+          <a href="{{ "post/yield-calculator/" | relURL }}">利回り計算</a>
+          <a href="{{ "post/rent-estimator/" | relURL }}">家賃相場</a>
+          <a href="{{ "post/price-prediction/" | relURL }}">価格予測</a>
+        </div>
+      </div>
       <a href="{{ .Site.BaseURL | relURL }}" class="nav-cta">相場を調べる</a>
     </nav>
   </div>
@@ -84,11 +93,23 @@
           </ul>
         </div>
         <div class="sidebar-widget">
-          <h3>地域別分析</h3>
+          <h3>記事カテゴリー</h3>
           <ul class="widget-list">
-            <li><a href="{{ "post/" | relURL }}">東京都</a></li>
-            <li><a href="{{ "post/" | relURL }}">大阪府</a></li>
-            <li><a href="{{ "post/" | relURL }}">神奈川県</a></li>
+            <li><a href="{{ "categories/market-data/" | relURL }}">📊 市場データ・ランキング</a></li>
+            <li><a href="{{ "categories/real-estate-guide/" | relURL }}">📖 不動産ガイド</a></li>
+            <li><a href="{{ "categories/qa/" | relURL }}">❓ Q&amp;A</a></li>
+            <li><a href="{{ "post/" | relURL }}">🏘️ エリア価格情報</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-widget">
+          <h3>都道府県で探す</h3>
+          <ul class="widget-list widget-grid">
+            <li><a href="{{ "prefectures/tokyo/" | relURL }}">東京都</a></li>
+            <li><a href="{{ "prefectures/osaka/" | relURL }}">大阪府</a></li>
+            <li><a href="{{ "prefectures/kanagawa/" | relURL }}">神奈川県</a></li>
+            <li><a href="{{ "prefectures/aichi/" | relURL }}">愛知県</a></li>
+            <li><a href="{{ "prefectures/fukuoka/" | relURL }}">福岡県</a></li>
+            <li><a href="{{ "prefectures/hokkaido/" | relURL }}">北海道</a></li>
           </ul>
         </div>
       </aside>

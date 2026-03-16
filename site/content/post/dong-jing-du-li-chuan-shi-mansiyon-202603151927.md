@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都立川市のマンション価格情報について、最新相場と地域の特性、生活環境を紹介します。立川市のマンション価格は、2023年現在、1LDKから3LDKまでの相場を掲載しています。"
 keywords: ["立川市", "マンション価格", "東京都", "不動産", "住まい"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

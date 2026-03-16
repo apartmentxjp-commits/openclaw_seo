@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都文京区のマンション価格情報を最新相場と生活環境の紹介。東京大学や東京医科歯科大学が立地する文京区の不動産価格は高い。最新の情報をチェックしてみよう"
 keywords: ["文京区", "マンション価格", "東京都", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

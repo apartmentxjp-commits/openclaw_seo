@@ -7,6 +7,9 @@ prefecture: "千葉県"
 property_type: "一戸建て"
 description: "船橋市の一戸建て不動産価格について、最新相場と地域の特徴をご説明します。自然豊かな環境と都心へのアクセスが良く、住みやすい地域です。"
 keywords: ["千葉県船橋市", "一戸建て", "不動産価格", "最新相場"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["chiba"]
 draft: false
 ---
 

@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "一戸建て"
 description: "東京都世田谷区の一戸建て不動産価格は、最新相場で約4,500万円から12,000万円です。豊かな自然環境と都会的なアメニティが共存するエリアです。"
 keywords: ["東京都世田谷区", "一戸建て", "不動産価格", "世田谷区の一戸建て価格"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

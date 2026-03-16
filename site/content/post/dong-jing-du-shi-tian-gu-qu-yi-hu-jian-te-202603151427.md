@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "一戸建て"
 description: "東京都世田谷区の一戸建て価格情報を最新相場と生活環境と共に解説いたします。平均地価や平均家価、一戸建ての坪単価などをまとめました。"
 keywords: ["東京都世田谷区", "一戸建て価格", "最新相場", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

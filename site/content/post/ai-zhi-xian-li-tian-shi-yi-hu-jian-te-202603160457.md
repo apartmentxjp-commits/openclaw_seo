@@ -7,6 +7,9 @@ prefecture: "愛知県"
 property_type: "一戸建て"
 description: "愛知県豊田市の一戸建て不動産価格情報。最新相場や地域の特性、ライフスタイルに関する情報を提供しています。中部地方で最も住み好きな都市の一つ。豊田市の一戸建て不動産市場は、安定した需要と供給のバランスを維持しており、価格は比較的安定しています。"
 keywords: ["愛知県", "豊田市", "一戸建て", "不動産価格", "最新相場", "ライフスタイル"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["aichi"]
 draft: false
 ---
 

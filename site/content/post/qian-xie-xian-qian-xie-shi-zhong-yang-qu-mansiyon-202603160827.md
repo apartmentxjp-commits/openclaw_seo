@@ -7,6 +7,9 @@ prefecture: "千葉県"
 property_type: "マンション"
 description: "千葉市中央区のマンション最新相場と魅力的な生活環境について。新築、中古マンションの価格情報や、地域の特性、生活環境などをご紹介します。"
 keywords: ["千葉市中央区", "マンション価格", "新築マンション", "中古マンション", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["chiba"]
 draft: false
 ---
 

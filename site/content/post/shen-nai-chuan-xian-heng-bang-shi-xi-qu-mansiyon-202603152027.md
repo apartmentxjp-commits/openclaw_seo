@@ -7,6 +7,9 @@ prefecture: "神奈川県"
 property_type: "マンション"
 description: "神奈川県横浜市西区のマンション価格について。新築物件の平均価格や中古マンションの価格情報を提供しています。平均価格は約550万円/㎡です。"
 keywords: ["神奈川県", "横浜市西区", "マンション価格", "新築物件", "中古マンション"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["kanagawa"]
 draft: false
 ---
 

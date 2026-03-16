@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都港区のマンション価格情報：最新相場と生活環境。港区のマンション価格は1平方メートルあたり約80万円から120万円まで様々です。地域別価格情報や購入の際に考慮すべき点も紹介しています。"
 keywords: ["東京都港区", "マンション価格情報", "最新相場", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

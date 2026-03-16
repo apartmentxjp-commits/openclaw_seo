@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都中野区のマンション価格情報をご紹介。最新の相場や地域特性をチェックしてみよう。中野区は生活の便利さと自然豊かな公園が魅力の人気エリアです。"
 keywords: ["中野区マンション", "マンション価格情報", "中野区の魅力", "東京マンション"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="container">
+  <div class="category-hero">
+    <h1>🏘️ {{ .Title }} の不動産情報</h1>
+    <p>{{ .Title }}内の最新不動産価格データ・相場情報・ランキング</p>
+  </div>
+
+  <div class="article-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    {{ if ne .Layout "tool" }}
+    <div class="article-card">
+      <span class="card-type">
+        {{ with .Params.article_type }}
+          {{ if eq . "ranking" }}📊 ランキング
+          {{ else if eq . "guide"   }}📖 ガイド
+          {{ else if eq . "qa"      }}❓ Q&A
+          {{ else }}🏘️ エリア情報
+          {{ end }}
+        {{ else }}🏘️ エリア情報{{ end }}
+      </span>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="card-meta">{{ .Date.Format "2006年01月02日" }}
+        {{ with .Params.area }} | {{ . }}{{ end }}
+      </p>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

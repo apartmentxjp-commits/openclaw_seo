@@ -7,6 +7,9 @@ prefecture: "福岡県"
 property_type: "マンション"
 description: "福岡市中央区の最新マンション価格情報と住みやすさ。1LDK、2LDK、3LDKの価格や交通機関、文化施設などの情報を紹介します。"
 keywords: ["福岡市中央区", "マンション価格", "住みやすさ", "交通機関", "文化施設"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["fukuoka"]
 draft: false
 ---
 

@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都新宿区のマンション価格情報をご紹介します。最新相場や生活環境、魅力的な地域の特徴などを掲載しています。"
 keywords: ["東京都新宿区", "マンスション価格", "新築マンション", "中古マンション", "物件価格"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

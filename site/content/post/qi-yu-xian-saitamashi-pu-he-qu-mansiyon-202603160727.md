@@ -7,6 +7,9 @@ prefecture: "埼玉県"
 property_type: "マンション"
 description: "さいたま市浦和区のマンション価格情報を紹介します。最新相場や地域の特性、マンションの特徴などを掲載しています。暮らしやすい浦和区で理想の住まいを見つけましょう。"
 keywords: ["さいたま市浦和区", "マンション価格", "新築マンション", "中古マンション", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["saitama"]
 draft: false
 ---
 

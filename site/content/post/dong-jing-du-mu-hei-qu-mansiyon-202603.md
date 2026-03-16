@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都目黒区のマンション価格情報：最新相場と生活環境。目黒区のマンション価格は、最新相場によると、1LDKが約4500万円から5500万円。自然豊かな環境と便利な交通アクセスが魅力"
 keywords: ["目黒区", "マンション価格", "最新相場", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

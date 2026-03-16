@@ -7,6 +7,9 @@ prefecture: "神奈川県"
 property_type: "マンション"
 description: "神奈川県川崎市中原区のマンション価格情報。平均価格は約550万円。東武トラストリートや京浜東北線沿線での価格上昇が見られる。1DKから3LDKまでの価格情報を_reference"
 keywords: ["川崎市中原区", "マンション価格", "神奈川県", "住居", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["kanagawa"]
 draft: false
 ---
 

@@ -7,6 +7,9 @@ prefecture: "茨城県"
 property_type: "一戸建て"
 description: "つくば市の一戸建て価格情報を最新の相場に基づいてご紹介します。平均価格や坪単価、立地条件などの情報を提供しています。"
 keywords: ["つくば市", "一戸建て", "価格情報", "茨城県", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["ibaraki"]
 draft: false
 ---
 

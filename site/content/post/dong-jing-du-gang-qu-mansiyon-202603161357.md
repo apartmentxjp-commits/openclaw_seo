@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都港区のマンション価格情報をご紹介します。最新相場や高級マンション、魅力的な生活環境について詳しく紹介します。"
 keywords: ["港区", "マンション価格", "東京都", "高級マンション", "東京タワー", "浜離宮恩賜庭園"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

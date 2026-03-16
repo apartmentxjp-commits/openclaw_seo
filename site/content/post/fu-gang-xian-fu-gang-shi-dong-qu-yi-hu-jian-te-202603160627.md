@@ -7,6 +7,9 @@ prefecture: "福岡県"
 property_type: "一戸建て"
 description: "福岡県福岡市東区の一戸建て市場動向と価格情報を紹介します。土地面積や建坪による価格差や、東区の特性、生活環境などをまとめました。"
 keywords: ["福岡市東区", "一戸建て", "価格情報", "市場動向", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["fukuoka"]
 draft: false
 ---
 

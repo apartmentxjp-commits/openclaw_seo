@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "一戸建て"
 description: "東京都杉並区の一戸建て不動産価格は約4,800〜6,500万円。最新相場を基に、地域の魅力と生活環境を紹介します。駅に近いエリアで価格上昇が見られるなど、変化する市場をチェックしてください。"
 keywords: ["杉並区", "一戸建て", "不動産価格", "最新相場", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都品川区のマンション価格は約550〜1,200万円と幅があります。品川区の生活環境やマンション価格の特徴について紹介します。"
 keywords: ["東京都品川区", "マンション価格", "生活環境", "住みやすさ", "アクセス"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

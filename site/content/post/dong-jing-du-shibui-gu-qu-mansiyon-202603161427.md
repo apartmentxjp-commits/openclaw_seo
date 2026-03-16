@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都渋谷区のマンション価格情報をご紹介。最新の不動産価格情報や魅力的な地域についても掲載しています。渋谷区のマンション価格は高水準で、1部屋から3部屋までの価格情報を提供。"
 keywords: ["渋谷区", "マンション価格", "東京都", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

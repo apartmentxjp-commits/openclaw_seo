@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "マンション"
 description: "札幌市中央区のマンション価格情報を最新の相場に基づいて紹介します。1LDK、2LDK、3LDKの平均価格や地域の特性、生活環境について掲載しています。"
 keywords: ["札幌市中央区", "マンション", "価格情報", "最新相場"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

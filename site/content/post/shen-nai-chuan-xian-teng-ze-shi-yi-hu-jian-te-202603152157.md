@@ -7,6 +7,9 @@ prefecture: "神奈川県"
 property_type: "一戸建て"
 description: "藤沢市の一戸建て不動産価格情報を最新相場で約2500〜4500万円。藤沢市の一戸建te市場動向や生活環境についてまとめています。"
 keywords: ["藤沢市", "一戸建て", "不動産価格", "湘南", "神奈川県"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["kanagawa"]
 draft: false
 ---
 

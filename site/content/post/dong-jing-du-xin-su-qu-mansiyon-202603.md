@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都新宿区のマンション価格情報を最新相場で紹介。1室あたりの平均価格は約4500万円から約1億5000万円と幅がある。地域ごとの価格情報も検討することが重要です。"
 keywords: ["新宿区マンション", "マンション価格", "東京都新宿区", "不動産情報"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

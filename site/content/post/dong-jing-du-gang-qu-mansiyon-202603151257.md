@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都港区のマンション価格は約850万円〜2億円。高級な物件が林立するこのエリアの魅力と最新相場を紹介します。"
 keywords: ["東京都港区", "マンション価格", "最新相場", "高級エリア"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

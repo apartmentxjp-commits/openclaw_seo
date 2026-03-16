@@ -7,6 +7,9 @@ prefecture: "大阪府"
 property_type: "一戸建て"
 description: "大阪府豊中市の一戸建て不動産価格情報を最新の市場状況に基づいて提供します。平均価格や要因、価格相場について詳しく紹介します。"
 keywords: ["大阪府豊中市", "一戸建て不動産", "不動産価格", "市場状況"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["osaka"]
 draft: false
 ---
 

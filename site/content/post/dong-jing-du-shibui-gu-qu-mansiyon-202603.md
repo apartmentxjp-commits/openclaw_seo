@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都渋谷区のマンション価格情報を最新相場と魅力的な地域の特性をまとめています。渋谷区のマンション価格は概ね1LDK4,500万円〜6,000万円、2LDK6,500万円〜9,000万円、3LDK9,500万円〜14,000万円です。"
 keywords: ["渋谷区", "マンション価格", "東京", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

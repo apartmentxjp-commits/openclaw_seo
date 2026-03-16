@@ -12,3 +12,14 @@ canonifyURLs = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  prefecture = "prefectures"
+
+[params.articleTypes]
+  area    = "エリア情報"
+  guide   = "不動産ガイド"
+  qa      = "Q&A"
+  ranking = "市場データ"

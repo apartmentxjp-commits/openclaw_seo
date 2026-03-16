@@ -7,6 +7,9 @@ prefecture: "大阪府"
 property_type: "マンション"
 description: "大阪府吹田市のマンション価格は、最新相場で約430万円から600万円/㎡。1LDKから3LDKまでの価格情報や地域ごとの価格差をご紹介します。"
 keywords: ["吹田市", "マンション価格", "不動産", "大阪府"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["osaka"]
 draft: false
 ---
 

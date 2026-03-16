@@ -7,6 +7,9 @@ prefecture: "広島県"
 property_type: "マンション"
 description: "広島市中区のマンション価格相場を最新情報でご紹介します。平均価格やマンション価格帯、地域の特徴などを掲載しています。中区の魅力や総合的な都市機能についても紹介しています"
 keywords: ["広島市中区", "マンション価格相場", "最新情報", "地域の特徴"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hiroshima"]
 draft: false
 ---
 

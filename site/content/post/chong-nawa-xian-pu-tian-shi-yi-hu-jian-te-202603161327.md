@@ -7,6 +7,9 @@ prefecture: "沖縄県"
 property_type: "一戸建て"
 description: "沖縄県浦添市の一戸建て不動産価格情報。平均価格は約3500万円。地域の特性や不動産価格の変化について詳しく紹介します。"
 keywords: ["浦添市", "一戸建て", "不動産価格", "沖縄県"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["okinawa"]
 draft: false
 ---
 

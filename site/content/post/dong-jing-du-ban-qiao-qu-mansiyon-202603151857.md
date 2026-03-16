@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都板橋区のマンション価格情報をご紹介します。最新相場や住みやすさ、マンション市場の動向について掲載しています。平均価格情報や地域の特徴などもご覧いただけます。"
 keywords: ["東京都板橋区", "マンション価格情報", "最新相場", "住みやすさ"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

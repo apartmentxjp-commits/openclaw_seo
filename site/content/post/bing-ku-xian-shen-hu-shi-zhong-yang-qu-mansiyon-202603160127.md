@@ -7,6 +7,9 @@ prefecture: "兵庫県"
 property_type: "マンション"
 description: "神戸市中央区のマンション価格情報を最新の相場とともに紹介します。1LDK、2LDK、3LDKの価格帯や地域の特性、生活環境についても解説しています。"
 keywords: ["兵庫県", "神戸市中央区", "マンション価格", "最新相場", "地域特性", "生活環境"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hyogo"]
 draft: false
 ---
 

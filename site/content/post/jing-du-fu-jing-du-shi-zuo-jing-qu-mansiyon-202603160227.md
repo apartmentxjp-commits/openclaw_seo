@@ -7,6 +7,9 @@ prefecture: "京都府"
 property_type: "マンション"
 description: "京都市左京区の最新マンション価格情報。1-roomから3LDKまでの平均価格や賃貸の魅力などを紹介します。"
 keywords: ["京都市左京区", "マンション価格", "賃貸", "最新相場"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["kyoto"]
 draft: false
 ---
 

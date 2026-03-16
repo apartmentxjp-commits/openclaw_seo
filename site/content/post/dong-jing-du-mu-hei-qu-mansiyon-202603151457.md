@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "マンション"
 description: "東京都目黒区のマンション価格정보。目黒区の平均価格は約950万円。物件の新旧や所要時間、住所、面積、フロアなどによって価格は変動します。"
 keywords: ["東京都目黒区", "マンション価格", "物件情報", "住環境", "目黒区"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

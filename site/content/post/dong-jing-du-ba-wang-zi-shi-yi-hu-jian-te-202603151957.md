@@ -7,6 +7,9 @@ prefecture: "東京都"
 property_type: "一戸建て"
 description: "東京都八王子市の一戸建て住宅の最新価格情報。平均価格5400万円。土地面積別の価格帯や地域の特性を紹介します。"
 keywords: ["八王子市", "一戸建て", "価格情報", "東京都"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["tokyo"]
 draft: false
 ---
 

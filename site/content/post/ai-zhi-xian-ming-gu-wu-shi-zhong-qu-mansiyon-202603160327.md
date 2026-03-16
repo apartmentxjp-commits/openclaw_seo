@@ -7,6 +7,9 @@ prefecture: "愛知県"
 property_type: "マンション"
 description: "名古屋市中区のマンション価格情報をご紹介。東部、西部、金山駅周辺、伏見駅周辺の平均価格や最新の市場調査結果を掲載しています。"
 keywords: ["名古屋市中区", "マンション価格", "愛知県", "名古屋市"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["aichi"]
 draft: false
 ---
 
