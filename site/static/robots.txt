@@ -1,3 +1,12 @@
 User-agent: *
 Allow: /
-Sitemap: https://apartmentxjp-commits.github.io/openclaw_seo/sitemap.xml
+
+# クロール最適化: 検索結果・管理ページは除外
+Disallow: /admin/
+Disallow: /api/
+
+# XML サイトマップ
+Sitemap: https://realestate.tacky-consulting.com/sitemap.xml
+
+# 主要検索エンジン用クロール間隔（秒）
+Crawl-delay: 1

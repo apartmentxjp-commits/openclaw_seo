@@ -1,8 +1,34 @@
 {{ define "main" }}
+{{/* 都道府県ページ JSON-LD */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ printf "%sの不動産情報" .Title | jsonify }},
+  "description": {{ printf "%s内の最新不動産価格データ・相場情報・ランキング。%d件の調査レポートを掲載。" .Title (len .Pages) | jsonify }},
+  "url": {{ .Permalink | jsonify }}
+}
+</script>
+
 <div class="container">
   <div class="category-hero">
     <h1>🏘️ {{ .Title }} の不動産情報</h1>
-    <p>{{ .Title }}内の最新不動産価格データ・相場情報・ランキング</p>
+    <p class="hero-desc">
+      {{ .Title }}内の最新不動産価格データ・相場情報・ランキング。
+      全{{ len .Pages }}件の調査レポートを掲載。
+    </p>
+
+    {{/* 記事タイプ別カウント */}}
+    {{ $ranking := where .Pages "Params.article_type" "ranking" }}
+    {{ $guide   := where .Pages "Params.article_type" "guide" }}
+    {{ $qa      := where .Pages "Params.article_type" "qa" }}
+    {{ $area    := where .Pages "Params.article_type" "area" }}
+    <div class="type-stat-row">
+      {{ if $area }}<span class="type-stat type-area">🏘️ エリア情報 {{ len $area }}件</span>{{ end }}
+      {{ if $ranking }}<span class="type-stat type-ranking">📊 ランキング {{ len $ranking }}件</span>{{ end }}
+      {{ if $guide }}<span class="type-stat type-guide">📖 ガイド {{ len $guide }}件</span>{{ end }}
+      {{ if $qa }}<span class="type-stat type-qa">❓ Q&A {{ len $qa }}件</span>{{ end }}
+    </div>
   </div>
 
   <div class="article-grid">
@@ -22,6 +48,7 @@
       <p class="card-meta">{{ .Date.Format "2006年01月02日" }}
         {{ with .Params.area }} | {{ . }}{{ end }}
       </p>
+      {{ with .Description }}<p class="card-desc">{{ . | truncate 80 }}</p>{{ end }}
     </div>
     {{ end }}
     {{ end }}

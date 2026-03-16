@@ -1,21 +1,36 @@
 {{ define "main" }}
+{{/* カテゴリページ JSON-LD */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ .Title | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "numberOfItems": {{ len .Pages }}
+}
+</script>
+
 <div class="container">
   <div class="category-hero">
     {{ if eq .Title "market-data" }}
     <h1>📊 市場データ・ランキング</h1>
-    <p>国土交通省地価公示データに基づくエリア別ランキングと市場分析</p>
+    <p class="hero-desc">国土交通省地価公示データ（2024年）に基づくエリア別ランキングと市場分析。全{{ len .Pages }}件掲載。</p>
     {{ else if eq .Title "real-estate-guide" }}
     <h1>📖 不動産ガイド</h1>
-    <p>マンション・一戸建ての購入から投資まで、わかりやすく解説</p>
+    <p class="hero-desc">マンション・一戸建ての購入から投資まで、プロが解説する完全ガイド。全{{ len .Pages }}件掲載。</p>
     {{ else if eq .Title "qa" }}
     <h1>❓ よくある質問（Q&A）</h1>
-    <p>不動産購入・ローン・税金に関する疑問に専門家が回答</p>
+    <p class="hero-desc">不動産購入・ローン・税金に関する疑問を専門家が回答。全{{ len .Pages }}件掲載。</p>
+    {{ else if eq .Title "area-info" }}
+    <h1>🏘️ エリア別不動産情報</h1>
+    <p class="hero-desc">日本全国のエリア別最新不動産価格相場・地域特性・生活情報。全{{ len .Pages }}件掲載。</p>
     {{ else }}
     <h1>{{ .Title }}</h1>
-    <p>{{ .Site.Params.description }}</p>
+    <p class="hero-desc">{{ .Site.Params.description }}</p>
     {{ end }}
   </div>
 
+  {{ if gt (len .Pages) 0 }}
   <div class="article-grid">
     {{ range .Pages.ByDate.Reverse }}
     {{ if ne .Layout "tool" }}
@@ -33,15 +48,16 @@
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <p class="card-meta">{{ .Date.Format "2006年01月02日" }}
         {{ with .Params.prefecture }} | {{ . }}{{ end }}
+        {{ with .Params.area }} · {{ . }}{{ end }}
       </p>
+      {{ with .Description }}<p class="card-desc">{{ . | truncate 80 }}</p>{{ end }}
     </div>
     {{ end }}
     {{ end }}
   </div>
-
-  {{ if eq (len .Pages) 0 }}
-  <div style="text-align:center; padding: 3rem; color: #888;">
-    <p>このカテゴリーの記事は準備中です。しばらくお待ちください。</p>
+  {{ else }}
+  <div class="empty-category">
+    <p>📝 このカテゴリーの記事は自動生成エージェントが準備中です。しばらくお待ちください。</p>
   </div>
   {{ end }}
 </div>
