@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "一戸建て"
 description: "札幌市西区の一戸建て不動産価格情報：最新相場と地域特性。平均価格は約11.9万円/㎡で、前年比で+8.9%の増加となっています。"
 keywords: ["札幌市西区", "一戸建て", "不動産価格", "最新相場", "地域特性"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

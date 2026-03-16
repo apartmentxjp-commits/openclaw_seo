@@ -7,6 +7,9 @@ prefecture: "秋田県"
 property_type: "一戸建て"
 description: "秋田県横手市の一戸建て不動産価格は平均で約53.6万円/坪から約244万円/坪まで変動します。地域や駅によって価格帯が異なります。詳細はこちら。"
 keywords: ["秋田県", "横手市", "一戸建て", "不動産価格", "地価公示データ"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["akita"]
 draft: false
 ---
 

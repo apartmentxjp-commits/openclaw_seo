@@ -7,6 +7,9 @@ prefecture: "岩手県"
 property_type: "一戸建て"
 description: "奥州市の一戸建て価格相場情報。最新の不動産価格データをお届けします。"
 keywords: ["奥州市", "一戸建て", "価格", "相場", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["iwate"]
 draft: false
 ---
 

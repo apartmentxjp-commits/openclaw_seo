@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "マンション"
 description: "札幌市中央区のマンション価格情報を最新の国土交通省データでご紹介します。住宅地の平均地価や店舗・事務所の平均地価について詳細に説明しています。"
 keywords: ["札幌市中央区", "マンション価格情報", "国土交通省データ", "土地価格"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

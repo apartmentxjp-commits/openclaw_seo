@@ -7,6 +7,9 @@ prefecture: "宮城県"
 property_type: "マンション"
 description: "宮城県仙台市宮城野区のマンション価格を調べます。平均価格や最新相場、地域の特性や生活環境について紹介しています。"
 keywords: ["宮城県", "仙台市", "宮城野区", "マンション価格", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["miyagi"]
 draft: false
 ---
 

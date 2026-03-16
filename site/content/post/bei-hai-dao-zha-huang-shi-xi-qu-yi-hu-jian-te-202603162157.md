@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "一戸建て"
 description: "札幌市西区の一戸建て価格相場と最新動向について紹介します。新築、中古の一戸建て物件の価格や平均地価、最新の物件情報を掲載しています。"
 keywords: ["札幌市西区", "一戸建て", "価格相場", "最新動向", "新築", "中古"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

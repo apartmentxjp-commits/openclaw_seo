@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "一戸建て"
 description: "旭川市の一戸建て不動産価格は、平均21,262円/㎡（約63.7万円/坪）で推移しています。地域の特性や最寄り駅の距離によって価格が異なります。"
 keywords: ["旭川市", "一戸建て", "不動産価格", "地価公示"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

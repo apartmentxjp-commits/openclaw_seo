@@ -7,6 +7,9 @@ prefecture: "岩手県"
 property_type: "マンション"
 description: "岩手県盆岡市のマンション価格情報を最新のデータでご紹介します。平均的なマンション価格は約60万円/㎡で、前年比で約2.5%の上昇しています。"
 keywords: ["岩手県", "盆岡市", "マンション価格", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["iwate"]
 draft: false
 ---
 

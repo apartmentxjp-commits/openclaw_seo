@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "マンション"
 description: "札幌市豊平区のマンション価格は平均で34.5万円/㎡。豊平区の特徴や地域別の特徴、分譲・賃貸物件の情報をご紹介します。"
 keywords: ["札幌市豊平区", "マンション価格", "分譲", "賃貸", "南郷18丁目駅", "南平岸駅", "学園前駅"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

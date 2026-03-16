@@ -7,6 +7,9 @@ prefecture: "秋田県"
 property_type: "マンション"
 description: "秋田県秋田市のマンション市場は、2024年の国土交通省地価公示データに基づいて、最新相場を参考に価格情報をご提供します。住宅の地価は平均29,558円/㎡で、前年比で0.9%増加しています。"
 keywords: ["秋田県", "秋田市", "マンション価格", "地価公示データ", "市場動向"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["akita"]
 draft: false
 ---
 

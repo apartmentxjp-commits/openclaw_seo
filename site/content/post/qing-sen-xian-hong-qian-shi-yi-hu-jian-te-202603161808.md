@@ -7,6 +7,9 @@ prefecture: "青森県"
 property_type: "一戸建て"
 description: "弘前市の一戸建て不動産価格情報を紹介します。国土交通省の地価公示データによると、弘前市の平均地価は24,600円/㎡で、前年比で+0.1%の変化を示しています。地域別の不動産価格も掲載しています。"
 keywords: ["弘前市", "一戸建て", "不動産価格", "地価公示", "平均地価"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["aomori"]
 draft: false
 ---
 

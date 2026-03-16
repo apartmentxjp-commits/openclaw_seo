@@ -7,6 +7,9 @@ prefecture: "宮城県"
 property_type: "マンション"
 description: "仙台市青葉区のマンション価格相場情報。最新の不動産価格データをお届けします。"
 keywords: ["仙台市青葉区", "マンション", "価格", "相場", "不動産"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["miyagi"]
 draft: false
 ---
 

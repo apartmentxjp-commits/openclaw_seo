@@ -7,6 +7,9 @@ prefecture: "宮城県"
 property_type: "一戸建て"
 description: "仙台市泉区の一戸建て価格情報を紹介します。国土交通省地価公示によると、住宅の平均地価は約10.78万円/㎡で前年比約7.6%の上昇しています。"
 keywords: ["仙台市泉区", "一戸建て", "不動産価格", "地価公示", "宮城県"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["miyagi"]
 draft: false
 ---
 

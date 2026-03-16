@@ -7,6 +7,9 @@ prefecture: "北海道"
 property_type: "マンション"
 description: "函館市のマンション価格情報を最新相場とともに紹介。地域別の価格情報や特性を詳しく解説します。住宅地や商業地域による価格の違いなどをチェック。"
 keywords: ["函館市", "マンション価格", "地域別価格", "最新相場"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["hokkaido"]
 draft: false
 ---
 

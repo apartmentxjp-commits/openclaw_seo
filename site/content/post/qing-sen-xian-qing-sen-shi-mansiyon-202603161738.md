@@ -7,6 +7,9 @@ prefecture: "青森県"
 property_type: "マンション"
 description: "青森県青森市のマンション価格情報をご紹介します。平均価格は約3万円/㎡から約7.8万円/㎡です。地域特性や最新相場についても詳しく解説します。"
 keywords: ["青森県", "青森市", "マンション価格", "不動産価格", "地域特性"]
+article_type: "area"
+categories: ["area-info"]
+prefectures: ["aomori"]
 draft: false
 ---
 
