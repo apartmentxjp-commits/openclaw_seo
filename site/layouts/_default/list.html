@@ -1,28 +1,40 @@
 {{ define "main" }}
-<section class="post-list">
-    <div class="section-header">
-        <h1>調査レポート一覧</h1>
-        <p>日本全国の不動産取引データに基づく最新分析レポート</p>
-    </div>
+<div class="post-list-header">
+  <div class="container">
+    <div class="section-label">REPORTS</div>
+    <h1>調査レポート一覧</h1>
+    <p>日本全国の不動産取引データに基づく最新分析レポート</p>
+  </div>
+</div>
 
-    {{ range .Paginator.Pages }}
-    {{ if ne .Layout "tool" }}
-    <a href="{{ .Permalink }}" class="post-card">
-        <div class="post-info">
-            <h3>{{ .Title }}</h3>
-            <p>{{ .Summary | truncate 150 }}</p>
+<div class="post-list-page">
+  <div class="container">
+    <div class="post-grid">
+      {{ range .Paginator.Pages }}
+      {{ if ne .Layout "tool" }}
+      <a href="{{ .Permalink }}" class="post-card">
+        <div class="post-thumb">
+          <div class="post-thumb-title">{{ .Title }}</div>
         </div>
-    </a>
-    {{ end }}
-    {{ end }}
+        <div class="post-body">
+          <span class="post-tag">調査レポート</span>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Summary | truncate 100 }}</p>
+        </div>
+        <div class="post-footer">詳細を見る</div>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
 
     <div class="pagination">
-        {{ if .Paginator.HasPrev }}
-        <a href="{{ .Paginator.Prev.URL }}" class="nav-link">&laquo; 前へ</a>
-        {{ end }}
-        {{ if .Paginator.HasNext }}
-        <a href="{{ .Paginator.Next.URL }}" class="nav-link">次へ &raquo;</a>
-        {{ end }}
+      {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}">&laquo; 前のページ</a>
+      {{ end }}
+      {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}">次のページ &raquo;</a>
+      {{ end }}
     </div>
-</section>
+  </div>
+</div>
 {{ end }}

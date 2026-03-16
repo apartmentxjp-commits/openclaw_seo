@@ -1,26 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>収益計算 on 日本不動産価格調査センター</title>
-    <link>https://apartmentxjp-commits.github.io/openclaw_seo/tags/%E5%8F%8E%E7%9B%8A%E8%A8%88%E7%AE%97/</link>
-    <description>Recent content in 収益計算 on 日本不動産価格調査センター</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://apartmentxjp-commits.github.io/openclaw_seo/tags/%E5%8F%8E%E7%9B%8A%E8%A8%88%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>表面利回りと実質利回りの違いとは？正しい計算式と目安の数値を解説</title>
-      <link>https://apartmentxjp-commits.github.io/openclaw_seo/post/real-vs-gross-yield/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0900</pubDate>
-      
-      <guid>https://apartmentxjp-commits.github.io/openclaw_seo/post/real-vs-gross-yield/</guid>
-      <description>この記事でわかること： 表面利回りと実質利回りの計算式の違い、東京・地方別の目安数値、そして自社シミュレーターで5分以内に試算する方法。
-表面利回りと実質利回りとは？ 表面利回り（グロス利回り） とは、物件価格に対する年間家賃収入の割合であり、諸経費を含まない最も基本的な収益指標です。
-実質利回り（ネット利回り） とは、管理費・修繕積立金・固定資産税などの年間諸経費を差し引いたうえで、物件価格と購入時の諸費用を合算した総投資額に対する利益率のことです。
-実際の手残り（キャッシュフロー）を把握するには、表面利回りではなく実質利回りを基準にする必要があります。
-計算式の比較 表面利回り（グロス利回り）の計算式 表面利回り（%）= 年間家賃収入 ÷ 物件価格 × 100 計算例：
-物件価格：3,000万円 月額家賃：15万円 → 年間：180万円 表面利回り = 180万円 ÷ 3,000万円 × 100 = 6.0% 実質利回り（ネット利回り）の計算式 実質利回り（%）= （年間家賃収入 − 年間諸経費）÷（物件価格 + 購入時諸費用）× 100 計算例（同じ物件）：
-年間諸経費：管理費（月1万円）＋修繕積立（月5,000円）＋固定資産税（年10万円）= 年28万円 購入時諸費用（仲介手数料・登記費用等）：約90万円（物件価格の約3%） 実質利回り = （180万円 − 28万円）÷（3,000万円 + 90万円）× 100 = 4.92% 表面利回りと実質利回りの比較表 項目 表面利回り 実質利回り 別称 グロス利回り ネット利回り 計算対象 年間家賃収入のみ 家賃収入 − 諸経費 分母（投資額） 物件価格のみ 物件価格 ＋ 購入諸費用 数値の大きさ 高く出る（実態より楽観的） 低く出る（実態に近い） 主な用途 物件の比較・スクリーニング 投資判断・CF計算 信頼性 低い（費用無視） 高い（費用込み） 東京・地方別の利回り目安 下表は一般的な市場データに基づく参考値です（物件条件・築年数・エリアにより大きく変動します）。</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>収益計算 on 日本不動産価格調査センター</title><link>https://realestate.tacky-consulting.com/tags/%E5%8F%8E%E7%9B%8A%E8%A8%88%E7%AE%97/</link><description>Recent content in 収益計算 on 日本不動産価格調査センター</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://realestate.tacky-consulting.com/tags/%E5%8F%8E%E7%9B%8A%E8%A8%88%E7%AE%97/index.xml" rel="self" type="application/rss+xml"/><item><title>表面利回りと実質利回りの違いとは？正しい計算式と目安の数値を解説</title><link>https://realestate.tacky-consulting.com/post/real-vs-gross-yield/</link><pubDate>Tue, 10 Mar 2026 00:00:00 +0900</pubDate><guid>https://realestate.tacky-consulting.com/post/real-vs-gross-yield/</guid><description>&lt;p&gt;&lt;strong&gt;この記事でわかること：&lt;/strong&gt; 表面利回りと実質利回りの計算式の違い、東京・地方別の目安数値、そして自社シミュレーターで5分以内に試算する方法。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="表面利回りと実質利回りとは"&gt;表面利回りと実質利回りとは？&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;表面利回り（グロス利回り）&lt;/strong&gt; とは、物件価格に対する年間家賃収入の割合であり、諸経費を含まない最も基本的な収益指標です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;実質利回り（ネット利回り）&lt;/strong&gt; とは、管理費・修繕積立金・固定資産税などの年間諸経費を差し引いたうえで、物件価格と購入時の諸費用を合算した総投資額に対する利益率のことです。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;実際の手残り（キャッシュフロー）を把握するには、表面利回りではなく実質利回りを基準にする必要があります。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="計算式の比較"&gt;計算式の比較&lt;/h2&gt;
+&lt;h3 id="表面利回りグロス利回りの計算式"&gt;表面利回り（グロス利回り）の計算式&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;表面利回り（%）= 年間家賃収入 ÷ 物件価格 × 100
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;計算例：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;物件価格：3,000万円&lt;/li&gt;
+&lt;li&gt;月額家賃：15万円 → 年間：180万円&lt;/li&gt;
+&lt;li&gt;表面利回り = 180万円 ÷ 3,000万円 × 100 = &lt;strong&gt;6.0%&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="実質利回りネット利回りの計算式"&gt;実質利回り（ネット利回り）の計算式&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;実質利回り（%）= （年間家賃収入 − 年間諸経費）÷（物件価格 + 購入時諸費用）× 100
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;計算例（同じ物件）：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年間諸経費：管理費（月1万円）＋修繕積立（月5,000円）＋固定資産税（年10万円）= 年28万円&lt;/li&gt;
+&lt;li&gt;購入時諸費用（仲介手数料・登記費用等）：約90万円（物件価格の約3%）&lt;/li&gt;
+&lt;li&gt;実質利回り = （180万円 − 28万円）÷（3,000万円 + 90万円）× 100 = &lt;strong&gt;4.92%&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="表面利回りと実質利回りの比較表"&gt;表面利回りと実質利回りの比較表&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;項目&lt;/th&gt;
+ &lt;th&gt;表面利回り&lt;/th&gt;
+ &lt;th&gt;実質利回り&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;別称&lt;/td&gt;
+ &lt;td&gt;グロス利回り&lt;/td&gt;
+ &lt;td&gt;ネット利回り&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;計算対象&lt;/td&gt;
+ &lt;td&gt;年間家賃収入のみ&lt;/td&gt;
+ &lt;td&gt;家賃収入 − 諸経費&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;分母（投資額）&lt;/td&gt;
+ &lt;td&gt;物件価格のみ&lt;/td&gt;
+ &lt;td&gt;物件価格 ＋ 購入諸費用&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;数値の大きさ&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;高く出る&lt;/strong&gt;（実態より楽観的）&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;低く出る&lt;/strong&gt;（実態に近い）&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;主な用途&lt;/td&gt;
+ &lt;td&gt;物件の比較・スクリーニング&lt;/td&gt;
+ &lt;td&gt;投資判断・CF計算&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;信頼性&lt;/td&gt;
+ &lt;td&gt;低い（費用無視）&lt;/td&gt;
+ &lt;td&gt;高い（費用込み）&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="東京地方別の利回り目安"&gt;東京・地方別の利回り目安&lt;/h2&gt;
+&lt;p&gt;下表は一般的な市場データに基づく参考値です（物件条件・築年数・エリアにより大きく変動します）。&lt;/p&gt;</description></item></channel></rss>
