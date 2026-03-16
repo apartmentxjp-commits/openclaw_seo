@@ -1,26 +1,156 @@
 {{ define "main" }}
-<article>
-    <header>
-        <h1>{{ .Title }}</h1>
-    </header>
+{{/* ── JSON-LD 構造化データ ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  {{ $atype := .Params.article_type | default "area" -}}
+  {{ if eq $atype "qa" -}}
+  "@type": "FAQPage",
+  "name": {{ .Title | jsonify }},
+  {{ else if eq $atype "guide" -}}
+  "@type": "HowTo",
+  "name": {{ .Title | jsonify }},
+  {{ else -}}
+  "@type": "Article",
+  "headline": {{ .Title | jsonify }},
+  {{ end -}}
+  "description": {{ .Description | default .Site.Params.description | jsonify }},
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05+09:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05+09:00" }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ .Site.Title | jsonify }},
+    "url": {{ .Site.BaseURL | jsonify }}
+  },
+  "url": {{ .Permalink | jsonify }}
+  {{ with .Params.keywords -}}
+  ,"keywords": {{ . | jsonify }}
+  {{ end -}}
+}
+</script>
 
-    <div class="content">
-        {{ .Content | safeHTML }}
+{{/* ── パンくずリスト JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": {{ .Site.BaseURL | jsonify }}
+    }
+    {{ with .Params.prefecture -}}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ . | jsonify }},
+      "item": {{ (printf "%sprefectures/%s/" $.Site.BaseURL (index $.Site.Data "prefecture_slugs" .)) | jsonify }}
+    }
+    {{ end -}}
+    ,{
+      "@type": "ListItem",
+      "position": {{ if .Params.prefecture }}3{{ else }}2{{ end }},
+      "name": {{ .Title | jsonify }},
+      "item": {{ .Permalink | jsonify }}
+    }
+  ]
+}
+</script>
+
+<article class="article-single">
+  {{/* ── 記事ヘッダー ── */}}
+  <header class="article-header">
+    <div class="article-meta-top">
+      {{/* 記事タイプバッジ */}}
+      {{ $atype := .Params.article_type | default "area" -}}
+      <span class="article-type-badge type-{{ $atype }}">
+        {{ if eq $atype "ranking" }}📊 市場データ・ランキング
+        {{ else if eq $atype "guide" }}📖 不動産ガイド
+        {{ else if eq $atype "qa" }}❓ Q&amp;A
+        {{ else }}🏘️ エリア情報
+        {{ end }}
+      </span>
+      <time class="article-date" datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ .Date.Format "2006年01月02日" }}
+      </time>
     </div>
 
-    <div class="post-navigation">
-        {{ with .PrevInSection }}
-        <a href="{{ .Permalink }}" class="nav-link prev">
-            <span class="label">前の調査レポート</span>
-            <span class="title">{{ .Title }}</span>
-        </a>
-        {{ end }}
-        {{ with .NextInSection }}
-        <a href="{{ .Permalink }}" class="nav-link next">
-            <span class="label">次の調査レポート</span>
-            <span class="title">{{ .Title }}</span>
-        </a>
-        {{ end }}
+    <h1 class="article-title">{{ .Title }}</h1>
+
+    {{/* 記事属性タグ */}}
+    <div class="article-tags">
+      {{ with .Params.prefecture }}<span class="tag tag-pref">📍 {{ . }}</span>{{ end }}
+      {{ with .Params.area }}<span class="tag tag-area">{{ . }}</span>{{ end }}
+      {{ with .Params.property_type }}<span class="tag tag-ptype">{{ . }}</span>{{ end }}
     </div>
+
+    {{ with .Description }}
+    <p class="article-description">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  {{/* ── 目次（見出しが3つ以上ある場合のみ表示） ── */}}
+  {{ $headings := findRE `(?m)^##\s+.+` .RawContent }}
+  {{ if ge (len $headings) 3 }}
+  <nav class="toc" aria-label="目次">
+    <h2 class="toc-title">📋 目次</h2>
+    <ol class="toc-list">
+      {{ range $headings }}
+      {{ $text := . | replaceRE `^##\s+` "" }}
+      {{ $id := $text | lower | replaceRE `[^a-z0-9\p{Han}\p{Hiragana}\p{Katakana}ー]+` "-" }}
+      <li><a href="#{{ $id }}">{{ $text }}</a></li>
+      {{ end }}
+    </ol>
+  </nav>
+  {{ end }}
+
+  {{/* ── 記事本文 ── */}}
+  <div class="article-content">
+    {{ .Content | safeHTML }}
+  </div>
+
+  {{/* ── 記事フッター ── */}}
+  <footer class="article-footer">
+    <div class="article-keywords">
+      {{ with .Params.keywords }}
+      <strong>関連キーワード: </strong>
+      {{ range . }}<span class="keyword-tag">{{ . }}</span> {{ end }}
+      {{ end }}
+    </div>
+
+    {{/* カテゴリ & 都道府県リンク */}}
+    <div class="article-taxonomy">
+      {{ with .Params.categories }}
+      <span class="tax-label">カテゴリ: </span>
+      {{ range . }}
+      <a href="{{ (printf "categories/%s/" .) | relURL }}" class="tax-link">{{ . }}</a>
+      {{ end }}
+      {{ end }}
+      {{ with .Params.prefectures }}
+      <span class="tax-label">都道府県: </span>
+      {{ range . }}
+      <a href="{{ (printf "prefectures/%s/" .) | relURL }}" class="tax-link">{{ . }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </footer>
+
+  {{/* ── 前後ナビ ── */}}
+  <nav class="post-navigation" aria-label="前後の記事">
+    {{ with .PrevInSection }}
+    <a href="{{ .Permalink }}" class="nav-link prev">
+      <span class="label">← 前の記事</span>
+      <span class="title">{{ .Title }}</span>
+    </a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .Permalink }}" class="nav-link next">
+      <span class="label">次の記事 →</span>
+      <span class="title">{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </nav>
 </article>
 {{ end }}

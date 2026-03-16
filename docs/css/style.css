@@ -992,3 +992,102 @@ footer a:hover { color: #fff; }
 .article-card h3 a { color: #1a1a1a; text-decoration: none; }
 .article-card h3 a:hover { color: #2d6a4f; }
 .article-card .card-meta { font-size: 0.78rem; color: #888; }
+
+/* ── 記事ページ (single.html) ──────────────────────────────── */
+.article-single { max-width: 860px; margin: 0 auto; }
+
+/* 記事ヘッダー */
+.article-header { margin-bottom: 2rem; }
+.article-meta-top {
+  display: flex; align-items: center; gap: 0.8rem;
+  margin-bottom: 0.8rem; flex-wrap: wrap;
+}
+.article-date { font-size: 0.82rem; color: var(--text-muted); }
+.article-title { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.45; margin-bottom: 0.8rem; }
+.article-description {
+  font-size: 0.95rem; color: var(--text-mid);
+  background: var(--bg-soft); border-left: 3px solid var(--green);
+  padding: 0.8rem 1rem; border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 1rem;
+}
+
+/* 記事タイプバッジ */
+.article-type-badge {
+  display: inline-block; padding: 0.25rem 0.75rem;
+  border-radius: 20px; font-size: 0.78rem; font-weight: 600;
+}
+.type-ranking { background: #e3f0fb; color: #1a5e9a; }
+.type-guide   { background: #e8f5e9; color: #2d6a4f; }
+.type-qa      { background: #fff3e0; color: #b45309; }
+.type-area    { background: #f0faf4; color: #0c6e3f; }
+
+/* 記事タグ */
+.article-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.tag {
+  display: inline-block; padding: 0.2rem 0.6rem;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 4px; font-size: 0.78rem; color: var(--text-mid);
+}
+.tag-pref { border-color: var(--green-light); color: var(--green); }
+
+/* 目次 */
+.toc {
+  background: var(--bg-soft); border: 1px solid var(--border-light);
+  border-radius: var(--radius); padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+}
+.toc-title { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.6rem; color: var(--text-mid); }
+.toc-list { margin: 0; padding-left: 1.4rem; }
+.toc-list li { margin-bottom: 0.3rem; font-size: 0.88rem; }
+.toc-list a { color: var(--green); text-decoration: none; }
+.toc-list a:hover { text-decoration: underline; }
+
+/* 記事本文 */
+.article-content { line-height: 1.85; }
+.article-content h2 {
+  font-size: 1.3rem; margin: 2rem 0 0.8rem;
+  padding-bottom: 0.4rem; border-bottom: 2px solid var(--green-light);
+  color: var(--navy);
+}
+.article-content h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--navy); }
+.article-content table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;
+}
+.article-content th, .article-content td {
+  padding: 0.6rem 0.8rem; border: 1px solid var(--border);
+}
+.article-content th { background: var(--green); color: #fff; font-weight: 600; }
+.article-content tr:nth-child(even) { background: var(--bg-soft); }
+
+/* 記事フッター */
+.article-footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.article-keywords { margin-bottom: 0.8rem; font-size: 0.85rem; color: var(--text-mid); }
+.keyword-tag {
+  display: inline-block; padding: 0.15rem 0.5rem; margin: 0.15rem;
+  background: var(--bg-soft); border: 1px solid var(--border-light);
+  border-radius: 4px; font-size: 0.78rem;
+}
+.article-taxonomy { font-size: 0.82rem; color: var(--text-muted); }
+.tax-label { font-weight: 600; margin-right: 0.3rem; }
+.tax-link {
+  display: inline-block; margin: 0 0.3rem 0.3rem 0;
+  padding: 0.2rem 0.6rem; background: var(--green-light);
+  color: var(--green); border-radius: 4px; text-decoration: none;
+}
+.tax-link:hover { background: var(--green); color: #fff; }
+
+/* 前後ナビ */
+.post-navigation {
+  display: flex; justify-content: space-between; flex-wrap: wrap;
+  gap: 1rem; margin-top: 2.5rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.nav-link {
+  display: flex; flex-direction: column; max-width: 46%;
+  text-decoration: none; padding: 0.8rem 1rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  transition: all 0.2s;
+}
+.nav-link:hover { border-color: var(--green); background: var(--green-light); }
+.nav-link .label { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+.nav-link .title { font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+.nav-link.next { margin-left: auto; text-align: right; }
