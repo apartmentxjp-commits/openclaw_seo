@@ -203,9 +203,55 @@ class WriterAgent:
 
 
 # ── バッチ記事生成 ────────────────────────────────────
-# 50トピック × 30分間隔 = 25時間で一巡（1日48記事、Groq無料枠の0.7%）
+# 全47都道府県カバー: 約150トピック × 30分間隔 = 約75時間で一巡
 ARTICLE_TOPICS = [
-    # 東京都
+    # ── 北海道 ──
+    {"area": "札幌市中央区", "prefecture": "北海道", "property_type": "マンション"},
+    {"area": "札幌市豊平区", "prefecture": "北海道", "property_type": "マンション"},
+    {"area": "札幌市西区", "prefecture": "北海道", "property_type": "一戸建て"},
+    {"area": "函館市", "prefecture": "北海道", "property_type": "マンション"},
+    {"area": "旭川市", "prefecture": "北海道", "property_type": "一戸建て"},
+    # ── 青森県 ──
+    {"area": "青森市", "prefecture": "青森県", "property_type": "マンション"},
+    {"area": "弘前市", "prefecture": "青森県", "property_type": "一戸建て"},
+    # ── 岩手県 ──
+    {"area": "盛岡市", "prefecture": "岩手県", "property_type": "マンション"},
+    {"area": "奥州市", "prefecture": "岩手県", "property_type": "一戸建て"},
+    # ── 宮城県 ──
+    {"area": "仙台市青葉区", "prefecture": "宮城県", "property_type": "マンション"},
+    {"area": "仙台市泉区", "prefecture": "宮城県", "property_type": "一戸建て"},
+    {"area": "仙台市宮城野区", "prefecture": "宮城県", "property_type": "マンション"},
+    # ── 秋田県 ──
+    {"area": "秋田市", "prefecture": "秋田県", "property_type": "マンション"},
+    {"area": "横手市", "prefecture": "秋田県", "property_type": "一戸建て"},
+    # ── 山形県 ──
+    {"area": "山形市", "prefecture": "山形県", "property_type": "マンション"},
+    {"area": "米沢市", "prefecture": "山形県", "property_type": "一戸建て"},
+    # ── 福島県 ──
+    {"area": "福島市", "prefecture": "福島県", "property_type": "マンション"},
+    {"area": "郡山市", "prefecture": "福島県", "property_type": "一戸建て"},
+    {"area": "いわき市", "prefecture": "福島県", "property_type": "一戸建て"},
+    # ── 茨城県 ──
+    {"area": "つくば市", "prefecture": "茨城県", "property_type": "一戸建て"},
+    {"area": "水戸市", "prefecture": "茨城県", "property_type": "マンション"},
+    {"area": "日立市", "prefecture": "茨城県", "property_type": "一戸建て"},
+    # ── 栃木県 ──
+    {"area": "宇都宮市", "prefecture": "栃木県", "property_type": "マンション"},
+    {"area": "小山市", "prefecture": "栃木県", "property_type": "一戸建て"},
+    # ── 群馬県 ──
+    {"area": "前橋市", "prefecture": "群馬県", "property_type": "マンション"},
+    {"area": "高崎市", "prefecture": "群馬県", "property_type": "一戸建て"},
+    # ── 埼玉県 ──
+    {"area": "さいたま市浦和区", "prefecture": "埼玉県", "property_type": "マンション"},
+    {"area": "さいたま市大宮区", "prefecture": "埼玉県", "property_type": "マンション"},
+    {"area": "川口市", "prefecture": "埼玉県", "property_type": "マンション"},
+    {"area": "川越市", "prefecture": "埼玉県", "property_type": "一戸建て"},
+    # ── 千葉県 ──
+    {"area": "千葉市中央区", "prefecture": "千葉県", "property_type": "マンション"},
+    {"area": "船橋市", "prefecture": "千葉県", "property_type": "一戸建て"},
+    {"area": "柏市", "prefecture": "千葉県", "property_type": "一戸建て"},
+    {"area": "松戸市", "prefecture": "千葉県", "property_type": "マンション"},
+    # ── 東京都 ──
     {"area": "港区", "prefecture": "東京都", "property_type": "マンション"},
     {"area": "渋谷区", "prefecture": "東京都", "property_type": "マンション"},
     {"area": "新宿区", "prefecture": "東京都", "property_type": "マンション"},
@@ -221,47 +267,126 @@ ARTICLE_TOPICS = [
     {"area": "板橋区", "prefecture": "東京都", "property_type": "マンション"},
     {"area": "立川市", "prefecture": "東京都", "property_type": "マンション"},
     {"area": "八王子市", "prefecture": "東京都", "property_type": "一戸建て"},
-    # 神奈川県
+    # ── 神奈川県 ──
     {"area": "横浜市西区", "prefecture": "神奈川県", "property_type": "マンション"},
     {"area": "横浜市港北区", "prefecture": "神奈川県", "property_type": "マンション"},
+    {"area": "横浜市青葉区", "prefecture": "神奈川県", "property_type": "一戸建て"},
     {"area": "川崎市中原区", "prefecture": "神奈川県", "property_type": "マンション"},
     {"area": "藤沢市", "prefecture": "神奈川県", "property_type": "一戸建て"},
     {"area": "相模原市", "prefecture": "神奈川県", "property_type": "一戸建て"},
-    # 大阪府・近畿
+    # ── 山梨県 ──
+    {"area": "甲府市", "prefecture": "山梨県", "property_type": "一戸建て"},
+    {"area": "甲斐市", "prefecture": "山梨県", "property_type": "一戸建て"},
+    # ── 長野県 ──
+    {"area": "長野市", "prefecture": "長野県", "property_type": "マンション"},
+    {"area": "松本市", "prefecture": "長野県", "property_type": "一戸建て"},
+    # ── 新潟県 ──
+    {"area": "新潟市中央区", "prefecture": "新潟県", "property_type": "マンション"},
+    {"area": "長岡市", "prefecture": "新潟県", "property_type": "一戸建て"},
+    # ── 富山県 ──
+    {"area": "富山市", "prefecture": "富山県", "property_type": "マンション"},
+    {"area": "高岡市", "prefecture": "富山県", "property_type": "一戸建て"},
+    # ── 石川県 ──
+    {"area": "金沢市", "prefecture": "石川県", "property_type": "マンション"},
+    {"area": "白山市", "prefecture": "石川県", "property_type": "一戸建て"},
+    # ── 福井県 ──
+    {"area": "福井市", "prefecture": "福井県", "property_type": "マンション"},
+    {"area": "越前市", "prefecture": "福井県", "property_type": "一戸建て"},
+    # ── 静岡県 ──
+    {"area": "静岡市葵区", "prefecture": "静岡県", "property_type": "マンション"},
+    {"area": "浜松市中区", "prefecture": "静岡県", "property_type": "マンション"},
+    {"area": "沼津市", "prefecture": "静岡県", "property_type": "一戸建て"},
+    # ── 愛知県 ──
+    {"area": "名古屋市中区", "prefecture": "愛知県", "property_type": "マンション"},
+    {"area": "名古屋市千種区", "prefecture": "愛知県", "property_type": "マンション"},
+    {"area": "名古屋市天白区", "prefecture": "愛知県", "property_type": "一戸建て"},
+    {"area": "豊田市", "prefecture": "愛知県", "property_type": "一戸建て"},
+    {"area": "岡崎市", "prefecture": "愛知県", "property_type": "一戸建て"},
+    # ── 岐阜県 ──
+    {"area": "岐阜市", "prefecture": "岐阜県", "property_type": "マンション"},
+    {"area": "各務原市", "prefecture": "岐阜県", "property_type": "一戸建て"},
+    # ── 三重県 ──
+    {"area": "津市", "prefecture": "三重県", "property_type": "マンション"},
+    {"area": "四日市市", "prefecture": "三重県", "property_type": "一戸建て"},
+    # ── 滋賀県 ──
+    {"area": "大津市", "prefecture": "滋賀県", "property_type": "マンション"},
+    {"area": "草津市", "prefecture": "滋賀県", "property_type": "一戸建て"},
+    # ── 京都府 ──
+    {"area": "京都市左京区", "prefecture": "京都府", "property_type": "マンション"},
+    {"area": "京都市中京区", "prefecture": "京都府", "property_type": "マンション"},
+    {"area": "京都市伏見区", "prefecture": "京都府", "property_type": "一戸建て"},
+    # ── 大阪府 ──
     {"area": "大阪市北区", "prefecture": "大阪府", "property_type": "マンション"},
     {"area": "大阪市中央区", "prefecture": "大阪府", "property_type": "マンション"},
     {"area": "大阪市西区", "prefecture": "大阪府", "property_type": "マンション"},
     {"area": "豊中市", "prefecture": "大阪府", "property_type": "一戸建て"},
     {"area": "吹田市", "prefecture": "大阪府", "property_type": "マンション"},
+    {"area": "枚方市", "prefecture": "大阪府", "property_type": "一戸建て"},
+    # ── 兵庫県 ──
     {"area": "神戸市中央区", "prefecture": "兵庫県", "property_type": "マンション"},
+    {"area": "神戸市東灘区", "prefecture": "兵庫県", "property_type": "マンション"},
     {"area": "西宮市", "prefecture": "兵庫県", "property_type": "一戸建て"},
-    {"area": "京都市左京区", "prefecture": "京都府", "property_type": "マンション"},
-    {"area": "京都市中京区", "prefecture": "京都府", "property_type": "マンション"},
-    # 愛知・東海
-    {"area": "名古屋市中区", "prefecture": "愛知県", "property_type": "マンション"},
-    {"area": "名古屋市千種区", "prefecture": "愛知県", "property_type": "マンション"},
-    {"area": "名古屋市天白区", "prefecture": "愛知県", "property_type": "一戸建て"},
-    {"area": "豊田市", "prefecture": "愛知県", "property_type": "一戸建て"},
-    # 福岡・九州
+    {"area": "姫路市", "prefecture": "兵庫県", "property_type": "マンション"},
+    # ── 奈良県 ──
+    {"area": "奈良市", "prefecture": "奈良県", "property_type": "マンション"},
+    {"area": "橿原市", "prefecture": "奈良県", "property_type": "一戸建て"},
+    # ── 和歌山県 ──
+    {"area": "和歌山市", "prefecture": "和歌山県", "property_type": "マンション"},
+    {"area": "田辺市", "prefecture": "和歌山県", "property_type": "一戸建て"},
+    # ── 鳥取県 ──
+    {"area": "鳥取市", "prefecture": "鳥取県", "property_type": "マンション"},
+    {"area": "米子市", "prefecture": "鳥取県", "property_type": "一戸建て"},
+    # ── 島根県 ──
+    {"area": "松江市", "prefecture": "島根県", "property_type": "マンション"},
+    {"area": "出雲市", "prefecture": "島根県", "property_type": "一戸建て"},
+    # ── 岡山県 ──
+    {"area": "岡山市北区", "prefecture": "岡山県", "property_type": "マンション"},
+    {"area": "倉敷市", "prefecture": "岡山県", "property_type": "一戸建て"},
+    # ── 広島県 ──
+    {"area": "広島市中区", "prefecture": "広島県", "property_type": "マンション"},
+    {"area": "広島市安佐南区", "prefecture": "広島県", "property_type": "一戸建て"},
+    {"area": "福山市", "prefecture": "広島県", "property_type": "マンション"},
+    # ── 山口県 ──
+    {"area": "山口市", "prefecture": "山口県", "property_type": "マンション"},
+    {"area": "下関市", "prefecture": "山口県", "property_type": "一戸建て"},
+    # ── 徳島県 ──
+    {"area": "徳島市", "prefecture": "徳島県", "property_type": "マンション"},
+    {"area": "阿南市", "prefecture": "徳島県", "property_type": "一戸建て"},
+    # ── 香川県 ──
+    {"area": "高松市", "prefecture": "香川県", "property_type": "マンション"},
+    {"area": "丸亀市", "prefecture": "香川県", "property_type": "一戸建て"},
+    # ── 愛媛県 ──
+    {"area": "松山市", "prefecture": "愛媛県", "property_type": "マンション"},
+    {"area": "今治市", "prefecture": "愛媛県", "property_type": "一戸建て"},
+    # ── 高知県 ──
+    {"area": "高知市", "prefecture": "高知県", "property_type": "マンション"},
+    {"area": "南国市", "prefecture": "高知県", "property_type": "一戸建て"},
+    # ── 福岡県 ──
     {"area": "福岡市中央区", "prefecture": "福岡県", "property_type": "マンション"},
     {"area": "福岡市博多区", "prefecture": "福岡県", "property_type": "マンション"},
     {"area": "福岡市東区", "prefecture": "福岡県", "property_type": "一戸建て"},
     {"area": "北九州市小倉北区", "prefecture": "福岡県", "property_type": "マンション"},
-    # 埼玉・千葉・茨城
-    {"area": "さいたま市浦和区", "prefecture": "埼玉県", "property_type": "マンション"},
-    {"area": "川口市", "prefecture": "埼玉県", "property_type": "マンション"},
-    {"area": "千葉市中央区", "prefecture": "千葉県", "property_type": "マンション"},
-    {"area": "船橋市", "prefecture": "千葉県", "property_type": "一戸建て"},
-    {"area": "柏市", "prefecture": "千葉県", "property_type": "一戸建て"},
-    {"area": "つくば市", "prefecture": "茨城県", "property_type": "一戸建て"},
-    # 札幌・仙台
-    {"area": "札幌市中央区", "prefecture": "北海道", "property_type": "マンション"},
-    {"area": "札幌市豊平区", "prefecture": "北海道", "property_type": "マンション"},
-    {"area": "仙台市青葉区", "prefecture": "宮城県", "property_type": "マンション"},
-    # 広島・岡山
-    {"area": "広島市中区", "prefecture": "広島県", "property_type": "マンション"},
-    {"area": "岡山市北区", "prefecture": "岡山県", "property_type": "マンション"},
-    # 沖縄
+    # ── 佐賀県 ──
+    {"area": "佐賀市", "prefecture": "佐賀県", "property_type": "マンション"},
+    {"area": "唐津市", "prefecture": "佐賀県", "property_type": "一戸建て"},
+    # ── 長崎県 ──
+    {"area": "長崎市", "prefecture": "長崎県", "property_type": "マンション"},
+    {"area": "佐世保市", "prefecture": "長崎県", "property_type": "一戸建て"},
+    # ── 熊本県 ──
+    {"area": "熊本市中央区", "prefecture": "熊本県", "property_type": "マンション"},
+    {"area": "熊本市東区", "prefecture": "熊本県", "property_type": "一戸建て"},
+    {"area": "菊陽町", "prefecture": "熊本県", "property_type": "一戸建て"},
+    # ── 大分県 ──
+    {"area": "大分市", "prefecture": "大分県", "property_type": "マンション"},
+    {"area": "別府市", "prefecture": "大分県", "property_type": "マンション"},
+    # ── 宮崎県 ──
+    {"area": "宮崎市", "prefecture": "宮崎県", "property_type": "マンション"},
+    {"area": "都城市", "prefecture": "宮崎県", "property_type": "一戸建て"},
+    # ── 鹿児島県 ──
+    {"area": "鹿児島市", "prefecture": "鹿児島県", "property_type": "マンション"},
+    {"area": "霧島市", "prefecture": "鹿児島県", "property_type": "一戸建て"},
+    # ── 沖縄県 ──
     {"area": "那覇市", "prefecture": "沖縄県", "property_type": "マンション"},
     {"area": "浦添市", "prefecture": "沖縄県", "property_type": "一戸建て"},
+    {"area": "沖縄市", "prefecture": "沖縄県", "property_type": "マンション"},
 ]
