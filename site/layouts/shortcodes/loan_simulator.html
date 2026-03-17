@@ -1,6 +1,5 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-    /* Premium UI Enhancement */
     #loan-app-root input:focus {
         transform: translateY(-2px);
         box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
@@ -11,26 +10,78 @@
     }
 
     @keyframes flash {
-        0% {
-            background-color: rgba(59, 130, 246, 0.4);
-        }
+        0% { background-color: rgba(59, 130, 246, 0.3); }
+        100% { background-color: transparent; }
+    }
 
-        100% {
-            background-color: transparent;
-        }
+    /* ── Header ── */
+    .ls-header {
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 45%, #0f2027 100%);
+        position: relative;
+        overflow: hidden;
+    }
+    .ls-header::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(148,163,184,0.12) 1px, transparent 1px);
+        background-size: 18px 18px;
+        pointer-events: none;
+    }
+    .ls-icon-wrap {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        margin-right: 10px;
+        flex-shrink: 0;
+        background: rgba(59,130,246,0.25);
+        box-shadow: 0 0 0 1px rgba(59,130,246,0.35), 0 4px 14px rgba(59,130,246,0.25);
+    }
+    /* ── Sections ── */
+    .ls-section-base {
+        background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+        border: 1px solid #dde3ec;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+    .ls-section-risk {
+        background: linear-gradient(135deg, #fff8f0 0%, #fff0d6 100%);
+        border: 1px solid #fdd6a0;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+    /* ── Result boxes ── */
+    .ls-result-primary {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border: 1px solid #bfdbfe;
+        border-radius: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    .ls-result-highlight {
+        background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+        box-shadow: 0 10px 28px -6px rgba(234,88,12,0.45);
+        border-radius: 1rem;
+        padding: 1rem;
+        text-align: center;
     }
 </style>
 
 <div id="loan-app-root" class="not-prose my-10 antialiased text-slate-800">
     <div class="max-w-4xl mx-auto bg-white border border-slate-200 shadow-xl rounded-3xl overflow-hidden">
 
-        <div class="bg-slate-900 px-6 py-4">
-            <h3 class="text-white text-lg font-bold flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
+        <div class="ls-header px-6 py-4">
+            <h3 class="text-white text-lg font-bold flex items-center relative z-10">
+                <span class="ls-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-300" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </span>
                 住宅ローン返済シミュレーター
             </h3>
         </div>
@@ -39,7 +90,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                 <div class="space-y-6">
-                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div class="ls-section-base">
                         <h4 class="text-sm font-bold text-slate-500 mb-4 uppercase tracking-wider">基本条件</h4>
                         <div class="space-y-4">
                             <div>
@@ -67,7 +118,7 @@
                         </div>
                     </div>
 
-                    <div class="p-4 bg-orange-50 rounded-2xl border border-orange-100">
+                    <div class="ls-section-risk">
                         <h4 class="text-sm font-bold text-orange-600 mb-4 uppercase tracking-wider italic">金利上昇リスク設定
                         </h4>
                         <div class="space-y-4">
@@ -88,11 +139,11 @@
 
                 <div class="flex flex-col justify-between">
                     <div class="space-y-4 mb-6">
-                        <div class="text-center p-4 bg-blue-50 rounded-2xl border border-blue-100">
+                        <div class="ls-result-primary">
                             <p class="text-[10px] font-bold text-blue-500 uppercase">当初の月々返済額</p>
                             <p class="text-3xl font-black text-blue-700">¥<span id="s_res_monthly1">0</span></p>
                         </div>
-                        <div class="text-center p-4 bg-orange-600 rounded-2xl shadow-lg shadow-orange-200">
+                        <div class="ls-result-highlight">
                             <p class="text-[10px] font-bold text-orange-100 uppercase">金利上昇後の月々返済額</p>
                             <p class="text-3xl font-black text-white">¥<span id="s_res_monthly2">0</span></p>
                             <p class="text-xs font-bold text-orange-200 mt-1">負担増: +¥<span id="s_res_diff">0</span> /月
