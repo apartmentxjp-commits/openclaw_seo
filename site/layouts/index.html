@@ -4,18 +4,76 @@
 <section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-label">
+    <div class="hero-label fade-in-up">
       <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
       国土交通省データ × AI分析
     </div>
-    <h2>AIデータで、<br>不動産投資に<em>「確信」</em>を。</h2>
-    <p>最新の成約事例とAI予測モデルに基づき、<br>適正な収益性と将来価格を算出します。</p>
-    <div class="hero-search-box">
+    <h2 class="fade-in-up delay-1">AIデータで、<br>不動産投資に<em>「確信」</em>を。</h2>
+    <p class="fade-in-up delay-2">最新の成約事例とAI予測モデルに基づき、<br>適正な収益性と将来価格を算出します。</p>
+    <div class="hero-search-box fade-in-up delay-3">
       <input type="text" id="address-search" placeholder="市区町村・町名を入力（例：世田谷区 三軒茶屋）">
       <button onclick="searchAddress()">相場を調査する</button>
     </div>
+    <div class="hero-stats fade-in-up delay-4">
+      <div class="hero-stat">
+        <span class="hero-stat-num">47</span>
+        <span class="hero-stat-label">都道府県対応</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">10万+</span>
+        <span class="hero-stat-label">成約事例データ</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">無料</span>
+        <span class="hero-stat-label">完全無料で利用</span>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">47<span>都道府県</span></div>
+      <div class="stat-label">全国対応エリア</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">10万+<span>件</span></div>
+      <div class="stat-label">成約事例データベース</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4<span>種類</span></div>
+      <div class="stat-label">AIシミュレーター</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">無料</div>
+      <div class="stat-label">完全無料で利用可能</div>
+    </div>
+  </div>
+</div>
+
+<!-- Trust Banner -->
+<div class="trust-banner">
+  <div class="trust-items">
+    <span class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      国土交通省公式データ使用
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      AI価格予測モデル搭載
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      最新成約データを随時更新
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      会員登録不要・完全無料
+    </span>
+  </div>
+</div>
 
 <!-- 最新の調査レポート（ヒーロー直後） -->
 <section class="articles-section">
@@ -93,6 +151,34 @@
     </div>
     <div class="qa-cta">
       <a href="{{ "categories/qa/" | relURL }}">Q&amp;A一覧を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- なぜ選ばれるか -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">WHY CHOOSE US</div>
+      <h2 class="section-title">なぜ、選ばれるのか</h2>
+      <p class="section-desc">信頼できるデータとAI技術で、不動産の「正しい価値」を届けます</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏛️</div>
+        <h3>国土交通省公式データ</h3>
+        <p>国が公開する不動産取引価格情報をもとに、信頼性の高い相場データを提供します。独自解釈ではなく、公的統計に基づく確かな情報です。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AIによる価格予測</h3>
+        <p>機械学習モデルが市場トレンドを多角的に分析。エリアの将来価値を定量的に予測し、投資判断をデータでサポートします。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>リアルタイム更新</h3>
+        <p>成約事例データを随時更新。常に最新の市場状況を反映した情報を無料で提供します。登録不要でいつでも利用可能です。</p>
+      </div>
     </div>
   </div>
 </section>

@@ -27,6 +27,13 @@
 </head>
 <body>
 
+<!-- ページローダー -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-dot"></div>
+  <div class="loader-dot"></div>
+  <div class="loader-dot"></div>
+</div>
+
 <!-- ヘッダー -->
 <header>
   <div class="header-inner">
@@ -58,8 +65,34 @@
       </div>
       <a href="{{ .Site.BaseURL | relURL }}" class="nav-cta">相場を調べる</a>
     </nav>
+    <!-- モバイルハンバーガー -->
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
+
+<!-- モバイルメニュー -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-panel">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="閉じる">✕</button>
+    <nav class="mobile-nav">
+      <div class="mobile-nav-section">コンテンツ</div>
+      <a href="{{ "categories/market-data/" | relURL }}">📊 市場データ</a>
+      <a href="{{ "categories/real-estate-guide/" | relURL }}">📖 不動産ガイド</a>
+      <a href="{{ "categories/qa/" | relURL }}">❓ Q&amp;A</a>
+      <a href="{{ "post/" | relURL }}">🏘️ エリア情報</a>
+      <div class="mobile-nav-section">シミュレーター</div>
+      <a href="{{ "post/loan-calculator/" | relURL }}">🏠 住宅ローン計算</a>
+      <a href="{{ "post/yield-calculator/" | relURL }}">📈 利回り計算</a>
+      <a href="{{ "post/rent-estimator/" | relURL }}">🏢 家賃相場</a>
+      <a href="{{ "post/price-prediction/" | relURL }}">🤖 AI価格予測</a>
+      <a href="{{ .Site.BaseURL | relURL }}" class="mobile-cta">相場を調べる →</a>
+    </nav>
+  </div>
+</div>
 
 {{ if .IsHome }}
   {{ block "main" . }}{{ end }}
@@ -118,22 +151,139 @@
   {{ end }}
 {{ end }}
 
-<!-- フッター -->
+<!-- フッター（マルチカラム） -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span class="logo-dot"></span>
-        日本不動産価格調査センター
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <span class="logo-dot"></span>
+          日本不動産価格調査センター
+        </div>
+        <p class="footer-brand-desc">国土交通省データ × AI分析で、不動産投資家・購入検討者に「確信」を届けるデータプラットフォーム。</p>
       </div>
-      <div>
-        <a href="{{ "post/" | relURL }}">調査レポート</a> &nbsp;|&nbsp;
-        <a href="{{ "post/loan-calculator/" | relURL }}">各種シミュレーター</a>
+      <div class="footer-col">
+        <h4>コンテンツ</h4>
+        <ul>
+          <li><a href="{{ "post/" | relURL }}">調査レポート一覧</a></li>
+          <li><a href="{{ "categories/market-data/" | relURL }}">市場データ</a></li>
+          <li><a href="{{ "categories/real-estate-guide/" | relURL }}">不動産ガイド</a></li>
+          <li><a href="{{ "categories/qa/" | relURL }}">よくある質問</a></li>
+        </ul>
       </div>
+      <div class="footer-col">
+        <h4>ツール</h4>
+        <ul>
+          <li><a href="{{ "post/loan-calculator/" | relURL }}">住宅ローン計算</a></li>
+          <li><a href="{{ "post/yield-calculator/" | relURL }}">利回り計算</a></li>
+          <li><a href="{{ "post/rent-estimator/" | relURL }}">家賃相場調査</a></li>
+          <li><a href="{{ "post/price-prediction/" | relURL }}">AI価格予測</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>エリア</h4>
+        <ul>
+          <li><a href="{{ "post/" | relURL }}">東京都</a></li>
+          <li><a href="{{ "post/" | relURL }}">大阪府</a></li>
+          <li><a href="{{ "post/" | relURL }}">神奈川県</a></li>
+          <li><a href="{{ "post/" | relURL }}">全国エリア一覧</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
       <p>&copy; {{ now.Format "2006" }} 日本不動産価格調査センター. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="{{ .Site.BaseURL | relURL }}">トップページ</a>
+        <a href="{{ "post/" | relURL }}">調査レポート</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<!-- スクロールトップボタン -->
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="トップへ戻る">↑</button>
+
+<script>
+// ページローダー
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('pageLoader').classList.add('hidden');
+  }, 300);
+});
+
+// モバイルメニュー
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+if (hamburger) {
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+}
+if (mobileMenuClose) {
+  mobileMenuClose.addEventListener('click', function() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+}
+if (mobileMenu) {
+  mobileMenu.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// スクロールトップ
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+});
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// スクロールアニメーション（Intersection Observer）
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.feature-card, .simulator-card, .post-card, .region-block, .stat-item').forEach(function(el) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+// ヘッダースクロールシャドウ
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+});
+</script>
 
 </body>
 </html>
