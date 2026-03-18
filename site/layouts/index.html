@@ -17,6 +17,86 @@
   </div>
 </section>
 
+<!-- 最新の調査レポート（ヒーロー直後） -->
+<section class="articles-section">
+  <div class="container">
+    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;">
+      <div>
+        <div class="section-label">LATEST REPORTS</div>
+        <h2 class="section-title" style="margin-bottom:0;">最新の調査レポート</h2>
+      </div>
+      <a href="{{ "post/" | relURL }}" class="view-all" style="font-size:.8rem;color:var(--green);font-weight:700;border-bottom:1px solid var(--green);padding-bottom:1px;">すべて見る →</a>
+    </div>
+    <div class="post-grid">
+      {{ range first 9 (where .Site.RegularPages "Section" "post") }}
+      {{ if ne .Layout "tool" }}
+      <a href="{{ .Permalink }}" class="post-card">
+        <div class="post-thumb">
+          <div class="post-thumb-title">{{ .Title }}</div>
+        </div>
+        <div class="post-body">
+          <div class="post-date">{{ .Date.Format "2006年01月02日" }}</div>
+          {{ $type := .Params.article_type | default "area" }}
+          {{ if eq $type "guide" }}
+            <span class="post-tag type-guide">📖 不動産ガイド</span>
+          {{ else if eq $type "qa" }}
+            <span class="post-tag type-qa">❓ Q&amp;A</span>
+          {{ else if eq $type "ranking" }}
+            <span class="post-tag type-ranking">📊 市場データ</span>
+          {{ else }}
+            <span class="post-tag type-area">🏘️ エリア情報</span>
+          {{ end }}
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Summary | truncate 80 }}</p>
+        </div>
+        <div class="post-footer">詳細を見る →</div>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Q&A プレビュー -->
+<section class="qa-section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">よくある質問</h2>
+      <p class="section-desc">不動産購入・投資に関するよくあるご質問にお答えします</p>
+    </div>
+    <div class="qa-grid">
+      <details class="qa-item">
+        <summary>不動産購入の初期費用は、購入価格の何%くらいかかりますか？</summary>
+        <div class="qa-answer">
+          一般的に購入価格の<strong>6〜10%程度</strong>が諸費用として必要です。内訳は、仲介手数料（購入価格の3%+6万円）、登記費用（1〜2%）、ローン諸費用（0.5〜1%）、固定資産税の精算分などです。3,000万円の物件なら約180〜300万円が目安となります。
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>住宅ローンの審査に通りやすくするには、どんな条件が重要ですか？</summary>
+        <div class="qa-answer">
+          主要なポイントは①<strong>年収</strong>（返済比率が年収の25〜35%以内が目安）、②<strong>勤続年数</strong>（2年以上が理想）、③<strong>信用情報</strong>（過去のローン遅延がないこと）、④<strong>自己資金比率</strong>（物件価格の20%以上が望ましい）の4つです。事前に信用情報を確認することをおすすめします。
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>マンションと一戸建て、どちらが資産価値を保ちやすいですか？</summary>
+        <div class="qa-answer">
+          立地次第で大きく異なりますが、<strong>都心部ではマンション</strong>、<strong>郊外では一戸建て</strong>が有利な傾向があります。マンションは駅近・管理状態が価値を左右し、一戸建ては土地の希少性が重要です。近年は都心の駅近マンションが値上がりしており、資産価値の観点では注目されています。
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>不動産投資の表面利回りと実質利回りの違いは何ですか？</summary>
+        <div class="qa-answer">
+          <strong>表面利回り</strong>は「年間家賃収入 ÷ 物件価格 × 100」で計算した数字です。一方<strong>実質利回り</strong>は、管理費・固定資産税・修繕費・空室損失などのコストを差し引いて計算します。表面利回りが8%でも、実質利回りは5〜6%になることが多く、投資判断には実質利回りが重要です。
+        </div>
+      </details>
+    </div>
+    <div class="qa-cta">
+      <a href="{{ "categories/qa/" | relURL }}">Q&amp;A一覧を見る →</a>
+    </div>
+  </div>
+</section>
+
 <!-- シミュレーター -->
 <section class="simulator-section">
   <div class="container">
@@ -137,36 +217,6 @@
           <a href="{{ "post/" | relURL }}">その他</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 最新レポート -->
-<section class="articles-section">
-  <div class="container">
-    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;">
-      <div>
-        <div class="section-label">LATEST REPORTS</div>
-        <h2 class="section-title" style="margin-bottom:0;">最新の調査レポート</h2>
-      </div>
-      <a href="{{ "post/" | relURL }}" class="view-all" style="font-size:.8rem;color:var(--green);font-weight:700;border-bottom:1px solid var(--green);padding-bottom:1px;">すべて見る →</a>
-    </div>
-    <div class="post-grid">
-      {{ range first 6 (where .Site.RegularPages "Section" "post") }}
-      {{ if ne .Layout "tool" }}
-      <a href="{{ .Permalink }}" class="post-card">
-        <div class="post-thumb">
-          <div class="post-thumb-title">{{ .Title }}</div>
-        </div>
-        <div class="post-body">
-          <span class="post-tag">調査レポート</span>
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Summary | truncate 90 }}</p>
-        </div>
-        <div class="post-footer">詳細を見る</div>
-      </a>
-      {{ end }}
-      {{ end }}
     </div>
   </div>
 </section>

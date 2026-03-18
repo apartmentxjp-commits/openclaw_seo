@@ -1118,3 +1118,95 @@ footer a:hover { color: #fff; }
   background: var(--bg-soft); border-radius: var(--radius-lg);
   border: 2px dashed var(--border);
 }
+
+/* ===== Homepage UI Redesign ===== */
+
+/* 記事カードの日付 */
+.post-date {
+  font-size: .72rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+  letter-spacing: .02em;
+}
+
+/* カテゴリバッジ (記事カード用) */
+.post-tag.type-guide   { background: #e8f5e9; color: #2e7d32; }
+.post-tag.type-qa      { background: #fff3e0; color: #e65100; }
+.post-tag.type-ranking { background: #e3f0fb; color: #1565c0; }
+.post-tag.type-area    { background: #f0faf4; color: #0c6e3f; }
+
+/* Q&A セクション */
+.qa-section {
+  background: var(--bg-soft);
+  padding: 72px 0;
+}
+.qa-grid {
+  display: grid;
+  gap: 10px;
+  max-width: 780px;
+  margin: 36px auto 0;
+}
+.qa-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.qa-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,.07);
+}
+.qa-item summary {
+  cursor: pointer;
+  padding: 18px 22px;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--navy);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.5;
+}
+.qa-item summary::-webkit-details-marker { display: none; }
+.qa-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--green);
+  line-height: 1;
+}
+.qa-item[open] summary::after { content: "−"; }
+.qa-item[open] summary {
+  border-bottom: 1px solid var(--border-light);
+  color: var(--green);
+}
+.qa-answer {
+  padding: 16px 22px 20px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  font-size: .9rem;
+}
+.qa-answer strong { color: var(--navy); }
+.qa-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+.qa-cta a {
+  display: inline-block;
+  padding: 11px 32px;
+  border: 2px solid var(--green);
+  color: var(--green);
+  border-radius: 28px;
+  font-weight: 700;
+  font-size: .85rem;
+  transition: all .2s;
+  letter-spacing: .03em;
+}
+.qa-cta a:hover {
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+}
