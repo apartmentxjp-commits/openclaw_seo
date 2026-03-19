@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kanagawa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Sagamihara_montage.jpg/640px-Sagamihara_montage.jpg"
 ---
 
 # 相模原市の一戸建て価格相場と最新動向

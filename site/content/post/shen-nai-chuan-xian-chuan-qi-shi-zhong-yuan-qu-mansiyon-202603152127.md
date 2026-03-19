@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kanagawa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%E6%A8%AA%E6%B5%9C%E3%81%BF%E3%81%AA%E3%81%A8%E3%81%BF%E3%82%89%E3%81%84%E5%9C%B0%E5%8C%BA.jpg/640px-%E6%A8%AA%E6%B5%9C%E3%81%BF%E3%81%AA%E3%81%A8%E3%81%BF%E3%82%89%E3%81%84%E5%9C%B0%E5%8C%BA.jpg"
 ---
 
 # 神奈川県川崎市中原区のマンション価格情報

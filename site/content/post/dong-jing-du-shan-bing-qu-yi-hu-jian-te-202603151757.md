@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/2018_K%C5%8Denji.jpg/640px-2018_K%C5%8Denji.jpg"
 ---
 
 # 東京都杉並区の一戸建て不動産価格情報: 最新相場と魅力的な地域

@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["fukuoka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/20100719_Dazaifu_Tenmangu_Shrine_3328.jpg/640px-20100719_Dazaifu_Tenmangu_Shrine_3328.jpg"
 ---
 
 # 福岡県福岡市博多区のマンション価格情報：最新相場と生活環境

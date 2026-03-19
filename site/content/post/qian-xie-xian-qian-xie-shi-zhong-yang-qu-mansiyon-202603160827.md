@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["chiba"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Naritasan-Shinshoji-Temple-2008.jpg/640px-Naritasan-Shinshoji-Temple-2008.jpg"
 ---
 
 # 千葉市中央区のマンション最新相場と魅力的な生活環境

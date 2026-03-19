@@ -10,6 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "qa"
 categories: ["qa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 住宅ローンを組む前に知るべきQ&A：年収・頭金・審査の疑問を解決

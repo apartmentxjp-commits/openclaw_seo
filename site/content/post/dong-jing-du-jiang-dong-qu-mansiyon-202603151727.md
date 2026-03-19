@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tomioka_Hachiman-gu_201708.jpg/640px-Tomioka_Hachiman-gu_201708.jpg"
 ---
 
 # 江東区マンスション価格情報: 最新相場と生活環境

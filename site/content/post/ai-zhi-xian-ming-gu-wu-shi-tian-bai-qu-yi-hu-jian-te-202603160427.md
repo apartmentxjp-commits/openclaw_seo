@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["aichi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Tenshuhonmaru.jpg/640px-Tenshuhonmaru.jpg"
 ---
 
 # 名古屋市天白区の一戸建て不動産価格情報: 最新相場と地域の特徴

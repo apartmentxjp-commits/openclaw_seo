@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["iwate"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Morioka_Montage.jpg/640px-Morioka_Montage.jpg"
 ---
 
 # 岩手県盆岡市のマンション価格情報

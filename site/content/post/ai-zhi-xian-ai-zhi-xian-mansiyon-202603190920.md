@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["aichi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Tenshuhonmaru.jpg/640px-Tenshuhonmaru.jpg"
 ---
 
 # 愛知県 エリア別地価ランキング2024：名古屋各区の価格比較

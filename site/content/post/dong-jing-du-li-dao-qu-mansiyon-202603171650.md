@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Sunshine_60_1_Ikebukuro_Tokyo_21_May_2004.jpg/640px-Sunshine_60_1_Ikebukuro_Tokyo_21_May_2004.jpg"
 ---
 
 # 豊島区のマンション価格相場と最新動向

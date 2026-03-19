@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/2018_Shibuya_Crossing.jpg/640px-2018_Shibuya_Crossing.jpg"
 ---
 
 # 渋谷区のマンション価格相場と最新動向

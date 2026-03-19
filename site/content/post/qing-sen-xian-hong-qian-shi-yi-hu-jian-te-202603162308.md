@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["aomori"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Hirosaki_Montage.jpg/640px-Hirosaki_Montage.jpg"
 ---
 
 # 弘前市の一戸建て価格相場と最新動向

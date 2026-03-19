@@ -11,6 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["aichi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Tenshuhonmaru.jpg/640px-Tenshuhonmaru.jpg"
 ---
 
 # 名古屋のマンション購入ガイド：人気エリアと価格帯を徹底解説

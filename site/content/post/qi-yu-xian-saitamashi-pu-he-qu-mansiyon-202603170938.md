@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["saitama"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Japanese_Saitama_Shintoshin_west_building.jpg/640px-Japanese_Saitama_Shintoshin_west_building.jpg"
 ---
 
 # さいたま市浦和区のマンション価格相場と最新動向

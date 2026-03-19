@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["iwate"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Esashi-fujiharanosato.jpg/640px-Esashi-fujiharanosato.jpg"
 ---
 
 # 奥州市の一戸建て価格相場と最新動向

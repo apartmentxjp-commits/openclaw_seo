@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["iwate"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Esashi-fujiharanosato.jpg/640px-Esashi-fujiharanosato.jpg"
 ---
 
 # 岩手県 奥州市 一戸建て 不動産価格情報

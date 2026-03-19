@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hokkaido"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Tokachi_plain_01.jpg/640px-Tokachi_plain_01.jpg"
 ---
 
 # 北海道札幌市豊平区のマンション価格情報

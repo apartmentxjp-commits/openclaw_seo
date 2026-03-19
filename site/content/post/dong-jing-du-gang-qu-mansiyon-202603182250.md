@@ -11,6 +11,7 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
 ---
 
 # 東京のマンション購入Q&A：頭金・ローン・費用の疑問を一挙解決

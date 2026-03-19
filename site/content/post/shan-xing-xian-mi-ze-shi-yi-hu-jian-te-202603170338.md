@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["yamagata"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Uesugi_Shrine_20250713a.jpg/640px-Uesugi_Shrine_20250713a.jpg"
 ---
 
 # 米沢市の一戸建て価格相場と最新動向

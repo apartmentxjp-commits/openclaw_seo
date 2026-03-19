@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["fukuoka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Fukuoka_City_-_Watanabe-dori_Avenue_-_01.JPG/640px-Fukuoka_City_-_Watanabe-dori_Avenue_-_01.JPG"
 ---
 
 # 福岡県福岡市中央区のマンション価格情報: 最新相場と住みやすさ

@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kanagawa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Fujisawa_montage.jpg/640px-Fujisawa_montage.jpg"
 ---
 
 # 藤沢市の一戸建て価格相場と最新動向

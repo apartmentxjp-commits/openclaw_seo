@@ -11,6 +11,7 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/JR_Osaka_Station_20151226.JPG/640px-JR_Osaka_Station_20151226.JPG"
 ---
 
 # 大阪の不動産Q&A：エリア選び・価格交渉・諸費用の疑問

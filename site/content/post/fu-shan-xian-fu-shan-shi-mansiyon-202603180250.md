@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["toyama"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Toyama_montage_0.png/640px-Toyama_montage_0.png"
 ---
 
 # 富山市のマンション価格相場と最新動向

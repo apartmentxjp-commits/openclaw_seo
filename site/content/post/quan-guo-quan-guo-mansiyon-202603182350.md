@@ -10,6 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "qa"
 categories: ["qa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 不動産投資Q&A：利回り・空室リスク・節税の疑問に回答

@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["ishikawa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2024-10-26_Kanazawa_Castle%2C_Ishikawa-mon.jpg/640px-2024-10-26_Kanazawa_Castle%2C_Ishikawa-mon.jpg"
 ---
 
 # 金沢市のマンション価格相場と最新動向

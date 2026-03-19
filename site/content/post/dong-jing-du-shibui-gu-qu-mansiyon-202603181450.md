@@ -11,6 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/2018_Shibuya_Crossing.jpg/640px-2018_Shibuya_Crossing.jpg"
 ---
 
 # 中古マンション購入ガイド：築年数別のメリット・デメリットと選び方

@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["aichi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/TMC_Headquarters_Building%2C_Toyota-cho_Toyota_2019.jpg/640px-TMC_Headquarters_Building%2C_Toyota-cho_Toyota_2019.jpg"
 ---
 
 # 愛知県豊田市の一戸建て不動産価格情報

@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["miyagi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Mt.Izumigatake_%28on_R457%29.JPG/640px-Mt.Izumigatake_%28on_R457%29.JPG"
 ---
 
 ## 仙台市泉区の一戸建て価格相場と最新動向

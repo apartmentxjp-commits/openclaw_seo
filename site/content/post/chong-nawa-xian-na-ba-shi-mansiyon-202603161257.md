@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["okinawa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Naha_montage.jpg/640px-Naha_montage.jpg"
 ---
 
 # 沖縄県那覇市のマンション価格情報: 最新相場と地域の魅力

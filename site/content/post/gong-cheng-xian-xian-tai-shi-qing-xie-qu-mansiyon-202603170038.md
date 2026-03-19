@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["miyagi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/SendaiJoOtemonSumiYagura2003-11.jpg/640px-SendaiJoOtemonSumiYagura2003-11.jpg"
 ---
 
 # 仙台市青葉区のマンション価格相場と最新動向

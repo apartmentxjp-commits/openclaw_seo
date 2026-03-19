@@ -11,6 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/JR_Osaka_Station_20151226.JPG/640px-JR_Osaka_Station_20151226.JPG"
 ---
 
 # 大阪のマンション購入ガイド：エリア選び・価格相場・注意点

@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hyogo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Himeji_castle_in_may_2015.jpg/640px-Himeji_castle_in_may_2015.jpg"
 ---
 
 # 兵庫県神戸市中央区のマンション価格情報

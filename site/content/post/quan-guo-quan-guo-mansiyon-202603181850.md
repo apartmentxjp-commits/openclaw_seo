@@ -10,6 +10,7 @@ keywords: ["全国地価ランキング", "都道府県別地価", "地価最高
 article_type: "ranking"
 categories: ["market-data"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 全国 都道府県別 地価ランキング2024：最高値・上昇率トップ20

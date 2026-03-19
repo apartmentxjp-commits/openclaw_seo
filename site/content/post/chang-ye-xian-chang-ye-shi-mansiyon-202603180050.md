@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["nagano"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Nagano_Montage.jpg/640px-Nagano_Montage.jpg"
 ---
 
 # 長野市のマンション価格相場と最新動向

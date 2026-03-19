@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["gunma"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Takasaki_Montage.jpg/640px-Takasaki_Montage.jpg"
 ---
 
 # 高崎市の一戸建て価格相場と最新動向

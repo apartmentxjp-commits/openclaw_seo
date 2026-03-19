@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["fukuoka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/20100719_Dazaifu_Tenmangu_Shrine_3328.jpg/640px-20100719_Dazaifu_Tenmangu_Shrine_3328.jpg"
 ---
 
 # 福岡県 エリア別地価ランキング2024：中央区vs博多区vs東区

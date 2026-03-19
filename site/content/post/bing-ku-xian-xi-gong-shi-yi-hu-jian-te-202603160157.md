@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hyogo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Koshien_Stadium_Ginsan_and_Liner_Vision.jpg/640px-Koshien_Stadium_Ginsan_and_Liner_Vision.jpg"
 ---
 
 # 兵庫県西宮市の一戸建て不動産価格情報

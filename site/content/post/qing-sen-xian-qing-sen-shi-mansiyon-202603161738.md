@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["aomori"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Aomori_Montage.jpg/640px-Aomori_Montage.jpg"
 ---
 
 # 青森県 青森市 マンション価格情報：最新相場と地域特性

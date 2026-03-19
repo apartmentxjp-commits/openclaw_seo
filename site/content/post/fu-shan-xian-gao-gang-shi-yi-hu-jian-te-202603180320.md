@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["toyama"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Takaoka_montage.JPG/640px-Takaoka_montage.JPG"
 ---
 
 # 高岡市の一戸建て価格相場と最新動向

@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["akita"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Akita_Montage2.jpg/640px-Akita_Montage2.jpg"
 ---
 
 # 秋田県秋田市のマンション価格情報

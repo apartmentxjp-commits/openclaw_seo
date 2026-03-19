@@ -10,6 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "ranking"
 categories: ["market-data"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 投資用マンション利回りランキング2024：高利回りエリアTOP10

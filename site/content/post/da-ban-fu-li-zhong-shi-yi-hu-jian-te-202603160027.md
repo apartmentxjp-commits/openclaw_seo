@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/151128_Hattori_Ryokuchi_Park_Osaka_pref_Japan02s3.jpg/640px-151128_Hattori_Ryokuchi_Park_Osaka_pref_Japan02s3.jpg"
 ---
 
 # 大阪府豊中市の一戸建て不動産価格情報

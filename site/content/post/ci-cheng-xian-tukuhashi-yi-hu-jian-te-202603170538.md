@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["ibaraki"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Tsukuba_Center_%26_Mt.Tsukuba01.jpg/640px-Tsukuba_Center_%26_Mt.Tsukuba01.jpg"
 ---
 
 # つくば市の一戸建て価格相場と最新動向

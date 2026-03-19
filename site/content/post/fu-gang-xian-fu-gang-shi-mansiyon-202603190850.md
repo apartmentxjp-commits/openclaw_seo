@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["fukuoka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Fukuoka_City_-_Montage_-_01.JPG/640px-Fukuoka_City_-_Montage_-_01.JPG"
 ---
 
 # 福岡市 区別 マンション価格ランキング2024：天神・博多・西新エリア

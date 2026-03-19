@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
 ---
 
 # 東京都内 一戸建て購入しやすいエリアランキング2024

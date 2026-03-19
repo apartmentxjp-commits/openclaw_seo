@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["okayama"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/250505_Korakuen_Okayama_Japan07s3.jpg/640px-250505_Korakuen_Okayama_Japan07s3.jpg"
 ---
 
 # 岡山県岡山市北区のマンション価格情報

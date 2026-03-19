@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["niigata"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nagaoka_Festival_Fireworks_2015_Phoenix_20150802.jpg/640px-Nagaoka_Festival_Fireworks_2015_Phoenix_20150802.jpg"
 ---
 
 # 長岡市の一戸建て価格相場と最新動向

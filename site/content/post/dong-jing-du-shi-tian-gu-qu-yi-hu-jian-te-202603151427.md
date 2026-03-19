@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Seijo_namikimichi_231011.jpg/640px-Seijo_namikimichi_231011.jpg"
 ---
 
 # 東京都世田谷区の一戸建て価格情報：最新相場と生活環境

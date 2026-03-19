@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["shizuoka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Mt.Fuji-Osezaki.jpg/640px-Mt.Fuji-Osezaki.jpg"
 ---
 
 # 静岡市葵区のマンション価格相場と最新動向

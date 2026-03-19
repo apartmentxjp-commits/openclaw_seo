@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["yamagata"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Yamagata_Montage.jpg/640px-Yamagata_Montage.jpg"
 ---
 
 # 山形市のマンション価格相場と最新動向

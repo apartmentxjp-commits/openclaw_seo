@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["chiba"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Matsudo_montage.jpg/640px-Matsudo_montage.jpg"
 ---
 
 # 松戸市のマンション価格相場と最新動向

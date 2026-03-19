@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["kyoto"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kyoto%2C_Japan_%28Unsplash_UIN-pFfJ7c%29.jpg/640px-Kyoto%2C_Japan_%28Unsplash_UIN-pFfJ7c%29.jpg"
 ---
 
 # 京都府 エリア別マンション価格ランキング2024：京都市内・宇治・亀岡

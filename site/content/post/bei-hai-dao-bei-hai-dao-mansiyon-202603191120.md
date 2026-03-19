@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["hokkaido"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Tokachi_plain_01.jpg/640px-Tokachi_plain_01.jpg"
 ---
 
 # 北海道 エリア別地価ランキング2024：札幌vs函館vs旭川

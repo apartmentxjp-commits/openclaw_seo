@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hiroshima"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Montages_of_Hiroshima_prefecture.jpg/640px-Montages_of_Hiroshima_prefecture.jpg"
 ---
 
 # 広島市中区のマンション価格相場：最新情報と地域の特徴

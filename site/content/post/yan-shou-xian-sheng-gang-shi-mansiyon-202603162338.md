@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["iwate"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Morioka_Montage.jpg/640px-Morioka_Montage.jpg"
 ---
 
 # 盛岡市のマンション価格相場と最新動向

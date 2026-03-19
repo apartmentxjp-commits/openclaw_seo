@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["aichi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Tenshuhonmaru.jpg/640px-Tenshuhonmaru.jpg"
 ---
 
 # 愛知県名古屋市中区のマンション価格情報

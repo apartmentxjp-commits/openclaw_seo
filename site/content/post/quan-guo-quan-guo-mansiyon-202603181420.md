@@ -10,6 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "guide"
 categories: ["real-estate-guide"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 住宅取得控除・すまい給付金：2024年の税制優遇を最大活用する方法

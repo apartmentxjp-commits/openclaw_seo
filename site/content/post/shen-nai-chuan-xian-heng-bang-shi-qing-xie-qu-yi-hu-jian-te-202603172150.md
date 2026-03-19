@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kanagawa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/%E3%81%93%E3%81%A9%E3%82%82%E3%81%AE%E5%9B%BD_-53540.jpeg/640px-%E3%81%93%E3%81%A9%E3%82%82%E3%81%AE%E5%9B%BD_-53540.jpeg"
 ---
 
 # 横浜市青葉区の一戸建て価格相場と最新動向

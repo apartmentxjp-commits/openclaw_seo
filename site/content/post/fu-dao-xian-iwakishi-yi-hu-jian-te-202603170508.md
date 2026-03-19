@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["fukushima"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Iwaki_Montage_2.jpg/640px-Iwaki_Montage_2.jpg"
 ---
 
 # いわき市の一戸建て価格相場と最新動向

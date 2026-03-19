@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["ibaraki"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Tsukuba_Center_%26_Mt.Tsukuba01.jpg/640px-Tsukuba_Center_%26_Mt.Tsukuba01.jpg"
 ---
 
 # 茨城県つくば市一戸建ての最新価格情報

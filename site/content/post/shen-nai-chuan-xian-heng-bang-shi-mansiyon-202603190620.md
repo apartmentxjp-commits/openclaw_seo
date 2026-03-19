@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["kanagawa"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Minato_Mirai_In_Blue_%28cropped%29.jpg/640px-Minato_Mirai_In_Blue_%28cropped%29.jpg"
 ---
 
 # 横浜市 区別 マンション価格ランキング2024：最高値と掘り出し物エリア

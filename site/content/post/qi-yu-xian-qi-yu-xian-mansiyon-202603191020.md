@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["saitama"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Japanese_Saitama_Shintoshin_west_building.jpg/640px-Japanese_Saitama_Shintoshin_west_building.jpg"
 ---
 
 # 埼玉県 市別 マンション価格ランキング2024：さいたま市・川越・越谷比較

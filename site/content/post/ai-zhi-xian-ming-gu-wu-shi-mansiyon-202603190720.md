@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["aichi"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/View_of_Westward_from_Sky_Deck_MIRAI360%2C_Nishiki_Naka_Ward_Nagoya_2022.jpg/640px-View_of_Westward_from_Sky_Deck_MIRAI360%2C_Nishiki_Naka_Ward_Nagoya_2022.jpg"
 ---
 
 # 名古屋市 区別 マンション価格ランキング2024：中区・西区・千種区比較
