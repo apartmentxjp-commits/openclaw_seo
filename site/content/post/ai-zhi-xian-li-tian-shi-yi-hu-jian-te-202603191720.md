@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["aichi"]
 draft: false
+thumbnail: "/images/thumbnails/640px-TMC_Headquarters_Building__Toyota-cho_Toyota_2019.jpg"
 ---
 
 # 豊田市の一戸建て価格相場と最新動向
