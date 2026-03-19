@@ -11,6 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["shizuoka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Mt.Fuji-Osezaki.jpg/640px-Mt.Fuji-Osezaki.jpg"
 ---
 
 # 静岡県 エリア別地価ランキング2024: 浜松・静岡・沼津の比較
