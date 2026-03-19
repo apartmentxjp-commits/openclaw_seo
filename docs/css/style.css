@@ -2027,3 +2027,230 @@ footer a:hover { color: #fff; }
   from { transform: translateY(0); opacity: .6; }
   to   { transform: translateY(-12px); opacity: 1; }
 }
+
+/* ── 用語集 (Glossary) ─────────────────────────────────────── */
+.glossary-hero {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%);
+  color: #fff;
+  padding: 56px 0 48px;
+  text-align: center;
+}
+.glossary-hero-title {
+  font-size: 2.2rem;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.glossary-hero-desc {
+  font-size: .95rem;
+  opacity: .85;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* 五十音ナビ */
+.gojuon-nav {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 32px;
+}
+.gojuon-row {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.gojuon-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 36px;
+  border-radius: 6px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--green);
+  border: 1px solid var(--green-light);
+  background: var(--green-light);
+  transition: all .15s;
+  text-decoration: none;
+}
+.gojuon-cell:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.gojuon-cell.empty {
+  background: transparent;
+  border-color: transparent;
+  pointer-events: none;
+}
+
+/* カテゴリバッジ */
+.glossary-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.glossary-cat-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: .78rem;
+  font-weight: 600;
+  background: var(--bg-section);
+  color: var(--text-mid);
+  border: 1px solid var(--border);
+}
+
+/* 五十音別リスト */
+.glossary-row {
+  margin-bottom: 32px;
+}
+.glossary-row-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--green-light);
+}
+.glossary-row-char {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green);
+  font-family: 'Noto Serif JP', serif;
+  width: 36px;
+}
+.glossary-row-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.glossary-term-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  transition: all .15s;
+  text-decoration: none;
+}
+.glossary-term-link:hover {
+  border-color: var(--green);
+  background: var(--green-light);
+  transform: translateX(2px);
+}
+.term-name {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.term-reading {
+  font-size: .75rem;
+  color: var(--text-muted);
+}
+.term-cat {
+  margin-left: auto;
+  font-size: .68rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--green-light);
+  color: var(--green);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* 個別用語ページ */
+.term-header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--green-light);
+}
+.term-title {
+  font-size: 2rem;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.term-reading-display {
+  font-size: .95rem;
+  color: var(--text-muted);
+}
+.term-body {
+  line-height: 1.9;
+  color: var(--text-mid);
+}
+.term-body h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 28px 0 12px;
+  padding-left: 10px;
+  border-left: 3px solid var(--green);
+}
+.term-body p { margin-bottom: 16px; }
+.term-body ul, .term-body ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.term-body li { margin-bottom: 6px; }
+.term-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: .9rem;
+}
+.term-body th, .term-body td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+}
+.term-body th { background: var(--bg-section); font-weight: 600; }
+
+/* 関連用語 */
+.term-related {
+  margin-top: 40px;
+  padding: 24px;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+.term-related h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.term-related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.term-related-link {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--green);
+  border-radius: 20px;
+  font-size: .82rem;
+  color: var(--green);
+  font-weight: 600;
+  transition: all .15s;
+}
+.term-related-link:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+  .glossary-hero-title { font-size: 1.6rem; }
+  .glossary-row-list { grid-template-columns: 1fr 1fr; }
+  .gojuon-cell { width: 32px; height: 30px; font-size: .78rem; }
+  .term-title { font-size: 1.5rem; }
+}
