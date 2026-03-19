@@ -96,8 +96,19 @@
     {{/* Featured first article */}}
     {{ with index $articles 0 }}
     {{ $type := .Params.article_type | default "area" }}
+    {{ $thumb := .Params.thumbnail | default "" }}
     <a href="{{ .Permalink }}" class="news-featured">
-      <div class="news-accent-bar {{ if eq $type "guide" }}bar-guide{{ else if eq $type "qa" }}bar-qa{{ else if eq $type "ranking" }}bar-ranking{{ else }}bar-area{{ end }}"></div>
+      {{/* サムネイル */}}
+      <div class="news-thumb-wrap {{ if eq $type "guide" }}bg-guide{{ else if eq $type "qa" }}bg-qa{{ else if eq $type "ranking" }}bg-ranking{{ else }}bg-area{{ end }}">
+        {{ if $thumb }}
+          <img src="{{ $thumb }}" alt="{{ .Title }}" class="news-thumb-img" loading="lazy">
+        {{ else }}
+          <div class="news-thumb-placeholder">
+            <span>{{ if eq $type "ranking" }}📊{{ else if eq $type "guide" }}📖{{ else if eq $type "qa" }}❓{{ else }}🏘️{{ end }}</span>
+            <small>{{ .Params.area | default .Params.prefecture }}</small>
+          </div>
+        {{ end }}
+      </div>
       <div class="news-featured-body">
         <div class="news-featured-meta">
           {{ if eq $type "guide" }}<span class="post-tag type-guide">不動産ガイド</span>
@@ -107,7 +118,7 @@
           <span class="news-date">{{ .Date.Format "2006年01月02日" }}</span>
         </div>
         <h3 class="news-featured-title">{{ .Title }}</h3>
-        <p class="news-featured-desc">{{ .Summary | truncate 90 }}</p>
+        <p class="news-featured-desc">{{ .Summary | truncate 80 }}</p>
         <span class="news-read">詳細を見る →</span>
       </div>
     </a>
@@ -117,8 +128,16 @@
     <div class="news-list">
       {{ range after 1 $articles }}
       {{ $type := .Params.article_type | default "area" }}
+      {{ $thumb := .Params.thumbnail | default "" }}
       <a href="{{ .Permalink }}" class="news-row">
-        <div class="news-row-accent {{ if eq $type "guide" }}bar-guide{{ else if eq $type "qa" }}bar-qa{{ else if eq $type "ranking" }}bar-ranking{{ else }}bar-area{{ end }}"></div>
+        {{/* サムネイル */}}
+        <div class="news-row-thumb {{ if eq $type "guide" }}bg-guide{{ else if eq $type "qa" }}bg-qa{{ else if eq $type "ranking" }}bg-ranking{{ else }}bg-area{{ end }}">
+          {{ if $thumb }}
+            <img src="{{ $thumb }}" alt="{{ .Title }}" loading="lazy">
+          {{ else }}
+            <span class="news-row-thumb-icon">{{ if eq $type "ranking" }}📊{{ else if eq $type "guide" }}📖{{ else if eq $type "qa" }}❓{{ else }}🏘️{{ end }}</span>
+          {{ end }}
+        </div>
         <div class="news-row-body">
           <div class="news-row-meta">
             {{ if eq $type "guide" }}<span class="post-tag type-guide">不動産ガイド</span>
