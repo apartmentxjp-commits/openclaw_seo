@@ -4,6 +4,7 @@ date: 2026-03-08T12:00:00+09:00
 article_type: "area"
 categories: ["area-info"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Seijo_namikimichi_231011.jpg/640px-Seijo_namikimichi_231011.jpg"
 ---
 
 

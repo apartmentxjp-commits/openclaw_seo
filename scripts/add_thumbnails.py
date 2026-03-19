@@ -86,21 +86,23 @@ def add_thumbnail_to_file(md_path: Path) -> bool:
     fm_block = text[3:end]
     rest = text[end:]  # "\n---\n..." から始まる残り
 
-    # area / prefecture を取得
+    # area / prefecture / thumbnail_keyword を取得
     area_m = re.search(r'^area:\s*"?([^"\n]+)"?', fm_block, re.MULTILINE)
     pref_m = re.search(r'^prefecture:\s*"?([^"\n]+)"?', fm_block, re.MULTILINE)
-    area = area_m.group(1).strip() if area_m else ""
-    pref = pref_m.group(1).strip() if pref_m else ""
+    kw_m   = re.search(r'^thumbnail_keyword:\s*"?([^"\n]+)"?', fm_block, re.MULTILINE)
+    area   = area_m.group(1).strip() if area_m else ""
+    pref   = pref_m.group(1).strip() if pref_m else ""
+    kw     = kw_m.group(1).strip()   if kw_m   else ""
 
-    # 検索順：area → prefecture → fallback
+    # 検索順：thumbnail_keyword → area → prefecture → fallback
     thumb = None
-    for query in filter(None, [area, pref]):
+    for query in filter(None, [kw, area, pref]):
         thumb = get_wikipedia_thumbnail(query)
         if thumb:
             break
 
     if not thumb:
-        print(f"  No thumbnail found: {md_path.name} (area={area}, pref={pref})")
+        print(f"  No thumbnail found: {md_path.name} (keyword={kw}, area={area}, pref={pref})")
         return False
 
     # thumbnail フィールドを front matter末尾に挿入
