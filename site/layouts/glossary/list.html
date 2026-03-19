@@ -1,0 +1,82 @@
+{{ define "main" }}
+<!-- 用語集インデックス -->
+<div class="glossary-hero">
+  <div class="container">
+    <div class="section-label">GLOSSARY</div>
+    <h1 class="glossary-hero-title">不動産用語集</h1>
+    <p class="glossary-hero-desc">不動産売買・投資・ローンに関する専門用語を{{ len .Pages }}語収録。五十音順・カテゴリ別に解説します。</p>
+  </div>
+</div>
+
+<div class="container" style="padding: 48px 16px 80px;">
+
+  <!-- 五十音インデックス -->
+  <div class="gojuon-nav">
+    {{ $rows := slice
+      (slice "あ" "い" "う" "え" "お")
+      (slice "か" "き" "く" "け" "こ")
+      (slice "さ" "し" "す" "せ" "そ")
+      (slice "た" "ち" "つ" "て" "と")
+      (slice "な" "に" "ぬ" "ね" "の")
+      (slice "は" "ひ" "ふ" "へ" "ほ")
+      (slice "ま" "み" "む" "め" "も")
+      (slice "や" "" "ゆ" "" "よ")
+      (slice "ら" "り" "る" "れ" "ろ")
+      (slice "わ" "" "" "" "を")
+    }}
+    {{ range $rows }}
+    <div class="gojuon-row">
+      {{ range . }}
+        {{ if . }}
+        <a href="#row-{{ . }}" class="gojuon-cell">{{ . }}</a>
+        {{ else }}
+        <span class="gojuon-cell empty"></span>
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- カテゴリフィルター（将来拡張用） -->
+  <div class="glossary-categories" style="margin-bottom:32px;">
+    {{ $cats := slice }}
+    {{ range .Pages }}
+      {{ $cat := .Params.category | default "その他" }}
+      {{ if not (in $cats $cat) }}{{ $cats = $cats | append $cat }}{{ end }}
+    {{ end }}
+    {{ range $cats }}
+    <span class="glossary-cat-badge">{{ . }}</span>
+    {{ end }}
+  </div>
+
+  <!-- 五十音別リスト -->
+  {{ $rows := slice "あ" "い" "う" "え" "お" "か" "き" "く" "け" "こ" "さ" "し" "す" "せ" "そ" "た" "ち" "つ" "て" "と" "な" "に" "ぬ" "ね" "の" "は" "ひ" "ふ" "へ" "ほ" "ま" "み" "む" "め" "も" "や" "ゆ" "よ" "ら" "り" "る" "れ" "ろ" "わ" }}
+
+  {{ range $char := $rows }}
+    {{ $terms := slice }}
+    {{ range $.Pages }}
+      {{ $reading := .Params.reading | default "" }}
+      {{ if hasPrefix $reading $char }}
+        {{ $terms = $terms | append . }}
+      {{ end }}
+    {{ end }}
+    {{ if $terms }}
+    <section id="row-{{ $char }}" class="glossary-row">
+      <div class="glossary-row-header">
+        <span class="glossary-row-char">{{ $char }}</span>
+      </div>
+      <div class="glossary-row-list">
+        {{ range $terms }}
+        <a href="{{ .Permalink }}" class="glossary-term-link">
+          <span class="term-name">{{ .Params.term | default .Title }}</span>
+          <span class="term-reading">{{ .Params.reading }}</span>
+          {{ if .Params.category }}<span class="term-cat">{{ .Params.category }}</span>{{ end }}
+        </a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+  {{ end }}
+
+</div>
+{{ end }}

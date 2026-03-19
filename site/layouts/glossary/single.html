@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="container" style="max-width:800px; padding: 40px 16px 80px;">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" style="margin-bottom:24px; font-size:.8rem; color:var(--text-muted);">
+    <a href="{{ "/" | relURL }}">ホーム</a>
+    <span> › </span>
+    <a href="{{ "glossary/" | relURL }}">不動産用語集</a>
+    <span> › </span>
+    <span>{{ .Params.term | default .Title }}</span>
+  </nav>
+
+  <!-- 用語ヘッダー -->
+  <div class="term-header">
+    {{ if .Params.category }}
+    <span class="post-tag" style="margin-bottom:12px; display:inline-block;">{{ .Params.category }}</span>
+    {{ end }}
+    <h1 class="term-title">{{ .Params.term | default .Title }}</h1>
+    {{ if .Params.reading }}
+    <p class="term-reading-display">（{{ .Params.reading }}）</p>
+    {{ end }}
+  </div>
+
+  <!-- 本文 -->
+  <div class="term-body prose">
+    {{ .Content }}
+  </div>
+
+  <!-- 関連用語 -->
+  {{ if .Params.related }}
+  <div class="term-related">
+    <h3>関連用語</h3>
+    <div class="term-related-list">
+      {{ range .Params.related }}
+      {{ $slug := . | urlize }}
+      <a href="{{ "glossary/" | relURL }}{{ $slug }}/" class="term-related-link">{{ . }}</a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <!-- 用語集に戻る -->
+  <div style="margin-top:40px; padding-top:24px; border-top:1px solid var(--border);">
+    <a href="{{ "glossary/" | relURL }}" style="color:var(--green); font-weight:700; font-size:.85rem;">
+      ← 不動産用語集に戻る
+    </a>
+  </div>
+
+</div>
+{{ end }}

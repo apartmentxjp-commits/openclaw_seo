@@ -13,9 +13,9 @@ draft: false
 thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
 ---
 
-# マンション管理費・修繕積立金の仕組みと確認ポイント
+# マンション[管理費](/glossary/かんりひ/)・[修繕積立金](/glossary/しゅうぜんつみたてきん/)の仕組みと確認ポイント
 この記事でわかること：
-* マンション管理費と修繕積立金の違いと仕組み
+* マンション[管理費](/glossary/かんりひ/)と[修繕積立金](/glossary/しゅうぜんつみたてきん/)の違いと仕組み
 * 管理費と修繕積立金の確認ポイント
 * マンション購入・賃貸の際に注意するべき点
 * マンションのコスト計算方法と具体的な数値例

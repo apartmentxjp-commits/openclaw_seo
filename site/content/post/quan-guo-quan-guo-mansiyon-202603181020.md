@@ -13,9 +13,9 @@ draft: false
 thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
 ---
 
-# 固定金利 vs 変動金利：2024年の金利上昇局面での最適選択ガイド
+# [固定金利](/glossary/こていきんり/) vs [変動金利](/glossary/へんどうきんり/)：2024年の金利上昇局面での最適選択ガイド
 ## この記事でわかること
-* 固定金利と変動金利の違いについて理解する
+* [固定金利](/glossary/こていきんり/)と[変動金利](/glossary/へんどうきんり/)の違いについて理解する
 * 2024年の金利上昇局面での最適選択のための手順を知る
 * 実際の例を通じて、どちらの選択が自分に適しているかを判断する方法を習得する
 *よくある質問と注意点を把握して、情報に基づいた意思決定をできる

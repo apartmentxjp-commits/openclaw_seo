@@ -23,19 +23,28 @@ def run_command(cmd, cwd=None):
 
 def publish():
     print("🚀 Starting auto-publish to GitHub Pages...")
-    
-    if not os.path.exists(PUBLIC_DIR):
-        print("Error: Public directory not found. Please run deploy_site.py first.")
-        return
 
     try:
-        # Note: In a real environment, we'd need git credentials configured.
-        # This assumes the /app directory (mapped to host) is already a git repo
-        # or we are pushing the public folder specifically.
-        
-        # For this demo, let's assume we are acting on the project root
         os.chdir(BASE_DIR)
-        
+
+        # ── Step 1: サムネイル自動追加 ──────────────────────────
+        thumb_script = os.path.join(BASE_DIR, "scripts", "add_thumbnails.py")
+        if os.path.exists(thumb_script):
+            print("🖼️  Adding thumbnails to new articles...")
+            run_command(["python3", thumb_script])
+        else:
+            print(f"⚠️  Thumbnail script not found: {thumb_script}")
+
+        # ── Step 2: Hugo ビルド ──────────────────────────────────
+        site_dir = os.path.join(BASE_DIR, "site")
+        docs_dir = os.path.join(BASE_DIR, "docs")
+        print("🔨 Building site with Hugo...")
+        run_command(["hugo", "--minify", "--destination", docs_dir], cwd=site_dir)
+
+        if not os.path.exists(docs_dir):
+            print("Error: docs directory not found after Hugo build.")
+            return
+
         print("Adding changes...")
         run_command(["git", "add", "."])
         

@@ -48,7 +48,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Nagano_Mon
 
 * 賃貸収益の計算
 	+ 賃貸収益 = 年間の賃料収入 - 運営費用
-	+ 運営費用 = 管理費、維持費、空室率など
+	+ 運営費用 = [管理費](/glossary/かんりひ/)、維持費、空室率など
 * 価格上昇の期待
 	+ 地域の人口増加や経済成長
 	+ インフラストラクチャーの整備や公共交通機関へのアクセス
