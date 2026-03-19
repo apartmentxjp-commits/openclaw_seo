@@ -78,40 +78,62 @@
 <!-- 最新の調査レポート（ヒーロー直後） -->
 <section class="articles-section">
   <div class="container">
-    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;">
+    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;">
       <div>
         <div class="section-label">LATEST REPORTS</div>
         <h2 class="section-title" style="margin-bottom:0;">最新の調査レポート</h2>
       </div>
       <a href="{{ "post/" | relURL }}" class="view-all" style="font-size:.8rem;color:var(--green);font-weight:700;border-bottom:1px solid var(--green);padding-bottom:1px;">すべて見る →</a>
     </div>
-    <div class="post-grid">
-      {{ range first 9 (where .Site.RegularPages "Section" "post") }}
+
+    {{ $articles := slice }}
+    {{ range first 9 (where .Site.RegularPages "Section" "post") }}
       {{ if ne .Layout "tool" }}
-      <a href="{{ .Permalink }}" class="post-card">
-        <div class="post-thumb">
-          <div class="post-thumb-title">{{ .Title }}</div>
+        {{ $articles = $articles | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Featured first article */}}
+    {{ with index $articles 0 }}
+    {{ $type := .Params.article_type | default "area" }}
+    <a href="{{ .Permalink }}" class="news-featured">
+      <div class="news-accent-bar {{ if eq $type "guide" }}bar-guide{{ else if eq $type "qa" }}bar-qa{{ else if eq $type "ranking" }}bar-ranking{{ else }}bar-area{{ end }}"></div>
+      <div class="news-featured-body">
+        <div class="news-featured-meta">
+          {{ if eq $type "guide" }}<span class="post-tag type-guide">不動産ガイド</span>
+          {{ else if eq $type "qa" }}<span class="post-tag type-qa">Q&amp;A</span>
+          {{ else if eq $type "ranking" }}<span class="post-tag type-ranking">市場データ</span>
+          {{ else }}<span class="post-tag type-area">エリア情報</span>{{ end }}
+          <span class="news-date">{{ .Date.Format "2006年01月02日" }}</span>
         </div>
-        <div class="post-body">
-          <div class="post-date">{{ .Date.Format "2006年01月02日" }}</div>
-          {{ $type := .Params.article_type | default "area" }}
-          {{ if eq $type "guide" }}
-            <span class="post-tag type-guide">📖 不動産ガイド</span>
-          {{ else if eq $type "qa" }}
-            <span class="post-tag type-qa">❓ Q&amp;A</span>
-          {{ else if eq $type "ranking" }}
-            <span class="post-tag type-ranking">📊 市場データ</span>
-          {{ else }}
-            <span class="post-tag type-area">🏘️ エリア情報</span>
-          {{ end }}
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Summary | truncate 80 }}</p>
+        <h3 class="news-featured-title">{{ .Title }}</h3>
+        <p class="news-featured-desc">{{ .Summary | truncate 90 }}</p>
+        <span class="news-read">詳細を見る →</span>
+      </div>
+    </a>
+    {{ end }}
+
+    {{/* Remaining articles as compact list */}}
+    <div class="news-list">
+      {{ range after 1 $articles }}
+      {{ $type := .Params.article_type | default "area" }}
+      <a href="{{ .Permalink }}" class="news-row">
+        <div class="news-row-accent {{ if eq $type "guide" }}bar-guide{{ else if eq $type "qa" }}bar-qa{{ else if eq $type "ranking" }}bar-ranking{{ else }}bar-area{{ end }}"></div>
+        <div class="news-row-body">
+          <div class="news-row-meta">
+            {{ if eq $type "guide" }}<span class="post-tag type-guide">不動産ガイド</span>
+            {{ else if eq $type "qa" }}<span class="post-tag type-qa">Q&amp;A</span>
+            {{ else if eq $type "ranking" }}<span class="post-tag type-ranking">市場データ</span>
+            {{ else }}<span class="post-tag type-area">エリア情報</span>{{ end }}
+            <span class="news-date">{{ .Date.Format "2006/01/02" }}</span>
+          </div>
+          <h4 class="news-row-title">{{ .Title }}</h4>
         </div>
-        <div class="post-footer">詳細を見る →</div>
+        <span class="news-row-arrow">›</span>
       </a>
       {{ end }}
-      {{ end }}
     </div>
+
   </div>
 </section>
 
@@ -191,42 +213,42 @@
       <h2 class="section-title">収益シミュレーション・ツール</h2>
       <p class="section-desc">物件購入前から売却戦略まで、プロ基準の試算をWeb上で再現</p>
     </div>
-    <div class="simulator-grid">
-      <a href="{{ "post/loan-calculator/" | relURL }}" class="simulator-card">
-        <div class="sim-thumb"></div>
-        <div class="sim-body">
-          <div class="sim-icon-wrap">🏠</div>
-          <h3>住宅ローンシミュレーター</h3>
-          <p>借入額や金利から、月々の返済額と総返済額を算出。</p>
+    <div class="book-grid">
+      <a href="{{ "post/loan-calculator/" | relURL }}" class="book-card book-green">
+        <div class="book-spine"><span>LOAN</span></div>
+        <div class="book-body">
+          <div class="book-genre">住宅購入</div>
+          <h3 class="book-title">住宅ローン<br>シミュレーター</h3>
+          <p class="book-desc">借入額・金利から月返済額と総返済額を算出</p>
         </div>
-        <div class="sim-footer">試算スタート</div>
+        <div class="book-cta">試算スタート <span>→</span></div>
       </a>
-      <a href="{{ "post/yield-calculator/" | relURL }}" class="simulator-card">
-        <div class="sim-thumb"></div>
-        <div class="sim-body">
-          <div class="sim-icon-wrap">📈</div>
-          <h3>不動産利回りシミュレーター</h3>
-          <p>表面・実質利回りとCFを算出。収益を可視化します。</p>
+      <a href="{{ "post/yield-calculator/" | relURL }}" class="book-card book-blue">
+        <div class="book-spine"><span>YIELD</span></div>
+        <div class="book-body">
+          <div class="book-genre">投資分析</div>
+          <h3 class="book-title">不動産利回り<br>計算ツール</h3>
+          <p class="book-desc">表面・実質利回りとキャッシュフローを可視化</p>
         </div>
-        <div class="sim-footer">収益を計算</div>
+        <div class="book-cta">収益を計算 <span>→</span></div>
       </a>
-      <a href="{{ "post/rent-estimator/" | relURL }}" class="simulator-card">
-        <div class="sim-thumb"></div>
-        <div class="sim-body">
-          <div class="sim-icon-wrap">📊</div>
-          <h3>家賃相場シミュレーター</h3>
-          <p>周辺の成約データを基に、適正な家賃設定を提案。</p>
+      <a href="{{ "post/rent-estimator/" | relURL }}" class="book-card book-amber">
+        <div class="book-spine"><span>RENT</span></div>
+        <div class="book-body">
+          <div class="book-genre">賃貸相場</div>
+          <h3 class="book-title">家賃相場<br>シミュレーター</h3>
+          <p class="book-desc">成約データをもとに適正家賃を提案</p>
         </div>
-        <div class="sim-footer">相場を調査</div>
+        <div class="book-cta">相場を調査 <span>→</span></div>
       </a>
-      <a href="{{ "post/price-prediction/" | relURL }}" class="simulator-card">
-        <div class="sim-thumb"></div>
-        <div class="sim-body">
-          <div class="sim-icon-wrap">🤖</div>
-          <h3>AI価格予測</h3>
-          <p>AIが市場トレンドを分析し、将来の価値を予測。</p>
+      <a href="{{ "post/price-prediction/" | relURL }}" class="book-card book-purple">
+        <div class="book-spine"><span>AI</span></div>
+        <div class="book-body">
+          <div class="book-genre">AI予測</div>
+          <h3 class="book-title">AI価格<br>予測レポート</h3>
+          <p class="book-desc">AIが市場トレンドを分析し将来価値を予測</p>
         </div>
-        <div class="sim-footer">レポート表示</div>
+        <div class="book-cta">レポート表示 <span>→</span></div>
       </a>
     </div>
   </div>
