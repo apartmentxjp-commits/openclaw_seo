@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["saitama"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/TokiNoKane_Kawagoe_2013Feb.JPG/640px-TokiNoKane_Kawagoe_2013Feb.JPG"
+thumbnail: "/images/thumbnails/640px-TokiNoKane_Kawagoe_2013Feb.JPG"
 ---
 
 # 川越市の一戸建て価格相場と最新動向

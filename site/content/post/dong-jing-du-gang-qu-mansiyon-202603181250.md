@@ -11,7 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
+thumbnail: "/images/thumbnails/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
 ---
 
 # マンション購入の完全ガイド：頭金・諸費用・ローン審査まで
@@ -85,7 +85,7 @@ A: マンション購入のためのローンの金利は、1〜2パーセント
 ### Q: マンション購入のためのローンの期間は何年が一般的ですか？
 A: マンション購入のためのローンの期間は、20〜30年が一般的です。
 
-### Q: マンションの管理費、修繕費等は何パーセントが一般的ですか？
+### Q: マンションの[管理費](/glossary/かんりひ/)、修繕費等は何パーセントが一般的ですか？
 A: マンションの管理費、修繕費等は、購入代金の0.5〜1.5パーセントが一般的です。
 
 ## 定義・用語解説

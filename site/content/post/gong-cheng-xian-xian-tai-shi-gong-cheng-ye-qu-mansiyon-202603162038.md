@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["miyagi"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Miyagi-Landscape_of_cherry_blossoms_and_Matsushima_Bay-xl.jpg/640px-Miyagi-Landscape_of_cherry_blossoms_and_Matsushima_Bay-xl.jpg"
+thumbnail: "/images/thumbnails/6aa5efe64ec6acb4.jpg"
 ---
 
 # 宮城県 仙台市宮城野区のマンション価格情報

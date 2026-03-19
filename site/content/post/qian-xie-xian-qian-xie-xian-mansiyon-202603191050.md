@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["chiba"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Naritasan-Shinshoji-Temple-2008.jpg/640px-Naritasan-Shinshoji-Temple-2008.jpg"
+thumbnail: "/images/thumbnails/640px-Naritasan-Shinshoji-Temple-2008.jpg"
 ---
 
 # 千葉県 市別 マンション価格ランキング2024：柏・千葉市・船橋・浦安比較

@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["gunma"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Maebashi_Montage.jpg/640px-Maebashi_Montage.jpg"
+thumbnail: "/images/thumbnails/640px-Maebashi_Montage.jpg"
 ---
 
 # 前橋市のマンション価格相場と最新動向

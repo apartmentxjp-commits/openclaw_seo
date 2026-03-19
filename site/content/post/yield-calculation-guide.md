@@ -6,7 +6,7 @@ article_type: "area"
 categories: ["area-info"]
 draft: false
 tags: ["不動産投資", "利回り計算", "収益シミュレーション", "キャッシュフロー"]
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
+thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 ---
 
 **この記事でわかること：** 不動産投資における3つの[利回り](/glossary/りまわり/)の定義、正確な計算式、そして「手残り」を最大化するためのシミュレーション方法。
@@ -19,7 +19,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscraper
 
 | 利回の種類 | 概要 | 信頼度 |
 |---|---|---|
-| **表面利回り** | 諸経費を一切考慮しない単純な利回り | ★☆☆☆☆ |
+| **表面[利回り](/glossary/りまわり/)** | 諸経費を一切考慮しない単純な利回り | ★☆☆☆☆ |
 | **実質利回り** | 運営経費（[管理費](/glossary/かんりひ/)等）を差し引いた利回り | ★★★☆☆ |
 | **税引後キャッシュフロー** | ローン返済と税金まで差し引いた「本当の手残り」 | ★★★★★ |
 

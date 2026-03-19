@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Akamon%2C_University_of_Tokyo_2019.jpg/640px-Akamon%2C_University_of_Tokyo_2019.jpg"
+thumbnail: "/images/thumbnails/640px-Akamon__University_of_Tokyo_2019.jpg"
 ---
 
 # 東京都文京区のマンション価格情報：最新相場と魅力的な住環境

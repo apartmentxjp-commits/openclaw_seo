@@ -10,7 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "guide"
 categories: ["real-estate-guide"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # [固定金利](/glossary/こていきんり/) vs [変動金利](/glossary/へんどうきんり/)：2024年の金利上昇局面での最適選択ガイド
@@ -21,7 +21,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Ja
 *よくある質問と注意点を把握して、情報に基づいた意思決定をできる
 
 ## まず、[固定金利](/glossary/こていきんり/)と[変動金利](/glossary/へんどうきんり/)の基本を理解しましょう
-固定金利とは、ローンの金利が一定期間、変動しないことを保証したものです。一方、変動金利は市場の状況に応じて金利が変動します。2024年現在、日銀政策金利は0.1%と比較的低水準となっていますが、近年の世界的な経済動向や日本国内の状況により、将来的に金利が上昇する可能性もあります。
+[固定金利](/glossary/こていきんり/)とは、ローンの金利が一定期間、変動しないことを保証したものです。一方、[変動金利](/glossary/へんどうきんり/)は市場の状況に応じて金利が変動します。2024年現在、日銀政策金利は0.1%と比較的低水準となっていますが、近年の世界的な経済動向や日本国内の状況により、将来的に金利が上昇する可能性もあります。
 
 ## 手順1: 自分の財務状況と目標を把握する
 不動産購入や賃貸を検討する前に、自分の財務状況と 목標を明確にすることが重要です。収入、支出、貯蓄額、借入金の残高などを把握し、将来の予測も含めて総合的な財務計画を作成します。这は、どちらの金利選択でも重要なステップです。

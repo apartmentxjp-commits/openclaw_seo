@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["ibaraki"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Hitachi-Daientotu1.jpg/640px-Hitachi-Daientotu1.jpg"
+thumbnail: "/images/thumbnails/640px-Hitachi-Daientotu1.jpg"
 ---
 
 # 日立市の一戸建て価格相場と最新動向

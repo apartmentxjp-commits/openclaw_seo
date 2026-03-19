@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hokkaido"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Tokachi_plain_01.jpg/640px-Tokachi_plain_01.jpg"
+thumbnail: "/images/thumbnails/640px-Tokachi_plain_01.jpg"
 ---
 
 # 札幌市西区の一戸建て価格相場と最新動向

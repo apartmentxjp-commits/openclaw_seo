@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Gate_City_Osaki.jpg/640px-Gate_City_Osaki.jpg"
+thumbnail: "/images/thumbnails/640px-Gate_City_Osaki.jpg"
 ---
 
 # 東京都品川区のマンション価格情報について

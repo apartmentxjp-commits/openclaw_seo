@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["akita"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Kamakura_at_Yokote_Castle_202402.jpg/640px-Kamakura_at_Yokote_Castle_202402.jpg"
+thumbnail: "/images/thumbnails/640px-Kamakura_at_Yokote_Castle_202402.jpg"
 ---
 
 # 秋田県横手市の一戸建て不動産価格情報

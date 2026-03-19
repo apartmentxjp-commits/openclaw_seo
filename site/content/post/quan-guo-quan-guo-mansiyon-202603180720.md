@@ -10,7 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "guide"
 categories: ["real-estate-guide"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # マンション購入完全ガイド2024：頭金・ローン・諸費用まで徹底解説
@@ -54,7 +54,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Ja
 * ローン：2,200万円
 * ローン金利：年1.5%
 * ローン期間：35年
-* 仲介手数料：120万円
+* [仲介手数料](/glossary/ちゅうかいてすうりょう/)：120万円
 * 登記登録料：12万円
 * 契約更新料：3万円
 

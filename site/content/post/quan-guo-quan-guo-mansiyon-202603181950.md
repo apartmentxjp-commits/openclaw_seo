@@ -10,7 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "qa"
 categories: ["qa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # マンション購入の値引き交渉はできる？成功率と交渉のコツ

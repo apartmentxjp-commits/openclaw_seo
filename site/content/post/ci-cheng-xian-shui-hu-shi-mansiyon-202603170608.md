@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["ibaraki"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Kairaku-en%2C_Ibaraki_24.jpg/640px-Kairaku-en%2C_Ibaraki_24.jpg"
+thumbnail: "/images/thumbnails/640px-Kairaku-en__Ibaraki_24.jpg"
 ---
 
 # 水戸市のマンション価格相場と最新動向

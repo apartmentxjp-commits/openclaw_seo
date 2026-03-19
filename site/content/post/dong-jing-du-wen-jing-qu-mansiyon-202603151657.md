@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Akamon%2C_University_of_Tokyo_2019.jpg/640px-Akamon%2C_University_of_Tokyo_2019.jpg"
+thumbnail: "/images/thumbnails/640px-Akamon__University_of_Tokyo_2019.jpg"
 ---
 
 # 東京都文京区のマンション価格情報：最新相場と生活環境の紹介
@@ -36,7 +36,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Akamon%2C_
 ### Q: 文京区のマンション価格は、なぜ高いのか？
 A: 文京区は東京都心部に位置し、教育機関や公共交通機関が充実しており、生活環境が良好です。また、物件の品質や周辺環境も高級であることが多いため、価格が高くなっているためです。
 ### Q: マンションの購入にあたり、どのような点に注意するべきか？
-A: 物件の新築・中古、築年数、管理費、専有面積などを考慮する必要があります。また、周辺の環境や交通の便も重要なポイントです。
+A: 物件の新築・中古、築年数、[管理費](/glossary/かんりひ/)、専有面積などを考慮する必要があります。また、周辺の環境や交通の便も重要なポイントです。
 ### Q: 文京区では、中古マンションの購入がpopular吗？
 A: はい、中古マンションも需要があります。特に、比較的大規模な物件やリニューアルされた物件は人気があります。
 

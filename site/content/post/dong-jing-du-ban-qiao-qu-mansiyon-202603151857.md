@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Itabashi-at-nakajuku.JPG/640px-Itabashi-at-nakajuku.JPG"
+thumbnail: "/images/thumbnails/640px-Itabashi-at-nakajuku.JPG"
 ---
 
 # 東京都板橋区のマンション価格情報: 最新相場と住みやすさ

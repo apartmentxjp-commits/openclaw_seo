@@ -6,14 +6,14 @@ article_type: "area"
 categories: ["area-info"]
 draft: false
 tags: ["不動産投資", "利回り", "収益計算", "初心者向け"]
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
+thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 ---
 
 **この記事でわかること：** 表面[利回り](/glossary/りまわり/)と実質[利回り](/glossary/りまわり/)の計算式の違い、東京・地方別の目安数値、そして自社シミュレーターで5分以内に試算する方法。
 
 ---
 
-## 表面[利回り](/glossary/りまわり/)と実質利回りとは？
+## 表面[利回り](/glossary/りまわり/)と実質[利回り](/glossary/りまわり/)とは？
 
 **表面利回り（グロス利回り）** とは、物件価格に対する年間家賃収入の割合であり、諸経費を含まない最も基本的な収益指標です。
 

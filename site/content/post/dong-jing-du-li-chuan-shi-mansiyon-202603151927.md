@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Tama_Intercity_Monorail_viewed_from_Green_Springs.jpg/640px-Tama_Intercity_Monorail_viewed_from_Green_Springs.jpg"
+thumbnail: "/images/thumbnails/640px-Tama_Intercity_Monorail_viewed_from_Green_Springs.jpg"
 ---
 
 # 東京都立川市のマンション価格情報：最新相場と地域の魅力

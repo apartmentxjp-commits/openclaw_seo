@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["fukui"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Fukui_montage.jpg/640px-Fukui_montage.jpg"
+thumbnail: "/images/thumbnails/640px-Fukui_montage.jpg"
 ---
 
 # 福井市のマンション価格相場と最新動向

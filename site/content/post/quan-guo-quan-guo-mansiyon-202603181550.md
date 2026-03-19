@@ -10,7 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "guide"
 categories: ["real-estate-guide"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # マンション[管理費](/glossary/かんりひ/)・[修繕積立金](/glossary/しゅうぜんつみたてきん/)の仕組みと確認ポイント
@@ -21,7 +21,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Ja
 * マンションのコスト計算方法と具体的な数値例
 
 ## はじめに
-マンション購入や賃貸は、住まいの将来を決める重要な選択です。マンスリーの支払い額だけでなく、さまざまな費用が発生することがあります。その中でも重要なのが、管理費と修繕積立金です。この記事では、管理費と修繕積立金の仕組みと確認ポイントについて詳しく説明します。
+マンション購入や賃貸は、住まいの将来を決める重要な選択です。マンスリーの支払い額だけでなく、さまざまな費用が発生することがあります。その中でも重要なのが、[管理費](/glossary/かんりひ/)と[修繕積立金](/glossary/しゅうぜんつみたてきん/)です。この記事では、管理費と修繕積立金の仕組みと確認ポイントについて詳しく説明します。
 
 ## ステップ1：管理費と修繕積立金の違いを理解する
 管理費は、エレベーターや共用部の清掃・管理、敷地内での各種の作業を行うために必要な費用です。修繕積立金は、将来必要な大規模な修繕工事のためにつくられる基金です。いずれも、管理組合または管理会社が毎月、住民から徴収します。

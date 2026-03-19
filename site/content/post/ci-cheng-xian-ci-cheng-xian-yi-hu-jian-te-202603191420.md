@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["ibaraki"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Mount_Tsukuba_2.jpg/640px-Mount_Tsukuba_2.jpg"
+thumbnail: "/images/thumbnails/640px-Mount_Tsukuba_2.jpg"
 ---
 
 # 茨城県 市別 一戸建て価格ランキング2024：つくば・水戸・ひたちなか

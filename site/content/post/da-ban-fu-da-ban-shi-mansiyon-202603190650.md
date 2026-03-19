@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["osaka"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Yodo_River_and_Umeda_skyline_2026.jpg/640px-Yodo_River_and_Umeda_skyline_2026.jpg"
+thumbnail: "/images/thumbnails/640px-Yodo_River_and_Umeda_skyline_2026.jpg"
 ---
 
 # 大阪市内 区別 マンション価格ランキング2024: どのエリアが最も высокいか？

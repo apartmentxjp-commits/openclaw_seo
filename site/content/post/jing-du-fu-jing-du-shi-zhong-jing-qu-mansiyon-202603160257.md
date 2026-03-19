@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kyoto"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kyoto%2C_Japan_%28Unsplash_UIN-pFfJ7c%29.jpg/640px-Kyoto%2C_Japan_%28Unsplash_UIN-pFfJ7c%29.jpg"
+thumbnail: "/images/thumbnails/640px-Kyoto__Japan__Unsplash_UIN-pFfJ7c_.jpg"
 ---
 
 # 京都府京都市中京区のマンション価格情報

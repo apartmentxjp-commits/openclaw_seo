@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["fukui"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Takefu_Chrysanthemum_Doll_Festival_2015-01.jpg/640px-Takefu_Chrysanthemum_Doll_Festival_2015-01.jpg"
+thumbnail: "/images/thumbnails/640px-Takefu_Chrysanthemum_Doll_Festival_2015-01.jpg"
 ---
 
 # 越前市の一戸建て価格相場と最新動向

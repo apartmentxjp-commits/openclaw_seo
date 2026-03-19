@@ -10,7 +10,7 @@ keywords: ["全国", "土地", "価格", "相場", "不動産"]
 article_type: "guide"
 categories: ["real-estate-guide"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 土地購入から家を建てるまでの完全ステップガイド

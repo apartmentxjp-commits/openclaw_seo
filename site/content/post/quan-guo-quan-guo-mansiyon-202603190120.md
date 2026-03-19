@@ -10,7 +10,7 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "qa"
 categories: ["qa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 転勤が決まったらどうする？持ち家・賃貸・売却の選択肢Q&A

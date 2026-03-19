@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["hiroshima"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Montages_of_Hiroshima_prefecture.jpg/640px-Montages_of_Hiroshima_prefecture.jpg"
+thumbnail: "/images/thumbnails/640px-Montages_of_Hiroshima_prefecture.jpg"
 ---
 
 # 広島県 エリア別マンション価格ランキング2024：広島市各区比較

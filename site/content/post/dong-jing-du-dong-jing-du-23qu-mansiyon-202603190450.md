@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Minato_City%2C_Tokyo%2C_Japan.jpg/640px-Minato_City%2C_Tokyo%2C_Japan.jpg"
+thumbnail: "/images/thumbnails/640px-Minato_City__Tokyo__Japan.jpg"
 ---
 
 # 東京23区 地価ランキング2024：最高値エリアと上昇率TOP10

@@ -6,7 +6,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 draft: false
 tags: ["マンション", "一戸建て", "不動産購入", "比較", "住宅選び"]
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Zenkei1.jpg/640px-Zenkei1.jpg"
+thumbnail: "/images/thumbnails/640px-Zenkei1.jpg"
 ---
 
 **この記事でわかること：** マンションと一戸建てのメリット・デメリット、費用の違い、資産価値の比較、そして自分に合った選び方の判断軸。

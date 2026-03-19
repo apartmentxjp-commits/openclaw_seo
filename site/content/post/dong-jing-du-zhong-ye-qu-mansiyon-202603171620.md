@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tetsugakudo_Park%28Philosophy_Hall_Park%29_-_%E5%93%B2%E5%AD%A6%E5%A0%82%E5%85%AC%E5%9C%92_-_panoramio_%281%29.jpg/640px-Tetsugakudo_Park%28Philosophy_Hall_Park%29_-_%E5%93%B2%E5%AD%A6%E5%A0%82%E5%85%AC%E5%9C%92_-_panoramio_%281%29.jpg"
+thumbnail: "/images/thumbnails/20f4c3bfc24df6fd.jpg"
 ---
 
 # 中野区のマンション価格相場と最新動向

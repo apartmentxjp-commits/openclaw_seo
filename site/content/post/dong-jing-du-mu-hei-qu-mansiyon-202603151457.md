@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Meguro_Meguro_River_Cherry_Trees_1.JPG/640px-Meguro_Meguro_River_Cherry_Trees_1.JPG"
+thumbnail: "/images/thumbnails/640px-Meguro_Meguro_River_Cherry_Trees_1.JPG"
 ---
 
 # 東京都目黒区のマンション価格情報

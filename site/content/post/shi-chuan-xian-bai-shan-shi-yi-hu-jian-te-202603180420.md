@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["ishikawa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hakusan_Shrine_in_Murodo_2008-7-1.jpg/640px-Hakusan_Shrine_in_Murodo_2008-7-1.jpg"
+thumbnail: "/images/thumbnails/640px-Hakusan_Shrine_in_Murodo_2008-7-1.jpg"
 ---
 
 # 白山市の一戸建て価格相場と最新動向

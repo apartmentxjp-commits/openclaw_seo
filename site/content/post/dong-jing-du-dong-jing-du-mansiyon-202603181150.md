@@ -11,7 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
+thumbnail: "/images/thumbnails/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
 ---
 
 # 東京で1000万円台のマンションを買う方法：エリア選びと物件探し
@@ -67,7 +67,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Stat
 
 ## FAQ
 Q：1000万円台のマンション購入の際に必要な初期費用は何ですか？
-A：間接費（登録免許税、固定資産税、印紙税など）約100万円。
+A：間接費（登録免許税、[固定資産税](/glossary/こていしさんぜい/)、印紙税など）約100万円。
 Q：ローンの返済期間は何度まで延長できますか？
 A：原則として30年払いまでが一般的ですが、銀行や金融機関によって異なる。
 Q：東京都の平均地価は何円/㎡ですか？

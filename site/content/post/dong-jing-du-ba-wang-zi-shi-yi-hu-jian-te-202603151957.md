@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Takao-san-Top_10.11.13_saturday.JPG/640px-Takao-san-Top_10.11.13_saturday.JPG"
+thumbnail: "/images/thumbnails/640px-Takao-san-Top_10.11.13_saturday.JPG"
 ---
 
 # 東京都八王子市の最新一戸建て価格情報

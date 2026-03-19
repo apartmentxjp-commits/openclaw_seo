@@ -10,7 +10,7 @@ keywords: ["全国", "一戸建て", "価格", "相場", "不動産"]
 article_type: "qa"
 categories: ["qa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 一戸建て購入Q&A：土地・建物・ローンの疑問を徹底解説

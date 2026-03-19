@@ -11,7 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["kanagawa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Minato_Mirai_In_Blue_%28cropped%29.jpg/640px-Minato_Mirai_In_Blue_%28cropped%29.jpg"
+thumbnail: "/images/thumbnails/640px-Minato_Mirai_In_Blue__cropped_.jpg"
 ---
 
 # 横浜市でマンションを購入する前に知っておくべき7つのこと

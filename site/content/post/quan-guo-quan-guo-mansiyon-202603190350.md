@@ -10,13 +10,13 @@ keywords: ["全国", "マンション", "価格", "相場", "不動産"]
 article_type: "ranking"
 categories: ["market-data"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 投資用マンション[利回り](/glossary/りまわり/)ランキング2024：高[利回り](/glossary/りまわり/)エリアTOP10
 ## 結論サマリー
 * 全国のエリアを比較し、最も高[利回り](/glossary/りまわり/)の投資用マンションをランキング化
-* 投資家と居住者のために、価格、利回り、将来の潜在性を分析
+* 投資家と居住者のために、価格、[利回り](/glossary/りまわり/)、将来の潜在性を分析
 * データは国土交通省 地価公示（2024年）に基づく
 * 日銀政策金利が0.1%（2024年3月時点）であり、金融市場の影響を受ける
 

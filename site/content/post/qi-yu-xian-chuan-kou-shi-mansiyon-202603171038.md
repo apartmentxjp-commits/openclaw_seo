@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["saitama"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kawaguchi_Jinja_%28Kawaguchi%29.JPG/640px-Kawaguchi_Jinja_%28Kawaguchi%29.JPG"
+thumbnail: "/images/thumbnails/640px-Kawaguchi_Jinja__Kawaguchi_.JPG"
 ---
 
 # 川口市のマンション価格相場と最新動向

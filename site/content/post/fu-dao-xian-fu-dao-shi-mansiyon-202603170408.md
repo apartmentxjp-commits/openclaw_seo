@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["fukushima"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Fukushima_Montage.jpg/640px-Fukushima_Montage.jpg"
+thumbnail: "/images/thumbnails/640px-Fukushima_Montage.jpg"
 ---
 
 # 福島市のマンション価格相場と最新動向

@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["fukuoka"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/20100719_Dazaifu_Tenmangu_Shrine_3328.jpg/640px-20100719_Dazaifu_Tenmangu_Shrine_3328.jpg"
+thumbnail: "/images/thumbnails/640px-20100719_Dazaifu_Tenmangu_Shrine_3328.jpg"
 ---
 
 # 福岡県北九州市小倉北区のマンション価格情報

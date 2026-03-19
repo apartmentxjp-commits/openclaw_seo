@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["nagano"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Matsumoto_Montage.jpg/640px-Matsumoto_Montage.jpg"
+thumbnail: "/images/thumbnails/640px-Matsumoto_Montage.jpg"
 ---
 
 # 松本市の一戸建て価格相場と最新動向

@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["niigata"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Bandaibashi-Bridge_20130929.JPG/640px-Bandaibashi-Bridge_20130929.JPG"
+thumbnail: "/images/thumbnails/640px-Bandaibashi-Bridge_20130929.JPG"
 ---
 
 # 新潟市中央区のマンション価格相場と最新動向

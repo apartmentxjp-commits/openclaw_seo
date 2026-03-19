@@ -10,7 +10,7 @@ keywords: ["全国", "土地", "価格", "相場", "不動産"]
 article_type: "ranking"
 categories: ["market-data"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langja-330px-Flag_of_Japan.svg.png"
+thumbnail: "/images/thumbnails/langja-330px-Flag_of_Japan.svg.png"
 ---
 
 # 地価上昇率ランキング2024：全国で地価が上がっているエリアTOP15

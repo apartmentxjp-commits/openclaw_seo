@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["chiba"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Kashiwa_montage.jpg/640px-Kashiwa_montage.jpg"
+thumbnail: "/images/thumbnails/640px-Kashiwa_montage.jpg"
 ---
 
 # 柏市の一戸建て価格相場と最新動向

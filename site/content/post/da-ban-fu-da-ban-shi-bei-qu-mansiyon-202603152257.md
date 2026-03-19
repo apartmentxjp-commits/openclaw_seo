@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/JR_Osaka_Station_20151226.JPG/640px-JR_Osaka_Station_20151226.JPG"
+thumbnail: "/images/thumbnails/640px-JR_Osaka_Station_20151226.JPG"
 ---
 
 # 大阪府大阪市北区のマンション価格情報

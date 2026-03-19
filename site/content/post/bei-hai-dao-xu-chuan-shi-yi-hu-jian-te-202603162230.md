@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hokkaido"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Asahikawa_Montage.jpg/640px-Asahikawa_Montage.jpg"
+thumbnail: "/images/thumbnails/640px-Asahikawa_Montage.jpg"
 ---
 
 # 旭川市の一戸建て価格相場と最新動向

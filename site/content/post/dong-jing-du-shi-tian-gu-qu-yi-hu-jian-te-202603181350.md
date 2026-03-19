@@ -11,7 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Seijo_namikimichi_231011.jpg/640px-Seijo_namikimichi_231011.jpg"
+thumbnail: "/images/thumbnails/640px-Seijo_namikimichi_231011.jpg"
 ---
 
 # 一戸建て購入の完全ガイド：土地探しから引き渡しまでの流れ

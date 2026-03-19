@@ -6,7 +6,7 @@ article_type: "area"
 categories: ["area-info"]
 draft: false
 tags: ["世田谷区", "エリア分析", "不動産投資", "三軒茶屋", "代沢"]
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Seijo_namikimichi_231011.jpg/640px-Seijo_namikimichi_231011.jpg"
+thumbnail: "/images/thumbnails/640px-Seijo_namikimichi_231011.jpg"
 ---
 
 **この記事でわかること：** 世田谷区三軒茶屋・代沢エリアの最新坪単価相場、ファミリー層向け物件の[利回り](/glossary/りまわり/)、そして今後の地価展望。
@@ -43,7 +43,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Seijo_nami
 
 最新の成約事例と想定家賃から算出される、世田谷区の[利回り](/glossary/りまわり/)目安です。
 
-| 物件タイプ | 表面利回り | 実質利回り（推定） |
+| 物件タイプ | 表面[利回り](/glossary/りまわり/) | 実質利回り（推定） |
 |---|---|---|
 | ワンルーム（駅徒歩10分内） | 3.8% 〜 4.5% | 2.8% 〜 3.5% |
 | ファミリー向け（3LDK以上） | 3.0% 〜 4.0% | 2.0% 〜 3.0% |

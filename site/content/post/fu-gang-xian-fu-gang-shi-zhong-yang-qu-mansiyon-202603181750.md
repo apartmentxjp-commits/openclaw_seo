@@ -11,7 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["fukuoka"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Fukuoka_City_-_Watanabe-dori_Avenue_-_01.JPG/640px-Fukuoka_City_-_Watanabe-dori_Avenue_-_01.JPG"
+thumbnail: "/images/thumbnails/640px-Fukuoka_City_-_Watanabe-dori_Avenue_-_01.JPG"
 ---
 
 # 福岡市でマンションを買うべきタイミング：市場分析ガイド

@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hokkaido"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Hakodate_montage.jpg/640px-Hakodate_montage.jpg"
+thumbnail: "/images/thumbnails/640px-Hakodate_montage.jpg"
 ---
 
 # 函館市のマンション価格情報：最新相場と地域特性

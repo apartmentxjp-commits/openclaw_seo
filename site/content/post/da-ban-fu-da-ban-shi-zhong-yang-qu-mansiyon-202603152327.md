@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/640px-Osaka_Castle_03bs3200.jpg"
+thumbnail: "/images/thumbnails/640px-Osaka_Castle_03bs3200.jpg"
 ---
 
 # 大阪市中央区のマンション価格情報

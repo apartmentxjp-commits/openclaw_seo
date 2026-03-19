@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["osaka"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/640px-Osaka_Castle_03bs3200.jpg"
+thumbnail: "/images/thumbnails/640px-Osaka_Castle_03bs3200.jpg"
 ---
 
 # 大阪府 エリア別地価ランキング2024：北摂・南大阪・市内比較

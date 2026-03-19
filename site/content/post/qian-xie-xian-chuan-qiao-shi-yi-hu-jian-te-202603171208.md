@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["chiba"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Funabashi_montage.jpg/640px-Funabashi_montage.jpg"
+thumbnail: "/images/thumbnails/640px-Funabashi_montage.jpg"
 ---
 
 # 船橋市の一戸建て価格相場と最新動向

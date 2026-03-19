@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["shizuoka"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Numazu_Montage.jpg/640px-Numazu_Montage.jpg"
+thumbnail: "/images/thumbnails/640px-Numazu_Montage.jpg"
 ---
 
 # 沼津市の一戸建て価格相場と最新動向

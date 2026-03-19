@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["okinawa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Urasoe_Yodore2.JPG/640px-Urasoe_Yodore2.JPG"
+thumbnail: "/images/thumbnails/640px-Urasoe_Yodore2.JPG"
 ---
 
 # 沖縄県浦添市の一戸建て不動産価格情報

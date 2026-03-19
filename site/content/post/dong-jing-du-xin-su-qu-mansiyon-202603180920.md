@@ -11,7 +11,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
+thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 ---
 
 # 住宅ローンの選び方完全ガイド：変動・固定の違いと選択基準
@@ -25,7 +25,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscraper
 住宅ローンは、マンション購入や家屋新築の際に不可欠な金融商品です。東京都新宿区では、地価が高騰しており、住宅ローンの選択が重要になっています。本記事では、住宅ローンの種類と特徴、[変動金利](/glossary/へんどうきんり/)と[固定金利](/glossary/こていきんり/)の違い、選び方の基準と注意点について解説します。
 
 ## ステップ1：住宅ローンの種類と特徴
-住宅ローンには、[変動金利](/glossary/へんどうきんり/)と[固定金利](/glossary/こていきんり/)の2種類があります。変動金利ローンは、金利が変動するため、初期の金利が低い場合に有利ですが、金利が上昇した場合には、返済額が増加します。一方、固定金利ローンは、金利が固定されるため、返済額が一定になります。
+住宅ローンには、[変動金利](/glossary/へんどうきんり/)と[固定金利](/glossary/こていきんり/)の2種類があります。[変動金利](/glossary/へんどうきんり/)ローンは、金利が変動するため、初期の金利が低い場合に有利ですが、金利が上昇した場合には、返済額が増加します。一方、[固定金利](/glossary/こていきんり/)ローンは、金利が固定されるため、返済額が一定になります。
 
 例えば、東京都新宿区で3000万円のマンションを購入する場合、変動金利ローンの場合、初期の金利が0.5%の場合、毎月の返済額は約13,500円になります。一方、固定金利ローンの場合、初期の金利が1.0%の場合、毎月の返済額は約20,000円になります。
 

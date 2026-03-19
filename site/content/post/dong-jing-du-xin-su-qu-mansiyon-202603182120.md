@@ -11,7 +11,7 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
+thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 ---
 
 # 住宅ローンQ&A：審査基準・繰り上げ返済・借り換えの疑問を解決する

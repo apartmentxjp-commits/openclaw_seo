@@ -11,7 +11,7 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
+thumbnail: "/images/thumbnails/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
 ---
 
 # 東京のマンション購入Q&A：頭金・ローン・費用の疑問を一挙解決
@@ -47,7 +47,7 @@ thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Stat
 * 管理会社や住居表示に関する注意事項
 * ローンの返済条件や遅延利息に関する注意事項
 * 登記や登録に関する注意事項
-具体的な例を挙げると、構造や設備の状況を調査する際には、建物の設計や施工の状況、主要設備の年式や状態を確認する必要があります。また、管理会社や住居表示に関する注意事項については、管理費の支払い方法や滞納による罰則などを確認する必要があります。
+具体的な例を挙げると、構造や設備の状況を調査する際には、建物の設計や施工の状況、主要設備の年式や状態を確認する必要があります。また、管理会社や住居表示に関する注意事項については、[管理費](/glossary/かんりひ/)の支払い方法や滞納による罰則などを確認する必要があります。
 
 ## Q7: マンション購入において、どのような点が将来的に重要になるでしょうか？
 結論から言うと、マンション購入において将来的に重要になる点は以下のようなものがあります。

@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hokkaido"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hokkaido_Prefectural_Office02s5s4272.jpg/640px-Hokkaido_Prefectural_Office02s5s4272.jpg"
+thumbnail: "/images/thumbnails/640px-Hokkaido_Prefectural_Office02s5s4272.jpg"
 ---
 
 # 札幌市中央区マンモスマンション最新価格情報
