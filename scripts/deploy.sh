@@ -7,6 +7,9 @@ set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
+echo "📥 Step 0: リモートの最新記事を取得..."
+git pull --rebase origin main 2>/dev/null || true
+
 echo "🖼️  Step 1: サムネイル自動追加..."
 python3 scripts/add_thumbnails.py
 
@@ -19,11 +22,6 @@ cd "$ROOT"
 
 echo "📦 Step 3: Git コミット & プッシュ..."
 MSG="${1:-Auto-publish: $(date '+%Y-%m-%d %H:%M')}"
-
-# リモートの変更を取り込む
-git stash 2>/dev/null || true
-git pull --rebase origin main 2>/dev/null || true
-git stash pop 2>/dev/null || true
 
 git add docs/ site/content/ site/static/ site/layouts/ scripts/ 2>/dev/null || git add docs/ site/content/
 git commit -m "$MSG" || echo "Nothing to commit."
