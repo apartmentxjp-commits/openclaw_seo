@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kyoto"]
 draft: false
-thumbnail: "/images/thumbnails/640px-Kyoto%2C_Japan_%28Unsplash_UIN-pFfJ7c%29.jpg"
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg/640px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg"
 ---
 
 # 京都市中京区のマンション価格相場と最新動向
