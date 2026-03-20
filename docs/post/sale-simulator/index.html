@@ -1,35 +1,510 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=google-site-verification content="GybH1SZgm52uJQPcpbGvL4t56Z3MiD1hYmMcwjTzwUk"><meta name=description content="エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。"><title>不動産売却価格シミュレーター | AIデータによる推定成約価格算出 | 日本不動産価格調査センター</title><link rel=stylesheet href=https://realestate.tacky-consulting.com/css/style.css><meta property="og:title" content="不動産売却価格シミュレーター | AIデータによる推定成約価格算出 | 日本不動産価格調査センター"><meta property="og:description" content="エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。"><meta property="og:type" content="article"><meta property="og:url" content="https://realestate.tacky-consulting.com/post/sale-simulator/"><meta property="og:site_name" content="日本不動産価格調査センター"><meta name=twitter:card content="summary_large_image"><script async src="https://www.googletagmanager.com/gtag/js?id=G-2BD4CP722E"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-2BD4CP722E")</script></head><body><div class=page-loader id=pageLoader><div class=loader-dot></div><div class=loader-dot></div><div class=loader-dot></div></div><header><div class=header-inner><a href=https://realestate.tacky-consulting.com/ class=site-logo><div class=logo-icon><svg viewBox="0 0 24 24"><path d="M3 9.5 12 3l9 6.5V21H3V9.5z"/><rect x="9" y="14" width="6" height="7" fill="rgba(255,255,255,0.3)"/></svg></div><div class=logo-text><span class=main>日本不動産価格調査センター</span>
-<span class=sub>JAPAN REAL ESTATE DATA CENTER</span></div></a><nav class=header-nav><a href=https://realestate.tacky-consulting.com/categories/market-data/>市場データ</a>
-<a href=https://realestate.tacky-consulting.com/categories/real-estate-guide/>ガイド</a>
-<a href=https://realestate.tacky-consulting.com/categories/qa/>Q&amp;A</a>
-<a href=https://realestate.tacky-consulting.com/post/>エリア情報</a>
-<a href=https://realestate.tacky-consulting.com/glossary/>用語集</a><div class=nav-tools-wrap><span class=nav-tools-label>ツール ▾</span><div class=nav-tools-dropdown><a href=https://realestate.tacky-consulting.com/post/loan-calculator/>ローン計算</a>
-<a href=https://realestate.tacky-consulting.com/post/yield-calculator/>利回り計算</a>
-<a href=https://realestate.tacky-consulting.com/post/rent-estimator/>家賃相場</a>
-<a href=https://realestate.tacky-consulting.com/post/price-prediction/>価格予測</a></div></div><a href=https://realestate.tacky-consulting.com/ class=nav-cta>相場を調べる</a></nav><button class=hamburger id=hamburger aria-label=メニューを開く>
-<span></span>
-<span></span>
-<span></span></button></div></header><div class=mobile-menu id=mobileMenu><div class=mobile-menu-panel><button class=mobile-menu-close id=mobileMenuClose aria-label=閉じる>✕</button><nav class=mobile-nav><div class=mobile-nav-section>コンテンツ</div><a href=https://realestate.tacky-consulting.com/categories/market-data/>📊 市場データ</a>
-<a href=https://realestate.tacky-consulting.com/categories/real-estate-guide/>📖 不動産ガイド</a>
-<a href=https://realestate.tacky-consulting.com/categories/qa/>❓ Q&amp;A</a>
-<a href=https://realestate.tacky-consulting.com/post/>🏘️ エリア情報</a>
-<a href=https://realestate.tacky-consulting.com/glossary/>📚 用語集</a><div class=mobile-nav-section>シミュレーター</div><a href=https://realestate.tacky-consulting.com/post/loan-calculator/>🏠 住宅ローン計算</a>
-<a href=https://realestate.tacky-consulting.com/post/yield-calculator/>📈 利回り計算</a>
-<a href=https://realestate.tacky-consulting.com/post/rent-estimator/>🏢 家賃相場</a>
-<a href=https://realestate.tacky-consulting.com/post/price-prediction/>🤖 AI価格予測</a>
-<a href=https://realestate.tacky-consulting.com/ class=mobile-cta>相場を調べる →</a></nav></div></div><div class=tool-page><header class=tool-header><div class=container><h1>不動産売却価格シミュレーター | AIデータによる推定成約価格算出</h1><p class=tool-description>エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。</p></div></header><div class=tool-container><p>今の住まい、今売ったらいくら？AIデータに基づき、周辺の成約事例から正確な売却相場を算出します。</p><script src=https://cdn.tailwindcss.com></script><style>#sale-app-root input:focus,#sale-app-root select:focus{transform:translateY(-2px);box-shadow:0 10px 15px -3px rgba(15,23,42,.2)}.value-update-flash{animation:flash .5s ease-out}@keyframes flash{0%{background-color:rgba(15,23,42,.4)}100%{background-color:initial}}</style><div id=sale-app-root class="not-prose my-10 antialiased text-slate-800 font-sans"><div class="max-w-5xl mx-auto bg-slate-50 border border-slate-200 shadow-2xl rounded-[2rem] overflow-hidden"><div class="bg-slate-900 px-8 py-6 text-white flex justify-between items-center"><div><h3 class="text-xl font-bold tracking-tight">不動産売却価格シミュレーター</h3><p class="text-slate-400 text-xs mt-1">AIデータに基づく推定成約価格の算出</p></div><div class="hidden md:block"><span class="bg-slate-800 text-slate-300 text-[10px] px-3 py-1 rounded-full border border-slate-700 uppercase tracking-widest">Market
-Analysis v3.0</span></div></div><div class="p-6 md:p-10"><div class="grid grid-cols-1 lg:grid-cols-12 gap-10"><div class="lg:col-span-4 space-y-6"><div class="p-6 bg-white rounded-3xl shadow-sm border border-slate-100"><div class=space-y-5><div><label class="block text-xs font-black text-slate-400 uppercase mb-2">物件種別</label><div class="grid grid-cols-2 gap-2"><button id=btn_condo onclick='setType("condo")' class="py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all">マンション</button>
-<button id=btn_house onclick='setType("house")' class="py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all">一戸建て</button></div></div><div><label class="block text-xs font-black text-slate-400 uppercase mb-2">エリア選択</label>
-<select id=s_area class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-slate-900 outline-none"><option value=1.5>東京都 心 5区</option><option value=1.2 selected>東京都 23区内</option><option value=1.0>首都圏 主要都市</option><option value=0.8>地方都市</option></select></div><div class="grid grid-cols-2 gap-4"><div><label class="block text-xs font-black text-slate-400 uppercase mb-2">面積 (㎡)</label>
-<input type=number id=s_size value=70 class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none transition-all"></div><div><label class="block text-xs font-black text-slate-400 uppercase mb-2">築年数
-(年)</label>
-<input type=number id=s_age value=10 class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none transition-all"></div></div></div></div><div class="p-6 bg-slate-800 rounded-3xl text-white"><h4 class="text-xs font-bold text-slate-400 mb-4 flex items-center"><span class="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span> 近隣の類似成約事例</h4><ul class="text-[11px] space-y-3 opacity-90"><li class="flex justify-between border-b border-slate-700 pb-2"><span>徒歩5分 / 築12年 /
-75㎡</span><span class=font-bold>¥6,480万</span></li><li class="flex justify-between border-b border-slate-700 pb-2"><span>徒歩8分 / 築8年 /
-68㎡</span><span class=font-bold>¥6,100万</span></li><li class="flex justify-between"><span>徒歩3分 / 築20年 / 80㎡</span><span class=font-bold>¥5,200万</span></li></ul></div></div><div class="lg:col-span-8 space-y-6"><div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 relative overflow-hidden"><div class="absolute top-0 right-0 p-6 opacity-5"><svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414.0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg></div><div class="text-center relative z-10"><p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">推定売却相場</p><div class="flex items-end justify-center gap-1 mb-4"><span class="text-2xl font-bold text-slate-900 mb-2">¥</span>
-<span id=res_price class="text-6xl md:text-7xl font-black text-slate-900 tracking-tighter transition-all">0</span>
-<span class="text-2xl font-bold text-slate-900 mb-2">万</span></div><div class="inline-flex items-center px-4 py-1.5 bg-slate-100 rounded-full text-slate-600 text-xs font-bold">坪単価: ¥<span id=res_tsubo class=mx-1>0</span>万</div></div><div class="grid grid-cols-2 gap-4 mt-8 border-t border-slate-100 pt-8"><div class=text-center><p class="text-[10px] font-bold text-slate-400 uppercase mb-1">最低予想</p><p class="text-lg font-bold text-slate-500">¥<span id=res_low>0</span>万</p></div><div class=text-center><p class="text-[10px] font-bold text-slate-400 uppercase mb-1">最高予想</p><p class="text-lg font-bold text-slate-500">¥<span id=res_high>0</span>万</p></div></div></div><div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm"><h4 class="text-xs font-bold text-slate-400 mb-6 flex items-center justify-between"><span><span class="w-2 h-2 bg-slate-900 rounded-full inline-block mr-2"></span>
-今後の価格予測（5年）</span>
-<span class="text-[10px] bg-red-50 text-red-500 px-2 py-0.5 rounded">予測モデル: 下落傾向</span></h4><div class=h-56><canvas id=sale_trend_chart></canvas></div></div></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js></script><script>(function(){let n="condo",e=null;window.setType=function(e){n=e;const s=document.getElementById("btn_condo"),o=document.getElementById("btn_house");e==="condo"?(s.className="py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all",o.className="py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all"):(o.className="py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all",s.className="py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all"),t()};function t(){const t=document.getElementById("s_area"),o=document.getElementById("s_size"),i=document.getElementById("s_age");if(!t||!o||!i)return;const c=parseFloat(t.value),a=parseFloat(o.value||0),l=parseFloat(i.value||0);let d=n==="condo"?6e5:4e5,u=Math.max(.2,1-l*.025);const r=d*c*u*a,e=Math.round(r/1e4);document.getElementById("res_price").innerText=e.toLocaleString(),document.getElementById("res_low").innerText=Math.round(e*.9).toLocaleString(),document.getElementById("res_high").innerText=Math.round(e*1.1).toLocaleString(),document.getElementById("res_tsubo").innerText=Math.round(r/a*3.305/1e4).toLocaleString(),["res_price","res_low","res_high"].forEach(e=>{const t=document.getElementById(e).parentElement;t.classList.remove("value-update-flash"),void t.offsetWidth,t.classList.add("value-update-flash")}),s(e)}function s(t){const n=document.getElementById("sale_trend_chart");if(!n)return;const s=n.getContext("2d"),o=["現在","1年後","2年後","3年後","4年後","5年後"],i=[t,t*.98,t*.96,t*.93,t*.91,t*.89];e&&e.destroy(),e=new Chart(s,{type:"line",data:{labels:o,datasets:[{data:i,borderColor:"#0f172a",backgroundColor:"rgba(15, 23, 42, 0.05)",fill:!0,tension:.3,pointRadius:0}]},options:{responsive:!0,maintainAspectRatio:!1,plugins:{legend:{display:!1}},scales:{x:{grid:{display:!1}},y:{display:!1}}}})}["s_area","s_size","s_age"].forEach(e=>{const n=document.getElementById(e);n&&n.addEventListener("input",t)}),t()})()</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"SoftwareApplication","name":"不動産売却価格シミュレーター | AIデータによる推定成約価格算出","operatingSystem":"All","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"description":"エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。"}</script><h3 id=算出の仕組み>算出の仕組み</h3><p>本シミュレーターは、東京都心および首都圏の膨大な取引データに基づき、物件種別ごとの基準単価、エリア係数、および築年数による減価償却率を掛け合わせて算出しています。</p><h3 id=売却を検討される方へ>売却を検討される方へ</h3><p>※本データは統計的な推計値であり、実際の査定価格を保証するものではありません。リフォーム状況や眺望、接道状況などにより価格は変動します。</p></div></div><footer><div class=container><div class=footer-grid><div class=footer-col><div class=footer-logo><span class=logo-dot></span>
-日本不動産価格調査センター</div><p class=footer-brand-desc>国土交通省データ × AI分析で、不動産投資家・購入検討者に「確信」を届けるデータプラットフォーム。</p></div><div class=footer-col><h4>コンテンツ</h4><ul><li><a href=https://realestate.tacky-consulting.com/post/>調査レポート一覧</a></li><li><a href=https://realestate.tacky-consulting.com/categories/market-data/>市場データ</a></li><li><a href=https://realestate.tacky-consulting.com/categories/real-estate-guide/>不動産ガイド</a></li><li><a href=https://realestate.tacky-consulting.com/categories/qa/>よくある質問</a></li><li><a href=https://realestate.tacky-consulting.com/glossary/>不動産用語集</a></li></ul></div><div class=footer-col><h4>ツール</h4><ul><li><a href=https://realestate.tacky-consulting.com/post/loan-calculator/>住宅ローン計算</a></li><li><a href=https://realestate.tacky-consulting.com/post/yield-calculator/>利回り計算</a></li><li><a href=https://realestate.tacky-consulting.com/post/rent-estimator/>家賃相場調査</a></li><li><a href=https://realestate.tacky-consulting.com/post/price-prediction/>AI価格予測</a></li></ul></div><div class=footer-col><h4>エリア</h4><ul><li><a href=https://realestate.tacky-consulting.com/post/>東京都</a></li><li><a href=https://realestate.tacky-consulting.com/post/>大阪府</a></li><li><a href=https://realestate.tacky-consulting.com/post/>神奈川県</a></li><li><a href=https://realestate.tacky-consulting.com/post/>全国エリア一覧</a></li></ul></div></div><div class=footer-bottom><p>&copy; 2026 日本不動産価格調査センター. All rights reserved.</p><div class=footer-bottom-links><a href=https://realestate.tacky-consulting.com/>トップページ</a>
-<a href=https://realestate.tacky-consulting.com/post/>調査レポート</a></div></div></div></footer><button class=scroll-top-btn id=scrollTopBtn aria-label=トップへ戻る>↑</button>
-<script>window.addEventListener("load",function(){setTimeout(function(){document.getElementById("pageLoader").classList.add("hidden")},300)});const hamburger=document.getElementById("hamburger"),mobileMenu=document.getElementById("mobileMenu"),mobileMenuClose=document.getElementById("mobileMenuClose");hamburger&&hamburger.addEventListener("click",function(){hamburger.classList.toggle("open"),mobileMenu.classList.toggle("open"),document.body.style.overflow=mobileMenu.classList.contains("open")?"hidden":""}),mobileMenuClose&&mobileMenuClose.addEventListener("click",function(){hamburger.classList.remove("open"),mobileMenu.classList.remove("open"),document.body.style.overflow=""}),mobileMenu&&mobileMenu.addEventListener("click",function(e){e.target===mobileMenu&&(hamburger.classList.remove("open"),mobileMenu.classList.remove("open"),document.body.style.overflow="")});const scrollTopBtn=document.getElementById("scrollTopBtn");window.addEventListener("scroll",function(){window.scrollY>400?scrollTopBtn.classList.add("visible"):scrollTopBtn.classList.remove("visible")}),scrollTopBtn&&scrollTopBtn.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});const observerOptions={threshold:.1,rootMargin:"0px 0px -40px 0px"},observer=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)",observer.unobserve(e.target))})},observerOptions);document.querySelectorAll(".feature-card, .simulator-card, .post-card, .region-block, .stat-item").forEach(function(e){e.style.opacity="0",e.style.transform="translateY(20px)",e.style.transition="opacity 0.5s ease, transform 0.5s ease",observer.observe(e)}),window.addEventListener("scroll",function(){const e=document.querySelector("header");window.scrollY>10?e.style.boxShadow="0 2px 20px rgba(0,0,0,0.08)":e.style.boxShadow="none"})</script></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="GybH1SZgm52uJQPcpbGvL4t56Z3MiD1hYmMcwjTzwUk" />
+  <meta name="description" content="エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。">
+  <title>不動産売却価格シミュレーター | AIデータによる推定成約価格算出 | 日本不動産価格調査センター</title>
+  <link rel="stylesheet" href="http://localhost:1313/css/style.css">
+  
+  <meta property="og:title" content="不動産売却価格シミュレーター | AIデータによる推定成約価格算出 | 日本不動産価格調査センター">
+  <meta property="og:description" content="エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://localhost:1313/post/sale-simulator/">
+  <meta property="og:site_name" content="日本不動産価格調査センター">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BD4CP722E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BD4CP722E');
+  </script>
+  
+</head>
+<body>
+
+
+<div class="page-loader" id="pageLoader">
+  <div class="loader-dot"></div>
+  <div class="loader-dot"></div>
+  <div class="loader-dot"></div>
+</div>
+
+
+<header>
+  <div class="header-inner">
+    <a href="http://localhost:1313/" class="site-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+          <rect x="9" y="14" width="6" height="7" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="main">日本不動産価格調査センター</span>
+        <span class="sub">JAPAN REAL ESTATE DATA CENTER</span>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="http://localhost:1313/categories/market-data/">市場データ</a>
+      <a href="http://localhost:1313/categories/real-estate-guide/">ガイド</a>
+      <a href="http://localhost:1313/categories/qa/">Q&amp;A</a>
+      <a href="http://localhost:1313/post/">エリア情報</a>
+      <a href="http://localhost:1313/glossary/">用語集</a>
+      <div class="nav-tools-wrap">
+        <span class="nav-tools-label">ツール ▾</span>
+        <div class="nav-tools-dropdown">
+          <a href="http://localhost:1313/post/loan-calculator/">ローン計算</a>
+          <a href="http://localhost:1313/post/yield-calculator/">利回り計算</a>
+          <a href="http://localhost:1313/post/rent-estimator/">家賃相場</a>
+          <a href="http://localhost:1313/post/price-prediction/">価格予測</a>
+        </div>
+      </div>
+      <a href="http://localhost:1313/" class="nav-cta">相場を調べる</a>
+    </nav>
+    
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-panel">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="閉じる">✕</button>
+    <nav class="mobile-nav">
+      <div class="mobile-nav-section">コンテンツ</div>
+      <a href="http://localhost:1313/categories/market-data/">📊 市場データ</a>
+      <a href="http://localhost:1313/categories/real-estate-guide/">📖 不動産ガイド</a>
+      <a href="http://localhost:1313/categories/qa/">❓ Q&amp;A</a>
+      <a href="http://localhost:1313/post/">🏘️ エリア情報</a>
+      <a href="http://localhost:1313/glossary/">📚 用語集</a>
+      <div class="mobile-nav-section">シミュレーター</div>
+      <a href="http://localhost:1313/post/loan-calculator/">🏠 住宅ローン計算</a>
+      <a href="http://localhost:1313/post/yield-calculator/">📈 利回り計算</a>
+      <a href="http://localhost:1313/post/rent-estimator/">🏢 家賃相場</a>
+      <a href="http://localhost:1313/post/price-prediction/">🤖 AI価格予測</a>
+      <a href="http://localhost:1313/" class="mobile-cta">相場を調べる →</a>
+    </nav>
+  </div>
+</div>
+
+
+  
+    
+<div class="tool-page">
+    <header class="tool-header">
+        <div class="container">
+            <h1>不動産売却価格シミュレーター | AIデータによる推定成約価格算出</h1>
+            <p class="tool-description">エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。</p>
+        </div>
+    </header>
+
+
+    <div class="tool-container">
+        <p>今の住まい、今売ったらいくら？AIデータに基づき、周辺の成約事例から正確な売却相場を算出します。</p>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    #sale-app-root input:focus,
+    #sale-app-root select:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
+    }
+
+    .value-update-flash {
+        animation: flash 0.5s ease-out;
+    }
+
+    @keyframes flash {
+        0% {
+            background-color: rgba(15, 23, 42, 0.4);
+        }
+
+        100% {
+            background-color: transparent;
+        }
+    }
+</style>
+
+<div id="sale-app-root" class="not-prose my-10 antialiased text-slate-800 font-sans">
+    <div class="max-w-5xl mx-auto bg-slate-50 border border-slate-200 shadow-2xl rounded-[2rem] overflow-hidden">
+        <div class="bg-slate-900 px-8 py-6 text-white flex justify-between items-center">
+            <div>
+                <h3 class="text-xl font-bold tracking-tight">不動産売却価格シミュレーター</h3>
+                <p class="text-slate-400 text-xs mt-1">AIデータに基づく推定成約価格の算出</p>
+            </div>
+            <div class="hidden md:block">
+                <span
+                    class="bg-slate-800 text-slate-300 text-[10px] px-3 py-1 rounded-full border border-slate-700 uppercase tracking-widest">Market
+                    Analysis v3.0</span>
+            </div>
+        </div>
+        <div class="p-6 md:p-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase mb-2">物件種別</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button id="btn_condo" onclick="setType('condo')"
+                                        class="py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all">マンション</button>
+                                    <button id="btn_house" onclick="setType('house')"
+                                        class="py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all">一戸建て</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase mb-2">エリア選択</label>
+                                <select id="s_area"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-slate-900 outline-none">
+                                    <option value="1.5">東京都 心 5区</option>
+                                    <option value="1.2" selected>東京都 23区内</option>
+                                    <option value="1.0">首都圏 主要都市</option>
+                                    <option value="0.8">地方都市</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-black text-slate-400 uppercase mb-2">面積 (㎡)</label>
+                                    <input type="number" id="s_size" value="70"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-black text-slate-400 uppercase mb-2">築年数
+                                        (年)</label>
+                                    <input type="number" id="s_age" value="10"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none transition-all">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-800 rounded-3xl text-white">
+                        <h4 class="text-xs font-bold text-slate-400 mb-4 flex items-center">
+                            <span class="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span> 近隣の類似成約事例
+                        </h4>
+                        <ul class="text-[11px] space-y-3 opacity-90">
+                            <li class="flex justify-between border-b border-slate-700 pb-2"><span>徒歩5分 / 築12年 /
+                                    75㎡</span><span class="font-bold">¥6,480万</span></li>
+                            <li class="flex justify-between border-b border-slate-700 pb-2"><span>徒歩8分 / 築8年 /
+                                    68㎡</span><span class="font-bold">¥6,100万</span></li>
+                            <li class="flex justify-between"><span>徒歩3分 / 築20年 / 80㎡</span><span
+                                    class="font-bold">¥5,200万</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:col-span-8 space-y-6">
+                    <div
+                        class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-6 opacity-5">
+                            <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="text-center relative z-10">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">推定売却相場</p>
+                            <div class="flex items-end justify-center gap-1 mb-4">
+                                <span class="text-2xl font-bold text-slate-900 mb-2">¥</span>
+                                <span id="res_price"
+                                    class="text-6xl md:text-7xl font-black text-slate-900 tracking-tighter transition-all">0</span>
+                                <span class="text-2xl font-bold text-slate-900 mb-2">万</span>
+                            </div>
+                            <div
+                                class="inline-flex items-center px-4 py-1.5 bg-slate-100 rounded-full text-slate-600 text-xs font-bold">
+                                坪単価: ¥<span id="res_tsubo" class="mx-1">0</span>万
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-8 border-t border-slate-100 pt-8">
+                            <div class="text-center">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">最低予想</p>
+                                <p class="text-lg font-bold text-slate-500">¥<span id="res_low">0</span>万</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">最高予想</p>
+                                <p class="text-lg font-bold text-slate-500">¥<span id="res_high">0</span>万</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                        <h4 class="text-xs font-bold text-slate-400 mb-6 flex items-center justify-between">
+                            <span><span class="w-2 h-2 bg-slate-900 rounded-full inline-block mr-2"></span>
+                                今後の価格予測（5年）</span>
+                            <span class="text-[10px] bg-red-50 text-red-500 px-2 py-0.5 rounded">予測モデル: 下落傾向</span>
+                        </h4>
+                        <div class="h-56">
+                            <canvas id="sale_trend_chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script>
+    (function () {
+        let currentType = 'condo';
+        let saleChart = null;
+
+        window.setType = function (type) {
+            currentType = type;
+            const cBtn = document.getElementById('btn_condo');
+            const hBtn = document.getElementById('btn_house');
+            if (type === 'condo') {
+                cBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all";
+                hBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all";
+            } else {
+                hBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-900 bg-slate-900 text-white transition-all";
+                cBtn.className = "py-2 text-sm font-bold rounded-lg border-2 border-slate-200 text-slate-400 hover:border-slate-300 transition-all";
+            }
+            calculateSale();
+        };
+
+        function calculateSale() {
+            const sAreaEl = document.getElementById('s_area');
+            const sSizeEl = document.getElementById('s_size');
+            const sAgeEl = document.getElementById('s_age');
+
+            if (!sAreaEl || !sSizeEl || !sAgeEl) return;
+
+            const areaFactor = parseFloat(sAreaEl.value);
+            const size = parseFloat(sSizeEl.value || 0);
+            const age = parseFloat(sAgeEl.value || 0);
+
+            let baseSqmPrice = currentType === 'condo' ? 600000 : 400000;
+            let ageFactor = Math.max(0.2, 1 - (age * 0.025));
+
+            const centerPrice = baseSqmPrice * areaFactor * ageFactor * size;
+            const finalPrice = Math.round(centerPrice / 10000);
+
+            document.getElementById('res_price').innerText = finalPrice.toLocaleString();
+            document.getElementById('res_low').innerText = Math.round(finalPrice * 0.9).toLocaleString();
+            document.getElementById('res_high').innerText = Math.round(finalPrice * 1.1).toLocaleString();
+            document.getElementById('res_tsubo').innerText = Math.round((centerPrice / size * 3.305) / 10000).toLocaleString();
+
+            
+            ['res_price', 'res_low', 'res_high'].forEach(id => {
+                const el = document.getElementById(id).parentElement;
+                el.classList.remove('value-update-flash');
+                void el.offsetWidth; 
+                el.classList.add('value-update-flash');
+            });
+
+            updateTrendChart(finalPrice);
+        }
+
+        function updateTrendChart(base) {
+            const canvas = document.getElementById('sale_trend_chart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const labels = ["現在", "1年後", "2年後", "3年後", "4年後", "5年後"];
+            const data = [base, base * 0.98, base * 0.96, base * 0.93, base * 0.91, base * 0.89];
+
+            if (saleChart) saleChart.destroy();
+            saleChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        borderColor: '#0f172a',
+                        backgroundColor: 'rgba(15, 23, 42, 0.05)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false } },
+                        y: { display: false }
+                    }
+                }
+            });
+        }
+
+        ['s_area', 's_size', 's_age'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', calculateSale);
+        });
+        calculateSale();
+    })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "不動産売却価格シミュレーター | AIデータによる推定成約価格算出",
+  "operatingSystem": "All",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "description": "エリア、物件種別、面積、築年数から、あなたの不動産が今いくらで売れるかをシミュレーション。将来の価格推移も予測します。"
+}
+</script>
+<h3 id="算出の仕組み">算出の仕組み</h3>
+<p>本シミュレーターは、東京都心および首都圏の膨大な取引データに基づき、物件種別ごとの基準単価、エリア係数、および築年数による減価償却率を掛け合わせて算出しています。</p>
+<h3 id="売却を検討される方へ">売却を検討される方へ</h3>
+<p>※本データは統計的な推計値であり、実際の査定価格を保証するものではありません。リフォーム状況や眺望、接道状況などにより価格は変動します。</p>
+
+    </div>
+
+    
+</div>
+
+  
+
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <span class="logo-dot"></span>
+          日本不動産価格調査センター
+        </div>
+        <p class="footer-brand-desc">国土交通省データ × AI分析で、不動産投資家・購入検討者に「確信」を届けるデータプラットフォーム。</p>
+      </div>
+      <div class="footer-col">
+        <h4>コンテンツ</h4>
+        <ul>
+          <li><a href="http://localhost:1313/post/">調査レポート一覧</a></li>
+          <li><a href="http://localhost:1313/categories/market-data/">市場データ</a></li>
+          <li><a href="http://localhost:1313/categories/real-estate-guide/">不動産ガイド</a></li>
+          <li><a href="http://localhost:1313/categories/qa/">よくある質問</a></li>
+          <li><a href="http://localhost:1313/glossary/">不動産用語集</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ツール</h4>
+        <ul>
+          <li><a href="http://localhost:1313/post/loan-calculator/">住宅ローン計算</a></li>
+          <li><a href="http://localhost:1313/post/yield-calculator/">利回り計算</a></li>
+          <li><a href="http://localhost:1313/post/rent-estimator/">家賃相場調査</a></li>
+          <li><a href="http://localhost:1313/post/price-prediction/">AI価格予測</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>エリア</h4>
+        <ul>
+          <li><a href="http://localhost:1313/post/">東京都</a></li>
+          <li><a href="http://localhost:1313/post/">大阪府</a></li>
+          <li><a href="http://localhost:1313/post/">神奈川県</a></li>
+          <li><a href="http://localhost:1313/post/">全国エリア一覧</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 日本不動産価格調査センター. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="http://localhost:1313/">トップページ</a>
+        <a href="http://localhost:1313/post/">調査レポート</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="トップへ戻る">↑</button>
+
+<script>
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('pageLoader').classList.add('hidden');
+  }, 300);
+});
+
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+if (hamburger) {
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+}
+if (mobileMenuClose) {
+  mobileMenuClose.addEventListener('click', function() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+}
+if (mobileMenu) {
+  mobileMenu.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+});
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.feature-card, .simulator-card, .post-card, .region-block, .stat-item').forEach(function(el) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
