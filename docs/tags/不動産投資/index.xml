@@ -34,7 +34,7 @@
 &lt;p&gt;「物件価格」と「家賃」だけで計算する、最もシンプルな指標です。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;計算式：&lt;/strong&gt;
 &lt;code&gt;年間家賃収入 ÷ 物件価格 × 100&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id="-実質利回りネット利回り--noi利回り"&gt;② 実質利回り（ネット利回り / NOI利回り）&lt;/h3&gt;
+&lt;h3 id="-実質利回りネット利回り--noi利回り"&gt;② 実質&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;（ネット利回り / NOI利回り）&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%81%8B%E3%82%93%E3%82%8A%E3%81%B2/"&gt;管理費&lt;/a&gt;、&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%81%97%E3%82%85%E3%81%86%E3%81%9C%E3%82%93%E3%81%A4%E3%81%BF%E3%81%9F%E3%81%A6%E3%81%8D%E3%82%93/"&gt;修繕積立金&lt;/a&gt;、&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%81%93%E3%81%A6%E3%81%84%E3%81%97%E3%81%95%E3%82%93%E3%81%9C%E3%81%84/"&gt;固定資産税&lt;/a&gt;などのランニングコストを考慮した指標です。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;計算式：&lt;/strong&gt;
 &lt;code&gt;（年間家賃収入 − 年間運営諸経費）÷（物件価格 ＋ 購入時諸費用）× 100&lt;/code&gt;&lt;/p&gt;
@@ -151,7 +151,7 @@
 &lt;p&gt;&lt;strong&gt;表面&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;（グロス&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;）&lt;/strong&gt; とは、物件価格に対する年間家賃収入の割合であり、諸経費を含まない最も基本的な収益指標です。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;実質&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;（ネット&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;）&lt;/strong&gt; とは、&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%81%8B%E3%82%93%E3%82%8A%E3%81%B2/"&gt;管理費&lt;/a&gt;・&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%81%97%E3%82%85%E3%81%86%E3%81%9C%E3%82%93%E3%81%A4%E3%81%BF%E3%81%9F%E3%81%A6%E3%81%8D%E3%82%93/"&gt;修繕積立金&lt;/a&gt;・&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%81%93%E3%81%A6%E3%81%84%E3%81%97%E3%81%95%E3%82%93%E3%81%9C%E3%81%84/"&gt;固定資産税&lt;/a&gt;などの年間諸経費を差し引いたうえで、物件価格と購入時の諸費用を合算した総投資額に対する利益率のことです。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;実際の手残り（キャッシュフロー）を把握するには、表面&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;ではなく実質利回りを基準にする必要があります。&lt;/p&gt;
+&lt;p&gt;実際の手残り（キャッシュフロー）を把握するには、表面&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;ではなく実質&lt;a href="https://realestate.tacky-consulting.com/glossary/%E3%82%8A%E3%81%BE%E3%82%8F%E3%82%8A/"&gt;利回り&lt;/a&gt;を基準にする必要があります。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id="計算式の比較"&gt;計算式の比較&lt;/h2&gt;

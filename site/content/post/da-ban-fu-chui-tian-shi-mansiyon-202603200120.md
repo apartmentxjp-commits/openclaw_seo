@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "/images/thumbnails/640px-131116_Tower_of_the_Sun_Expo_Commemoration_Park_Suita_Osaka_pref_Japan01s3.jpg"
 ---
 
 # 吹田市のマンション価格相場と最新動向
