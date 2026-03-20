@@ -75,65 +75,88 @@
   </div>
 </div>
 
-<!-- カテゴリーナビ（固定カード） -->
-<section class="cat-nav-section">
+<!-- カテゴリーナビ（交互レイアウト） -->
+<section class="cat-alt-section">
+
   <div class="container">
-    <div class="section-header center" style="margin-bottom:32px;">
-      <div class="section-label">CONTENTS</div>
-      <h2 class="section-title">コンテンツを探す</h2>
-    </div>
-    <div class="cat-nav-grid">
 
-      <a href="/categories/market-data/" class="cat-nav-card">
-        <div class="cat-nav-img-wrap">
-          <img src="/images/thumbnails/cat_ranking.jpg" alt="全国最新不動産ランキング" loading="lazy">
-          <span class="cat-nav-badge">📊 市場データ</span>
-        </div>
-        <div class="cat-nav-body">
-          <h3>全国最新不動産ランキング</h3>
-          <p>都市別・地域別の価格ランキングと最新市場動向を確認できます</p>
-          <span class="cat-nav-link">ランキングを見る →</span>
-        </div>
-      </a>
+    <!-- ① ランキング: 写真左・テキスト右 -->
+    <a href="/categories/market-data/" class="cat-alt-row">
+      <div class="cat-alt-img-wrap">
+        <img src="/images/thumbnails/cat_ranking.jpg" alt="全国最新不動産ランキング" loading="lazy">
+      </div>
+      <div class="cat-alt-body">
+        <span class="cat-alt-badge">📊 市場データ</span>
+        <h3>全国最新不動産ランキング</h3>
+        <p>都市別・地域別の価格ランキングと最新市場動向を確認できます。毎月更新の調査データで、エリア選びをサポートします。</p>
+        <span class="cat-alt-link">ランキングを見る →</span>
+      </div>
+    </a>
 
-      <a href="/categories/area-info/" class="cat-nav-card">
-        <div class="cat-nav-img-wrap">
-          <img src="/images/thumbnails/cat_news.jpg" alt="最新不動産ニュース" loading="lazy">
-          <span class="cat-nav-badge">🏘️ エリア情報</span>
-        </div>
-        <div class="cat-nav-body">
-          <h3>最新不動産ニュース</h3>
-          <p>全国各地の最新不動産情報・エリアレポートをお届けします</p>
-          <span class="cat-nav-link">ニュースを見る →</span>
-        </div>
-      </a>
+    <!-- ② ニュース: テキスト左・写真右 -->
+    <a href="/categories/area-info/" class="cat-alt-row cat-alt-reverse">
+      <div class="cat-alt-img-wrap">
+        <img src="/images/thumbnails/cat_news.jpg" alt="最新不動産ニュース" loading="lazy">
+      </div>
+      <div class="cat-alt-body">
+        <span class="cat-alt-badge">🏘️ エリア情報</span>
+        <h3>最新不動産ニュース</h3>
+        <p>全国各地の最新不動産情報・エリアレポートをお届けします。地域ごとの価格動向や注目エリアを毎日更新中。</p>
+        <span class="cat-alt-link">ニュースを見る →</span>
+      </div>
+    </a>
 
-      <a href="/simulator/" class="cat-nav-card">
-        <div class="cat-nav-img-wrap">
-          <img src="/images/thumbnails/cat_simulator.jpg" alt="AIシミュレーションツール" loading="lazy">
-          <span class="cat-nav-badge">🤖 AIツール</span>
-        </div>
-        <div class="cat-nav-body">
-          <h3>AIシミュレーションツール</h3>
-          <p>ローン・収益・売却など、あらゆる不動産シミュレーションを無料で</p>
-          <span class="cat-nav-link">ツールを使う →</span>
-        </div>
-      </a>
-
-      <a href="/glossary/" class="cat-nav-card">
-        <div class="cat-nav-img-wrap">
-          <img src="/images/thumbnails/cat_glossary.jpg" alt="不動産用語解説" loading="lazy">
-          <span class="cat-nav-badge">📖 用語解説</span>
-        </div>
-        <div class="cat-nav-body">
-          <h3>不動産用語解説</h3>
-          <p>初心者にもわかりやすく、専門用語を丁寧に解説します</p>
-          <span class="cat-nav-link">用語集を見る →</span>
-        </div>
-      </a>
-
-    </div>
   </div>
+
+  <!-- ③ AIシミュレーター: 全幅ヒーローカード -->
+  <a href="/simulator/" class="cat-sim-hero">
+    <div class="cat-sim-bg">
+      <img src="/images/thumbnails/cat_simulator.jpg" alt="" loading="lazy">
+      <div class="cat-sim-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="cat-sim-content">
+        <div class="cat-sim-left">
+          <span class="cat-sim-badge">🤖 AI シミュレーションツール</span>
+          <h2>不動産シミュレーションで<br>最適な計画を立てよう</h2>
+          <p>ローン返済・収益計算・売却試算・利回り分析など、<br>あらゆる不動産シミュレーションを完全無料で。</p>
+          <span class="cat-sim-btn">無料で試す →</span>
+        </div>
+        <div class="cat-sim-right" aria-hidden="true">
+          <div class="cat-sim-chart">
+            <div class="chart-bar" style="--h:55%;--d:0s"><span>¥3,200万</span></div>
+            <div class="chart-bar" style="--h:72%;--d:.1s"><span>¥4,100万</span></div>
+            <div class="chart-bar" style="--h:48%;--d:.2s"><span>¥2,900万</span></div>
+            <div class="chart-bar" style="--h:88%;--d:.3s"><span>¥5,500万</span></div>
+            <div class="chart-bar" style="--h:64%;--d:.4s"><span>¥3,800万</span></div>
+          </div>
+          <div class="cat-sim-calc">
+            <div class="calc-row"><span>月返済額</span><strong>¥ 148,200</strong></div>
+            <div class="calc-row"><span>総返済額</span><strong>¥ 53,352,000</strong></div>
+            <div class="calc-row"><span>実質利回り</span><strong>4.8 %</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <div class="container">
+
+    <!-- ④ 用語解説: 写真左・テキスト右 -->
+    <a href="/glossary/" class="cat-alt-row">
+      <div class="cat-alt-img-wrap">
+        <img src="/images/thumbnails/cat_glossary.jpg" alt="不動産用語解説" loading="lazy">
+      </div>
+      <div class="cat-alt-body">
+        <span class="cat-alt-badge">📖 用語解説</span>
+        <h3>不動産用語解説</h3>
+        <p>「表面利回り」「実質利回り」「重要事項説明書」など、初心者にもわかりやすく専門用語を丁寧に解説します。</p>
+        <span class="cat-alt-link">用語集を見る →</span>
+      </div>
+    </a>
+
+  </div>
+
 </section>
 
 <!-- Q&A プレビュー -->
