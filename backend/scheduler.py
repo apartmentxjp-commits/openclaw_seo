@@ -387,6 +387,25 @@ async def run_research_cycle():
         await emit_thought("scheduler", "Research Agent エラー", "error", detail=str(e)[:80])
 
 
+async def run_akiya_scrape_cycle():
+    """Akiya Scraper Agent — 週1回、次の3自治体をスクレイプして物件登録"""
+    print(f"[AkiyaScraper] {datetime.utcnow().isoformat()} — 週次スクレイプ開始", flush=True)
+    await emit_thought("scheduler", "Akiya Scraper: 空き家バンク週次収集開始", "working")
+    try:
+        from agents.akiya_scraper import run_weekly_akiya_scrape
+        import asyncio as _asyncio
+        results = await _asyncio.to_thread(run_weekly_akiya_scrape)
+        total = sum(r["inserted"] for r in results)
+        names = ", ".join(r["municipality"] for r in results)
+        print(f"[AkiyaScraper] 完了: {names} — 合計{total}件登録", flush=True)
+        await emit_thought("scheduler",
+                           f"Akiya Scraper 完了: {names} ({total}件登録)",
+                           "success")
+    except Exception as e:
+        print(f"[AkiyaScraper] エラー: {e}", flush=True)
+        await emit_thought("scheduler", "Akiya Scraper エラー", "error", detail=str(e)[:80])
+
+
 async def run_topic_refill():
     """topic_queue の pending 件数をチェックし、不足時は補充"""
     db_url = os.getenv("DATABASE_URL", "").replace("postgresql+asyncpg://", "postgresql://")
@@ -490,6 +509,16 @@ async def main():
         replace_existing=True,
     )
 
+    # ジョブ7: Akiya Scraper（週1回 = 168時間ごと）
+    akiya_scrape_hours = int(float(os.getenv("AKIYA_SCRAPE_INTERVAL_HOURS", "168")))
+    scheduler.add_job(
+        run_akiya_scrape_cycle,
+        IntervalTrigger(hours=akiya_scrape_hours),
+        id="akiya_scrape_cycle",
+        replace_existing=True,
+        next_run_time=None,  # 初回は手動または次回起動時
+    )
+
     scheduler.start()
     print(f"[Scheduler] 起動完了", flush=True)
     print(f"  - 記事生成: {generation_minutes}分ごと（Commander Agent: area/guide/qa/ranking 比率制御）", flush=True)
@@ -498,6 +527,7 @@ async def main():
     print(f"  - Research Agent: {research_hours}時間ごと（knowledge_base 更新）", flush=True)
     print(f"  - Internal Link Agent: {internallink_hours}時間ごと（記事間相互リンク生成）", flush=True)
     print(f"  - Sitemap ping: 24時間ごと（Google・Bing）", flush=True)
+    print(f"  - Akiya Scraper: {akiya_scrape_hours}時間ごと（空き家バンク週次収集）", flush=True)
 
     await emit_thought(
         "scheduler",

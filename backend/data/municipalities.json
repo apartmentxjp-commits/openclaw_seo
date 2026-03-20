@@ -1,0 +1,84 @@
+{
+  "_comment": "空き家バンク対象自治体リスト。週3件ずつローリング追加。status: pending/done/error",
+  "municipalities": [
+    {"id": 1,  "prefecture": "長野県", "name": "飯山市",     "url": "https://www.city.iiyama.nagano.jp/life/akiyabank/",                  "status": "pending", "batch": 1},
+    {"id": 2,  "prefecture": "島根県", "name": "雲南市",     "url": "https://www.city.unnan.shimane.jp/www/contents/1001000000078/",       "status": "pending", "batch": 1},
+    {"id": 3,  "prefecture": "和歌山県","name": "那智勝浦町","url": "https://www.town.nachikatsuura.wakayama.jp/akiyabank/",               "status": "pending", "batch": 1},
+
+    {"id": 4,  "prefecture": "岡山県", "name": "真庭市",     "url": "https://www.city.maniwa.lg.jp/site/akiyabank/",                      "status": "pending", "batch": 2},
+    {"id": 5,  "prefecture": "高知県", "name": "四万十町",   "url": "https://www.town.shimanto.lg.jp/section/kikaku/akiyabank.html",       "status": "pending", "batch": 2},
+    {"id": 6,  "prefecture": "北海道", "name": "ニセコ町",   "url": "https://www.town.niseko.lg.jp/town_planning/chiiki/akiyabank/",       "status": "pending", "batch": 2},
+
+    {"id": 7,  "prefecture": "長野県", "name": "安曇野市",   "url": "https://www.city.azumino.nagano.jp/soshiki/34/2278.html",            "status": "pending", "batch": 3},
+    {"id": 8,  "prefecture": "徳島県", "name": "美馬市",     "url": "https://www.city.mima.lg.jp/akiyabank/",                             "status": "pending", "batch": 3},
+    {"id": 9,  "prefecture": "大分県", "name": "九重町",     "url": "https://www.town.kokonoe.oita.jp/docs/2015042300019/",               "status": "pending", "batch": 3},
+
+    {"id": 10, "prefecture": "京都府", "name": "亀岡市",     "url": "https://www.city.kameoka.kyoto.jp/soshiki/27/1764.html",             "status": "pending", "batch": 4},
+    {"id": 11, "prefecture": "富山県", "name": "南砺市",     "url": "https://www.city.nanto.toyama.jp/cms-sypher/www/service/detail.jsp?id=6788", "status": "pending", "batch": 4},
+    {"id": 12, "prefecture": "徳島県", "name": "上勝町",     "url": "https://kamikatsu.jp/akiyabank/",                                   "status": "pending", "batch": 4},
+
+    {"id": 13, "prefecture": "兵庫県", "name": "丹波篠山市", "url": "https://www.city.tanbasasayama.lg.jp/soshiki/10/1799.html",          "status": "pending", "batch": 5},
+    {"id": 14, "prefecture": "長崎県", "name": "五島市",     "url": "https://www.city.goto.nagasaki.jp/s001/010/020/040/010/akiyabank.html","status": "pending", "batch": 5},
+    {"id": 15, "prefecture": "熊本県", "name": "南阿蘇村",   "url": "https://www.vill.minamiaso.lg.jp/soshiki/somu/1012.html",            "status": "pending", "batch": 5},
+
+    {"id": 16, "prefecture": "岐阜県", "name": "飛騨市",     "url": "https://www.city.hida.gifu.jp/soshiki/43/1796.html",                "status": "pending", "batch": 6},
+    {"id": 17, "prefecture": "三重県", "name": "尾鷲市",     "url": "https://www.city.owase.lg.jp/category/akiya/",                      "status": "pending", "batch": 6},
+    {"id": 18, "prefecture": "宮城県", "name": "気仙沼市",   "url": "https://www.city.kesennuma.lg.jp/www/contents/1510130145765/",       "status": "pending", "batch": 6},
+
+    {"id": 19, "prefecture": "石川県", "name": "輪島市",     "url": "https://www.city.wajima.ishikawa.jp/docs/2014091200042/",           "status": "pending", "batch": 7},
+    {"id": 20, "prefecture": "山形県", "name": "鶴岡市",     "url": "https://www.city.tsuruoka.lg.jp/kurashi/sumai/akiya/akiyabank.html", "status": "pending", "batch": 7},
+    {"id": 21, "prefecture": "鹿児島県","name": "指宿市",    "url": "https://www.city.ibusuki.lg.jp/docs/2016071900025/",                "status": "pending", "batch": 7},
+
+    {"id": 22, "prefecture": "岩手県", "name": "遠野市",     "url": "https://www.city.tono.iwate.jp/index.cfm/6,16,html",                "status": "pending", "batch": 8},
+    {"id": 23, "prefecture": "福島県", "name": "只見町",     "url": "https://www.town.tadami.lg.jp/akiyabank/",                          "status": "pending", "batch": 8},
+    {"id": 24, "prefecture": "新潟県", "name": "妙高市",     "url": "https://www.city.myoko.niigata.jp/docs/2015041400019/",             "status": "pending", "batch": 8},
+
+    {"id": 25, "prefecture": "高知県", "name": "梼原町",     "url": "https://www.town.yusuhara.kochi.jp/kanko/akiyabank.html",           "status": "pending", "batch": 9},
+    {"id": 26, "prefecture": "島根県", "name": "津和野町",   "url": "https://www.town.tsuwano.lg.jp/docs/2016061400014/",                "status": "pending", "batch": 9},
+    {"id": 27, "prefecture": "秋田県", "name": "湯沢市",     "url": "https://www.city.yuzawa.akita.jp/docs/2017042400030/",              "status": "pending", "batch": 9},
+
+    {"id": 28, "prefecture": "山口県", "name": "萩市",       "url": "https://www.city.hagi.lg.jp/site/akiyabank/",                       "status": "pending", "batch": 10},
+    {"id": 29, "prefecture": "愛媛県", "name": "西予市",     "url": "https://www.city.seiyo.ehime.jp/kakuka/somu/kikaku/akiyabank.html", "status": "pending", "batch": 10},
+    {"id": 30, "prefecture": "宮崎県", "name": "高千穂町",   "url": "https://www.town.takachiho.lg.jp/docs/2015091400018/",              "status": "pending", "batch": 10},
+
+    {"id": 31, "prefecture": "長野県", "name": "木曽町",     "url": "https://www.town.kiso.nagano.jp/soshiki/9/1123.html",               "status": "pending", "batch": 11},
+    {"id": 32, "prefecture": "北海道", "name": "富良野市",   "url": "https://www.city.furano.hokkaido.jp/docs/2015092200013/",           "status": "pending", "batch": 11},
+    {"id": 33, "prefecture": "福岡県", "name": "東峰村",     "url": "https://www.toho-village.jp/kankou/akiyabank.html",                 "status": "pending", "batch": 11},
+
+    {"id": 34, "prefecture": "滋賀県", "name": "高島市",     "url": "https://www.city.takashima.lg.jp/www/contents/1001000000121/",      "status": "pending", "batch": 12},
+    {"id": 35, "prefecture": "奈良県", "name": "吉野町",     "url": "https://www.town.yoshino.nara.jp/soshiki/7/akiyabank.html",         "status": "pending", "batch": 12},
+    {"id": 36, "prefecture": "岡山県", "name": "新見市",     "url": "https://www.city.niimi.okayama.jp/usr/akiyabank/",                  "status": "pending", "batch": 12},
+
+    {"id": 37, "prefecture": "青森県", "name": "十和田市",   "url": "https://www.city.towada.lg.jp/docs/2016043000016/",                 "status": "pending", "batch": 13},
+    {"id": 38, "prefecture": "茨城県", "name": "大子町",     "url": "https://www.town.daigo.ibaraki.jp/page/page003034.html",            "status": "pending", "batch": 13},
+    {"id": 39, "prefecture": "群馬県", "name": "みなかみ町",  "url": "https://www.town.minakami.gunma.jp/docs/2015012600017/",            "status": "pending", "batch": 13},
+
+    {"id": 40, "prefecture": "長崎県", "name": "壱岐市",     "url": "https://www.city.iki.nagasaki.jp/docs/2016032400029/",              "status": "pending", "batch": 14},
+    {"id": 41, "prefecture": "鹿児島県","name": "奄美市",    "url": "https://www.city.amami.lg.jp/shimiken/akiyabank.html",              "status": "pending", "batch": 14},
+    {"id": 42, "prefecture": "沖縄県", "name": "読谷村",     "url": "https://www.vill.yomitan.okinawa.jp/docs/akiyabank.html",           "status": "pending", "batch": 14},
+
+    {"id": 43, "prefecture": "岐阜県", "name": "白川村",     "url": "https://www.vill.shirakawa.lg.jp/1418.htm",                         "status": "pending", "batch": 15},
+    {"id": 44, "prefecture": "山梨県", "name": "北杜市",     "url": "https://www.city.hokuto.yamanashi.jp/docs/2015021300011/",          "status": "pending", "batch": 15},
+    {"id": 45, "prefecture": "静岡県", "name": "川根本町",   "url": "https://www.town.kawanehon.shizuoka.jp/docs/2016051300014/",        "status": "pending", "batch": 15},
+
+    {"id": 46, "prefecture": "岩手県", "name": "一関市",     "url": "https://www.city.ichinoseki.iwate.jp/index.cfm/8,64,html",          "status": "pending", "batch": 16},
+    {"id": 47, "prefecture": "秋田県", "name": "大仙市",     "url": "https://www.city.daisen.akita.jp/docs/2016012600040/",              "status": "pending", "batch": 16},
+    {"id": 48, "prefecture": "山形県", "name": "小国町",     "url": "https://www.town.oguni.yamagata.jp/akiyabank/",                     "status": "pending", "batch": 16},
+
+    {"id": 49, "prefecture": "長野県", "name": "根羽村",     "url": "https://www.vill.neba.nagano.jp/docs/2017041700017/",               "status": "pending", "batch": 17},
+    {"id": 50, "prefecture": "岐阜県", "name": "郡上市",     "url": "https://www.city.gujo.gifu.jp/kurashi/sumai/akiyabank.html",        "status": "pending", "batch": 17},
+    {"id": 51, "prefecture": "三重県", "name": "熊野市",     "url": "https://www.city.kumano.mie.jp/docs/2015070100058/",               "status": "pending", "batch": 17},
+
+    {"id": 52, "prefecture": "鳥取県", "name": "智頭町",     "url": "https://www.town.chizu.tottori.jp/docs/2016121600015/",             "status": "pending", "batch": 18},
+    {"id": 53, "prefecture": "島根県", "name": "邑南町",     "url": "https://www.town.ohnan.shimane.jp/docs/2016060100025/",             "status": "pending", "batch": 18},
+    {"id": 54, "prefecture": "広島県", "name": "神石高原町", "url": "https://www.jinsekikogen.hiroshima.jp/akiyabank/",                  "status": "pending", "batch": 18},
+
+    {"id": 55, "prefecture": "熊本県", "name": "人吉市",     "url": "https://www.city.hitoyoshi.lg.jp/q/aview/97/578.html",              "status": "pending", "batch": 19},
+    {"id": 56, "prefecture": "宮崎県", "name": "椎葉村",     "url": "https://www.vill.shiiba.miyazaki.jp/index.cfm/6,1,html",            "status": "pending", "batch": 19},
+    {"id": 57, "prefecture": "鹿児島県","name": "南さつま市","url": "https://www.city.minamisatsuma.lg.jp/docs/2017012600025/",          "status": "pending", "batch": 19},
+
+    {"id": 58, "prefecture": "北海道", "name": "美瑛町",     "url": "https://www.town.biei.hokkaido.jp/docs/2016011300023/",             "status": "pending", "batch": 20},
+    {"id": 59, "prefecture": "北海道", "name": "占冠村",     "url": "https://www.vill.shimukappu.lg.jp/docs/akiyabank.html",             "status": "pending", "batch": 20},
+    {"id": 60, "prefecture": "長野県", "name": "信濃町",     "url": "https://www.town.shinano.nagano.jp/docs/2016041300014/",            "status": "pending", "batch": 20}
+  ]
+}
