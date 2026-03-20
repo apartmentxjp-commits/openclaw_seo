@@ -2054,20 +2054,33 @@ footer a:hover { color: #fff; }
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 16px;
+  padding: 20px 20px 16px;
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .gojuon-row {
   display: flex;
-  gap: 4px;
-  margin-bottom: 4px;
+  align-items: center;
+  gap: 6px;
+}
+.gojuon-row-label {
+  display: inline-flex;
+  align-items: center;
+  width: 44px;
+  min-width: 44px;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: .02em;
 }
 .gojuon-cell {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 36px;
+  width: 36px;
+  height: 34px;
   border-radius: 6px;
   font-size: .85rem;
   font-weight: 600;
@@ -2081,11 +2094,6 @@ footer a:hover { color: #fff; }
   background: var(--green);
   color: #fff;
   border-color: var(--green);
-}
-.gojuon-cell.empty {
-  background: transparent;
-  border-color: transparent;
-  pointer-events: none;
 }
 
 /* カテゴリバッジ */
@@ -2639,4 +2647,125 @@ footer a:hover { color: #fff; }
   .cat-sim-right { flex: unset; width: 100%; }
   .cat-sim-left h2 { font-size: 1.4rem; }
   .cat-sim-left p br { display: none; }
+}
+
+/* =========================================================
+   シミュレーター一覧ページ
+   ========================================================= */
+.sim-list-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #0c4a2b 100%);
+  color: #fff;
+  padding: 64px 0;
+  text-align: center;
+}
+
+.sim-list-hero .section-label {
+  color: rgba(255,255,255,.6);
+}
+
+.sim-list-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 8px 0 16px;
+}
+
+.sim-list-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,.8);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.sim-list-body {
+  padding: 56px 16px 80px;
+}
+
+.sim-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.sim-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 28px 28px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.sim-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green);
+}
+
+.sim-card-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: var(--green-light);
+  border-radius: 14px;
+}
+
+.sim-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sim-card-content h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sim-card-content p {
+  font-size: .85rem;
+  color: var(--text-mid);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.sim-card-link {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.sim-list-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .82rem;
+  color: var(--text-muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+
+.sim-list-note svg {
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+@media (max-width: 640px) {
+  .sim-card-grid { grid-template-columns: 1fr; }
+  .sim-list-title { font-size: 1.6rem; }
 }

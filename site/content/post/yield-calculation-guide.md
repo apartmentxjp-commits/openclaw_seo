@@ -27,7 +27,7 @@ thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 
 ## 2. それぞれの計算方法と具体例
 
-### ① 表面[利回り](/glossary/りまわり/)（グロス利回り）
+### ① 表面[利回り](/glossary/りまわり/)（グロス[利回り](/glossary/りまわり/)）
 「物件価格」と「家賃」だけで計算する、最もシンプルな指標です。
 
 **計算式：**
