@@ -2254,3 +2254,116 @@ footer a:hover { color: #fff; }
   .gojuon-cell { width: 32px; height: 30px; font-size: .78rem; }
   .term-title { font-size: 1.5rem; }
 }
+
+/* =========================================================
+   カテゴリーナビ固定カード（ホームページ）
+   ========================================================= */
+.cat-nav-section {
+  padding: 64px 0;
+  background: var(--bg-soft);
+}
+
+.cat-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cat-nav-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.cat-nav-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green);
+}
+
+.cat-nav-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-section);
+}
+
+.cat-nav-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s;
+}
+
+.cat-nav-card:hover .cat-nav-img-wrap img {
+  transform: scale(1.04);
+}
+
+.cat-nav-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(12, 110, 63, .85);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.cat-nav-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px 18px;
+  flex: 1;
+}
+
+.cat-nav-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cat-nav-body p {
+  font-size: .82rem;
+  color: var(--text-mid);
+  margin: 0;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cat-nav-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+/* タブレット: 2列 */
+@media (max-width: 900px) {
+  .cat-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* モバイル: 1列 */
+@media (max-width: 560px) {
+  .cat-nav-section { padding: 40px 0; }
+  .cat-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

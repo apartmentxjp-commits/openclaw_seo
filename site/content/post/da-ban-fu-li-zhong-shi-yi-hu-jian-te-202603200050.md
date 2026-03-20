@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "/images/thumbnails/640px-151128_Hattori_Ryokuchi_Park_Osaka_pref_Japan02s3.jpg"
 ---
 
 # 豊中市の一戸建て価格相場と最新動向
