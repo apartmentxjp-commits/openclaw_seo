@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Kyocera_Dome_Osaka1.jpg/640px-Kyocera_Dome_Osaka1.jpg"
 ---
 
 # 大阪市西区のマンション価格相場と最新動向
