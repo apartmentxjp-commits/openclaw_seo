@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tochigi"]
 draft: false
-thumbnail: "/images/thumbnails/640px-%E5%AE%89%E6%88%BF%E7%A5%9E%E7%A4%BE_.jpg"
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Tateyama_Montage.jpg/640px-Tateyama_Montage.jpg"
 ---
 
 # 小山市の一戸建て価格相場と最新動向

@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "/images/thumbnails/640px-2018_K%C5%8Denji.jpg"
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tetsugakudo_Park%28Philosophy_Hall%29_Park1.jpg/640px-Tetsugakudo_Park%28Philosophy_Hall%29_Park1.jpg"
 ---
 
 # 東京都杉並区の一戸建て不動産価格情報: 最新相場と魅力的な地域
