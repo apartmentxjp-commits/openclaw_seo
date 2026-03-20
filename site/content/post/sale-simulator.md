@@ -5,6 +5,7 @@ description: "エリア、物件種別、面積、築年数から、あなたの
 article_type: "area"
 categories: ["area-info"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/National_Diet_Building_02.jpg/640px-National_Diet_Building_02.jpg"
 layout: "tool"
 ---
 

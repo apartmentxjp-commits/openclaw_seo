@@ -5,6 +5,7 @@ description: "物件価格・家賃収入・ランニングコスト・ローン
 article_type: "area"
 categories: ["area-info"]
 draft: false
+thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Tokyo_Skytree_2014_%E2%85%A2.jpg/640px-Tokyo_Skytree_2014_%E2%85%A2.jpg"
 layout: "tool"
 ---
 
