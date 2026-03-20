@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kyoto"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Kyoto%2C_Japan_%28Unsplash_UIN-pFfJ7c%29.jpg"
 ---
 
 # 京都市左京区のマンション価格相場と最新動向

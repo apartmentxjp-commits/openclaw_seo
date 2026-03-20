@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["gifu"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Kawashima-Parking-Area-1.jpg"
 ---
 
 # 各務原市の一戸建て価格相場と最新動向

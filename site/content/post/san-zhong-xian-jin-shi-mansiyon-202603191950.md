@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["mie"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Tsu_Montage.jpg"
 ---
 
 # 津市のマンション価格相場と最新動向

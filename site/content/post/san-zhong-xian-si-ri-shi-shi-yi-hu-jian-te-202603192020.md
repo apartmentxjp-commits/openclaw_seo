@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["mie"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Yokkaichi_Montage.jpg"
 ---
 
 ## 四日市市の一戸建て価格相場と最新動向

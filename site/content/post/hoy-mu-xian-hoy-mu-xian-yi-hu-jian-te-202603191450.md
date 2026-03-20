@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["tochigi"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Nikko_toshogu_shrine.jpg/640px-Nikko_toshogu_shrine.jpg"
+thumbnail: "/images/thumbnails/640px-Nikko_toshogu_shrine.jpg"
 ---
 
 # 栃木県 エリア別地価ランキング2024：宇都宮・那須・日光比較

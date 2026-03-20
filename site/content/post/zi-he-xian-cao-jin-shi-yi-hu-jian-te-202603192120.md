@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["shiga"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Kusatsujuku_Kusatsu_Shiga_Pref01n4592.jpg"
 ---
 
 # 草津市の一戸建て価格相場と最新動向

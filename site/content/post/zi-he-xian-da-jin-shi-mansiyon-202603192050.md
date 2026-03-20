@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["shiga"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Skyline_of_Otsu_City20210828.jpg"
 ---
 
 # 大津市のマンション価格相場と最新動向

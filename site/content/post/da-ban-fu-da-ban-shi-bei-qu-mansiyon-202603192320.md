@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "/images/thumbnails/640px-JR_Osaka_Station_20151226.JPG"
 ---
 
 # 大阪市北区のマンション価格相場と最新動向

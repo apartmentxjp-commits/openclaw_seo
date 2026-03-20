@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["gifu"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Gifu_City_Tower_43_and_Gifu_Sky_Wing_37_from_Twinarch138.jpg"
 ---
 
 # 岐阜市のマンション価格相場と最新動向

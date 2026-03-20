@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Osaka_Castle_03bs3200.jpg"
 ---
 
 # 大阪市中央区のマンション価格相場と最新動向
