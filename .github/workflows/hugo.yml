@@ -45,6 +45,8 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Add thumbnails via Wikipedia API
+        run: python3 scripts/add_thumbnails.py
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
