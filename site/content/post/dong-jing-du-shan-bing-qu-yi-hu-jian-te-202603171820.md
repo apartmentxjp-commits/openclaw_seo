@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tetsugakudo_Park%28Philosophy_Hall%29_Park1.jpg/640px-Tetsugakudo_Park%28Philosophy_Hall%29_Park1.jpg"
+thumbnail: "/images/thumbnails/640px-Kichijoji_N-gate_Square.JPG"
 ---
 
 # 杉並区の一戸建て価格相場と最新動向

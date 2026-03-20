@@ -5,7 +5,7 @@ description: "エリア・間取り・専有面積・築年数・駅徒歩分数
 article_type: "area"
 categories: ["area-info"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Tokyo_Station_Marunouchi_Building_P5228787.jpg/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
+thumbnail: "/images/thumbnails/640px-Tokyo_Station_Marunouchi_Building_P5228787.jpg"
 layout: "tool"
 ---
 

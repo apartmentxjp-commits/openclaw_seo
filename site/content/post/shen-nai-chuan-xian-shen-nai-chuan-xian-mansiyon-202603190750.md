@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["kanagawa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Minato_Mirai_In_Blue_%28cropped%29.jpg/640px-Minato_Mirai_In_Blue_%28cropped%29.jpg"
+thumbnail: "/images/thumbnails/640px-Minato_Mirai_In_Blue_cropped_.jpg"
 ---
 
 # 神奈川県 エリア別地価ランキング2024：横浜・川崎・湘南

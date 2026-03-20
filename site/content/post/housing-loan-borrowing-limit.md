@@ -6,7 +6,7 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 draft: false
 tags: ["住宅ローン", "借入可能額", "年収", "審査", "マイホーム購入"]
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Japanese_Saitama_Shintoshin_west_building.jpg/640px-Japanese_Saitama_Shintoshin_west_building.jpg"
+thumbnail: "/images/thumbnails/640px-Japanese_Saitama_Shintoshin_west_building.jpg"
 ---
 
 **この記事でわかること：** 住宅ローンの借入可能額の計算方法、金融機関の審査基準、年収別の借入目安、そして借り過ぎを防ぐための実践的チェックリスト。

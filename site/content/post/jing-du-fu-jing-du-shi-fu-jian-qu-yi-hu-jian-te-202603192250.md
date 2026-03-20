@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kyoto"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg/640px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg"
+thumbnail: "/images/thumbnails/640px-Kinkaku-ji_2015.JPG"
 ---
 
 # 京都市伏見区の一戸建て価格相場と最新動向

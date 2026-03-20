@@ -11,7 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kanagawa"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Minato_Mirai_In_Blue_%28cropped%29.jpg/640px-Minato_Mirai_In_Blue_%28cropped%29.jpg"
+thumbnail: "/images/thumbnails/640px-Minato_Mirai_In_Blue_cropped_.jpg"
 ---
 
 # 横浜市西区のマンション価格相場と最新動向

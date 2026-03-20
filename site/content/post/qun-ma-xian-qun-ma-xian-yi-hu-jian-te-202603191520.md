@@ -11,7 +11,7 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["gunma"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Mount_Haruna_view_from_Hokkitsu_Onsen_Tachibana_no_sato_Shiroyama_%28cropped%29.jpg/640px-Mount_Haruna_view_from_Hokkitsu_Onsen_Tachibana_no_sato_Shiroyama_%28cropped%29.jpg"
+thumbnail: "/images/thumbnails/640px-Mount_Haruna_view_from_Hokkitsu_Onsen_Tachibana_no_sato_Shiroyama_cropped_.jpg"
 ---
 
 # 群馬県エリア別地価ランキング2024：前橋・高崎・伊勢崎比較

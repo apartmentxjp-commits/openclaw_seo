@@ -5,7 +5,7 @@ description: "借入金額・金利・返済期間を入力するだけで、月
 article_type: "area"
 categories: ["area-info"]
 draft: false
-thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
+thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 layout: "tool"
 ---
 
