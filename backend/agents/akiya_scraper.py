@@ -348,30 +348,7 @@ _AGENT_RE = re.compile(
 
 def _translate(title: str, description: str) -> tuple[str, str]:
     clean_desc = _AGENT_RE.sub("", description or "").strip()
-    # Claude Haiku を優先、フォールバックで Groq
-    anthropic_key = os.getenv("ANTHROPIC_API_KEY")
-    if anthropic_key:
-        try:
-            import anthropic
-            client = anthropic.Anthropic(api_key=anthropic_key)
-            resp = client.messages.create(
-                model="claude-haiku-4-5",
-                max_tokens=512,
-                messages=[{"role": "user", "content": TRANSLATE_PROMPT.format(
-                    title=title[:300], description=clean_desc[:600]
-                )}],
-            )
-            text = resp.content[0].text.strip()
-            if "```" in text:
-                text = text.split("```")[1].split("```")[0]
-                if text.startswith("json"):
-                    text = text[4:]
-            result = json.loads(text.strip())
-            return result.get("title_en", title), result.get("description_en", clean_desc)
-        except Exception as e:
-            print(f"[Translate] Claude 失敗 ({e}), Groq にフォールバック", flush=True)
-
-    # Groq フォールバック
+    # Groq（無料）のみ使用
     groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
     try:
         resp = groq.chat.completions.create(
