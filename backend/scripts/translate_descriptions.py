@@ -1,7 +1,7 @@
 """
 英語説明一括補完スクリプト
 
-description_en が null の物件に対して Claude で英語翻訳を生成し、DBを更新する。
+description_en が null の物件に対して Groq で英語翻訳を生成し、DBを更新する。
 エージェント情報（【取扱店舗名】など）は翻訳前に除去する。
 
 使い方:
@@ -20,7 +20,6 @@ import time
 # ─────────────────────────────────────────────────────────────────────────────
 # エージェント情報の除去
 # ─────────────────────────────────────────────────────────────────────────────
-# 【取扱店舗名】〜【取扱店舗TEL】 のようなブロックを除去する
 _AGENT_PATTERN = re.compile(
     r'【(?:取扱店舗名|取扱店舗住所|取扱店舗ＴＥＬ|取扱店舗TEL|仲介業者|問合せ)】[^【]*',
     re.UNICODE
@@ -34,7 +33,7 @@ def _clean_description(text: str) -> str:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Claude による翻訳
+# Groq による翻訳
 # ─────────────────────────────────────────────────────────────────────────────
 TRANSLATE_PROMPT = """Translate this Japanese real estate listing to natural English for international buyers.
 - Keep Japanese cultural terms (kominka, machiya, satoyama, noka, minka) in parentheses when used
@@ -48,28 +47,24 @@ Description: {description}
 Respond with JSON only: {{"title_en": "...", "description_en": "..."}}"""
 
 
-def _translate_with_claude(title: str, description: str) -> tuple[str, str]:
-    import anthropic
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+def _translate_with_groq(title: str, description: str) -> tuple[str, str]:
+    from groq import Groq
+    client = Groq(api_key=os.environ["GROQ_API_KEY"])
 
     cleaned_desc = _clean_description(description)
 
-    response = client.messages.create(
-        model="claude-haiku-4-5",
+    response = client.chat.completions.create(
+        model="llama-3.1-8b-instant",
         max_tokens=512,
         messages=[{"role": "user", "content": TRANSLATE_PROMPT.format(
             title=title[:300],
             description=cleaned_desc[:600],
         )}],
+        response_format={"type": "json_object"},
     )
 
-    text = response.content[0].text.strip()
-    if "```" in text:
-        text = text.split("```")[1].split("```")[0]
-        if text.startswith("json"):
-            text = text[4:]
-
-    result = json.loads(text.strip())
+    text = response.choices[0].message.content.strip()
+    result = json.loads(text)
     return result.get("title_en", title), result.get("description_en", "")
 
 
@@ -94,8 +89,8 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="DBを更新せず確認のみ")
     args = parser.parse_args()
 
-    if "ANTHROPIC_API_KEY" not in os.environ:
-        print("❌ ANTHROPIC_API_KEY が未設定です", file=sys.stderr)
+    if "GROQ_API_KEY" not in os.environ:
+        print("❌ GROQ_API_KEY が未設定です", file=sys.stderr)
         sys.exit(1)
 
     supabase = _get_supabase()
@@ -129,7 +124,7 @@ def main():
 
         print(f"[{i+1}/{len(rows)}] {title[:50]}", end=" ... ", flush=True)
         try:
-            title_en, desc_en = _translate_with_claude(title, description)
+            title_en, desc_en = _translate_with_groq(title, description)
 
             update: dict = {"description_en": desc_en}
             # title_en も未設定なら一緒に更新
@@ -145,7 +140,7 @@ def main():
 
         # レートリミット対策
         if i < len(rows) - 1:
-            time.sleep(0.3)
+            time.sleep(0.2)
 
     print(f"\n完了: {ok} 件更新, {fail} 件失敗")
 
