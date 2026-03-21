@@ -166,6 +166,31 @@ def _parse_detail_page(html: str, base: dict) -> dict:
     """
     soup = BeautifulSoup(html, "html.parser")
 
+    # ── タイトル（詳細ページから取得） ──
+    title = base.get("title", "")
+    if not title:
+        for sel in ["h1", ".bk-name", ".bukken-name", ".property-name"]:
+            el = soup.select_one(sel)
+            if el:
+                candidate = el.get_text(strip=True)
+                if candidate:
+                    title = candidate
+                    break
+    if not title:
+        # <title>タグから抽出: "登録番号４ - 物件詳細 - ..." → 先頭部分
+        page_title = soup.find("title")
+        if page_title:
+            title = page_title.get_text(strip=True).split(" - ")[0].strip()
+
+    # ── 価格（詳細ページから取得） ──
+    price = base.get("price")
+    if price is None:
+        for tag in soup.find_all(string=re.compile(r"[\d,]+万円")):
+            m = re.search(r"([\d,]+)万円", tag)
+            if m:
+                price = int(m.group(1).replace(",", ""))
+                break
+
     # ── 画像 ──
     images = []
     # JS変数 image_tile_carousel_image_s からURLを抽出
@@ -271,14 +296,16 @@ def _parse_detail_page(html: str, base: dict) -> dict:
         "町家": "machiya", "別荘": "villa",
         "土地": "land", "宅地": "land",
     }
-    title = base.get("title", "")
+    title_for_type = title or base.get("title", "")
     for jp, en in type_map.items():
-        if jp in title or jp in description:
+        if jp in title_for_type or jp in description:
             property_type = en
             break
 
     return {
         **base,
+        "title": title,
+        "price": price,
         "images": images,
         "address": address,
         "prefecture": prefecture,
