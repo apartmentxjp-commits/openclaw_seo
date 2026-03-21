@@ -364,9 +364,18 @@ def _get_supabase():
     return create_client(url, key)
 
 
+# 成約・交渉中などの物件を除外するキーワード
+SKIP_KEYWORDS = ['成約', '交渉中', '申込', '売約', '商談中', '契約済', '取引中']
+
 def _insert_property(supabase, prop: dict) -> bool:
     source_url = prop.get("source_url", "")
-    if not prop.get("title"):
+    title = prop.get("title", "")
+    if not title:
+        return False
+
+    # 成約・交渉中物件をスキップ
+    if any(kw in title for kw in SKIP_KEYWORDS):
+        print(f"[Scraper]   スキップ（{next(kw for kw in SKIP_KEYWORDS if kw in title)}）: {title[:40]}", flush=True)
         return False
 
     # 重複チェック
