@@ -194,16 +194,25 @@ def _parse_detail_page(html: str, base: dict) -> dict:
     # ── 画像 ──
     images = []
     # JS変数 image_tile_carousel_image_s からURLを抽出
+    # 間取り図・不動産会社情報入り画像を除外するため、外観写真（先頭）のみ保存
+    SKIP_IMG_KEYWORDS = ['間取り', '図面', 'madori', 'floor', 'plan']
     script_match = re.search(r"image_tile_carousel_image_s\s*=\s*(\[.*?\]);", html, re.DOTALL)
     if script_match:
         try:
             img_data = json.loads(script_match.group(1))
             for img in img_data:
                 full = img.get("image_url_fullsize", "") or img.get("image_url_thumbnail", "")
-                if full:
-                    if full.startswith("//"):
-                        full = "https:" + full
-                    images.append(full)
+                if not full:
+                    continue
+                if full.startswith("//"):
+                    full = "https:" + full
+                # commentフィールドに間取り・図面などが含まれる場合はスキップ
+                comment = str(img.get("comment", "") or img.get("title", "") or "").lower()
+                if any(kw in comment for kw in SKIP_IMG_KEYWORDS):
+                    continue
+                images.append(full)
+                # 外観写真1枚のみ保存（間取り図・会社情報入り画像を避けるため）
+                break
         except Exception:
             pass
 
@@ -323,20 +332,52 @@ def _parse_detail_page(html: str, base: dict) -> dict:
 # ─────────────────────────────────────────────────────────────────────────────
 # 英語翻訳
 # ─────────────────────────────────────────────────────────────────────────────
-TRANSLATE_PROMPT = """Translate this Japanese real estate listing to English for international buyers.
-Keep Japanese cultural terms (kominka, machiya, satoyama, noka) when appropriate.
+TRANSLATE_PROMPT = """Translate this Japanese real estate listing to natural English for international buyers.
+Keep Japanese cultural terms (kominka, machiya, satoyama, noka, minka) when appropriate.
+Do NOT include real estate agency names, phone numbers, or agent contact info in the translation.
 Title: {title}
 Description: {description}
 Respond with JSON only: {{"title_en": "...", "description_en": "..."}}"""
 
+# エージェント情報（【取扱店舗名】など）を除去
+_AGENT_RE = re.compile(
+    r'【(?:取扱店舗名|取扱店舗住所|取扱店舗ＴＥＬ|取扱店舗TEL|仲介業者|問合せ)】[^【]*',
+    re.UNICODE
+)
+
 
 def _translate(title: str, description: str) -> tuple[str, str]:
+    clean_desc = _AGENT_RE.sub("", description or "").strip()
+    # Claude Haiku を優先、フォールバックで Groq
+    anthropic_key = os.getenv("ANTHROPIC_API_KEY")
+    if anthropic_key:
+        try:
+            import anthropic
+            client = anthropic.Anthropic(api_key=anthropic_key)
+            resp = client.messages.create(
+                model="claude-haiku-4-5",
+                max_tokens=512,
+                messages=[{"role": "user", "content": TRANSLATE_PROMPT.format(
+                    title=title[:300], description=clean_desc[:600]
+                )}],
+            )
+            text = resp.content[0].text.strip()
+            if "```" in text:
+                text = text.split("```")[1].split("```")[0]
+                if text.startswith("json"):
+                    text = text[4:]
+            result = json.loads(text.strip())
+            return result.get("title_en", title), result.get("description_en", clean_desc)
+        except Exception as e:
+            print(f"[Translate] Claude 失敗 ({e}), Groq にフォールバック", flush=True)
+
+    # Groq フォールバック
     groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
     try:
         resp = groq.chat.completions.create(
             model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": TRANSLATE_PROMPT.format(
-                title=title[:300], description=(description or "")[:600]
+                title=title[:300], description=clean_desc[:600]
             )}],
             max_tokens=512,
             temperature=0.3,
@@ -347,9 +388,9 @@ def _translate(title: str, description: str) -> tuple[str, str]:
             if text.startswith("json"):
                 text = text[4:]
         result = json.loads(text.strip())
-        return result.get("title_en", title), result.get("description_en", description or "")
+        return result.get("title_en", title), result.get("description_en", clean_desc)
     except Exception:
-        return title, description or ""
+        return title, clean_desc
 
 
 # ─────────────────────────────────────────────────────────────────────────────
