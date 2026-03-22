@@ -33,7 +33,7 @@ thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 **計算式：**
 `年間家賃収入 ÷ 物件価格 × 100`
 
-### ② 実質[利回り](/glossary/りまわり/)（ネット利回り / NOI利回り）
+### ② 実質[利回り](/glossary/りまわり/)（ネット[利回り](/glossary/りまわり/) / NOI利回り）
 [管理費](/glossary/かんりひ/)、[修繕積立金](/glossary/しゅうぜんつみたてきん/)、[固定資産税](/glossary/こていしさんぜい/)などのランニングコストを考慮した指標です。
 
 **計算式：**

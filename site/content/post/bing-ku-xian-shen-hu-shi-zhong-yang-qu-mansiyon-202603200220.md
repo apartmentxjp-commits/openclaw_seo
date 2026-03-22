@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hyogo"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Himeji_castle_in_may_2015.jpg"
 ---
 
 # 神戸市中央区のマンション価格相場と最新動向

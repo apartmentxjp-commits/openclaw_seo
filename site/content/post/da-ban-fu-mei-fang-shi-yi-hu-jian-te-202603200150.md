@@ -11,6 +11,7 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["osaka"]
 draft: false
+thumbnail: "/images/thumbnails/640px-Hirakata_Park.jpg"
 ---
 
 # 枚方市の一戸建て価格相場と最新動向

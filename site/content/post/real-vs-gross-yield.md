@@ -25,7 +25,7 @@ thumbnail: "/images/thumbnails/640px-Skyscrapers_of_Shinjuku_2009_January.jpg"
 
 ## 計算式の比較
 
-### 表面利回り（グロス利回り）の計算式
+### 表面[利回り](/glossary/りまわり/)（グロス利回り）の計算式
 
 ```
 表面利回り（%）= 年間家賃収入 ÷ 物件価格 × 100
