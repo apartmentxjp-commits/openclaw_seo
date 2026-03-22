@@ -31,6 +31,81 @@
   </div>
 </section>
 
+<!-- 最新記事 -->
+<section class="latest-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">LATEST ARTICLES</div>
+      <h2 class="section-title">最新記事</h2>
+    </div>
+    <div class="latest-grid">
+      {{ range first 9 .Site.RegularPages }}
+      {{ $type := .Params.article_type | default "area" }}
+      <a href="{{ .RelPermalink }}" class="latest-card">
+        {{ if .Params.thumbnail }}
+        <div class="latest-card-img">
+          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
+        </div>
+        {{ end }}
+        <div class="latest-card-body">
+          <span class="post-tag type-{{ $type }}">
+            {{ if eq $type "guide" }}📖 不動産ガイド
+            {{ else if eq $type "qa" }}❓ Q&A
+            {{ else if eq $type "ranking" }}📊 市場データ
+            {{ else }}🏘️ エリア情報{{ end }}
+          </span>
+          <p class="post-date">{{ .Date.Format "2006年1月2日" }}</p>
+          <h3 class="latest-card-title">{{ .Title }}</h3>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    <div class="latest-more">
+      <a href="/post/">すべての記事を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Q&A プレビュー -->
+<section class="qa-section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">よくある質問</h2>
+      <p class="section-desc">不動産購入・投資に関するよくある疑問にお答えします</p>
+    </div>
+    <div class="qa-grid">
+      <details class="qa-item">
+        <summary>不動産購入の初期費用は購入価格の何%くらいかかりますか？</summary>
+        <div class="qa-answer">
+          一般的に購入価格の6〜10%程度が目安です。内訳は仲介手数料（最大3%+6万円）、登記費用、不動産取得税、火災保険料、住宅ローン諸費用などです。新築マンションでは修繕積立基金も必要になります。事前に詳細な見積もりを取ることをお勧めします。
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>住宅ローンの審査に通りやすい条件は？</summary>
+        <div class="qa-answer">
+          主な審査ポイントは「年収」「勤続年数（3年以上が望ましい）」「他のローン残高」「返済比率（年収の25〜35%以内）」「信用情報」です。頭金を多く用意すること、借入前にカードローンを整理することで通過率が上がります。金融機関によって基準が異なるため、複数に相談することも有効です。
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>マンションと一戸建て、どちらが資産価値を保ちやすいですか？</summary>
+        <div class="qa-answer">
+          立地次第で大きく変わりますが、都市部では駅近マンションが資産価値を保ちやすい傾向があります。一戸建ては土地の価値が残るメリットがありますが、建物の減価が進みます。国交省データによると、築20年を超えると木造一戸建ては建物価値がほぼゼロになる一方、都市部の中古マンションは立地次第で安定した取引価格を維持しています。
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>不動産投資の利回りの目安は？</summary>
+        <div class="qa-answer">
+          表面利回り（年間賃料÷物件価格）は都市部で3〜5%、地方で6〜10%程度が目安です。ただし管理費・修繕費・空室リスクを考慮した実質利回りは表面利回りから1〜2%低くなります。当サイトの利回りシミュレーターで実質利回りを計算することをお勧めします。
+        </div>
+      </details>
+    </div>
+    <div class="qa-cta">
+      <a href="/categories/qa/">Q&A一覧を見る →</a>
+    </div>
+  </div>
+</section>
+
 <!-- カテゴリーナビ（交互レイアウト） -->
 <section class="cat-alt-section">
 
