@@ -118,6 +118,22 @@
           </ul>
         </div>
         <div class="sidebar-widget">
+          {{ $currentPrefSlug := index .Params.prefectures 0 }}
+          {{ if $currentPrefSlug }}
+          <h3>{{ with .Params.prefecture }}{{ . }}{{ else }}同エリア{{ end }}の記事</h3>
+          <ul class="widget-list">
+            {{ $prefPages := index .Site.Taxonomies.prefectures $currentPrefSlug }}
+            {{ $filtered := slice }}
+            {{ range $prefPages }}
+              {{ if and (ne .Page.Permalink $.Permalink) (ne .Page.Layout "tool") }}
+                {{ $filtered = $filtered | append .Page }}
+              {{ end }}
+            {{ end }}
+            {{ range first 6 $filtered }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+          {{ else }}
           <h3>最新の調査レポート</h3>
           <ul class="widget-list">
             {{ range first 6 (where .Site.RegularPages "Section" "post") }}
@@ -126,6 +142,7 @@
             {{ end }}
             {{ end }}
           </ul>
+          {{ end }}
         </div>
         <div class="sidebar-widget">
           <h3>記事カテゴリー</h3>
