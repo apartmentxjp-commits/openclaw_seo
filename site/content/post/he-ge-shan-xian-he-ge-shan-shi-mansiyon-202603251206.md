@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "和歌山市のマンション購入ガイド"
 date: 2026-03-25T12:06:46+09:00
 slug: "he-ge-shan-xian-he-ge-shan-shi-mansiyon-202603251206"
 area: "和歌山市"

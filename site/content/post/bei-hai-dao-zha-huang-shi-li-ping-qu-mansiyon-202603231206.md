@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "札幌市豊平区のマンション購入ガイド"
 date: 2026-03-23T12:06:46+09:00
 slug: "bei-hai-dao-zha-huang-shi-li-ping-qu-mansiyon-202603231206"
 area: "札幌市豊平区"

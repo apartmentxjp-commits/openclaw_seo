@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "仙台市青葉区のマンション購入ガイド"
 date: 2026-03-23T16:06:43+09:00
 slug: "gong-cheng-xian-xian-tai-shi-qing-xie-qu-mansiyon-202603231606"
 area: "仙台市青葉区"

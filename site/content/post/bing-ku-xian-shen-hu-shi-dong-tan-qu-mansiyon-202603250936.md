@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "神戸市東灘区のマンション購入ガイド"
 date: 2026-03-25T09:36:44+09:00
 slug: "bing-ku-xian-shen-hu-shi-dong-tan-qu-mansiyon-202603250936"
 area: "神戸市東灘区"

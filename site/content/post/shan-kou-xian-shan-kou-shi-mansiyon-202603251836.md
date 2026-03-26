@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "山口市のマンション購入ガイド"
 date: 2026-03-25T18:36:43+09:00
 slug: "shan-kou-xian-shan-kou-shi-mansiyon-202603251836"
 area: "山口市"

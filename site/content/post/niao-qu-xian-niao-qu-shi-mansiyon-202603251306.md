@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "鳥取市のマンション購入ガイド"
 date: 2026-03-25T13:06:43+09:00
 slug: "niao-qu-xian-niao-qu-shi-mansiyon-202603251306"
 area: "鳥取市"

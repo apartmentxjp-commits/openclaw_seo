@@ -1,5 +1,5 @@
 ---
-title: "一戸建て購入・活用の完全ガイド"
+title: "下関市の一戸建て購入ガイド"
 date: 2026-03-25T19:06:43+09:00
 slug: "shan-kou-xian-xia-guan-shi-yi-hu-jian-te-202603251906"
 area: "下関市"

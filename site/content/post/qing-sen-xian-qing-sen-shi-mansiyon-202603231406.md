@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "青森市のマンション購入ガイド"
 date: 2026-03-23T14:06:44+09:00
 slug: "qing-sen-xian-qing-sen-shi-mansiyon-202603231406"
 area: "青森市"

@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "仙台市宮城野区のマンション購入ガイド"
 date: 2026-03-23T17:06:42+09:00
 slug: "gong-cheng-xian-xian-tai-shi-gong-cheng-ye-qu-mansiyon-202603231706"
 area: "仙台市宮城野区"

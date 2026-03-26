@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "吹田市のマンション購入ガイド"
 date: 2026-03-25T08:06:43+09:00
 slug: "da-ban-fu-chui-tian-shi-mansiyon-202603250806"
 area: "吹田市"

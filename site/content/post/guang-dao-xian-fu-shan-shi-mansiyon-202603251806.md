@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "福山市のマンション購入ガイド"
 date: 2026-03-25T18:06:43+09:00
 slug: "guang-dao-xian-fu-shan-shi-mansiyon-202603251806"
 area: "福山市"

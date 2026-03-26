@@ -9,32 +9,101 @@
 
 <div class="post-list-page">
   <div class="container">
-    <div class="post-grid">
-      {{ range .Paginator.Pages }}
-      {{ if ne .Layout "tool" }}
-      <a href="{{ .Permalink }}" class="post-card">
-        <div class="post-thumb">
-          <div class="post-thumb-title">{{ .Title }}</div>
-        </div>
-        <div class="post-body">
-          <span class="post-tag">調査レポート</span>
-          <h3>{{ .Title }}</h3>
-          <p>{{ .Summary | truncate 100 }}</p>
-        </div>
-        <div class="post-footer">詳細を見る</div>
-      </a>
-      {{ end }}
-      {{ end }}
-    </div>
 
-    <div class="pagination">
-      {{ if .Paginator.HasPrev }}
-      <a href="{{ .Paginator.Prev.URL }}">&laquo; 前のページ</a>
-      {{ end }}
-      {{ if .Paginator.HasNext }}
-      <a href="{{ .Paginator.Next.URL }}">次のページ &raquo;</a>
-      {{ end }}
-    </div>
+    {{/* 都道府県別グループ表示 */}}
+    {{ $allPages := where .Pages "Layout" "ne" "tool" }}
+
+    {{/* 全国記事（prefecture未設定またはprefecture=全国）*/}}
+    {{ $nationwide := where $allPages "Params.prefecture" "全国" }}
+    {{ $nationwide = $nationwide | union (where $allPages "Params.prefecture" "") }}
+
+    {{/* 都道府県別taxonomy一覧（記事があるもの） */}}
+    {{ $prefOrder := slice "hokkaido" "aomori" "iwate" "miyagi" "akita" "yamagata" "fukushima" "ibaraki" "tochigi" "gunma" "saitama" "chiba" "tokyo" "kanagawa" "niigata" "toyama" "ishikawa" "fukui" "yamanashi" "nagano" "shizuoka" "aichi" "mie" "shiga" "kyoto" "osaka" "hyogo" "nara" "wakayama" "tottori" "shimane" "okayama" "hiroshima" "yamaguchi" "tokushima" "kagawa" "ehime" "kochi" "fukuoka" "saga" "nagasaki" "kumamoto" "oita" "miyazaki" "kagoshima" "okinawa" }}
+
+    {{ $prefNames := dict
+      "hokkaido" "北海道" "aomori" "青森県" "iwate" "岩手県" "miyagi" "宮城県"
+      "akita" "秋田県" "yamagata" "山形県" "fukushima" "福島県" "ibaraki" "茨城県"
+      "tochigi" "栃木県" "gunma" "群馬県" "saitama" "埼玉県" "chiba" "千葉県"
+      "tokyo" "東京都" "kanagawa" "神奈川県" "niigata" "新潟県" "toyama" "富山県"
+      "ishikawa" "石川県" "fukui" "福井県" "yamanashi" "山梨県" "nagano" "長野県"
+      "shizuoka" "静岡県" "aichi" "愛知県" "mie" "三重県" "shiga" "滋賀県"
+      "kyoto" "京都府" "osaka" "大阪府" "hyogo" "兵庫県" "nara" "奈良県"
+      "wakayama" "和歌山県" "tottori" "鳥取県" "shimane" "島根県" "okayama" "岡山県"
+      "hiroshima" "広島県" "yamaguchi" "山口県" "tokushima" "徳島県" "kagawa" "香川県"
+      "ehime" "愛媛県" "kochi" "高知県" "fukuoka" "福岡県" "saga" "佐賀県"
+      "nagasaki" "長崎県" "kumamoto" "熊本県" "oita" "大分県" "miyazaki" "宮崎県"
+      "kagoshima" "鹿児島県" "okinawa" "沖縄県"
+    }}
+
+    {{ range $prefOrder }}
+    {{ $slug := . }}
+    {{ $prefName := index $prefNames $slug }}
+    {{ $termPages := index $.Site.Taxonomies.prefectures $slug }}
+    {{ if $termPages }}
+    {{ $articles := slice }}
+    {{ range $termPages }}{{ $articles = $articles | append .Page }}{{ end }}
+    {{ $articles = $articles | uniq }}
+
+    <section class="pref-group" id="pref-{{ $slug }}">
+      <div class="pref-group-header">
+        <h2 class="pref-group-title">
+          📍 {{ $prefName }}
+          <span class="pref-count">{{ len $articles }}件</span>
+        </h2>
+        <a href="{{ (printf "prefectures/%s/" $slug) | relURL }}" class="pref-all-link">すべて見る →</a>
+      </div>
+      <div class="post-grid">
+        {{ range first 4 $articles }}
+        <a href="{{ .Permalink }}" class="post-card">
+          <div class="post-thumb">
+            <div class="post-thumb-title">{{ .Title }}</div>
+          </div>
+          <div class="post-body">
+            {{ $atype := .Params.article_type | default "area" }}
+            <span class="post-tag type-{{ $atype }}">
+              {{ if eq $atype "ranking" }}📊 市場データ
+              {{ else if eq $atype "guide" }}📖 ガイド
+              {{ else if eq $atype "qa" }}❓ Q&A
+              {{ else }}🏘️ エリア情報{{ end }}
+            </span>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Summary | truncate 80 }}</p>
+          </div>
+          <div class="post-footer">詳細を見る</div>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+    {{ end }}
+
+    {{/* 全国記事 */}}
+    {{ if $nationwide }}
+    <section class="pref-group" id="pref-nationwide">
+      <div class="pref-group-header">
+        <h2 class="pref-group-title">
+          🗾 全国データ
+          <span class="pref-count">{{ len $nationwide }}件</span>
+        </h2>
+      </div>
+      <div class="post-grid">
+        {{ range first 4 ($nationwide.ByDate.Reverse) }}
+        <a href="{{ .Permalink }}" class="post-card">
+          <div class="post-thumb">
+            <div class="post-thumb-title">{{ .Title }}</div>
+          </div>
+          <div class="post-body">
+            <span class="post-tag type-ranking">📊 市場データ</span>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Summary | truncate 80 }}</p>
+          </div>
+          <div class="post-footer">詳細を見る</div>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
   </div>
 </div>
 {{ end }}

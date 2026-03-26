@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "函館市のマンション購入ガイド"
 date: 2026-03-23T13:06:45+09:00
 slug: "bei-hai-dao-han-guan-shi-mansiyon-202603231306"
 area: "函館市"

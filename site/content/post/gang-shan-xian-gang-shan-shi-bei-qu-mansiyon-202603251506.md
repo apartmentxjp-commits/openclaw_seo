@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "岡山市北区のマンション購入ガイド"
 date: 2026-03-25T15:06:43+09:00
 slug: "gang-shan-xian-gang-shan-shi-bei-qu-mansiyon-202603251506"
 area: "岡山市北区"

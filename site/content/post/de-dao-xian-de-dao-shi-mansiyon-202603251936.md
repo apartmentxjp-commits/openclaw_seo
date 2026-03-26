@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "徳島市のマンション購入ガイド"
 date: 2026-03-25T19:36:43+09:00
 slug: "de-dao-xian-de-dao-shi-mansiyon-202603251936"
 area: "徳島市"

@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "秋田市のマンション購入ガイド"
 date: 2026-03-23T17:36:43+09:00
 slug: "qiu-tian-xian-qiu-tian-shi-mansiyon-202603231736"
 area: "秋田市"

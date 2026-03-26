@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "盛岡市のマンション購入ガイド"
 date: 2026-03-23T15:06:46+09:00
 slug: "yan-shou-xian-sheng-gang-shi-mansiyon-202603231506"
 area: "盛岡市"

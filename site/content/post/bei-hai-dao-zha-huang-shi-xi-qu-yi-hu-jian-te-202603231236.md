@@ -1,5 +1,5 @@
 ---
-title: "一戸建て購入・活用の完全ガイド"
+title: "札幌市西区の一戸建て購入ガイド"
 date: 2026-03-23T12:36:43+09:00
 slug: "bei-hai-dao-zha-huang-shi-xi-qu-yi-hu-jian-te-202603231236"
 area: "札幌市西区"

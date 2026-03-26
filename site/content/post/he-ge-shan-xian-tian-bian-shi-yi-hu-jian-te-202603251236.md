@@ -1,5 +1,5 @@
 ---
-title: "一戸建て購入・活用の完全ガイド"
+title: "田辺市の一戸建て購入ガイド"
 date: 2026-03-25T12:36:46+09:00
 slug: "he-ge-shan-xian-tian-bian-shi-yi-hu-jian-te-202603251236"
 area: "田辺市"

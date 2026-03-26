@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "札幌市中央区のマンション購入ガイド"
 date: 2026-03-23T11:36:43+09:00
 slug: "bei-hai-dao-zha-huang-shi-zhong-yang-qu-mansiyon-202603231136"
 area: "札幌市中央区"

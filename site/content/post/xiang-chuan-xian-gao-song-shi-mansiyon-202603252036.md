@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "高松市のマンション購入ガイド"
 date: 2026-03-25T20:36:43+09:00
 slug: "xiang-chuan-xian-gao-song-shi-mansiyon-202603252036"
 area: "高松市"

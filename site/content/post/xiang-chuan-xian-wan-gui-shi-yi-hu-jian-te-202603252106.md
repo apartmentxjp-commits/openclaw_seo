@@ -1,5 +1,5 @@
 ---
-title: "一戸建て購入・活用の完全ガイド"
+title: "丸亀市の一戸建て購入ガイド"
 date: 2026-03-25T21:06:43+09:00
 slug: "xiang-chuan-xian-wan-gui-shi-yi-hu-jian-te-202603252106"
 area: "丸亀市"

@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "神戸市中央区のマンション購入ガイド"
 date: 2026-03-25T09:06:43+09:00
 slug: "bing-ku-xian-shen-hu-shi-zhong-yang-qu-mansiyon-202603250906"
 area: "神戸市中央区"

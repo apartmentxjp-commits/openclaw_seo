@@ -1,5 +1,5 @@
 ---
-title: "この記事でわかること"
+title: "旭川市のマンション購入ガイド"
 date: 2026-03-23T13:36:43+09:00
 slug: "bei-hai-dao-xu-chuan-shi-yi-hu-jian-te-202603231336"
 area: "旭川市"

@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "姫路市のマンション購入ガイド"
 date: 2026-03-25T10:36:42+09:00
 slug: "bing-ku-xian-ji-lu-shi-mansiyon-202603251036"
 area: "姫路市"

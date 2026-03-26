@@ -1,5 +1,5 @@
 ---
-title: "マンション購入・活用の完全ガイド"
+title: "奈良市のマンション購入ガイド"
 date: 2026-03-25T11:06:45+09:00
 slug: "nai-liang-xian-nai-liang-shi-mansiyon-202603251106"
 area: "奈良市"
