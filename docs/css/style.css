@@ -636,6 +636,46 @@ header {
   color: var(--text-muted);
 }
 
+/* ── 都道府県別グループ ─────────────────────── */
+.pref-group {
+  margin-bottom: 56px;
+}
+
+.pref-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.pref-group-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pref-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-family: var(--font-base);
+}
+
+.pref-all-link {
+  font-size: 0.85rem;
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pref-all-link:hover { text-decoration: underline; }
+
 /* ── 記事ページ (single) ─────────────────────── */
 .layout-wrapper {
   display: grid;

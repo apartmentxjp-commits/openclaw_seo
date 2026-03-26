@@ -636,6 +636,46 @@ header {
   color: var(--text-muted);
 }
 
+/* ── 都道府県別グループ ─────────────────────── */
+.pref-group {
+  margin-bottom: 56px;
+}
+
+.pref-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.pref-group-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pref-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-family: var(--font-base);
+}
+
+.pref-all-link {
+  font-size: 0.85rem;
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pref-all-link:hover { text-decoration: underline; }
+
 /* ── 記事ページ (single) ─────────────────────── */
 .layout-wrapper {
   display: grid;
@@ -1091,6 +1131,82 @@ footer a:hover { color: #fff; }
 .nav-link .label { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.2rem; }
 .nav-link .title { font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.4; }
 .nav-link.next { margin-left: auto; text-align: right; }
+
+/* ── 同じ都道府県の関連記事セクション ── */
+.related-articles {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border);
+}
+.related-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+.related-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  background: #fff;
+  transition: all 0.2s;
+}
+.related-card:hover {
+  border-color: var(--green);
+  background: var(--green-light);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.related-badge {
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 2px;
+}
+.related-card-title {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+.related-card-date {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.related-more {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+.related-more-link {
+  display: inline-block;
+  padding: 0.55rem 1.4rem;
+  border: 2px solid var(--green);
+  border-radius: 24px;
+  color: var(--green);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.related-more-link:hover {
+  background: var(--green);
+  color: #fff;
+}
+@media (max-width: 640px) {
+  .related-grid { grid-template-columns: 1fr; }
+}
 
 /* ── カテゴリ・都道府県ページ追加スタイル ── */
 .hero-desc { font-size: 1rem; color: var(--text-mid); margin-top: 0.5rem; }
