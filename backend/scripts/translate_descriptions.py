@@ -95,17 +95,36 @@ def main():
 
     supabase = _get_supabase()
 
-    # description_en が null の物件を取得
-    query = supabase.table("properties") \
+    # description_en が null または空文字の物件を取得
+    r_null = supabase.table("properties") \
         .select("id, title, description, title_en") \
         .is_("description_en", "null") \
-        .order("created_at", desc=False)
+        .order("created_at", desc=False).execute().data
+    r_empty = supabase.table("properties") \
+        .select("id, title, description, title_en") \
+        .eq("description_en", "") \
+        .order("created_at", desc=False).execute().data
+    # 重複除去してまとめる
+    seen = set()
+    rows_all = []
+    for r in r_null + r_empty:
+        if r["id"] not in seen:
+            seen.add(r["id"])
+            rows_all.append(r)
 
     if args.limit > 0:
-        query = query.limit(args.limit)
+        rows_all = rows_all[:args.limit]
 
-    rows = query.execute().data
-    print(f"▶ 対象: {len(rows)} 件 (description_en が null)")
+    rows = rows_all
+    # queryは使わない（既にrowsに格納済み）
+    class _Dummy:
+        def limit(self, n): return self
+        def execute(self):
+            class R: data = rows
+            return R()
+    query = _Dummy()
+
+    print(f"▶ 対象: {len(rows)} 件 (description_en が null または空)")
 
     if args.dry_run:
         for r in rows[:5]:
