@@ -193,28 +193,40 @@ def _parse_detail_page(html: str, base: dict) -> dict:
 
     # ── 画像 ──
     images = []
-    # JS変数 image_tile_carousel_image_s からURLを抽出
-    # 間取り図・不動産会社情報入り画像を除外するため、外観写真（先頭）のみ保存
-    SKIP_IMG_KEYWORDS = ['間取り', '図面', 'madori', 'floor', 'plan']
+    SKIP_IMG_KEYWORDS = [
+        '間取り', '図面', 'madori', 'floor', 'plan',
+        '地図', 'map', '路線', '周辺', '案内図', '位置図',
+        '地形', '航空', 'satellite', '仕様', 'spec',
+        '詳細図', '設計', '配置図', '現況図',
+    ]
+    PREFER_IMG_KEYWORDS = ['外観', '建物', '正面', '全景', '外', '庭', '駐車', '玄関外']
     script_match = re.search(r"image_tile_carousel_image_s\s*=\s*(\[.*?\]);", html, re.DOTALL)
     if script_match:
         try:
             img_data = json.loads(script_match.group(1))
+            candidates = []
             for img in img_data:
                 full = img.get("image_url_fullsize", "") or img.get("image_url_thumbnail", "")
                 if not full:
                     continue
                 if full.startswith("//"):
                     full = "https:" + full
-                # commentフィールドに間取り・図面などが含まれる場合はスキップ
                 comment = str(img.get("comment", "") or img.get("title", "") or "").lower()
                 if any(kw in comment for kw in SKIP_IMG_KEYWORDS):
                     continue
-                images.append(full)
-                # 外観写真1枚のみ保存（間取り図・会社情報入り画像を避けるため）
-                break
+                if any(kw in full.lower() for kw in ['madori', 'floor', 'plan', 'map']):
+                    continue
+                is_exterior = any(kw in comment for kw in PREFER_IMG_KEYWORDS)
+                candidates.append((full, is_exterior))
+            # 外観写真優先、なければ最初の候補を1枚だけ保存
+            chosen = next((u for u, ext in candidates if ext), None)
+            if not chosen and candidates:
+                chosen = candidates[0][0]
+            if chosen:
+                images.append(chosen)
         except Exception:
             pass
+    # OGPはスペック表・地図が混入しやすいので使わない
 
     # ── テーブルデータ ──
     def _cell(label: str) -> str:
