@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["saitama"]
 draft: false
+image: "https://images.unsplash.com/photo-1705578815676-11a1b22c00e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxTYWl0YW1hJTIwSmFwYW4lMjBzdWJ1cmJhbiUyMGhvdXNlfGVufDB8MHx8fDE3NzQ4MTk4MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "James Butterly"
+image_credit_url: "https://unsplash.com/@jamesbutterly"
 ---
 
 # 川越市の一戸建て価格相場・最新動向

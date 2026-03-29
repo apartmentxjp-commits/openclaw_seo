@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kagoshima"]
 draft: false
+image: "https://images.unsplash.com/photo-1624517608495-8625e52798af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxLYWdvc2hpbWElMjBKYXBhbiUyMGNpdHklMjBhcGFydG1lbnR8ZW58MHwwfHx8MTc3NDgxOTc1Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Tayawee Supan"
+image_credit_url: "https://unsplash.com/@banktayawee"
 ---
 
 # 鹿児島市のマンション価格相場と最新動向

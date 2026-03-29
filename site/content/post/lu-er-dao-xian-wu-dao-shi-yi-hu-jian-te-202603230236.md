@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kagoshima"]
 draft: false
+image: "https://images.unsplash.com/photo-1687145042480-b81fa8347220?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxLYWdvc2hpbWElMjBKYXBhbiUyMHN1YnVyYmFuJTIwaG91c2V8ZW58MHwwfHx8MTc3NDgxOTc1NXww&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "WL ST"
+image_credit_url: "https://unsplash.com/@stwl"
 ---
 
 # 霧島市の一戸建て価格相場と最新動向
