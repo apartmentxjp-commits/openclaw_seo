@@ -14,9 +14,11 @@ satei:
   subtext: "複数社に無料で査定依頼。最大6社の査定額を比較できます。"
   slots:
     - id: "satei1"
-      name: "一括査定サービス①"
-      # ↓ A8.netの広告コードをここに貼り付け
-      html: ""
+      name: "ノムコム（野村不動産）"
+      html: |
+        <a href="https://px.a8.net/svt/ejp?a8mat=45BNJ8+66O50Y+5M76+BXB8X" rel="nofollow">
+        <img border="0" width="300" height="250" alt="" src="https://www21.a8.net/svt/bgt?aid=250806500374&wid=001&eno=01&mid=s00000026205002003000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45BNJ8+66O50Y+5M76+BXB8X" alt="">
 
     - id: "satei2"
       name: "一括査定サービス②"
