@@ -91,6 +91,16 @@
     {{ end }}
   </header>
 
+  {{/* ── アイキャッチ画像 ── */}}
+  {{ with .Params.image }}
+  <figure class="article-featured-image">
+    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    {{ with $.Params.image_credit_name }}
+    <figcaption>Photo by <a href="{{ $.Params.image_credit_url }}?utm_source=openclaw&utm_medium=referral" target="_blank" rel="noopener">{{ . }}</a> on <a href="https://unsplash.com?utm_source=openclaw&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a></figcaption>
+    {{ end }}
+  </figure>
+  {{ end }}
+
   {{/* ── 目次（見出しが3つ以上ある場合のみ表示） ── */}}
   {{ $headings := findRE `(?m)^##\s+.+` .RawContent }}
   {{ if ge (len $headings) 3 }}
@@ -137,7 +147,51 @@
     </div>
   </footer>
 
-  {{/* ── 前後ナビ ── */}}
+  {{/* ── 同じ都道府県の関連記事 ── */}}
+  {{ $currentPref := index .Params.prefectures 0 }}
+  {{ if $currentPref }}
+  {{ $termPages := index .Site.Taxonomies.prefectures $currentPref }}
+  {{ $related := slice }}
+  {{ range $termPages }}
+    {{ if ne .Page.Permalink $.Permalink }}
+      {{ $related = $related | append .Page }}
+    {{ end }}
+  {{ end }}
+  {{ if gt (len $related) 0 }}
+  <section class="related-articles">
+    <h2 class="related-title">
+      📍 {{ with $.Params.prefecture }}{{ . }}{{ else }}同じエリア{{ end }}の関連記事
+    </h2>
+    <div class="related-grid">
+      {{ range first 6 $related }}
+      {{ $atype := .Params.article_type | default "area" }}
+      <a href="{{ .Permalink }}" class="related-card">
+        <span class="related-badge type-{{ $atype }}">
+          {{ if eq $atype "ranking" }}📊
+          {{ else if eq $atype "guide" }}📖
+          {{ else if eq $atype "qa" }}❓
+          {{ else }}🏘️
+          {{ end }}
+        </span>
+        <span class="related-card-title">{{ .Title }}</span>
+        <span class="related-card-date">{{ .Date.Format "2006.01.02" }}</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ with $.Params.prefectures }}
+    {{ $prefSlug := index . 0 }}
+    <div class="related-more">
+      <a href="{{ (printf "prefectures/%s/" $prefSlug) | relURL }}" class="related-more-link">
+        {{ with $.Params.prefecture }}{{ . }}{{ end }}の記事をすべて見る →
+      </a>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── 都道府県が設定されていない記事（ガイド等）の前後ナビ ── */}}
+  {{ if not $currentPref }}
   <nav class="post-navigation" aria-label="前後の記事">
     {{ with .PrevInSection }}
     <a href="{{ .Permalink }}" class="nav-link prev">
@@ -152,5 +206,6 @@
     </a>
     {{ end }}
   </nav>
+  {{ end }}
 </article>
 {{ end }}
