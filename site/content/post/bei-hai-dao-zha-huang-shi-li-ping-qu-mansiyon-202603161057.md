@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["hokkaido"]
 draft: false
+image: "https://images.unsplash.com/photo-1735100190326-1afceaf67c42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxIb2trYWlkbyUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0Nzk2MDE1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Yucong Cai"
+image_credit_url: "https://unsplash.com/@yucongcai"
 thumbnail: "/images/thumbnails/640px-Tokachi_plain_01.jpg"
 ---
 

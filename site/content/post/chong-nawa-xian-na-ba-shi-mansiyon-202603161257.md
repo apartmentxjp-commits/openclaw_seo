@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["okinawa"]
 draft: false
+image: "https://images.unsplash.com/photo-1607753334515-388d52395b9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxPa2luYXdhJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ3OTgxNzV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "bady abbas"
+image_credit_url: "https://unsplash.com/@bady"
 thumbnail: "/images/thumbnails/640px-Naha_montage.jpg"
 ---
 

@@ -11,6 +11,9 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["aichi"]
 draft: false
+image: "https://images.unsplash.com/photo-1600418288086-111f9256c817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxOYWdveWElMjBKYXBhbiUyMGNpdHklMjBhcGFydG1lbnR8ZW58MHwwfHx8MTc3NDc5NTk1MXww&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Hakan Nural"
+image_credit_url: "https://unsplash.com/@hakannural"
 thumbnail: "/images/thumbnails/640px-Tenshuhonmaru.jpg"
 ---
 
