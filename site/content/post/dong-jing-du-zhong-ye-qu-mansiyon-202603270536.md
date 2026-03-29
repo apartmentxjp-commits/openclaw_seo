@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["tokyo"]
 draft: false
+image: "https://images.unsplash.com/photo-1699093873612-c4f4f7c1e0e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxUb2t5byUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0ODAxODE4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Tsuyoshi Kozu"
+image_credit_url: "https://unsplash.com/@tsuyoshikozu"
 ---
 
 # 中野区のマンション価格相場・最新動向
