@@ -712,3 +712,114 @@ footer {
 .kyushu {
     grid-area: kyushu;
 }
+
+/* ── Latest Posts Section (homepage) ─────────────────── */
+.latest-posts-section {
+    padding: 56px 0 48px;
+}
+
+.home-post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+/* Article date on cards */
+.post-date {
+    font-size: .75rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+/* Article type badges */
+.post-tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    letter-spacing: .03em;
+}
+
+.post-tag.type-area    { background: #f0faf4; color: #0c6e3f; }
+.post-tag.type-guide   { background: #e8f5e9; color: #2e7d32; }
+.post-tag.type-qa      { background: #fff3e0; color: #e65100; }
+.post-tag.type-ranking { background: #e3f0fb; color: #1565c0; }
+
+/* ── Q&A Section ──────────────────────────────────────── */
+.qa-section {
+    background: #f8fafc;
+    padding: 64px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.qa-grid {
+    display: grid;
+    gap: 12px;
+    max-width: 760px;
+    margin: 0 auto 28px;
+}
+
+.qa-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.qa-item summary {
+    cursor: pointer;
+    padding: 18px 20px;
+    font-weight: 600;
+    font-size: .95rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary);
+    gap: 12px;
+}
+
+.qa-item summary::-webkit-details-marker { display: none; }
+
+.qa-item summary::after {
+    content: "+";
+    font-size: 1.2rem;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.qa-item[open] summary::after { content: "−"; }
+
+.qa-answer {
+    padding: 0 20px 18px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: .9rem;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+}
+
+.qa-cta {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.qa-cta a {
+    display: inline-block;
+    padding: 10px 28px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: .85rem;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.qa-cta a:hover {
+    background: var(--accent);
+    color: #fff;
+}
