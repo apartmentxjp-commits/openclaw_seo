@@ -11,6 +11,9 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["fukuoka"]
 draft: false
+image: "https://images.unsplash.com/photo-1623310075009-f89bfd8142e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxGdWt1b2thJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ4MTI1MzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Tayawee Supan"
+image_credit_url: "https://unsplash.com/@banktayawee"
 thumbnail: "/images/thumbnails/640px-Fukuoka_City_-_Watanabe-dori_Avenue_-_01.JPG"
 ---
 

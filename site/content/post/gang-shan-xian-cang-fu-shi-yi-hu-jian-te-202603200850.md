@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["okayama"]
 draft: false
+image: "https://images.unsplash.com/photo-1687279788881-f539d014cb83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxKYXBhbiUyMG5laWdoYm9yaG9vZCUyMGhvdXNlfGVufDB8MHx8fDE3NzQ3OTU5NjR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "wei"
+image_credit_url: "https://unsplash.com/@chanwei_snap"
 ---
 
 # 倉敷市の一戸建て価格相場と最新動向
