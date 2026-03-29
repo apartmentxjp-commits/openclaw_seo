@@ -151,6 +151,33 @@ TARGET_AREAS = [
     {"pref": "大阪府", "city": "中央区",    "pref_en": "osaka",    "type": "マンション", "article_type": "timed_sell"},
     {"pref": "愛知県", "city": "名古屋市西区","pref_en": "aichi",   "type": "マンション", "article_type": "timed_sell"},
     {"pref": "福岡県", "city": "福岡市中央区","pref_en": "fukuoka", "type": "マンション", "article_type": "timed_sell"},
+    # ──────────────────────────────────────────────
+    # 地方・空き家売却特化記事（SEO: 空き家 固定資産税 更地 地方不動産）
+    # ──────────────────────────────────────────────
+    {"pref": "山形県", "city": "山形市",    "pref_en": "yamagata",  "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "秋田県", "city": "秋田市",    "pref_en": "akita",     "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "青森県", "city": "青森市",    "pref_en": "aomori",    "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "岩手県", "city": "盛岡市",    "pref_en": "iwate",     "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "島根県", "city": "松江市",    "pref_en": "shimane",   "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "鳥取県", "city": "鳥取市",    "pref_en": "tottori",   "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "高知県", "city": "高知市",    "pref_en": "kochi",     "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "徳島県", "city": "徳島市",    "pref_en": "tokushima", "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "和歌山県","city": "和歌山市",  "pref_en": "wakayama",  "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "山口県", "city": "山口市",    "pref_en": "yamaguchi", "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "福島県", "city": "郡山市",    "pref_en": "fukushima", "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "長野県", "city": "松本市",    "pref_en": "nagano",    "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "新潟県", "city": "新潟市",    "pref_en": "niigata",   "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "山梨県", "city": "甲府市",    "pref_en": "yamanashi", "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "栃木県", "city": "宇都宮市",  "pref_en": "tochigi",   "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "群馬県", "city": "前橋市",    "pref_en": "gunma",     "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "茨城県", "city": "水戸市",    "pref_en": "ibaraki",   "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "三重県", "city": "津市",      "pref_en": "mie",       "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "滋賀県", "city": "大津市",    "pref_en": "shiga",     "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "奈良県", "city": "奈良市",    "pref_en": "nara",      "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "佐賀県", "city": "佐賀市",    "pref_en": "saga",      "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "大分県", "city": "大分市",    "pref_en": "oita",      "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "宮崎県", "city": "宮崎市",    "pref_en": "miyazaki",  "type": "一戸建て", "article_type": "chiho_sell"},
+    {"pref": "鹿児島県","city": "鹿児島市",  "pref_en": "kagoshima", "type": "一戸建て", "article_type": "chiho_sell"},
     # ガイド記事
     {"pref": "全国",   "city": "住宅ローン減税2024",  "pref_en": "guide", "type": "guide",
      "article_type": "guide", "theme": "住宅ローン減税の最新ルールと賢い使い方"},
@@ -196,6 +223,10 @@ def pick_uncovered_areas(count: int = 1) -> list:
         elif article_type == "timed_sell":
             already_covered = any(
                 (pref_slug in s and city_slug in s and "uritori" in s) for s in covered
+            )
+        elif article_type == "chiho_sell":
+            already_covered = any(
+                (pref_slug in s and city_slug in s and "akiya" in s) for s in covered
             )
         else:
             already_covered = any(
@@ -401,41 +432,95 @@ def generate_article(area: dict) -> str:
         prompt = f"""あなたは日本の不動産専門メディア「OpenClaw（不動産価格調査センター）」のライターです。
 
 {pref}{city}の{prop_type}オーナーに向けた「今が売り時か？」という疑問に答えるSEO記事をMarkdown形式で書いてください。
-検索ユーザーは「{pref}{city} 不動産 売り時」「{pref}{city} {prop_type} 売却 タイミング」「住宅ローン 高騰 売却」などで検索してくる人です。
+
+【重要：事実に基づいて書くこと】
+根拠のない断定は禁止。以下の公的データを参照して書く：
+- 日銀：2024年3月・7月・2025年1月に政策金利を引き上げ（ゼロ金利解除）
+- 住宅ローン変動金利：2024年以降、主要銀行が相次いで引き上げ
+- 建設工事費デフレーター（国土交通省）：2020年比で約20〜30%上昇
+- 職人・建設技能者不足：国交省試算で2030年に約80万人不足
+- 総務省住宅・土地統計調査（2023年）：空き家数約900万戸、空き家率13.8%
 
 【記事構成】
-# {pref}{city}の{prop_type}、今が売り時？2026年に売却すべき5つの理由
+# {pref}{city}の{prop_type}、今が売り時？2026年に売却を検討すべき理由
 
-## 2026年、{pref}{city}の不動産市場はどうなっているか
-- 価格推移データ（直近3〜5年）
-- 金利上昇が不動産価格に与える影響
-- 「高止まり」から「下落」に転じるリスク
+## 金利上昇が不動産市場に与える影響
+- 日銀の利上げ局面と変動金利の推移（事実ベース）
+- 金利上昇 → 月々の返済額増加 → 買い手が購入できる価格帯が下がる仕組み
+- 「高止まり」が続く今と、買い手減少後の価格の違い
 
-## 住宅ローン金利上昇で買い手が減る前に売るべき理由
-- 金利上昇 → 買える人が減る → 需要減 → 価格下落の連鎖
-- 2024〜2026年の金利動向と不動産への影響
+## 新築・リフォームコストが上昇している現実
+- 建設工事費が2020年比約20〜30%上昇している背景（資材費・人件費）
+- 職人不足で工期が延びる・工事が受けてもらえないケース
+- 「築古でも高く売れる今」が続く理由とその限界
 
-## {pref}{city}エリア固有の売り時サイン
-- 再開発・人口動態・新線開通などエリア固有の情報
-- 「今買い手が多い」タイミングの見極め方
+## 固定資産税と「更地にするリスク」
+- 住宅用地特例：住宅がある土地は固定資産税が1/6〜1/3に軽減される制度
+- 建物を取り壊して更地にすると特例が外れ、税負担が最大6倍になる
+- 空き家のまま放置すると「特定空き家」に指定されるリスク（2023年法改正）
 
-## 売却を先延ばしにするリスク
-- 築年数が増えるほど査定額が下がる目安（年〇〜〇%下落）
-- 空き家・賃貸運用のコストと比較
-- 相続前に売るメリット
+## {pref}{city}エリアの現状と売り時判断
+- エリアの人口動態・需給バランス（推定で可、推定であることを明記）
+- 再開発・インフラ状況がある場合は記載
 
-## 今すぐ売却を始めるための3ステップ
-1. 無料一括査定で現在の売却価格を把握
-2. 複数社の査定額を比較
-3. 売り出し価格を決めて売却開始
+## 売却を先延ばしにする具体的なリスク
+- 築年数と査定額の関係（目安として年1〜2%程度の減価）
+- 維持管理コスト・修繕費の積み上がり
 
-## まとめ｜迷っているなら今すぐ査定だけでも
-- 「査定は無料・売却義務なし」を強調したCTAで締める
+## まとめ｜まず無料査定で現在の価格を知ることから
+- 査定は無料・売却義務なし・複数社比較を勧めるCTAで締める
 
 【条件】
-- 「売り時」「今が売り時」「住宅ローン金利」「高止まり」「資産価値」を自然に使う
-- 具体的な数字（金利〇%、価格下落〇%など）を必ず入れる
-- 読者が「今すぐ査定してみよう」と思わせる危機感と行動促進
+- 推定・見込みの情報は「〜と見られる」「〜が予想される」など表現を和らげる
+- 数字を使う際は出典か「目安」であることを明記
+- 読者が「なるほど、調べてみよう」と自然に思えるトーン
+- Front matterは不要（本文のみ）
+- 文字数：1800〜2500字"""
+    elif article_type == "chiho_sell":
+        prompt = f"""あなたは日本の不動産専門メディア「OpenClaw（不動産価格調査センター）」のライターです。
+
+{pref}{city}の{prop_type}オーナーに向けた「地方不動産の売却を早めに検討すべき理由」をテーマにしたSEO記事をMarkdown形式で書いてください。
+
+【重要：事実に基づいて書くこと】
+以下の公的データを参照：
+- 総務省住宅・土地統計調査（2023年）：全国空き家数約900万戸・空き家率13.8%
+- 地方・郡部の空き家率はさらに高く、20〜30%を超えるエリアも存在
+- 2023年「空き家対策特別措置法」改正：「管理不全空き家」新設、住宅用地特例が外れる場合あり
+- 住宅用地特例：建物があると固定資産税が1/6〜1/3に。更地・空き家指定で最大6倍に
+- 地方の人口減少：国立社会保障・人口問題研究所の将来推計（各自治体ごとに差あり）
+- 建設工事費：2020年比約20〜30%上昇（建設工事費デフレーター）
+
+【記事構成】
+# {pref}{city}の{prop_type}は早めに売却すべき？空き家問題と税負担から考える
+
+## {pref}{city}周辺の空き家・不動産事情
+- エリアの人口動態と空き家の増加傾向（推定含む、推定と明記）
+- 地方不動産の需要が落ちやすい構造的な理由
+
+## 空き家のまま放置するとどうなるか
+- 「特定空き家」「管理不全空き家」に指定されるリスク（2023年法改正の内容）
+- 指定されると住宅用地特例が外れ、固定資産税が最大6倍になる仕組みを具体的に説明
+- 建物の老朽化と維持管理コストの増大
+
+## 更地にしても税金が上がる問題
+- 住宅用地特例の仕組み（200㎡以下で1/6、200㎡超で1/3に軽減）
+- 建物を壊すと特例が外れる → 更地の方が固定資産税が高くなるケース
+- 「壊せない・売れない・税金だけかかる」という地方空き家の実態
+
+## 新築・リフォームが難しくなっている現実
+- 建設コスト高騰（2020年比20〜30%増）と職人不足の実態
+- 地方では施工業者が見つからないケースも増加
+
+## 今の相場で売るメリット
+- 2024〜2026年は都市部の需要が地方物件にも波及している面がある（推定）
+- 「まだ買い手がいる今」と「空き家が増え続けた後」の違い
+
+## まとめ｜まず無料査定で現在の価格を確認を
+- 査定無料・義務なし、複数社比較を勧めるCTAで締める
+
+【条件】
+- 推定・見込み情報は必ず「〜と推計される」「目安として」など断り書きを入れる
+- 恐怖を煽りすぎず、「知って判断する」スタンスで書く
 - Front matterは不要（本文のみ）
 - 文字数：1800〜2500字"""
     elif article_type == "satei":
@@ -538,10 +623,16 @@ def save_article(area: dict, content: str, image: dict | None = None) -> Path:
         tags = [pref, city, "不動産査定", "売却", "高値売却", "無料査定", prop_type]
         category = "satei"
     elif article_type == "timed_sell":
-        title = f"{pref}{city}の{prop_type}、今が売り時？2026年に売却すべき5つの理由"
+        title = f"{pref}{city}の{prop_type}、今が売り時？2026年に売却を検討すべき理由"
         slug_base = slugify(f"{pref}{city}{prop_type}uritori")
-        description = f"{pref}{city}の{prop_type}は今が売り時か徹底解説。住宅ローン金利上昇・価格高止まりの今、売却を先延ばしにするリスクと2026年の売り時サインを分析。"
-        tags = [pref, city, "売り時", "売却タイミング", "住宅ローン金利", "不動産売却", prop_type]
+        description = f"{pref}{city}の{prop_type}は今が売り時か解説。日銀利上げ・建設コスト高騰・固定資産税の仕組みをもとに、売却を先延ばしにするリスクを分析。"
+        tags = [pref, city, "売り時", "売却タイミング", "住宅ローン金利", "固定資産税", "不動産売却", prop_type]
+        category = "satei"
+    elif article_type == "chiho_sell":
+        title = f"{pref}{city}の{prop_type}は早めに売却すべき？空き家問題と税負担から考える"
+        slug_base = slugify(f"{pref}{city}{prop_type}akiya")
+        description = f"{pref}{city}の{prop_type}の売却を早めに検討すべき理由を解説。空き家の固定資産税・住宅用地特例・管理不全空き家指定のリスクと売却のメリット。"
+        tags = [pref, city, "空き家", "固定資産税", "更地", "住宅用地特例", "地方不動産売却", prop_type]
         category = "satei"
     else:
         title = f"{pref}{city}の{prop_type}相場2026年版｜最新価格と将来予測"
