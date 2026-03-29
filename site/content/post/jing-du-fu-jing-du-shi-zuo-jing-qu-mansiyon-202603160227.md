@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kyoto"]
 draft: false
+image: "https://images.unsplash.com/photo-1736331998013-5c8a3b6cb067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxLeW90byUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0ODE2MTk5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Julien"
+image_credit_url: "https://unsplash.com/@domsson"
 thumbnail: "/images/thumbnails/640px-Kyoto__Japan__Unsplash_UIN-pFfJ7c_.jpg"
 ---
 
