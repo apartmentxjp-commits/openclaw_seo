@@ -1,0 +1,31 @@
+{{/* 不動産一括査定 アフィリエイトセクション */}}
+{{ $cfg := .Site.Data.affiliates.satei }}
+{{ if $cfg.enabled }}
+{{ $activeSlots := slice }}
+{{ range $cfg.slots }}
+  {{ if .html }}
+    {{ $activeSlots = $activeSlots | append . }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $activeSlots) 0 }}
+<section class="affiliate-satei">
+  <div class="affiliate-satei-inner">
+    <div class="affiliate-satei-header">
+      <span class="affiliate-satei-icon">🏠</span>
+      <div>
+        <h3 class="affiliate-satei-heading">{{ $cfg.heading }}</h3>
+        <p class="affiliate-satei-sub">{{ $cfg.subtext }}</p>
+      </div>
+    </div>
+    <div class="affiliate-satei-slots affiliate-slots-{{ len $activeSlots }}">
+      {{ range $activeSlots }}
+      <div class="affiliate-slot" id="{{ .id }}">
+        {{ .html | safeHTML }}
+      </div>
+      {{ end }}
+    </div>
+    <p class="affiliate-satei-note">※ 査定依頼・利用は無料です</p>
+  </div>
+</section>
+{{ end }}
+{{ end }}

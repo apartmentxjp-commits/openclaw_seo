@@ -848,3 +848,85 @@ footer {
     color: var(--text-muted, #999);
     text-decoration: underline;
 }
+
+/* 不動産一括査定 アフィリエイトセクション */
+.affiliate-satei {
+    margin: 40px 0;
+    background: linear-gradient(135deg, #f0faf4 0%, #e8f5e9 100%);
+    border: 2px solid var(--accent, #0c6e3f);
+    border-radius: var(--radius-lg, 12px);
+    padding: 28px 24px;
+}
+
+.affiliate-satei-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.affiliate-satei-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.affiliate-satei-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.affiliate-satei-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark, #1a1a1a);
+    margin: 0 0 4px;
+}
+
+.affiliate-satei-sub {
+    font-size: .85rem;
+    color: var(--text-mid, #555);
+    margin: 0;
+}
+
+.affiliate-satei-slots {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.affiliate-satei-slots.affiliate-slots-1 { justify-content: center; }
+.affiliate-satei-slots.affiliate-slots-2 { justify-content: space-around; }
+.affiliate-satei-slots.affiliate-slots-3 { justify-content: space-between; }
+
+.affiliate-slot {
+    flex: 1 1 200px;
+    max-width: 320px;
+    text-align: center;
+}
+
+.affiliate-slot img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.affiliate-satei-note {
+    font-size: .72rem;
+    color: var(--text-muted, #999);
+    text-align: center;
+    margin: 14px 0 0;
+}
+
+@media (max-width: 600px) {
+    .affiliate-satei-slots {
+        flex-direction: column;
+        align-items: center;
+    }
+    .affiliate-slot {
+        max-width: 100%;
+        width: 100%;
+    }
+}
