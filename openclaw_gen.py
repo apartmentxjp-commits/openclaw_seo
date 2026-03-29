@@ -107,6 +107,50 @@ TARGET_AREAS = [
     # 北陸
     {"pref": "石川県", "city": "金沢市",     "pref_en": "ishikawa","type": "マンション"},
     {"pref": "富山県", "city": "富山市",     "pref_en": "toyama",  "type": "一戸建て"},
+    # ──────────────────────────────────────────────
+    # 査定・売却 特化記事（SEO: 不動産査定 / 高値売却）
+    # ──────────────────────────────────────────────
+    {"pref": "東京都", "city": "渋谷区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "新宿区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "港区",      "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "世田谷区",  "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "品川区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "目黒区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "豊島区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "杉並区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "大田区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "東京都", "city": "江東区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "satei"},
+    {"pref": "神奈川県","city": "横浜市青葉区","pref_en": "kanagawa","type": "マンション", "article_type": "satei"},
+    {"pref": "神奈川県","city": "横浜市中区", "pref_en": "kanagawa","type": "マンション", "article_type": "satei"},
+    {"pref": "神奈川県","city": "川崎市幸区", "pref_en": "kanagawa","type": "マンション", "article_type": "satei"},
+    {"pref": "神奈川県","city": "藤沢市",    "pref_en": "kanagawa", "type": "一戸建て",   "article_type": "satei"},
+    {"pref": "神奈川県","city": "鎌倉市",    "pref_en": "kanagawa", "type": "一戸建て",   "article_type": "satei"},
+    {"pref": "埼玉県", "city": "さいたま市浦和区","pref_en": "saitama","type": "マンション","article_type": "satei"},
+    {"pref": "千葉県", "city": "千葉市中央区","pref_en": "chiba",   "type": "マンション", "article_type": "satei"},
+    {"pref": "大阪府", "city": "北区",      "pref_en": "osaka",    "type": "マンション", "article_type": "satei"},
+    {"pref": "大阪府", "city": "中央区",    "pref_en": "osaka",    "type": "マンション", "article_type": "satei"},
+    {"pref": "大阪府", "city": "天王寺区",  "pref_en": "osaka",    "type": "マンション", "article_type": "satei"},
+    {"pref": "京都府", "city": "中京区",    "pref_en": "kyoto",    "type": "マンション", "article_type": "satei"},
+    {"pref": "兵庫県", "city": "神戸市中央区","pref_en": "hyogo",   "type": "マンション", "article_type": "satei"},
+    {"pref": "愛知県", "city": "名古屋市西区","pref_en": "aichi",   "type": "マンション", "article_type": "satei"},
+    {"pref": "福岡県", "city": "福岡市中央区","pref_en": "fukuoka", "type": "マンション", "article_type": "satei"},
+    {"pref": "宮城県", "city": "仙台市青葉区","pref_en": "miyagi",  "type": "マンション", "article_type": "satei"},
+    {"pref": "石川県", "city": "金沢市",     "pref_en": "ishikawa", "type": "マンション", "article_type": "satei"},
+    # ──────────────────────────────────────────────
+    # 売り時・タイミング特化記事（SEO: 売り時 / 住宅ローン金利 / 今すぐ売却）
+    # ──────────────────────────────────────────────
+    {"pref": "東京都", "city": "渋谷区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "東京都", "city": "新宿区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "東京都", "city": "港区",      "pref_en": "tokyo",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "東京都", "city": "世田谷区",  "pref_en": "tokyo",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "東京都", "city": "品川区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "東京都", "city": "目黒区",    "pref_en": "tokyo",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "神奈川県","city": "横浜市青葉区","pref_en": "kanagawa","type": "マンション", "article_type": "timed_sell"},
+    {"pref": "神奈川県","city": "川崎市幸区", "pref_en": "kanagawa","type": "マンション", "article_type": "timed_sell"},
+    {"pref": "大阪府", "city": "北区",      "pref_en": "osaka",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "大阪府", "city": "中央区",    "pref_en": "osaka",    "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "愛知県", "city": "名古屋市西区","pref_en": "aichi",   "type": "マンション", "article_type": "timed_sell"},
+    {"pref": "福岡県", "city": "福岡市中央区","pref_en": "fukuoka", "type": "マンション", "article_type": "timed_sell"},
     # ガイド記事
     {"pref": "全国",   "city": "住宅ローン減税2024",  "pref_en": "guide", "type": "guide",
      "article_type": "guide", "theme": "住宅ローン減税の最新ルールと賢い使い方"},
@@ -141,12 +185,22 @@ def pick_uncovered_areas(count: int = 1) -> list:
     covered = get_covered_slugs()
     picks = []
     for area in TARGET_AREAS:
-        # 既存ファイル名に area の pref+city が含まれるか確認
         pref_slug = slugify(area["pref"].replace("都", "").replace("府", "").replace("県", ""))
         city_slug = slugify(area["city"])
-        already_covered = any(
-            (pref_slug in s and city_slug in s) for s in covered
-        )
+        article_type = area.get("article_type", "area")
+        # 記事タイプ別にslugの一致条件を変える
+        if article_type == "satei":
+            already_covered = any(
+                (pref_slug in s and city_slug in s and "satei" in s) for s in covered
+            )
+        elif article_type == "timed_sell":
+            already_covered = any(
+                (pref_slug in s and city_slug in s and "uritori" in s) for s in covered
+            )
+        else:
+            already_covered = any(
+                (pref_slug in s and city_slug in s and "satei" not in s and "uritori" not in s) for s in covered
+            )
         if not already_covered:
             picks.append(area)
             if len(picks) >= count:
@@ -343,6 +397,86 @@ def generate_article(area: dict) -> str:
 - 業者目線のセールス文章
 
 記事の冒頭はH1見出しから始めること（# タイトル）"""
+    elif article_type == "timed_sell":
+        prompt = f"""あなたは日本の不動産専門メディア「OpenClaw（不動産価格調査センター）」のライターです。
+
+{pref}{city}の{prop_type}オーナーに向けた「今が売り時か？」という疑問に答えるSEO記事をMarkdown形式で書いてください。
+検索ユーザーは「{pref}{city} 不動産 売り時」「{pref}{city} {prop_type} 売却 タイミング」「住宅ローン 高騰 売却」などで検索してくる人です。
+
+【記事構成】
+# {pref}{city}の{prop_type}、今が売り時？2026年に売却すべき5つの理由
+
+## 2026年、{pref}{city}の不動産市場はどうなっているか
+- 価格推移データ（直近3〜5年）
+- 金利上昇が不動産価格に与える影響
+- 「高止まり」から「下落」に転じるリスク
+
+## 住宅ローン金利上昇で買い手が減る前に売るべき理由
+- 金利上昇 → 買える人が減る → 需要減 → 価格下落の連鎖
+- 2024〜2026年の金利動向と不動産への影響
+
+## {pref}{city}エリア固有の売り時サイン
+- 再開発・人口動態・新線開通などエリア固有の情報
+- 「今買い手が多い」タイミングの見極め方
+
+## 売却を先延ばしにするリスク
+- 築年数が増えるほど査定額が下がる目安（年〇〜〇%下落）
+- 空き家・賃貸運用のコストと比較
+- 相続前に売るメリット
+
+## 今すぐ売却を始めるための3ステップ
+1. 無料一括査定で現在の売却価格を把握
+2. 複数社の査定額を比較
+3. 売り出し価格を決めて売却開始
+
+## まとめ｜迷っているなら今すぐ査定だけでも
+- 「査定は無料・売却義務なし」を強調したCTAで締める
+
+【条件】
+- 「売り時」「今が売り時」「住宅ローン金利」「高止まり」「資産価値」を自然に使う
+- 具体的な数字（金利〇%、価格下落〇%など）を必ず入れる
+- 読者が「今すぐ査定してみよう」と思わせる危機感と行動促進
+- Front matterは不要（本文のみ）
+- 文字数：1800〜2500字"""
+    elif article_type == "satei":
+        prompt = f"""あなたは日本の不動産専門メディア「OpenClaw（不動産価格調査センター）」のライターです。
+
+{pref}{city}の{prop_type}を「高く売る」ことに特化したSEO記事をMarkdown形式で書いてください。
+検索ユーザーは「{pref}{city} 不動産 査定」「{pref}{city} {prop_type} 売却」などで検索してくる人です。
+
+【記事構成】
+# {pref}{city}の{prop_type}査定相場2026年版｜無料査定で高値売却する方法
+
+## {pref}{city}の{prop_type}査定相場（2026年最新）
+- 現在の査定価格の目安（㎡単価・築年数別）
+- 同エリアの売却事例（推定値でOK）
+
+## {pref}{city}で{prop_type}を高く売るための3つのポイント
+- 査定タイミング・売り出し価格の決め方
+- 複数社査定の重要性
+- リフォーム・クリーニングの費用対効果
+
+## 無料査定の流れ｜一括査定サービスの使い方
+- 一括査定サービスを使うメリット
+- 査定から売却完了までの期間目安（〇〜〇ヶ月）
+- 査定時に必要な書類リスト
+
+## {pref}{city}の不動産市場動向と売り時
+- 直近の価格トレンド（上昇・横ばい・下落）
+- 2026年の売り時判断材料
+
+## {prop_type}売却でよくある失敗と対策
+- Q&A形式で3問（「査定額と売却額が違う理由は？」など）
+
+## まとめ｜{pref}{city}で{prop_type}を売るなら今すぐ査定を
+- 無料査定を勧めるCTAで締める
+
+【条件】
+- 「査定」「売却」「高値売却」「無料査定」を自然に繰り返し使う
+- 具体的な数字を必ず入れる
+- 読者が「査定してみようかな」と思わせる文章
+- Front matterは不要（本文のみ）
+- 文字数：1800〜2500字"""
     else:
         prompt = f"""あなたは日本の不動産専門メディア「OpenClaw（不動産価格調査センター）」のライターです。
 
@@ -394,17 +528,30 @@ def save_article(area: dict, content: str, image: dict | None = None) -> Path:
         theme = area.get("theme", city)
         title = theme
         slug_base = slugify(city)
+        description = f"{theme}をわかりやすく解説。具体的な数字と実例で不動産選びをサポート。"
+        tags = [pref, city, "不動産", "ガイド"]
+        category = "guide"
+    elif article_type == "satei":
+        title = f"{pref}{city}の{prop_type}査定相場2026年版｜無料査定で高値売却する方法"
+        slug_base = slugify(f"{pref}{city}{prop_type}satei")
+        description = f"{pref}{city}の{prop_type}の査定相場・売却相場を解説。無料一括査定で高値売却を実現する方法と2026年の売り時を徹底分析。"
+        tags = [pref, city, "不動産査定", "売却", "高値売却", "無料査定", prop_type]
+        category = "satei"
+    elif article_type == "timed_sell":
+        title = f"{pref}{city}の{prop_type}、今が売り時？2026年に売却すべき5つの理由"
+        slug_base = slugify(f"{pref}{city}{prop_type}uritori")
+        description = f"{pref}{city}の{prop_type}は今が売り時か徹底解説。住宅ローン金利上昇・価格高止まりの今、売却を先延ばしにするリスクと2026年の売り時サインを分析。"
+        tags = [pref, city, "売り時", "売却タイミング", "住宅ローン金利", "不動産売却", prop_type]
+        category = "satei"
     else:
         title = f"{pref}{city}の{prop_type}相場2026年版｜最新価格と将来予測"
         slug_base = slugify(f"{pref}{city}{prop_type}")
+        description = f"{pref}{city}の{prop_type}相場を解説。査定・購入時の参考に。最新データと将来予測。"
+        tags = [pref, city, "不動産価格", "相場", prop_type]
+        category = "market-data"
 
     slug = f"{slug_base}-{now.strftime('%Y%m%d%H%M')}"
     filename = CONTENT_DIR / f"{slug}.md"
-
-    # Front matter組み立て
-    tags = [pref, city, "不動産価格", "相場"]
-    if article_type != "guide":
-        tags.append(prop_type)
 
     image_lines = ""
     if image:
@@ -421,10 +568,10 @@ slug: "{slug}"
 area: "{pref}{city}"
 prefecture: "{pref}"
 property_type: "{prop_type}"
-description: "{pref}{city}の{prop_type}相場を解説。最新データと将来予測。"
+description: "{description}"
 keywords: {json.dumps(tags, ensure_ascii=False)}
 article_type: "{article_type}"
-categories: ["{('guide' if article_type == 'guide' else 'market-data')}"]
+categories: ["{category}"]
 prefectures: ["{pref_en}"]{image_lines}
 draft: false
 ---
