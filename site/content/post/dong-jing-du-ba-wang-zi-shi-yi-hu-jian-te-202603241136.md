@@ -11,6 +11,9 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["tokyo"]
 draft: false
+image: "https://images.unsplash.com/photo-1562558784-9f87e1c1606e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxUb2t5byUyMEphcGFuJTIwc3VidXJiYW4lMjBob3VzZXxlbnwwfDB8fHwxNzc0ODAxODA5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Kevin Ma"
+image_credit_url: "https://unsplash.com/@eatallthetofu"
 ---
 
 # 東京都 エリア別地価・不動産価格ランキング: 2024年版

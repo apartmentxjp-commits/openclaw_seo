@@ -11,6 +11,9 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["osaka"]
 draft: false
+image: "https://images.unsplash.com/photo-1736517322506-b5005fd21e44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxPc2FrYSUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0ODAxNzIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Mykyta Voloshyn"
+image_credit_url: "https://unsplash.com/@mykytavv"
 thumbnail: "/images/thumbnails/640px-JR_Osaka_Station_20151226.JPG"
 ---
 
