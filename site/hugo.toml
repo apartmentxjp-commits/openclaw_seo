@@ -6,7 +6,7 @@ canonifyURLs = true
 
 [params]
   description = "全国の取引データに基づく、公平で客観的な不動産価格調査レポート"
-  googleAnalytics = "G-2BD4CP722E"
+  googleAnalytics = "G-D7LXF8MJN9"
 
 [markup]
   [markup.goldmark]
