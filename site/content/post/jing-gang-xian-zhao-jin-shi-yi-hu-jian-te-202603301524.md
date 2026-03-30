@@ -11,6 +11,9 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["shizuoka"]
 draft: false
+image: "https://images.unsplash.com/photo-1653047024693-c5f024e6bee7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxTaGl6dW9rYSUyMEphcGFuJTIwc3VidXJiYW4lMjBob3VzZXxlbnwwfDB8fHwxNzc0ODE5NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "wanderplans.com"
+image_credit_url: "https://unsplash.com/@wanderplans"
 ---
 
 # 静岡県の不動産購入に関するQ&A
