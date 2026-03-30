@@ -94,7 +94,7 @@
   {{/* ── アイキャッチ画像 ── */}}
   {{ with .Params.image }}
   <figure class="article-featured-image">
-    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    <img src="{{ . }}" alt="{{ $.Title }}">
     {{ with $.Params.image_credit_name }}
     <figcaption>Photo by <a href="{{ $.Params.image_credit_url }}?utm_source=openclaw&utm_medium=referral" target="_blank" rel="noopener">{{ . }}</a> on <a href="https://unsplash.com?utm_source=openclaw&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a></figcaption>
     {{ end }}
