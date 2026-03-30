@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kanagawa"]
 draft: false
+image: "https://images.unsplash.com/photo-1565569936844-0c8c6e92d42d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxZb2tvaGFtYSUyMEphcGFuJTIwc3VidXJiYW4lMjBob3VzZXxlbnwwfDB8fHwxNzc0ODMwNjEyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Nagatoshi Shimamura"
+image_credit_url: "https://unsplash.com/@shima_giraffe"
 thumbnail: "/images/thumbnails/640px-Fujisawa_montage.jpg"
 ---
 

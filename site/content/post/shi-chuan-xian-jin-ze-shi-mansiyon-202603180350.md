@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["ishikawa"]
 draft: false
+image: "https://images.unsplash.com/photo-1733662095268-6f9aec8155ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxLYW5hemF3YSUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0ODM0MTY5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Bruna Santos"
+image_credit_url: "https://unsplash.com/@brunafisantos"
 thumbnail: "/images/thumbnails/640px-2024-10-26_Kanazawa_Castle__Ishikawa-mon.jpg"
 ---
 

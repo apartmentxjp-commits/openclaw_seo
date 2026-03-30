@@ -11,6 +11,9 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["niigata"]
 draft: false
+image: "https://images.unsplash.com/photo-1700553559487-e75dc4de307a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxKYXBhbiUyMGFwYXJ0bWVudCUyMGJ1aWxkaW5nfGVufDB8MHx8fDE3NzQ4MzQyMDF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Dorothy Kuromi"
+image_credit_url: "https://unsplash.com/@mik_9339"
 ---
 
 # マンション購入・活用の完全ガイド

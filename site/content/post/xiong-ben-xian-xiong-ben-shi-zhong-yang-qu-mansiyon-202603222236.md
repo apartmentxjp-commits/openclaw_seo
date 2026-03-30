@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["kumamoto"]
 draft: false
+image: "https://images.unsplash.com/photo-1624517608495-8625e52798af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxLdW1hbW90byUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0ODM0MjIwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Tayawee Supan"
+image_credit_url: "https://unsplash.com/@banktayawee"
 ---
 
 # 熊本市中央区のマンション価格相場と最新動向
