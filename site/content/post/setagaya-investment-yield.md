@@ -5,6 +5,9 @@ description: "世田谷区（三軒茶屋・代沢エリア等）の最新不動
 article_type: "area"
 categories: ["area-info"]
 draft: false
+image: "https://images.unsplash.com/photo-1738688761832-b6be60fbba6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxKYXBhbiUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0Nzk1OTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Ray Eldath"
+image_credit_url: "https://unsplash.com/@ray_eldath"
 tags: ["世田谷区", "エリア分析", "不動産投資", "三軒茶屋", "代沢"]
 thumbnail: "/images/thumbnails/640px-Seijo_namikimichi_231011.jpg"
 ---

@@ -11,6 +11,9 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["yamagata"]
 draft: false
+image: "https://images.unsplash.com/photo-1705578815676-11a1b22c00e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxKYXBhbiUyMEphcGFuJTIwc3VidXJiYW4lMjBob3VzZXxlbnwwfDB8fHwxNzc0Nzk1OTQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "James Butterly"
+image_credit_url: "https://unsplash.com/@jamesbutterly"
 ---
 
 # 山形県 エリア別地価・不動産価格ランキング
