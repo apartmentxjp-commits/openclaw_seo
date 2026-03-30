@@ -230,29 +230,32 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileMenuClose = document.getElementById('mobileMenuClose');
 
-if (hamburger) {
-  hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+function openMenu() {
+  mobileMenu.style.display = 'block';
+  requestAnimationFrame(function() {
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
   });
 }
-if (mobileMenuClose) {
-  mobileMenuClose.addEventListener('click', function() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-  });
-}
-if (mobileMenu) {
-  mobileMenu.addEventListener('click', function(e) {
-    if (e.target === mobileMenu) {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(function() {
+    if (!mobileMenu.classList.contains('open')) {
+      mobileMenu.style.display = 'none';
     }
-  });
+  }, 280);
 }
+
+if (hamburger) hamburger.addEventListener('click', function() {
+  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+});
+if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
+if (mobileMenu) mobileMenu.addEventListener('click', function(e) {
+  if (e.target === mobileMenu) closeMenu();
+});
 
 // スクロールトップ
 const scrollTopBtn = document.getElementById('scrollTopBtn');
