@@ -11,6 +11,9 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["ishikawa"]
 draft: false
+image: "https://images.unsplash.com/photo-1733662095268-6f9aec8155ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxLYW5hemF3YSUyMEphcGFuJTIwY2l0eSUyMGFwYXJ0bWVudHxlbnwwfDB8fHwxNzc0ODgxMDA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Bruna Santos"
+image_credit_url: "https://unsplash.com/@brunafisantos"
 ---
 
 # 石川県の不動産購入に関するQ&A
