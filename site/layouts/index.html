@@ -38,7 +38,7 @@
                 {{ end }}
                 <div class="post-date">{{ .Date.Format "2006年01月02日" }}</div>
                 <h3>{{ .Title }}</h3>
-                <p>{{ .Summary | truncate 100 }}</p>
+                <p>{{ .Summary | plainify | truncate 100 }}</p>
             </div>
         </a>
         {{ end }}
