@@ -21,6 +21,11 @@
         {{ range first 9 (where .Site.RegularPages "Section" "post") }}
         {{ if ne .Layout "tool" }}
         <a href="{{ .Permalink }}" class="post-card">
+            {{ with .Params.image }}
+            <div class="post-card-img">
+                <img src="{{ . }}" alt="{{ $.Title }}">
+            </div>
+            {{ end }}
             <div class="post-info">
                 {{ with .Params.article_type }}
                 <span class="post-tag type-{{ . }}">
