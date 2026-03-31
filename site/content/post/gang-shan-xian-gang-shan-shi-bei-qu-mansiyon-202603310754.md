@@ -11,6 +11,9 @@ article_type: "area"
 categories: ["area-info"]
 prefectures: ["okayama"]
 draft: false
+image: "https://images.unsplash.com/photo-1566914718833-5455b32368f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxPa2F5YW1hJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ5NzA5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Sam Lee"
+image_credit_url: "https://unsplash.com/@mysam123"
 ---
 
 # 岡山市北区のマンション価格相場・最新動向

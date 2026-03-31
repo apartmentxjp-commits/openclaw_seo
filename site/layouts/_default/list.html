@@ -2,8 +2,13 @@
 <div class="post-list-header">
   <div class="container">
     <div class="section-label">REPORTS</div>
-    <h1>調査レポート一覧</h1>
-    <p>日本全国の不動産取引データに基づく最新分析レポート</p>
+    <h1 id="list-title">調査レポート一覧</h1>
+    <p id="list-desc">日本全国の不動産取引データに基づく最新分析レポート</p>
+    <div class="list-search-box" style="margin-top:20px;display:flex;gap:10px;max-width:560px;">
+      <input type="text" id="list-search" placeholder="市区町村・地名で絞り込む（例：世田谷区）"
+        style="flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:10px;font-size:0.95rem;outline:none;">
+      <button onclick="doListSearch()" style="padding:12px 20px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;white-space:nowrap;">検索</button>
+    </div>
   </div>
 </div>
 
@@ -108,4 +113,64 @@
 
   </div>
 </div>
+
+<script>
+(function() {
+  // URLパラメータ ?q= を読み取って記事をフィルタリング
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q') || '';
+
+  function doListSearch() {
+    const val = document.getElementById('list-search').value.trim();
+    if (val) {
+      window.location.href = window.location.pathname + '?q=' + encodeURIComponent(val);
+    } else {
+      window.location.href = window.location.pathname;
+    }
+  }
+  window.doListSearch = doListSearch;
+
+  // Enterキーでも検索
+  document.getElementById('list-search').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doListSearch();
+  });
+
+  if (!q) return;
+
+  // 検索キーワードをセット
+  document.getElementById('list-search').value = q;
+  document.getElementById('list-title').textContent = '「' + q + '」の検索結果';
+  document.getElementById('list-desc').textContent = '';
+
+  // 全カードをチェックしてマッチしないものを隠す
+  const cards = document.querySelectorAll('.post-card');
+  let matchCount = 0;
+  cards.forEach(function(card) {
+    const text = (card.textContent || '').toLowerCase();
+    const keywords = q.toLowerCase().split(/\s+/);
+    const matched = keywords.every(function(kw) { return text.includes(kw); });
+    if (matched) {
+      matchCount++;
+    } else {
+      card.style.display = 'none';
+      // カードが属するセクション（pref-group）もチェック
+      const grid = card.closest('.post-grid');
+      if (grid) {
+        const visible = grid.querySelectorAll('.post-card:not([style*="display: none"])');
+        if (visible.length === 0) {
+          const section = grid.closest('.pref-group');
+          if (section) section.style.display = 'none';
+        }
+      }
+    }
+  });
+
+  // 検索結果なしの場合
+  if (matchCount === 0) {
+    document.getElementById('list-desc').textContent = '該当する記事が見つかりませんでした。別のキーワードをお試しください。';
+  } else {
+    document.getElementById('list-desc').textContent = matchCount + '件の記事が見つかりました';
+  }
+})();
+</script>
 {{ end }}

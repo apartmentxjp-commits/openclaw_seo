@@ -6,7 +6,7 @@
         <p>最新の成約事例と市場データに基づき、適正な相場・売却価格を徹底調査します。</p>
 
         <div class="hero-search-box">
-            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）">
+            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）" onkeydown="if(event.key==='Enter')searchAddress()">
             <button onclick="searchAddress()">相場を調査する</button>
         </div>
     </div>
@@ -222,9 +222,9 @@
 
 <script>
     function searchAddress() {
-        const query = document.getElementById('address-search').value;
+        const query = document.getElementById('address-search').value.trim();
         if (query) {
-            window.location.href = '{{"post/"|relURL}}';
+            window.location.href = '{{"post/"|relURL}}?q=' + encodeURIComponent(query);
         }
     }
 </script>

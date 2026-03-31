@@ -11,6 +11,9 @@ article_type: "ranking"
 categories: ["market-data"]
 prefectures: ["hyogo"]
 draft: false
+image: "https://images.unsplash.com/photo-1767519865138-cd22e88c3128?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxLb2JlJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ5NzA5MjN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "PJH"
+image_credit_url: "https://unsplash.com/@dokae"
 ---
 
 # 兵庫県 兵庫県 エリア別地価・不動産価格ランキング
