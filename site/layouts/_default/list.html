@@ -52,24 +52,25 @@
         </h2>
         <a href="{{ (printf "prefectures/%s/" $slug) | relURL }}" class="pref-all-link">すべて見る →</a>
       </div>
-      <div class="post-grid">
+      <div class="post-grid home-post-grid">
         {{ range first 4 $articles }}
+        {{ $atype := .Params.article_type | default "area" }}
         <a href="{{ .Permalink }}" class="post-card">
-          <div class="post-thumb">
-            <div class="post-thumb-title">{{ .Title }}</div>
+          {{ with .Params.image }}
+          <div class="post-card-img">
+            <img src="{{ . }}" alt="{{ $.Title }}">
           </div>
-          <div class="post-body">
-            {{ $atype := .Params.article_type | default "area" }}
+          {{ end }}
+          <div class="post-info">
             <span class="post-tag type-{{ $atype }}">
-              {{ if eq $atype "ranking" }}📊 市場データ
-              {{ else if eq $atype "guide" }}📖 ガイド
-              {{ else if eq $atype "qa" }}❓ Q&A
-              {{ else }}🏘️ エリア情報{{ end }}
+              {{- if eq $atype "ranking" }}📊 市場データ
+              {{- else if eq $atype "guide" }}📖 ガイド
+              {{- else if eq $atype "qa" }}❓ Q&A
+              {{- else }}🏘️ エリア情報{{ end -}}
             </span>
             <h3>{{ .Title }}</h3>
             <p>{{ .Summary | plainify | truncate 80 }}</p>
           </div>
-          <div class="post-footer">詳細を見る</div>
         </a>
         {{ end }}
       </div>
@@ -86,18 +87,19 @@
           <span class="pref-count">{{ len $nationwide }}件</span>
         </h2>
       </div>
-      <div class="post-grid">
+      <div class="post-grid home-post-grid">
         {{ range first 4 ($nationwide.ByDate.Reverse) }}
         <a href="{{ .Permalink }}" class="post-card">
-          <div class="post-thumb">
-            <div class="post-thumb-title">{{ .Title }}</div>
+          {{ with .Params.image }}
+          <div class="post-card-img">
+            <img src="{{ . }}" alt="{{ $.Title }}">
           </div>
-          <div class="post-body">
+          {{ end }}
+          <div class="post-info">
             <span class="post-tag type-ranking">📊 市場データ</span>
             <h3>{{ .Title }}</h3>
             <p>{{ .Summary | plainify | truncate 80 }}</p>
           </div>
-          <div class="post-footer">詳細を見る</div>
         </a>
         {{ end }}
       </div>
