@@ -11,6 +11,9 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["miyagi"]
 draft: false
+image: "https://images.unsplash.com/photo-1622446556621-538a69d5c7a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxTZW5kYWklMjBKYXBhbiUyMGNpdHklMjBhcGFydG1lbnR8ZW58MHwwfHx8MTc3NTA1NzMyNnww&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Alex Rerh"
+image_credit_url: "https://unsplash.com/@alexrerh"
 ---
 
 # マンション購入・活用の完全ガイド

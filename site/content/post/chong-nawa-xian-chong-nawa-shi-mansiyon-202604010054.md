@@ -11,6 +11,9 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["okinawa"]
 draft: false
+image: "https://images.unsplash.com/photo-1716171990438-c1ac5d70212a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxPa2luYXdhJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzUwNTczMjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Syria Polidoro"
+image_credit_url: "https://unsplash.com/@syria_polidoro"
 ---
 
 # マンション購入・活用の完全ガイド: 沖縄県沖縄市で賢く投資する

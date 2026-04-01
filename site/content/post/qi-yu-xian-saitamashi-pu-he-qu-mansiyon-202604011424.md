@@ -11,6 +11,9 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["saitama"]
 draft: false
+image: "https://images.unsplash.com/photo-1735970166611-956f63437f81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxTYWl0YW1hJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzUwNTczMzV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "Tsuyoshi Kozu"
+image_credit_url: "https://unsplash.com/@tsuyoshikozu"
 ---
 
 # 埼玉県さいたま市浦和区の不動産購入に関するQ&A

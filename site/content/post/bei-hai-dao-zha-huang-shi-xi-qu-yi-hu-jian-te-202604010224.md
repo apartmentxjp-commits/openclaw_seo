@@ -11,6 +11,9 @@ article_type: "guide"
 categories: ["real-estate-guide"]
 prefectures: ["hokkaido"]
 draft: false
+image: "https://images.unsplash.com/photo-1769921409596-a7aa35cb7b8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxIb2trYWlkbyUyMEphcGFuJTIwc3VidXJiYW4lMjBob3VzZXxlbnwwfDB8fHwxNzc1MDU3MzE1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "PJH"
+image_credit_url: "https://unsplash.com/@dokae"
 ---
 
 # 一戸建て購入・活用の完全ガイド
