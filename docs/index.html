@@ -1,606 +1,82 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta name="generator" content="Hugo 0.157.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="GybH1SZgm52uJQPcpbGvL4t56Z3MiD1hYmMcwjTzwUk" />
-  <meta name="description" content="全国の取引データに基づく、公平で客観的な不動産価格調査レポート">
-  <title>日本不動産価格調査センター</title>
-  <link rel="stylesheet" href="http://localhost:1314/css/style.css">
-  
-  <meta property="og:title" content="日本不動産価格調査センター">
-  <meta property="og:description" content="全国の取引データに基づく、公平で客観的な不動産価格調査レポート">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:1314/">
-  <meta property="og:site_name" content="日本不動産価格調査センター">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7LXF8MJN9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D7LXF8MJN9');
-  </script>
-  
-</head>
-<body>
-
-
-<div class="page-loader" id="pageLoader">
-  <div class="loader-dot"></div>
-  <div class="loader-dot"></div>
-  <div class="loader-dot"></div>
-</div>
-
-
-<header>
-  <div class="header-inner">
-    <a href="http://localhost:1314/" class="site-logo">
-      <div class="logo-text">
-        <span class="main">日本不動産価格調査センター</span>
-        <span class="sub">JAPAN REAL ESTATE DATA CENTER</span>
-      </div>
-    </a>
-    <nav class="header-nav">
-      <a href="http://localhost:1314/categories/market-data/">市場データ</a>
-      <a href="http://localhost:1314/categories/real-estate-guide/">ガイド</a>
-      <a href="http://localhost:1314/categories/qa/">Q&amp;A</a>
-      <a href="http://localhost:1314/post/">エリア情報</a>
-      <a href="http://localhost:1314/glossary/">用語集</a>
-      <div class="nav-tools-wrap">
-        <span class="nav-tools-label">ツール ▾</span>
-        <div class="nav-tools-dropdown">
-          <a href="http://localhost:1314/post/loan-calculator/">ローン計算</a>
-          <a href="http://localhost:1314/post/yield-calculator/">利回り計算</a>
-          <a href="http://localhost:1314/post/rent-estimator/">家賃相場</a>
-          <a href="http://localhost:1314/post/price-prediction/">価格予測</a>
-        </div>
-      </div>
-      <a href="http://localhost:1314/" class="nav-cta">相場を調べる</a>
-    </nav>
-    
-    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-panel">
-    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="閉じる">✕</button>
-    <nav class="mobile-nav">
-      <div class="mobile-nav-section">コンテンツ</div>
-      <a href="http://localhost:1314/categories/market-data/">📊 市場データ</a>
-      <a href="http://localhost:1314/categories/real-estate-guide/">📖 不動産ガイド</a>
-      <a href="http://localhost:1314/categories/qa/">❓ Q&amp;A</a>
-      <a href="http://localhost:1314/post/">🏘️ エリア情報</a>
-      <a href="http://localhost:1314/glossary/">📚 用語集</a>
-      <div class="mobile-nav-section">シミュレーター</div>
-      <a href="http://localhost:1314/post/loan-calculator/">🏠 住宅ローン計算</a>
-      <a href="http://localhost:1314/post/yield-calculator/">📈 利回り計算</a>
-      <a href="http://localhost:1314/post/rent-estimator/">🏢 家賃相場</a>
-      <a href="http://localhost:1314/post/price-prediction/">🤖 AI価格予測</a>
-      <a href="http://localhost:1314/" class="mobile-cta">相場を調べる →</a>
-    </nav>
-  </div>
-</div>
-
-
-  
-<section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h2>AIデータで、<br>不動産取引に「確信」を。</h2>
-        <p>最新の成約事例と市場データに基づき、適正な相場・売却価格を徹底調査します。</p>
-
-        <div class="hero-search-box">
-            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）" onkeydown="if(event.key==='Enter')searchAddress()">
-            <button onclick="searchAddress()">相場を調査する</button>
-        </div>
-    </div>
-</section>
-
-
-<section class="latest-posts-section container">
-    <div class="section-header" style="text-align: left; margin-bottom: 24px;">
-        <h2 style="font-size: 1.75rem;">最新の調査レポート</h2>
-    </div>
-    <div class="post-grid home-post-grid">
-        
-        
-        <a href="http://localhost:1314/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202604011106/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年04月01日</div>
-                <h3>東京都江戸川区のマンション相場2026年版｜最新価格と将来予測</h3>
-                <p>東京都江戸川区のマンション相場2026年版｜最新価格と将来予測 エリア概要 東京都江戸川区は、都内有数のベッドタウンとして家族向けに人気があります。都心へのアクセスは、都営新宿線やJR総武線など …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B6%B3%E7%AB%8B%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202604011103/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年04月01日</div>
-                <h3>東京都足立区のマンション相場2026年版｜最新価格と将来予測</h3>
-                <p>東京都足立区のマンション相場2026年版｜最新価格と将来予測 エリア概要 足立区は、東京都北部に位置し、東京スカイツリーを始めとするランドマークの周辺に発展を遂げているエリアです。かつては …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202604011101/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年04月01日</div>
-                <h3>東京都豊島区のマンション相場2026年版｜最新価格と将来予測</h3>
-                <p>東京都豊島区のマンション相場2026年版｜最新価格と将来予測 エリア概要 豊島区は、東京都の中心部に位置し、ビジネスと住宅の両立がしやすいエリアとして人気です。特に近年は、再開発が進み、住環境の向上と …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%BF%E6%A9%8B%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202603311613/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年03月31日</div>
-                <h3>東京都板橋区のマンション相場2026年版｜最新価格と将来予測</h3>
-                <p>東京都板橋区のマンション相場2026年版｜最新価格と将来予測 エリア概要 板橋区は、都心へのアクセスと豊かな自然環境を兼ね備えた魅力的なエリアです。近年は再開発が進み、住環境の向上と利便性の向上が図ら …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8C%97%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202603311609/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年03月31日</div>
-                <h3>東京都北区のマンション相場2026年版｜最新価格と将来予測</h3>
-                <p>東京都北区のマンション相場2026年版｜最新価格と将来予測 エリア概要 東京都北区は、都心へのアクセスと豊かな自然環境が魅力のエリアです。日本橋、上野、田原町など、多様な顔を持つ北区は、ビジネス、文化 …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%9B%AE%E9%BB%92%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202603311604/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年03月31日</div>
-                <h3>東京都目黒区のマンション相場2026年版｜最新価格と将来予測</h3>
-                <p>東京都目黒区のマンション相場2026年版｜最新価格と将来予測 エリア概要 目黒区は、東京都の中でも特に人気が高く、高級住宅街として知られています。洗練された雰囲気と豊かな自然が調和した環境は、多くの人 …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/fu-gang-xian-fu-gang-shi-bo-duo-qu-mansiyon-202603311554/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1623310075009-f89bfd8142e4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxGdWt1b2thJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ5NzQ1MTl8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年03月31日</div>
-                <h3>福岡市博多区のマンション価格相場・最新動向</h3>
-                <p>福岡市博多区のマンション価格相場・最新動向 福岡市博多区のマンション価格相場は、2024年の国土交通省地価公示データによると、平均215,747円/㎡で、前年比14.5%の上昇を記録しています。ここで …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/fu-gang-xian-fu-gang-shi-zhong-yang-qu-mansiyon-202603311524/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1623310075009-f89bfd8142e4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxGdWt1b2thJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ5NzQ1MTl8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年03月31日</div>
-                <h3>福岡市中央区のマンション価格相場・最新動向</h3>
-                <p>福岡市中央区のマンション価格相場・最新動向 福岡市中央区は、福岡県の政治・経済の中心地として、都心に近い住宅地域と商業地域が混在しています。ここでは、福岡市中央区のマンション価格相場と最新の動向につい …</p>
-            </div>
-        </a>
-        
-        
-        
-        <a href="http://localhost:1314/post/gao-zhi-xian-nan-guo-shi-yi-hu-jian-te-202603311454/" class="post-card">
-            
-            <div class="post-card-img">
-                <img src="https://images.unsplash.com/photo-1705578815676-11a1b22c00e3?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxKYXBhbiUyMEphcGFuJTIwc3VidXJiYW4lMjBob3VzZXxlbnwwfDB8fHwxNzc0OTcwOTE1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="日本不動産価格調査センター">
-            </div>
-            
-            <div class="post-info">
-                
-                <span class="post-tag type-area">エリア情報</span>
-                
-                <div class="post-date">2026年03月31日</div>
-                <h3>南国市の一戸建て価格相場・最新動向</h3>
-                <p>南国市の一戸建て価格相場・最新動向 南国市の一戸建て価格は、平均で46,400円/㎡（約4.55万円/坪）で、前年比で0.5%の上昇を示しています（国土交通省 地価公示データ（2024年））。
-一戸建 …</p>
-            </div>
-        </a>
-        
-        
-    </div>
-    <div style="margin-top: 32px; text-align: center;">
-        <a href="http://localhost:1314/post/" class="nav-link" style="color: var(--accent); font-weight: 700; font-size: 1.05rem;">すべて見る →</a>
-    </div>
-</section>
-
-
-<section class="qa-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>よくある質問</h2>
-            <p>不動産購入・投資に関するよくある疑問にお答えします</p>
-        </div>
-        <div class="qa-grid">
-            <details class="qa-item">
-                <summary>不動産購入の初期費用は購入価格の何%くらいかかりますか？</summary>
-                <div class="qa-answer">
-                    一般的に、物件購入価格の6〜10%程度が初期費用の目安です。仲介手数料（物件価格×3%＋6万円）、登記費用、印紙税、ローン関連費用（保証料・手数料）、固定資産税の精算金などが含まれます。新築マンションでは修繕積立基金・管理準備金なども必要です。
-                </div>
-            </details>
-            <details class="qa-item">
-                <summary>住宅ローンの審査に通りやすい条件は？</summary>
-                <div class="qa-answer">
-                    主なポイントは①年収に対する返済比率を35%以下に抑える②継続的な雇用実績（正社員2年以上が目安）③信用情報に傷がない（クレジットの延滞なし）④自己資金を物件価格の10〜20%用意する、の4点です。フラット35では比較的審査が柔軟なため、変動型より通りやすいケースもあります。
-                </div>
-            </details>
-            <details class="qa-item">
-                <summary>マンションと一戸建て、どちらが資産価値を保ちやすいですか？</summary>
-                <div class="qa-answer">
-                    立地条件が同等であれば、都市部ではマンション（特に駅徒歩5分以内）の方が流動性が高く、資産価値を維持しやすい傾向があります。一方、土地が含まれる一戸建ては建物の老朽化を土地価値でカバーできる面もあります。最終的には「立地×管理状態×需給バランス」で判断するのが重要です。
-                </div>
-            </details>
-            <details class="qa-item">
-                <summary>不動産投資の利回りの目安は？</summary>
-                <div class="qa-answer">
-                    表面利回りは「年間家賃収入 ÷ 物件価格 × 100」で計算します。都心部の区分マンションで3〜5%、地方の一棟物件で8〜12%が目安ですが、管理費・修繕費・空室リスクを差し引いた実質利回りで比較することが重要です。一般に実質利回りは表面利回りより1〜2%低くなります。
-                </div>
-            </details>
-        </div>
-        <div class="qa-cta">
-            <a href="http://localhost:1314/categories/qa/">Q&amp;A一覧を見る →</a>
-        </div>
-    </div>
-</section>
-
-<section class="simulator-hub container">
-    <div class="section-header">
-        <h2>収益シミュレーション・ツール</h2>
-        <p>物件購入前から売却戦略まで、プロ基準の試算をWeb上で再現</p>
-    </div>
-    <div class="simulator-grid">
-        <a href="http://localhost:1314/post/loan-calculator/" class="simulator-card">
-            <div class="sim-icon">🏠</div>
-            <div class="sim-content">
-                <h3>住宅ローン</h3>
-                <p>借入額や金利から、月々の返済額と総返済額を算出。</p>
-            </div>
-            <div class="sim-action">試算スタート</div>
-        </a>
-        <a href="http://localhost:1314/post/yield-calculator/" class="simulator-card">
-            <div class="sim-icon">📈</div>
-            <div class="sim-content">
-                <h3>不動産利回りシミュレーター</h3>
-                <p>表面・実質利回りとCFを算出。収益を可視化します。</p>
-            </div>
-            <div class="sim-action">収益を計算</div>
-        </a>
-        <a href="http://localhost:1314/post/rent-estimator/" class="simulator-card">
-            <div class="sim-icon">📊</div>
-            <div class="sim-content">
-                <h3>家賃相場</h3>
-                <p>周辺の成約データを基に、適正な家賃設定を提案。</p>
-            </div>
-            <div class="sim-action">相場を調査</div>
-        </a>
-        <a href="http://localhost:1314/post/price-prediction/" class="simulator-card">
-            <div class="sim-icon">🤖</div>
-            <div class="sim-content">
-                <h3>価格予測</h3>
-                <p>AIが市場トレンドを分析し、将来の価値を予測。</p>
-            </div>
-            <div class="sim-action">レポート表示</div>
-        </a>
-    </div>
-</section>
-
-<section class="price-map-section container">
-    <div class="section-header">
-        <h2>地域別、不動産価格を調べる</h2>
-        <p>調査したいエリアを選択して、最新の相場レポートを確認</p>
-    </div>
-    <div class="japan-map-container">
-        
-        <div class="map-wrapper">
-            <div class="map-region hokkaido">
-                <a href="http://localhost:1314/post/" class="map-btn">北海道</a>
-            </div>
-            <div class="map-region tohoku">
-                <span class="region-label">東北</span>
-                <div class="pref-grid">
-                    <a href="http://localhost:1314/post/">青森</a>
-                    <a href="http://localhost:1314/post/">岩手</a>
-                    <a href="http://localhost:1314/post/">宮城</a>
-                    <a href="http://localhost:1314/post/">秋田</a>
-                    <a href="http://localhost:1314/post/">山形</a>
-                    <a href="http://localhost:1314/post/">福島</a>
-                </div>
-            </div>
-            <div class="map-region kanto">
-                <span class="region-label">関東</span>
-                <div class="pref-grid">
-                    <a href="http://localhost:1314/post/" class="highlight">東京</a>
-                    <a href="http://localhost:1314/post/">神奈川</a>
-                    <a href="http://localhost:1314/post/">埼玉</a>
-                    <a href="http://localhost:1314/post/">千葉</a>
-                    <a href="http://localhost:1314/post/">茨城</a>
-                    <a href="http://localhost:1314/post/">栃木</a>
-                    <a href="http://localhost:1314/post/">群馬</a>
-                </div>
-            </div>
-            <div class="map-region chubu">
-                <span class="region-label">中部</span>
-                <div class="pref-grid">
-                    <a href="http://localhost:1314/post/">愛知</a>
-                    <a href="http://localhost:1314/post/">静岡</a>
-                    <a href="http://localhost:1314/post/">岐阜</a>
-                    <a href="http://localhost:1314/post/">三重</a>
-                    <a href="http://localhost:1314/post/">新潟</a>
-                    <a href="http://localhost:1314/post/">富山</a>
-                    <a href="http://localhost:1314/post/">石川</a>
-                    <a href="http://localhost:1314/post/">福井</a>
-                    <a href="http://localhost:1314/post/">山梨</a>
-                    <a href="http://localhost:1314/post/">長野</a>
-                </div>
-            </div>
-            <div class="map-region kansai">
-                <span class="region-label">関西</span>
-                <div class="pref-grid">
-                    <a href="http://localhost:1314/post/">大阪</a>
-                    <a href="http://localhost:1314/post/">兵庫</a>
-                    <a href="http://localhost:1314/post/">京都</a>
-                    <a href="http://localhost:1314/post/">滋賀</a>
-                    <a href="http://localhost:1314/post/">奈良</a>
-                    <a href="http://localhost:1314/post/">和歌山</a>
-                </div>
-            </div>
-            <div class="map-region chugoku-shikoku">
-                <span class="region-label">中国・四国</span>
-                <div class="pref-grid">
-                    <a href="http://localhost:1314/post/">広島</a>
-                    <a href="http://localhost:1314/post/">岡山</a>
-                    <a href="http://localhost:1314/post/">鳥取</a>
-                    <a href="http://localhost:1314/post/">島根</a>
-                    <a href="http://localhost:1314/post/">山口</a>
-                    <a href="http://localhost:1314/post/">徳島</a>
-                    <a href="http://localhost:1314/post/">香川</a>
-                    <a href="http://localhost:1314/post/">愛媛</a>
-                    <a href="http://localhost:1314/post/">高知</a>
-                </div>
-            </div>
-            <div class="map-region kyushu">
-                <span class="region-label">九州・沖縄</span>
-                <div class="pref-grid">
-                    <a href="http://localhost:1314/post/">福岡</a>
-                    <a href="http://localhost:1314/post/">佐賀</a>
-                    <a href="http://localhost:1314/post/">長崎</a>
-                    <a href="http://localhost:1314/post/">熊本</a>
-                    <a href="http://localhost:1314/post/">大分</a>
-                    <a href="http://localhost:1314/post/">宮崎</a>
-                    <a href="http://localhost:1314/post/">鹿児島</a>
-                    <a href="http://localhost:1314/post/">沖縄</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    function searchAddress() {
-        const query = document.getElementById('address-search').value.trim();
-        if (query) {
-            window.location.href = '\/post\/?q=' + encodeURIComponent(query);
-        }
-    }
-</script>
-
-
-
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-logo">
-          <span class="logo-dot"></span>
-          日本不動産価格調査センター
-        </div>
-        <p class="footer-brand-desc">国土交通省データ × AI分析で、不動産投資家・購入検討者に「確信」を届けるデータプラットフォーム。</p>
-      </div>
-      <div class="footer-col">
-        <h4>コンテンツ</h4>
-        <ul>
-          <li><a href="http://localhost:1314/post/">調査レポート一覧</a></li>
-          <li><a href="http://localhost:1314/categories/market-data/">市場データ</a></li>
-          <li><a href="http://localhost:1314/categories/real-estate-guide/">不動産ガイド</a></li>
-          <li><a href="http://localhost:1314/categories/qa/">よくある質問</a></li>
-          <li><a href="http://localhost:1314/glossary/">不動産用語集</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>ツール</h4>
-        <ul>
-          <li><a href="http://localhost:1314/post/loan-calculator/">住宅ローン計算</a></li>
-          <li><a href="http://localhost:1314/post/yield-calculator/">利回り計算</a></li>
-          <li><a href="http://localhost:1314/post/rent-estimator/">家賃相場調査</a></li>
-          <li><a href="http://localhost:1314/post/price-prediction/">AI価格予測</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>エリア</h4>
-        <ul>
-          <li><a href="http://localhost:1314/post/">東京都</a></li>
-          <li><a href="http://localhost:1314/post/">大阪府</a></li>
-          <li><a href="http://localhost:1314/post/">神奈川県</a></li>
-          <li><a href="http://localhost:1314/post/">全国エリア一覧</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 日本不動産価格調査センター. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="http://localhost:1314/">トップページ</a>
-        <a href="http://localhost:1314/post/">調査レポート</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-<button class="scroll-top-btn" id="scrollTopBtn" aria-label="トップへ戻る">↑</button>
-
-<script>
-
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    document.getElementById('pageLoader').classList.add('hidden');
-  }, 300);
-});
-
-
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileMenuClose = document.getElementById('mobileMenuClose');
-
-function openMenu() {
-  mobileMenu.style.display = 'block';
-  requestAnimationFrame(function() {
-    mobileMenu.classList.add('open');
-    hamburger.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
-}
-function closeMenu() {
-  mobileMenu.classList.remove('open');
-  hamburger.classList.remove('open');
-  document.body.style.overflow = '';
-  setTimeout(function() {
-    if (!mobileMenu.classList.contains('open')) {
-      mobileMenu.style.display = 'none';
-    }
-  }, 280);
-}
-
-if (hamburger) hamburger.addEventListener('click', function() {
-  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
-});
-if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
-if (mobileMenu) mobileMenu.addEventListener('click', function(e) {
-  if (e.target === mobileMenu) closeMenu();
-});
-
-
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 400) {
-    scrollTopBtn.classList.add('visible');
-  } else {
-    scrollTopBtn.classList.remove('visible');
-  }
-});
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.feature-card, .simulator-card, .post-card, .region-block, .stat-item').forEach(function(el) {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
-
-
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  if (window.scrollY > 10) {
-    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
-  } else {
-    header.style.boxShadow = 'none';
-  }
-});
-</script>
-
-</body>
-</html>
+<!doctype html><html lang=ja><head><meta name=generator content="Hugo 0.157.0"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=google-site-verification content="GybH1SZgm52uJQPcpbGvL4t56Z3MiD1hYmMcwjTzwUk"><meta name=description content="全国の取引データに基づく、公平で客観的な不動産価格調査レポート"><title>日本不動産価格調査センター</title><link rel=stylesheet href=https://realestate.tacky-consulting.com/css/style.css><meta property="og:title" content="日本不動産価格調査センター"><meta property="og:description" content="全国の取引データに基づく、公平で客観的な不動産価格調査レポート"><meta property="og:type" content="website"><meta property="og:url" content="https://realestate.tacky-consulting.com/"><meta property="og:site_name" content="日本不動産価格調査センター"><meta name=twitter:card content="summary_large_image"><script async src="https://www.googletagmanager.com/gtag/js?id=G-D7LXF8MJN9"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-D7LXF8MJN9")</script></head><body><div class=page-loader id=pageLoader><div class=loader-dot></div><div class=loader-dot></div><div class=loader-dot></div></div><header><div class=header-inner><a href=https://realestate.tacky-consulting.com/ class=site-logo><div class=logo-text><span class=main>日本不動産価格調査センター</span>
+<span class=sub>JAPAN REAL ESTATE DATA CENTER</span></div></a><nav class=header-nav><a href=https://realestate.tacky-consulting.com/categories/market-data/>市場データ</a>
+<a href=https://realestate.tacky-consulting.com/categories/real-estate-guide/>ガイド</a>
+<a href=https://realestate.tacky-consulting.com/categories/qa/>Q&amp;A</a>
+<a href=https://realestate.tacky-consulting.com/post/>エリア情報</a>
+<a href=https://realestate.tacky-consulting.com/glossary/>用語集</a><div class=nav-tools-wrap><span class=nav-tools-label>ツール ▾</span><div class=nav-tools-dropdown><a href=https://realestate.tacky-consulting.com/post/loan-calculator/>ローン計算</a>
+<a href=https://realestate.tacky-consulting.com/post/yield-calculator/>利回り計算</a>
+<a href=https://realestate.tacky-consulting.com/post/rent-estimator/>家賃相場</a>
+<a href=https://realestate.tacky-consulting.com/post/price-prediction/>価格予測</a></div></div><a href=https://realestate.tacky-consulting.com/ class=nav-cta>相場を調べる</a></nav><button class=hamburger id=hamburger aria-label=メニューを開く>
+<span></span>
+<span></span>
+<span></span></button></div></header><div class=mobile-menu id=mobileMenu><div class=mobile-menu-panel><button class=mobile-menu-close id=mobileMenuClose aria-label=閉じる>✕</button><nav class=mobile-nav><div class=mobile-nav-section>コンテンツ</div><a href=https://realestate.tacky-consulting.com/categories/market-data/>📊 市場データ</a>
+<a href=https://realestate.tacky-consulting.com/categories/real-estate-guide/>📖 不動産ガイド</a>
+<a href=https://realestate.tacky-consulting.com/categories/qa/>❓ Q&amp;A</a>
+<a href=https://realestate.tacky-consulting.com/post/>🏘️ エリア情報</a>
+<a href=https://realestate.tacky-consulting.com/glossary/>📚 用語集</a><div class=mobile-nav-section>シミュレーター</div><a href=https://realestate.tacky-consulting.com/post/loan-calculator/>🏠 住宅ローン計算</a>
+<a href=https://realestate.tacky-consulting.com/post/yield-calculator/>📈 利回り計算</a>
+<a href=https://realestate.tacky-consulting.com/post/rent-estimator/>🏢 家賃相場</a>
+<a href=https://realestate.tacky-consulting.com/post/price-prediction/>🤖 AI価格予測</a>
+<a href=https://realestate.tacky-consulting.com/ class=mobile-cta>相場を調べる →</a></nav></div></div><section class=hero-section><div class=hero-overlay></div><div class=hero-content><h2>AIデータで、不動産取引に確信を。</h2><p>最新の成約事例と市場データで、適正相場を徹底調査。</p><a href=#region-search class=hero-cta-btn>地域から相場を調べる ↓</a></div></section><section id=region-search class="region-search-section container"><div class=region-search-box><input type=text id=region-search-input placeholder=例：福岡市、渋谷区、北海道... onkeydown='event.key==="Enter"&&regionSearch()'>
+<button onclick=regionSearch()>相場を調べる</button></div><div class=region-card-grid><a href="https://realestate.tacky-consulting.com/post/?region=tohoku" class=region-card><span class=region-emoji>🏔️</span>
+<span class=region-name>北海道・東北</span>
+<span class=region-link>相場を見る →</span>
+</a><a href="https://realestate.tacky-consulting.com/post/?region=kanto" class=region-card><span class=region-emoji>🗼</span>
+<span class=region-name>関東</span>
+<span class=region-link>相場を見る →</span>
+</a><a href="https://realestate.tacky-consulting.com/post/?region=chubu" class=region-card><span class=region-emoji>⛰️</span>
+<span class=region-name>中部・北陸</span>
+<span class=region-link>相場を見る →</span>
+</a><a href="https://realestate.tacky-consulting.com/post/?region=kinki" class=region-card><span class=region-emoji>🏯</span>
+<span class=region-name>近畿</span>
+<span class=region-link>相場を見る →</span>
+</a><a href="https://realestate.tacky-consulting.com/post/?region=chugoku" class=region-card><span class=region-emoji>🌊</span>
+<span class=region-name>中国・四国</span>
+<span class=region-link>相場を見る →</span>
+</a><a href="https://realestate.tacky-consulting.com/post/?region=kyushu" class=region-card><span class=region-emoji>🌺</span>
+<span class=region-name>九州・沖縄</span>
+<span class=region-link>相場を見る →</span></a></div></section><section id=affiliate-banner class=container><p class=affiliate-label>提携サービス</p><a href=https://suumo.jp target=_blank rel="noopener noreferrer sponsored"><div class=affiliate-card><span class=affiliate-icon>🏠</span><div class=affiliate-text><p class=affiliate-title>SUUMO で物件を探す</p><p class=affiliate-sub>全国の最新物件情報・無料査定</p></div><span class=affiliate-arrow>→</span></div></a></section><section class="latest-posts-section container"><div class=section-header style=text-align:left;margin-bottom:24px><h2 style=font-size:1.75rem>最新の調査レポート</h2></div><div class="post-grid home-post-grid"><a href=https://realestate.tacky-consulting.com/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202604011106/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年04月01日</div><h3>東京都江戸川区のマンション相場2026年版｜最新価格と将来予測</h3><p>東京都江戸川区のマンション相場2026年版｜最新価格と将来予測 エリア概要 東京都江戸川区は、都内有数のベッドタウンとして家族向けに人気があります。都心へのアクセスは、都営新宿線やJR総武線など …</p></div></a><a href=https://realestate.tacky-consulting.com/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B6%B3%E7%AB%8B%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202604011103/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年04月01日</div><h3>東京都足立区のマンション相場2026年版｜最新価格と将来予測</h3><p>東京都足立区のマンション相場2026年版｜最新価格と将来予測 エリア概要 足立区は、東京都北部に位置し、東京スカイツリーを始めとするランドマークの周辺に発展を遂げているエリアです。かつては …</p></div></a><a href=https://realestate.tacky-consulting.com/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B1%8A%E5%B3%B6%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202604011101/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年04月01日</div><h3>東京都豊島区のマンション相場2026年版｜最新価格と将来予測</h3><p>東京都豊島区のマンション相場2026年版｜最新価格と将来予測 エリア概要 豊島区は、東京都の中心部に位置し、ビジネスと住宅の両立がしやすいエリアとして人気です。特に近年は、再開発が進み、住環境の向上と …</p></div></a><a href=https://realestate.tacky-consulting.com/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%BF%E6%A9%8B%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202603311613/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年03月31日</div><h3>東京都板橋区のマンション相場2026年版｜最新価格と将来予測</h3><p>東京都板橋区のマンション相場2026年版｜最新価格と将来予測 エリア概要 板橋区は、都心へのアクセスと豊かな自然環境を兼ね備えた魅力的なエリアです。近年は再開発が進み、住環境の向上と利便性の向上が図ら …</p></div></a><a href=https://realestate.tacky-consulting.com/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8C%97%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202603311609/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年03月31日</div><h3>東京都北区のマンション相場2026年版｜最新価格と将来予測</h3><p>東京都北区のマンション相場2026年版｜最新価格と将来予測 エリア概要 東京都北区は、都心へのアクセスと豊かな自然環境が魅力のエリアです。日本橋、上野、田原町など、多様な顔を持つ北区は、ビジネス、文化 …</p></div></a><a href=https://realestate.tacky-consulting.com/post/%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%9B%AE%E9%BB%92%E5%8C%BA%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3-202603311604/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1591194233688-dca69d406068?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHx0b2t5byUyMEphcGFuJTIwY2l0eXxlbnwwfDB8fHwxNzc0OTQwNjA5fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年03月31日</div><h3>東京都目黒区のマンション相場2026年版｜最新価格と将来予測</h3><p>東京都目黒区のマンション相場2026年版｜最新価格と将来予測 エリア概要 目黒区は、東京都の中でも特に人気が高く、高級住宅街として知られています。洗練された雰囲気と豊かな自然が調和した環境は、多くの人 …</p></div></a><a href=https://realestate.tacky-consulting.com/post/fu-gang-xian-fu-gang-shi-bo-duo-qu-mansiyon-202603311554/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1623310075009-f89bfd8142e4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxGdWt1b2thJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ5NzQ1MTl8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年03月31日</div><h3>福岡市博多区のマンション価格相場・最新動向</h3><p>福岡市博多区のマンション価格相場・最新動向 福岡市博多区のマンション価格相場は、2024年の国土交通省地価公示データによると、平均215,747円/㎡で、前年比14.5%の上昇を記録しています。ここで …</p></div></a><a href=https://realestate.tacky-consulting.com/post/fu-gang-xian-fu-gang-shi-zhong-yang-qu-mansiyon-202603311524/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1623310075009-f89bfd8142e4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxGdWt1b2thJTIwSmFwYW4lMjBjaXR5JTIwYXBhcnRtZW50fGVufDB8MHx8fDE3NzQ5NzQ1MTl8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年03月31日</div><h3>福岡市中央区のマンション価格相場・最新動向</h3><p>福岡市中央区のマンション価格相場・最新動向 福岡市中央区は、福岡県の政治・経済の中心地として、都心に近い住宅地域と商業地域が混在しています。ここでは、福岡市中央区のマンション価格相場と最新の動向につい …</p></div></a><a href=https://realestate.tacky-consulting.com/post/gao-zhi-xian-nan-guo-shi-yi-hu-jian-te-202603311454/ class=post-card><div class=post-card-img><img src="https://images.unsplash.com/photo-1705578815676-11a1b22c00e3?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxKYXBhbiUyMEphcGFuJTIwc3VidXJiYW4lMjBob3VzZXxlbnwwfDB8fHwxNzc0OTcwOTE1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt=日本不動産価格調査センター></div><div class=post-info><span class="post-tag type-area">エリア情報</span><div class=post-date>2026年03月31日</div><h3>南国市の一戸建て価格相場・最新動向</h3><p>南国市の一戸建て価格相場・最新動向 南国市の一戸建て価格は、平均で46,400円/㎡（約4.55万円/坪）で、前年比で0.5%の上昇を示しています（国土交通省 地価公示データ（2024年））。
+一戸建 …</p></div></a></div><div style=margin-top:32px;text-align:center><a href=https://realestate.tacky-consulting.com/post/ class=nav-link style=color:var(--accent);font-weight:700;font-size:1.05rem>すべて見る →</a></div></section><section class=qa-section><div class=container><div class=section-header><h2>よくある質問</h2><p>不動産購入・投資に関するよくある疑問にお答えします</p></div><div class=qa-grid><details class=qa-item><summary>不動産購入の初期費用は購入価格の何%くらいかかりますか？</summary><div class=qa-answer>一般的に、物件購入価格の6〜10%程度が初期費用の目安です。仲介手数料（物件価格×3%＋6万円）、登記費用、印紙税、ローン関連費用（保証料・手数料）、固定資産税の精算金などが含まれます。新築マンションでは修繕積立基金・管理準備金なども必要です。</div></details><details class=qa-item><summary>住宅ローンの審査に通りやすい条件は？</summary><div class=qa-answer>主なポイントは①年収に対する返済比率を35%以下に抑える②継続的な雇用実績（正社員2年以上が目安）③信用情報に傷がない（クレジットの延滞なし）④自己資金を物件価格の10〜20%用意する、の4点です。フラット35では比較的審査が柔軟なため、変動型より通りやすいケースもあります。</div></details><details class=qa-item><summary>マンションと一戸建て、どちらが資産価値を保ちやすいですか？</summary><div class=qa-answer>立地条件が同等であれば、都市部ではマンション（特に駅徒歩5分以内）の方が流動性が高く、資産価値を維持しやすい傾向があります。一方、土地が含まれる一戸建ては建物の老朽化を土地価値でカバーできる面もあります。最終的には「立地×管理状態×需給バランス」で判断するのが重要です。</div></details><details class=qa-item><summary>不動産投資の利回りの目安は？</summary><div class=qa-answer>表面利回りは「年間家賃収入 ÷ 物件価格 × 100」で計算します。都心部の区分マンションで3〜5%、地方の一棟物件で8〜12%が目安ですが、管理費・修繕費・空室リスクを差し引いた実質利回りで比較することが重要です。一般に実質利回りは表面利回りより1〜2%低くなります。</div></details></div><div class=qa-cta><a href=https://realestate.tacky-consulting.com/categories/qa/>Q&amp;A一覧を見る →</a></div></div></section><section class="simulator-hub container"><div class=section-header><h2>収益シミュレーション・ツール</h2><p>物件購入前から売却戦略まで、プロ基準の試算をWeb上で再現</p></div><div class=simulator-grid><a href=https://realestate.tacky-consulting.com/post/loan-calculator/ class=simulator-card><div class=sim-icon>🏠</div><div class=sim-content><h3>住宅ローン</h3><p>借入額や金利から、月々の返済額と総返済額を算出。</p></div><div class=sim-action>試算スタート</div></a><a href=https://realestate.tacky-consulting.com/post/yield-calculator/ class=simulator-card><div class=sim-icon>📈</div><div class=sim-content><h3>不動産利回りシミュレーター</h3><p>表面・実質利回りとCFを算出。収益を可視化します。</p></div><div class=sim-action>収益を計算</div></a><a href=https://realestate.tacky-consulting.com/post/rent-estimator/ class=simulator-card><div class=sim-icon>📊</div><div class=sim-content><h3>家賃相場</h3><p>周辺の成約データを基に、適正な家賃設定を提案。</p></div><div class=sim-action>相場を調査</div></a><a href=https://realestate.tacky-consulting.com/post/price-prediction/ class=simulator-card><div class=sim-icon>🤖</div><div class=sim-content><h3>価格予測</h3><p>AIが市場トレンドを分析し、将来の価値を予測。</p></div><div class=sim-action>レポート表示</div></a></div></section><section class="price-map-section container"><div class=section-header><h2>地域別、不動産価格を調べる</h2><p>調査したいエリアを選択して、最新の相場レポートを確認</p></div><div class=japan-map-container><div class=map-wrapper><div class="map-region hokkaido"><a href=https://realestate.tacky-consulting.com/post/ class=map-btn>北海道</a></div><div class="map-region tohoku"><span class=region-label>東北</span><div class=pref-grid><a href=https://realestate.tacky-consulting.com/post/>青森</a>
+<a href=https://realestate.tacky-consulting.com/post/>岩手</a>
+<a href=https://realestate.tacky-consulting.com/post/>宮城</a>
+<a href=https://realestate.tacky-consulting.com/post/>秋田</a>
+<a href=https://realestate.tacky-consulting.com/post/>山形</a>
+<a href=https://realestate.tacky-consulting.com/post/>福島</a></div></div><div class="map-region kanto"><span class=region-label>関東</span><div class=pref-grid><a href=https://realestate.tacky-consulting.com/post/ class=highlight>東京</a>
+<a href=https://realestate.tacky-consulting.com/post/>神奈川</a>
+<a href=https://realestate.tacky-consulting.com/post/>埼玉</a>
+<a href=https://realestate.tacky-consulting.com/post/>千葉</a>
+<a href=https://realestate.tacky-consulting.com/post/>茨城</a>
+<a href=https://realestate.tacky-consulting.com/post/>栃木</a>
+<a href=https://realestate.tacky-consulting.com/post/>群馬</a></div></div><div class="map-region chubu"><span class=region-label>中部</span><div class=pref-grid><a href=https://realestate.tacky-consulting.com/post/>愛知</a>
+<a href=https://realestate.tacky-consulting.com/post/>静岡</a>
+<a href=https://realestate.tacky-consulting.com/post/>岐阜</a>
+<a href=https://realestate.tacky-consulting.com/post/>三重</a>
+<a href=https://realestate.tacky-consulting.com/post/>新潟</a>
+<a href=https://realestate.tacky-consulting.com/post/>富山</a>
+<a href=https://realestate.tacky-consulting.com/post/>石川</a>
+<a href=https://realestate.tacky-consulting.com/post/>福井</a>
+<a href=https://realestate.tacky-consulting.com/post/>山梨</a>
+<a href=https://realestate.tacky-consulting.com/post/>長野</a></div></div><div class="map-region kansai"><span class=region-label>関西</span><div class=pref-grid><a href=https://realestate.tacky-consulting.com/post/>大阪</a>
+<a href=https://realestate.tacky-consulting.com/post/>兵庫</a>
+<a href=https://realestate.tacky-consulting.com/post/>京都</a>
+<a href=https://realestate.tacky-consulting.com/post/>滋賀</a>
+<a href=https://realestate.tacky-consulting.com/post/>奈良</a>
+<a href=https://realestate.tacky-consulting.com/post/>和歌山</a></div></div><div class="map-region chugoku-shikoku"><span class=region-label>中国・四国</span><div class=pref-grid><a href=https://realestate.tacky-consulting.com/post/>広島</a>
+<a href=https://realestate.tacky-consulting.com/post/>岡山</a>
+<a href=https://realestate.tacky-consulting.com/post/>鳥取</a>
+<a href=https://realestate.tacky-consulting.com/post/>島根</a>
+<a href=https://realestate.tacky-consulting.com/post/>山口</a>
+<a href=https://realestate.tacky-consulting.com/post/>徳島</a>
+<a href=https://realestate.tacky-consulting.com/post/>香川</a>
+<a href=https://realestate.tacky-consulting.com/post/>愛媛</a>
+<a href=https://realestate.tacky-consulting.com/post/>高知</a></div></div><div class="map-region kyushu"><span class=region-label>九州・沖縄</span><div class=pref-grid><a href=https://realestate.tacky-consulting.com/post/>福岡</a>
+<a href=https://realestate.tacky-consulting.com/post/>佐賀</a>
+<a href=https://realestate.tacky-consulting.com/post/>長崎</a>
+<a href=https://realestate.tacky-consulting.com/post/>熊本</a>
+<a href=https://realestate.tacky-consulting.com/post/>大分</a>
+<a href=https://realestate.tacky-consulting.com/post/>宮崎</a>
+<a href=https://realestate.tacky-consulting.com/post/>鹿児島</a>
+<a href=https://realestate.tacky-consulting.com/post/>沖縄</a></div></div></div></div></section><script>function regionSearch(){const e=document.getElementById("region-search-input").value.trim();e&&(window.location.href="/post/?q="+encodeURIComponent(e))}</script><footer><div class=container><div class=footer-grid><div class=footer-col><div class=footer-logo><span class=logo-dot></span>
+日本不動産価格調査センター</div><p class=footer-brand-desc>国土交通省データ × AI分析で、不動産投資家・購入検討者に「確信」を届けるデータプラットフォーム。</p></div><div class=footer-col><h4>コンテンツ</h4><ul><li><a href=https://realestate.tacky-consulting.com/post/>調査レポート一覧</a></li><li><a href=https://realestate.tacky-consulting.com/categories/market-data/>市場データ</a></li><li><a href=https://realestate.tacky-consulting.com/categories/real-estate-guide/>不動産ガイド</a></li><li><a href=https://realestate.tacky-consulting.com/categories/qa/>よくある質問</a></li><li><a href=https://realestate.tacky-consulting.com/glossary/>不動産用語集</a></li></ul></div><div class=footer-col><h4>ツール</h4><ul><li><a href=https://realestate.tacky-consulting.com/post/loan-calculator/>住宅ローン計算</a></li><li><a href=https://realestate.tacky-consulting.com/post/yield-calculator/>利回り計算</a></li><li><a href=https://realestate.tacky-consulting.com/post/rent-estimator/>家賃相場調査</a></li><li><a href=https://realestate.tacky-consulting.com/post/price-prediction/>AI価格予測</a></li></ul></div><div class=footer-col><h4>エリア</h4><ul><li><a href=https://realestate.tacky-consulting.com/post/>東京都</a></li><li><a href=https://realestate.tacky-consulting.com/post/>大阪府</a></li><li><a href=https://realestate.tacky-consulting.com/post/>神奈川県</a></li><li><a href=https://realestate.tacky-consulting.com/post/>全国エリア一覧</a></li></ul></div></div><div class=footer-bottom><p>&copy; 2026 日本不動産価格調査センター. All rights reserved.</p><div class=footer-bottom-links><a href=https://realestate.tacky-consulting.com/>トップページ</a>
+<a href=https://realestate.tacky-consulting.com/post/>調査レポート</a></div></div></div></footer><button class=scroll-top-btn id=scrollTopBtn aria-label=トップへ戻る>↑</button>
+<script>window.addEventListener("load",function(){setTimeout(function(){document.getElementById("pageLoader").classList.add("hidden")},300)});const hamburger=document.getElementById("hamburger"),mobileMenu=document.getElementById("mobileMenu"),mobileMenuClose=document.getElementById("mobileMenuClose");function openMenu(){mobileMenu.style.display="block",requestAnimationFrame(function(){mobileMenu.classList.add("open"),hamburger.classList.add("open"),document.body.style.overflow="hidden"})}function closeMenu(){mobileMenu.classList.remove("open"),hamburger.classList.remove("open"),document.body.style.overflow="",setTimeout(function(){mobileMenu.classList.contains("open")||(mobileMenu.style.display="none")},280)}hamburger&&hamburger.addEventListener("click",function(){mobileMenu.classList.contains("open")?closeMenu():openMenu()}),mobileMenuClose&&mobileMenuClose.addEventListener("click",closeMenu),mobileMenu&&mobileMenu.addEventListener("click",function(e){e.target===mobileMenu&&closeMenu()});const scrollTopBtn=document.getElementById("scrollTopBtn");window.addEventListener("scroll",function(){window.scrollY>400?scrollTopBtn.classList.add("visible"):scrollTopBtn.classList.remove("visible")}),scrollTopBtn&&scrollTopBtn.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});const observerOptions={threshold:.1,rootMargin:"0px 0px -40px 0px"},observer=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.style.opacity="1",e.target.style.transform="translateY(0)",observer.unobserve(e.target))})},observerOptions);document.querySelectorAll(".feature-card, .simulator-card, .post-card, .region-block, .stat-item").forEach(function(e){e.style.opacity="0",e.style.transform="translateY(20px)",e.style.transition="opacity 0.5s ease, transform 0.5s ease",observer.observe(e)}),window.addEventListener("scroll",function(){const e=document.querySelector("header");window.scrollY>10?e.style.boxShadow="0 2px 20px rgba(0,0,0,0.08)":e.style.boxShadow="none"})</script></body></html>

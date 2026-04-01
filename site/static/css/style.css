@@ -1230,3 +1230,211 @@ footer {
         width: 100%;
     }
 }
+
+/* ── Hero CTA Button ────────────────────────────────────── */
+.hero-cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    scroll-behavior: smooth;
+}
+.hero-cta-btn:hover {
+    background: #0a5c34;
+    transform: translateY(-2px);
+}
+
+/* ── Region Search Section ──────────────────────────────── */
+.region-search-section {
+    padding: 48px 0 32px;
+}
+
+.region-search-box {
+    display: flex;
+    gap: 10px;
+    max-width: 640px;
+    margin: 0 auto 36px;
+}
+
+.region-search-box input {
+    flex: 1;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.region-search-box input:focus {
+    border-color: var(--accent);
+}
+
+.region-search-box button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 0 24px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+}
+.region-search-box button:hover {
+    background: #0a5c34;
+    transform: translateY(-2px);
+}
+
+/* ── Region Cards ───────────────────────────────────────── */
+.region-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.region-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: #1e293b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-align: center;
+}
+.region-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.region-card:active {
+    transform: scale(0.97);
+}
+
+.region-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+.region-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1a2b4a;
+}
+.region-link {
+    font-size: 0.78rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ── Affiliate Banner ───────────────────────────────────── */
+#affiliate-banner {
+    padding: 8px 0 40px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.affiliate-label {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 6px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+#affiliate-banner a {
+    text-decoration: none;
+    display: block;
+}
+
+.affiliate-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f5e9 100%);
+    border: 1px solid #c8e6c9;
+    border-radius: 12px;
+    padding: 16px 20px;
+    min-height: 64px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.affiliate-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.affiliate-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+.affiliate-text {
+    flex: 1;
+}
+.affiliate-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1a2b4a;
+    margin: 0 0 2px;
+}
+.affiliate-sub {
+    font-size: 0.78rem;
+    color: #555;
+    margin: 0;
+}
+.affiliate-arrow {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ── Mobile overrides ───────────────────────────────────── */
+@media (max-width: 768px) {
+    /* 1. 最新記事セクションをスマホで非表示 */
+    .latest-posts-section {
+        display: none;
+    }
+
+    /* Hero */
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+    .hero-section {
+        min-height: 280px;
+    }
+
+    /* Region search */
+    .region-search-box {
+        flex-direction: column;
+    }
+    .region-search-box button {
+        padding: 14px;
+    }
+
+    /* Region cards: 2 columns on mobile */
+    .region-card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Affiliate banner full width */
+    #affiliate-banner {
+        padding: 8px 16px 32px;
+    }
+}

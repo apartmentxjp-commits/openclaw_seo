@@ -2,14 +2,66 @@
 <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h2>AIデータで、<br>不動産取引に「確信」を。</h2>
-        <p>最新の成約事例と市場データに基づき、適正な相場・売却価格を徹底調査します。</p>
-
-        <div class="hero-search-box">
-            <input type="text" id="address-search" placeholder="市区町村、町名を入力（例：世田谷区 三軒茶屋）" onkeydown="if(event.key==='Enter')searchAddress()">
-            <button onclick="searchAddress()">相場を調査する</button>
-        </div>
+        <h2>AIデータで、不動産取引に確信を。</h2>
+        <p>最新の成約事例と市場データで、適正相場を徹底調査。</p>
+        <a href="#region-search" class="hero-cta-btn">地域から相場を調べる ↓</a>
     </div>
+</section>
+
+<!-- 地域検索 + 地方カード -->
+<section id="region-search" class="region-search-section container">
+    <div class="region-search-box">
+        <input type="text" id="region-search-input" placeholder="例：福岡市、渋谷区、北海道..." onkeydown="if(event.key==='Enter')regionSearch()">
+        <button onclick="regionSearch()">相場を調べる</button>
+    </div>
+    <div class="region-card-grid">
+        <a href="{{ "post/" | relURL }}?region=tohoku" class="region-card">
+            <span class="region-emoji">🏔️</span>
+            <span class="region-name">北海道・東北</span>
+            <span class="region-link">相場を見る →</span>
+        </a>
+        <a href="{{ "post/" | relURL }}?region=kanto" class="region-card">
+            <span class="region-emoji">🗼</span>
+            <span class="region-name">関東</span>
+            <span class="region-link">相場を見る →</span>
+        </a>
+        <a href="{{ "post/" | relURL }}?region=chubu" class="region-card">
+            <span class="region-emoji">⛰️</span>
+            <span class="region-name">中部・北陸</span>
+            <span class="region-link">相場を見る →</span>
+        </a>
+        <a href="{{ "post/" | relURL }}?region=kinki" class="region-card">
+            <span class="region-emoji">🏯</span>
+            <span class="region-name">近畿</span>
+            <span class="region-link">相場を見る →</span>
+        </a>
+        <a href="{{ "post/" | relURL }}?region=chugoku" class="region-card">
+            <span class="region-emoji">🌊</span>
+            <span class="region-name">中国・四国</span>
+            <span class="region-link">相場を見る →</span>
+        </a>
+        <a href="{{ "post/" | relURL }}?region=kyushu" class="region-card">
+            <span class="region-emoji">🌺</span>
+            <span class="region-name">九州・沖縄</span>
+            <span class="region-link">相場を見る →</span>
+        </a>
+    </div>
+</section>
+
+<!-- アフィリエイト枠 -->
+<section id="affiliate-banner" class="container">
+    <p class="affiliate-label">提携サービス</p>
+    <a href="https://suumo.jp" target="_blank" rel="noopener noreferrer sponsored">
+        <div class="affiliate-card">
+            <span class="affiliate-icon">🏠</span>
+            <div class="affiliate-text">
+                <p class="affiliate-title">SUUMO で物件を探す</p>
+                <p class="affiliate-sub">全国の最新物件情報・無料査定</p>
+            </div>
+            <span class="affiliate-arrow">→</span>
+        </div>
+    </a>
+    <!-- 追加バナーはここに差し込む -->
 </section>
 
 <!-- 最新記事（ヒーロー直後） -->
@@ -94,7 +146,7 @@
         <p>物件購入前から売却戦略まで、プロ基準の試算をWeb上で再現</p>
     </div>
     <div class="simulator-grid">
-        <a href="{{" post/loan-calculator/"|relURL}}" class="simulator-card">
+        <a href="{{ "post/loan-calculator/" | relURL }}" class="simulator-card">
             <div class="sim-icon">🏠</div>
             <div class="sim-content">
                 <h3>住宅ローン</h3>
@@ -102,7 +154,7 @@
             </div>
             <div class="sim-action">試算スタート</div>
         </a>
-        <a href="{{" post/yield-calculator/"|relURL}}" class="simulator-card">
+        <a href="{{ "post/yield-calculator/" | relURL }}" class="simulator-card">
             <div class="sim-icon">📈</div>
             <div class="sim-content">
                 <h3>不動産利回りシミュレーター</h3>
@@ -110,7 +162,7 @@
             </div>
             <div class="sim-action">収益を計算</div>
         </a>
-        <a href="{{" post/rent-estimator/"|relURL}}" class="simulator-card">
+        <a href="{{ "post/rent-estimator/" | relURL }}" class="simulator-card">
             <div class="sim-icon">📊</div>
             <div class="sim-content">
                 <h3>家賃相場</h3>
@@ -118,7 +170,7 @@
             </div>
             <div class="sim-action">相場を調査</div>
         </a>
-        <a href="{{" post/price-prediction/"|relURL}}" class="simulator-card">
+        <a href="{{ "post/price-prediction/" | relURL }}" class="simulator-card">
             <div class="sim-icon">🤖</div>
             <div class="sim-content">
                 <h3>価格予測</h3>
@@ -138,82 +190,82 @@
         <!-- SVG or Premium Grid Layout for Map -->
         <div class="map-wrapper">
             <div class="map-region hokkaido">
-                <a href="{{" post/"|relURL}}" class="map-btn">北海道</a>
+                <a href="{{ "post/" | relURL }}" class="map-btn">北海道</a>
             </div>
             <div class="map-region tohoku">
                 <span class="region-label">東北</span>
                 <div class="pref-grid">
-                    <a href="{{" post/"|relURL}}">青森</a>
-                    <a href="{{" post/"|relURL}}">岩手</a>
-                    <a href="{{" post/"|relURL}}">宮城</a>
-                    <a href="{{" post/"|relURL}}">秋田</a>
-                    <a href="{{" post/"|relURL}}">山形</a>
-                    <a href="{{" post/"|relURL}}">福島</a>
+                    <a href="{{ "post/" | relURL }}">青森</a>
+                    <a href="{{ "post/" | relURL }}">岩手</a>
+                    <a href="{{ "post/" | relURL }}">宮城</a>
+                    <a href="{{ "post/" | relURL }}">秋田</a>
+                    <a href="{{ "post/" | relURL }}">山形</a>
+                    <a href="{{ "post/" | relURL }}">福島</a>
                 </div>
             </div>
             <div class="map-region kanto">
                 <span class="region-label">関東</span>
                 <div class="pref-grid">
-                    <a href="{{" post/"|relURL}}" class="highlight">東京</a>
-                    <a href="{{" post/"|relURL}}">神奈川</a>
-                    <a href="{{" post/"|relURL}}">埼玉</a>
-                    <a href="{{" post/"|relURL}}">千葉</a>
-                    <a href="{{" post/"|relURL}}">茨城</a>
-                    <a href="{{" post/"|relURL}}">栃木</a>
-                    <a href="{{" post/"|relURL}}">群馬</a>
+                    <a href="{{ "post/" | relURL }}" class="highlight">東京</a>
+                    <a href="{{ "post/" | relURL }}">神奈川</a>
+                    <a href="{{ "post/" | relURL }}">埼玉</a>
+                    <a href="{{ "post/" | relURL }}">千葉</a>
+                    <a href="{{ "post/" | relURL }}">茨城</a>
+                    <a href="{{ "post/" | relURL }}">栃木</a>
+                    <a href="{{ "post/" | relURL }}">群馬</a>
                 </div>
             </div>
             <div class="map-region chubu">
                 <span class="region-label">中部</span>
                 <div class="pref-grid">
-                    <a href="{{" post/"|relURL}}">愛知</a>
-                    <a href="{{" post/"|relURL}}">静岡</a>
-                    <a href="{{" post/"|relURL}}">岐阜</a>
-                    <a href="{{" post/"|relURL}}">三重</a>
-                    <a href="{{" post/"|relURL}}">新潟</a>
-                    <a href="{{" post/"|relURL}}">富山</a>
-                    <a href="{{" post/"|relURL}}">石川</a>
-                    <a href="{{" post/"|relURL}}">福井</a>
-                    <a href="{{" post/"|relURL}}">山梨</a>
-                    <a href="{{" post/"|relURL}}">長野</a>
+                    <a href="{{ "post/" | relURL }}">愛知</a>
+                    <a href="{{ "post/" | relURL }}">静岡</a>
+                    <a href="{{ "post/" | relURL }}">岐阜</a>
+                    <a href="{{ "post/" | relURL }}">三重</a>
+                    <a href="{{ "post/" | relURL }}">新潟</a>
+                    <a href="{{ "post/" | relURL }}">富山</a>
+                    <a href="{{ "post/" | relURL }}">石川</a>
+                    <a href="{{ "post/" | relURL }}">福井</a>
+                    <a href="{{ "post/" | relURL }}">山梨</a>
+                    <a href="{{ "post/" | relURL }}">長野</a>
                 </div>
             </div>
             <div class="map-region kansai">
                 <span class="region-label">関西</span>
                 <div class="pref-grid">
-                    <a href="{{" post/"|relURL}}">大阪</a>
-                    <a href="{{" post/"|relURL}}">兵庫</a>
-                    <a href="{{" post/"|relURL}}">京都</a>
-                    <a href="{{" post/"|relURL}}">滋賀</a>
-                    <a href="{{" post/"|relURL}}">奈良</a>
-                    <a href="{{" post/"|relURL}}">和歌山</a>
+                    <a href="{{ "post/" | relURL }}">大阪</a>
+                    <a href="{{ "post/" | relURL }}">兵庫</a>
+                    <a href="{{ "post/" | relURL }}">京都</a>
+                    <a href="{{ "post/" | relURL }}">滋賀</a>
+                    <a href="{{ "post/" | relURL }}">奈良</a>
+                    <a href="{{ "post/" | relURL }}">和歌山</a>
                 </div>
             </div>
             <div class="map-region chugoku-shikoku">
                 <span class="region-label">中国・四国</span>
                 <div class="pref-grid">
-                    <a href="{{" post/"|relURL}}">広島</a>
-                    <a href="{{" post/"|relURL}}">岡山</a>
-                    <a href="{{" post/"|relURL}}">鳥取</a>
-                    <a href="{{" post/"|relURL}}">島根</a>
-                    <a href="{{" post/"|relURL}}">山口</a>
-                    <a href="{{" post/"|relURL}}">徳島</a>
-                    <a href="{{" post/"|relURL}}">香川</a>
-                    <a href="{{" post/"|relURL}}">愛媛</a>
-                    <a href="{{" post/"|relURL}}">高知</a>
+                    <a href="{{ "post/" | relURL }}">広島</a>
+                    <a href="{{ "post/" | relURL }}">岡山</a>
+                    <a href="{{ "post/" | relURL }}">鳥取</a>
+                    <a href="{{ "post/" | relURL }}">島根</a>
+                    <a href="{{ "post/" | relURL }}">山口</a>
+                    <a href="{{ "post/" | relURL }}">徳島</a>
+                    <a href="{{ "post/" | relURL }}">香川</a>
+                    <a href="{{ "post/" | relURL }}">愛媛</a>
+                    <a href="{{ "post/" | relURL }}">高知</a>
                 </div>
             </div>
             <div class="map-region kyushu">
                 <span class="region-label">九州・沖縄</span>
                 <div class="pref-grid">
-                    <a href="{{" post/"|relURL}}">福岡</a>
-                    <a href="{{" post/"|relURL}}">佐賀</a>
-                    <a href="{{" post/"|relURL}}">長崎</a>
-                    <a href="{{" post/"|relURL}}">熊本</a>
-                    <a href="{{" post/"|relURL}}">大分</a>
-                    <a href="{{" post/"|relURL}}">宮崎</a>
-                    <a href="{{" post/"|relURL}}">鹿児島</a>
-                    <a href="{{" post/"|relURL}}">沖縄</a>
+                    <a href="{{ "post/" | relURL }}">福岡</a>
+                    <a href="{{ "post/" | relURL }}">佐賀</a>
+                    <a href="{{ "post/" | relURL }}">長崎</a>
+                    <a href="{{ "post/" | relURL }}">熊本</a>
+                    <a href="{{ "post/" | relURL }}">大分</a>
+                    <a href="{{ "post/" | relURL }}">宮崎</a>
+                    <a href="{{ "post/" | relURL }}">鹿児島</a>
+                    <a href="{{ "post/" | relURL }}">沖縄</a>
                 </div>
             </div>
         </div>
@@ -221,10 +273,10 @@
 </section>
 
 <script>
-    function searchAddress() {
-        const query = document.getElementById('address-search').value.trim();
+    function regionSearch() {
+        const query = document.getElementById('region-search-input').value.trim();
         if (query) {
-            window.location.href = '{{"post/"|relURL}}?q=' + encodeURIComponent(query);
+            window.location.href = '{{ "post/" | relURL }}?q=' + encodeURIComponent(query);
         }
     }
 </script>
