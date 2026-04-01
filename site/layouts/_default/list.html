@@ -116,9 +116,23 @@
 
 <script>
 (function() {
-  // URLパラメータ ?q= を読み取って記事をフィルタリング
   const params = new URLSearchParams(window.location.search);
   const q = params.get('q') || '';
+  const region = params.get('region') || '';
+
+  // 地方 → 都道府県スラッグのマッピング
+  const regionMap = {
+    tohoku:  ['hokkaido','aomori','iwate','miyagi','akita','yamagata','fukushima'],
+    kanto:   ['ibaraki','tochigi','gunma','saitama','chiba','tokyo','kanagawa'],
+    chubu:   ['niigata','toyama','ishikawa','fukui','yamanashi','nagano','shizuoka','aichi','mie','gifu'],
+    kinki:   ['shiga','kyoto','osaka','hyogo','nara','wakayama'],
+    chugoku: ['tottori','shimane','okayama','hiroshima','yamaguchi','tokushima','kagawa','ehime','kochi'],
+    kyushu:  ['fukuoka','saga','nagasaki','kumamoto','oita','miyazaki','kagoshima','okinawa'],
+  };
+  const regionNames = {
+    tohoku: '北海道・東北', kanto: '関東', chubu: '中部・北陸',
+    kinki: '近畿', chugoku: '中国・四国', kyushu: '九州・沖縄',
+  };
 
   function doListSearch() {
     const val = document.getElementById('list-search').value.trim();
@@ -129,20 +143,32 @@
     }
   }
   window.doListSearch = doListSearch;
-
-  // Enterキーでも検索
   document.getElementById('list-search').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') doListSearch();
   });
 
+  // 地方フィルタリング（?region=kanto など）
+  if (region && regionMap[region]) {
+    const prefs = regionMap[region];
+    document.getElementById('list-title').textContent = regionNames[region] + 'の不動産相場';
+    document.getElementById('list-desc').textContent = '';
+    document.querySelectorAll('.pref-group').forEach(function(section) {
+      const slug = section.id.replace('pref-', '');
+      if (!prefs.includes(slug)) section.style.display = 'none';
+    });
+    // 表示中の最初のセクションへスクロール
+    var first = document.querySelector('.pref-group:not([style*="display: none"])');
+    if (first) setTimeout(function(){ first.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    return;
+  }
+
   if (!q) return;
 
-  // 検索キーワードをセット
+  // キーワード検索（?q= ）
   document.getElementById('list-search').value = q;
   document.getElementById('list-title').textContent = '「' + q + '」の検索結果';
   document.getElementById('list-desc').textContent = '';
 
-  // 全カードをチェックしてマッチしないものを隠す
   const cards = document.querySelectorAll('.post-card');
   let matchCount = 0;
   cards.forEach(function(card) {
@@ -153,7 +179,6 @@
       matchCount++;
     } else {
       card.style.display = 'none';
-      // カードが属するセクション（pref-group）もチェック
       const grid = card.closest('.post-grid');
       if (grid) {
         const visible = grid.querySelectorAll('.post-card:not([style*="display: none"])');
@@ -165,7 +190,6 @@
     }
   });
 
-  // 検索結果なしの場合
   if (matchCount === 0) {
     document.getElementById('list-desc').textContent = '該当する記事が見つかりませんでした。別のキーワードをお試しください。';
   } else {

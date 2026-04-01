@@ -11,6 +11,9 @@ article_type: "qa"
 categories: ["qa"]
 prefectures: ["saitama"]
 draft: false
+image: "https://images.unsplash.com/photo-1769921409596-a7aa35cb7b8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDI3NDR8MHwxfHNlYXJjaHwxfHxTYWl0YW1hJTIwSmFwYW4lMjBzdWJ1cmJhbiUyMGhvdXNlfGVufDB8MHx8fDE3NzUwNjA5Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+image_credit_name: "PJH"
+image_credit_url: "https://unsplash.com/@dokae"
 ---
 
 # 埼玉県川越市の一戸建て不動産購入ガイド：Q&A

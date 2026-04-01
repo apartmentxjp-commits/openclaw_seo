@@ -214,8 +214,6 @@
   </div>
 </footer>
 
-<!-- スクロールトップボタン -->
-<button class="scroll-top-btn" id="scrollTopBtn" aria-label="トップへ戻る">↑</button>
 
 <script>
 // ページローダー
@@ -256,21 +254,6 @@ if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
 if (mobileMenu) mobileMenu.addEventListener('click', function(e) {
   if (e.target === mobileMenu) closeMenu();
 });
-
-// スクロールトップ
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 400) {
-    scrollTopBtn.classList.add('visible');
-  } else {
-    scrollTopBtn.classList.remove('visible');
-  }
-});
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
 
 // スクロールアニメーション（Intersection Observer）
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
