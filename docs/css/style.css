@@ -1252,7 +1252,24 @@ footer {
 
 /* ── Region Search Section ──────────────────────────────── */
 .region-search-section {
-    padding: 48px 0 32px;
+    padding: 40px 0 32px;
+}
+
+.region-section-title {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a2b4a;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+.region-section-title span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+    display: block;
+    margin-top: 4px;
+    letter-spacing: 0;
 }
 
 .region-search-box {
@@ -1306,11 +1323,11 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     background: #fff;
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 20px 12px;
+    padding: 16px 10px;
     text-decoration: none;
     color: #1e293b;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -1410,22 +1427,41 @@ footer {
 
     /* Hero */
     .hero-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.75rem;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        margin-bottom: 16px;
     }
     .hero-content p {
-        font-size: 0.9rem;
-        margin-bottom: 24px;
+        font-size: 0.83rem;
+        margin-bottom: 22px;
+        line-height: 1.55;
     }
     .hero-section {
-        min-height: 280px;
+        min-height: 260px;
+    }
+
+    /* Region section */
+    .region-search-section {
+        padding: 24px 0 24px;
+    }
+    .region-section-title {
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+    }
+
+    /* Reduce hero bottom margin on mobile */
+    .hero-section {
+        margin-bottom: 0;
     }
 
     /* Region search */
     .region-search-box {
         flex-direction: column;
+        margin-bottom: 20px;
     }
     .region-search-box button {
-        padding: 14px;
+        padding: 13px;
     }
 
     /* Region cards: 2 columns on mobile */

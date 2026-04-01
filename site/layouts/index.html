@@ -2,7 +2,7 @@
 <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h2>AIデータで、不動産取引に確信を。</h2>
+        <h2>AIデータで、<br>不動産取引に確信を。</h2>
         <p>最新の成約事例と市場データで、適正相場を徹底調査。</p>
         <a href="#region-search" class="hero-cta-btn">地域から相場を調べる ↓</a>
     </div>
@@ -10,6 +10,7 @@
 
 <!-- 地域検索 + 地方カード -->
 <section id="region-search" class="region-search-section container">
+    <div class="region-section-title">地域から不動産相場を調べる<span>市区町村・都道府県名で検索できます</span></div>
     <div class="region-search-box">
         <input type="text" id="region-search-input" placeholder="例：福岡市、渋谷区、北海道..." onkeydown="if(event.key==='Enter')regionSearch()">
         <button onclick="regionSearch()">相場を調べる</button>
@@ -48,20 +49,9 @@
     </div>
 </section>
 
-<!-- アフィリエイト枠 -->
+<!-- アフィリエイト枠（リンクは後で差し替え） -->
 <section id="affiliate-banner" class="container">
-    <p class="affiliate-label">提携サービス</p>
-    <a href="https://suumo.jp" target="_blank" rel="noopener noreferrer sponsored">
-        <div class="affiliate-card">
-            <span class="affiliate-icon">🏠</span>
-            <div class="affiliate-text">
-                <p class="affiliate-title">SUUMO で物件を探す</p>
-                <p class="affiliate-sub">全国の最新物件情報・無料査定</p>
-            </div>
-            <span class="affiliate-arrow">→</span>
-        </div>
-    </a>
-    <!-- 追加バナーはここに差し込む -->
+    <!-- ここにアフィリエイトバナーを追加 -->
 </section>
 
 <!-- 最新記事（ヒーロー直後） -->
